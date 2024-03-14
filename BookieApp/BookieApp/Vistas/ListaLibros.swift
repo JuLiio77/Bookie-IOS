@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ListaLibros: View {
     
-    
-    
+
     @State var search = ""
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
