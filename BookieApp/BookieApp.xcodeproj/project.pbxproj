@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0CFE6C2BA3524400DB1D79 /* ViewFiltros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CFE6B2BA3524400DB1D79 /* ViewFiltros.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0CFE6B2BA3524400DB1D79 /* ViewFiltros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFiltros.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */,
 				3D8826F52B9F7DFD00CF248C /* RegistroView.swift */,
 				3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */,
+				3D0CFE6B2BA3524400DB1D79 /* ViewFiltros.swift */,
 			);
 			path = Vistas;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0CFE6C2BA3524400DB1D79 /* ViewFiltros.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
