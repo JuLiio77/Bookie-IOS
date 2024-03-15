@@ -70,9 +70,10 @@ struct ContentView: View {
                 .toggleStyle(SwitchToggleStyle(tint: Color.button))
                 
                 
-                Button("¿Has olvidado la contraseña?"){}
-                .padding(.top, 20)
-                .foregroundColor(.black)
+                NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
+                    .padding(.top, 20)
+                    .foregroundColor(.black)
+
                 
                 
                 //NavigationLink("Iniciar Sesion", destination:)
@@ -85,19 +86,16 @@ struct ContentView: View {
                 .cornerRadius(20)
                 .padding([.leading, .trailing], 10)
                 .padding(.top, 75)
+
                 
-                
-                NavigationLink("Crear cuenta", destination: RegistroView())
-                Button("Crear cuenta"){
-                }
-                .padding(.top, 30)
-                .foregroundColor(.black)
-                
-                
+                NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
+                    .padding(.top, 30)
+                    .foregroundColor(.black)
             }
             .padding()
-        
+            
         }
+
     }
 }
 
