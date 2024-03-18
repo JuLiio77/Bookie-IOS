@@ -36,6 +36,7 @@ struct ContentView: View {
                     .textContentType(.emailAddress)
                 
                 ZStack(alignment: .trailingFirstTextBaseline) {
+                    
                     if mostrarContrasenia {
                         TextField("Contraseña", text: $contrasenia)
                             .padding()
@@ -59,10 +60,14 @@ struct ContentView: View {
                             .padding(10)
                     }
                     .padding(.trailing, 15)
+                    
                 }
+                
                 HStack {
+                    
                     Toggle("",isOn: $toggle)
                     Text("Recordar contraseña")
+                    
                 }
                 .frame(width: 400)
                 .padding(.top, 20)
@@ -73,20 +78,18 @@ struct ContentView: View {
                 NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
                     .padding(.top, 20)
                     .foregroundColor(.black)
-
+                    .navigationBarBackButtonHidden(true)
                 
                 
-                //NavigationLink("Iniciar Sesion", destination:)
-                
-                Button("Iniciar sesión"){}
-                .padding(20)
-                .padding(.horizontal, 30)
-                .background(Color.button)
-                .foregroundColor(.black)
-                .cornerRadius(20)
-                .padding([.leading, .trailing], 10)
-                .padding(.top, 75)
-
+                NavigationLink("Iniciar Sesion", destination: TabarView())
+                    .padding(20)
+                    .padding(.horizontal, 30)
+                    .background(Color.button)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 75)
+                    .navigationBarBackButtonHidden(true)
                 
                 NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                     .padding(.top, 30)
@@ -95,7 +98,7 @@ struct ContentView: View {
             .padding()
             
         }
-
+        .tint(.brown)
     }
 }
 
