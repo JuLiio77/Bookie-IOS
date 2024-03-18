@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct ListaLibros: View {
-    
 
     @State var search = ""
+    
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0)
     ]
-    
-
     
     var body: some View {
         
@@ -25,7 +23,7 @@ struct ListaLibros: View {
             
             Section{
                 
-                Text("Categoria")
+                Text("Romance")
                     .padding(.trailing, 280)
                     .padding([.top, .bottom], 5)
                 
@@ -33,6 +31,21 @@ struct ListaLibros: View {
 
                     LazyVGrid(columns: columnas, content: {
                         
+                        NavigationLink(destination: DetalleLibro()){
+                            VistaCeldaLibro()
+                        }
+                        NavigationLink(destination: DetalleLibro()){
+                            VistaCeldaLibro()
+                        }
+                        NavigationLink(destination: DetalleLibro()){
+                            VistaCeldaLibro()
+                        }
+                        NavigationLink(destination: DetalleLibro()){
+                            VistaCeldaLibro()
+                        }
+                        NavigationLink(destination: DetalleLibro()){
+                            VistaCeldaLibro()
+                        }
                         NavigationLink(destination: DetalleLibro()){
                             VistaCeldaLibro()
                         }
