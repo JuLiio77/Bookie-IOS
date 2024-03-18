@@ -8,89 +8,102 @@
 import SwiftUI
 
 struct PerfilView: View {
+
+    @State private var seleccionado = 0
     
     var body: some View {
-
-            VStack {
-
-                Text("Julio Vera")
-
-                    .font(.title)
-                    .padding()
+        
+        NavigationStack {
+            
+            
+            HStack {
                 
                 Image(systemName: "person.circle.fill")
                     .resizable()
-                    .frame(width: 100, height: 100)
-                    .padding()
-
-                VStack{
+                    .frame(width: 120, height: 120)
+                
+                
+                VStack(alignment: .leading) {
                     Text("Linares")
-                        .padding(.horizontal)
-
+                    
                     Text("4,8 ★")
-
+                    
+                    Text("Bookies favoritas")
                 }
-
-                .padding()
-
-                HStack {
-
+            }
+            .padding(.trailing, 70)
+            
+            HStack {
+                
+                VStack {
+                    Image(systemName: "book.circle.fill")
+                    //.frame(width: 50, height: 50)
+                    Text("Misterio")
+                }
+                .padding(.horizontal, 10)
+                
+                
+                VStack {
                     Image(systemName: "book.circle.fill")
                     Text("Misterio")
-                    Spacer()
-                    
-                    Image(systemName: "book.circle.fill")
-
-                    Text("Aventura")
-                    Spacer()
-
-                    Image(systemName: "book.circle.fill")
-                    Text("Filosofía")
-
                 }
-
-                .padding()
-                Spacer()
-
+                
+                .padding(.horizontal, 10)
+                
+                VStack {
+                    Image(systemName: "book.circle.fill")
+                    Text("Misterio")
+                }
+                
+                .padding(.horizontal, 10)
+                
             }
-
-            .background(
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.button]), startPoint: .top, endPoint: .bottom)
-
-            )
-
+            .padding(.leading, 100)
+            
+            VStack {
+                Picker("", selection: $seleccionado) {
+                    Text("Imágenes").tag(0)
+                    Text("Reels").tag(1)
+                    Text("fsdfsdf").tag(2)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                Spacer()
+                
+                if seleccionado == 0 {
+                    Text("Vista de Imágenes")
+                } else if seleccionado == 1 {
+                    Text("Vista de Reels")
+                } else if seleccionado == 2 {
+                    Text("Vista de fdfdsfs")
+                    
+                }
+                
+                Spacer()
+            }
+            
+            
+            Spacer()
+            
+            
+            
+                .navigationTitle("Julio Vera")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    Button(action: {
+                        //accion
+                    }) {
+                        Image(systemName: "ellipsis")
+                    }
+                    .rotationEffect(.degrees(90))
+                    .foregroundColor(Color.black)
+                    
+                }
         }
-
     }
 
-//    struct BookItemView: View {
-//
-//        let title: String
-//
-//        let author: String
-//
-//        var body: some View {
-//    HStack {
-//
-//                Image(systemName: "book.fill")
-//
-//                VStack(alignment: .leading) {
-//
-//                    Text(title)
-//              .font(.headline)
-//
-//                    Text(author)
-//
-//                        .font(.subheadline)
-//
-//                }
-//
-//            }
-//
-//        }
-//
-//    }
-
+}
 
 #Preview {
     PerfilView()
