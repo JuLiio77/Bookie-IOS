@@ -26,16 +26,14 @@ struct CeldaBibloteca: View {
           
                 VStack(alignment: .leading){
                     
-                    Text("La chica desaparecidas")
+                    Text("La chica desaparecida")
                         .bold()
-                        .padding(.leading, 90)
-                        .padding(.trailing, 10)
-                        .lineLimit(2, reservesSpace: false)
+                        .padding(.leading, 80)
+         
                     
                     Text("Autor")
-                        .padding(.leading, 90)
-                        .padding(.trailing, 10)
-                        .lineLimit(2, reservesSpace: false)
+                        .padding(.leading, 80)
+                    
                     Button("Ver mas"){
                         
                     }
@@ -48,8 +46,8 @@ struct CeldaBibloteca: View {
                     
                     
                 }
-                .padding(.leading, 50)
-                .frame(width: 350)
+            
+                .frame(width: 350, height: 40)
 
             
                 
