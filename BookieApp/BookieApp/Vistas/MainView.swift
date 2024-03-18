@@ -19,6 +19,17 @@ struct MainView: View {
                 .tabItem {
                     Label("Biblioteca", systemImage: "book")
                 }
+            
+            MainViewBuzon()
+                .tabItem {
+                    Label("Buzon", systemImage: "message")
+                }
+            
+            
+            PerfilView()
+                .tabItem {
+                    Label("Perfil", systemImage: "person.fill")
+                }
         }
         .accentColor(Color.button)
     }
