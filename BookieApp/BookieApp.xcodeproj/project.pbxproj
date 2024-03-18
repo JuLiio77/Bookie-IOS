@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0916992BA8917A00C88A88 /* Peticiones.swift */; };
+		3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09169B2BA8964700C88A88 /* FuncionLogin.swift */; };
 		3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE92C2BA3484100844484 /* TabarView.swift */; };
 		3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */; };
 		3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0916992BA8917A00C88A88 /* Peticiones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peticiones.swift; sourceTree = "<group>"; };
+		3D09169B2BA8964700C88A88 /* FuncionLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionLogin.swift; sourceTree = "<group>"; };
 		3D1CE92C2BA3484100844484 /* TabarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabarView.swift; sourceTree = "<group>"; };
 		3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaView.swift; sourceTree = "<group>"; };
 		3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBibloteca.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
+				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 			);
 			path = ViewLogin;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF524262BA888D600C7D10F /* Service */,
+				3D0916992BA8917A00C88A88 /* Peticiones.swift */,
 			);
 			path = Peticiones;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
 				3DE784E12BA8BBE600686105 /* MainViewBuzon.swift in Sources */,
 				3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */,
+				3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */,
 				3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */,
 				3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */,
 				3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */,
@@ -290,6 +297,7 @@
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
+				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
