@@ -36,23 +36,33 @@ struct PerfilView: View {
             HStack {
                 
                 VStack {
-                    Image(systemName: "book.circle.fill")
-                    //.frame(width: 50, height: 50)
+                    Image(systemName: "eye.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
                     Text("Misterio")
+                        .font(.caption)
                 }
                 .padding(.horizontal, 10)
                 
                 
                 VStack {
-                    Image(systemName: "book.circle.fill")
-                    Text("Misterio")
+                    Image(systemName: "leaf.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Aventura")
+                        .font(.caption)
+
                 }
                 
                 .padding(.horizontal, 10)
                 
                 VStack {
                     Image(systemName: "book.circle.fill")
-                    Text("Misterio")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Filosofía")
+                        .font(.caption)
+
                 }
                 
                 .padding(.horizontal, 10)
