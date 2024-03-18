@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct InicioView: View {
+
     @State var nombre: String = ""
+    var category: [String] = ["Romance","Fantasía","Thriller","Aventuras","Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Mistério", "Clasico", "Ciencia Ficcion", "Poesia", "Psicologia", "Biográfico", "Aficiones", "Extranjeros", "Educativo"]
         
         var body: some View {
             
-            
-                VStack{
-                    
+                NavigationStack{
                     
                     Text("¡Bienvenido \(nombre)!")
                         .bold()
@@ -23,45 +23,49 @@ struct InicioView: View {
                     Text("Descubre a tu bookie favorita")
                         .padding(.trailing, 120)
                     
-            ScrollView  {
-                    
-                    Image(systemName: "")
-                        .frame(width: 353, height: 100)
-                        .background(Color.gray)
-                        .cornerRadius(20)
-                        .bold()
+                    ScrollView  {
+                        
+                        NavigationLink(destination: ListaLibros()){
+                            Image(systemName: "")
+                                .frame(width: 353, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+                                .bold()
+                        }
                         .overlay(
-                        Text("Romance")
+                            Text("\(category[0])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
                         alignment: .topLeading
-                    )
+                        )
                         
                     HStack{
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Fantasía")
+                                Text("\(category[1])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Aventuras")
+                                Text("\(category[2])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -72,26 +76,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Thriller")
+                                Text("\(category[3])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Terror")
+                                Text("\(category[4])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -102,14 +108,15 @@ struct InicioView: View {
                         
                     }
                     
-                    
-                    Image(systemName: "")
-                        .frame(width: 353, height: 100)
-                        .background(Color.gray)
-                        .cornerRadius(20)
-                        .bold()
+                        NavigationLink(destination: ListaLibros()){
+                            Image(systemName: "")
+                                .frame(width: 353, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+                                .bold()
+                        }
                         .overlay(
-                        Text("Acción")
+                        Text("\(category[5])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -119,26 +126,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Infantil")
+                                Text("\(category[6])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Bélico")
+                                Text("\(category[7])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -149,26 +158,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Tragedia")
+                                Text("\(category[8])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Filosofia")
+                                Text("\(category[0])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -179,14 +190,15 @@ struct InicioView: View {
                         
                     }
                     
-                    
-                    Image(systemName: "")
-                        .frame(width: 353, height: 100)
-                        .background(Color.gray)
-                        .cornerRadius(20)
-                        .bold()
+                        NavigationLink(destination: ListaLibros()){
+                            Image(systemName: "")
+                                .frame(width: 353, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+                                .bold()
+                        }
                         .overlay(
-                        Text("Ciencia ficción")
+                        Text("\(category[9])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -196,26 +208,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Misterio")
+                                Text("\(category[10])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Clásico")
+                                Text("\(category[11])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -226,26 +240,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Poesía")
+                                Text("\(category[12])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Psicología")
+                                Text("\(category[13])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -256,13 +272,15 @@ struct InicioView: View {
                         
                     }
                     
-                    Image(systemName: "")
-                        .frame(width: 353, height: 100)
-                        .background(Color.gray)
-                        .cornerRadius(20)
-                        .bold()
+                        NavigationLink(destination: ListaLibros()){
+                            Image(systemName: "")
+                                .frame(width: 353, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+                                .bold()
+                        }
                         .overlay(
-                        Text("Biográfico")
+                        Text("\(category[14])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -272,26 +290,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Aficiones")
+                                Text("\(category[15])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Educativo")
+                                Text("\(category[16])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -302,26 +322,28 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 100)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Historia")
+                                Text("\(category[17])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            
-                            Image(systemName: "")
-                                .frame(width: 172, height: 196)
-                                .background(Color.gray)
-                                .cornerRadius(20)
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 196)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
                                 .overlay(
-                                Text("Extranjeros")
+                                Text("\(category[18])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -332,13 +354,15 @@ struct InicioView: View {
                         
                     }
                     
-                    Image(systemName: "")
-                        .frame(width: 353, height: 100)
-                        .background(Color.gray)
-                        .cornerRadius(20)
-                        .bold()
+                        NavigationLink(destination: ListaLibros()){
+                            Image(systemName: "")
+                                .frame(width: 353, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+                                .bold()
+                        }
                         .overlay(
-                        Text("Ciencia")
+                        Text("\(category[18])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
