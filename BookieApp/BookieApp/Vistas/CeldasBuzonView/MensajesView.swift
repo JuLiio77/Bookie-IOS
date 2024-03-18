@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MensajesView: View {
-    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3"]
+    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4"]
+
     
     var body: some View {
         ScrollView {

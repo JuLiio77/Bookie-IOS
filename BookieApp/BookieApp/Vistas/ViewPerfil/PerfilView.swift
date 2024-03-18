@@ -62,21 +62,22 @@ struct PerfilView: View {
             
             VStack {
                 Picker("", selection: $seleccionado) {
-                    Text("Imágenes").tag(0)
-                    Text("Reels").tag(1)
-                    Text("fsdfsdf").tag(2)
+                    Text("Mis libros").tag(0)
+                    Text("Reseñas").tag(1)
+                    Text("Historial").tag(2)
                 }
+//                .background(Color.blue)
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
                 
                 Spacer()
                 
                 if seleccionado == 0 {
-                    Text("Vista de Imágenes")
+                    Text("Vista de Mis libros")
                 } else if seleccionado == 1 {
-                    Text("Vista de Reels")
+                    Text("Vista de Reseñas")
                 } else if seleccionado == 2 {
-                    Text("Vista de fdfdsfs")
+                    Text("Vista de Historial")
                     
                 }
                 
