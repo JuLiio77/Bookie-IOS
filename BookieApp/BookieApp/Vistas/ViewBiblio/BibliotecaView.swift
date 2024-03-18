@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct BibliotecaView: View {
-    
-    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3"]
-
     var body: some View {
-
-        VStack {
-            ForEach(mensajes, id: \.self) { mensaje in
-                CeldaBibloteca()
-            }
-        }
-
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
