@@ -125,11 +125,36 @@ struct DetalleLibro: View {
                     }
                     
                     
+                    HStack{
+                        
+                        NavigationLink("Intercambio", destination: TabarView())
+                            .padding(15)
+                            .padding(.horizontal, 20)
+                            .background(.brown)
+                            .foregroundColor(.white)
+                            .cornerRadius(30)
+                            .padding([.leading, .trailing], 10)
+                            .padding(.top, 20)
+                            .navigationBarBackButtonHidden(true)
+                        
+                        NavigationLink("Escribir Reseña", destination: ReviewView())
+                            .padding(15)
+                            .background(Color.button)
+                            .foregroundColor(.white)
+                            .cornerRadius(30)
+                            .padding([.leading, .trailing], 10)
+                            .padding(.top, 20)
+                            .navigationBarBackButtonHidden(true)
+                    }
+                    
+                    
                     Spacer()
                 }
                 
             }
+            
         }
+        .tint(.brown)
     }
 }
 
