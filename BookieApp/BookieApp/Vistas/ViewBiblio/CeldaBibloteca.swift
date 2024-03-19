@@ -12,7 +12,7 @@ struct CeldaBibloteca: View {
         ZStack{
             Image(systemName: "")
                 .frame(width: 350, height: 150)
-                .background(Color.color.opacity(0.7))
+                .background(Color.color.opacity(0.5))
                 .cornerRadius(20)
             
          
@@ -31,19 +31,25 @@ struct CeldaBibloteca: View {
                         .padding(.leading, 90)
                         .padding(.trailing, 10)
                         .lineLimit(2, reservesSpace: false)
+                        .font(.callout)
                     
                     Text("Autor")
                         .padding(.leading, 90)
                         .padding(.trailing, 10)
                         .lineLimit(2, reservesSpace: false)
+                        .font(.caption)
+                    
                     Button("Ver mas"){
                         
                     }
-                    .frame(width: 120, height: 40)
+                    .frame(width: 130, height: 25)
                     .background(Color.button)
                     .cornerRadius(20)
-                    .padding(.leading, 100)
+                    .padding(.leading, 150)
                     .foregroundColor(.black)
+                    .font(.caption)
+                    .padding(.top, 18)
+                    
                     
                     
                     

@@ -179,7 +179,7 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[0])")
+                                Text("\(category[9])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -198,7 +198,7 @@ struct InicioView: View {
                                 .bold()
                         }
                         .overlay(
-                        Text("\(category[9])")
+                        Text("\(category[10])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -215,30 +215,12 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[10])")
-                                    .bold()
-                                    .padding(8)
-                                    .offset(x: 10, y: 10),
-                                alignment: .topLeading
-                            )
-                            
-                            NavigationLink(destination: ListaLibros()){
-                                Image(systemName: "")
-                                    .frame(width: 172, height: 100)
-                                    .background(Color.gray)
-                                    .cornerRadius(20)
-                            }
-                                .overlay(
                                 Text("\(category[11])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
-                            
-                        }
-                        
-                        VStack{
                             
                             NavigationLink(destination: ListaLibros()){
                                 Image(systemName: "")
@@ -254,6 +236,24 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
+                        }
+                        
+                        VStack{
+                            
+                            NavigationLink(destination: ListaLibros()){
+                                Image(systemName: "")
+                                    .frame(width: 172, height: 100)
+                                    .background(Color.gray)
+                                    .cornerRadius(20)
+                            }
+                                .overlay(
+                                Text("\(category[13])")
+                                    .bold()
+                                    .padding(8)
+                                    .offset(x: 10, y: 10),
+                                alignment: .topLeading
+                            )
+                            
                             NavigationLink(destination: ListaLibros()){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
@@ -261,7 +261,7 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[13])")
+                                Text("\(category[14])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -280,7 +280,7 @@ struct InicioView: View {
                                 .bold()
                         }
                         .overlay(
-                        Text("\(category[14])")
+                        Text("\(category[15])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -297,7 +297,7 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[15])")
+                                Text("\(category[16])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
