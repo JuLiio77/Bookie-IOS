@@ -26,7 +26,7 @@ struct CeldaBibloteca: View {
           
                 VStack(alignment: .leading){
                     
-                    Text("La chica desaparecidas")
+                    Text("La chica desaparecida")
                         .bold()
                         .padding(.leading, 90)
                         .padding(.trailing, 10)

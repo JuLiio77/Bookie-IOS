@@ -16,16 +16,23 @@ struct ViewChats: View {
         
         VStack{
             
-            List{
+            ScrollView(.vertical){
+
+                VistaCeldaChat()
+                VistaCeldaChat()
+                VistaCeldaChat()
+                VistaCeldaChat()
+                VistaCeldaChat()
+                VistaCeldaChat()
+                VistaCeldaChat()
                 
-                MensajesCeldaView()
-                MensajesCeldaView()
-                MensajesCeldaView()
             }
                        
             Spacer()
             
-            
+            TextField("texto", text: $texto)
+                .border(.black, width: 2)
+                .padding()
         }
     }
 }
