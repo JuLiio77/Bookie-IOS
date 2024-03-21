@@ -21,7 +21,7 @@ struct BibliotecaView: View {
                     
                     
                     ForEach(mensajes, id: \.self) { mensaje in
-                        CeldaBibloteca()
+                        CeldaBibloteca(book: BookModel())
                     }
                 }
             }

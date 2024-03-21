@@ -10,7 +10,7 @@ import Foundation
 class Peticiones{
     
     // funcion para descargar los datos
-    func getDatosApi(apiResponse: @escaping(RespuestaApi)-> ()){
+    func getDatosApi(apiResponse: @escaping(Book)-> ()){
         
         guard let url = URL(string: "url donde hacer las peticiones") else {return}
         
@@ -32,7 +32,7 @@ class Peticiones{
             
             guard let data = data else {return}
             
-            if let decodedData = try? JSONDecoder().decode(RespuestaApi.self, from: data){
+            if let decodedData = try? JSONDecoder().decode(Book.self, from: data){
                 print("Se ha traido los datos correctamente")
                 
                 DispatchQueue.main.async {

@@ -12,9 +12,9 @@ struct BookService{
     
     public static let shared: BookService = BookService()
     
-    public func fetch() -> AnyPublisher<RespuestaApi ,Error>{
+    public func fetch(query: String) -> AnyPublisher<Book ,Error>{
         
-        guard let url = URL(string: "La url para pedir peticiones") else {
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(query)") else {
             let error = URLError(.badURL)
             return Fail(error: error)
                 .eraseToAnyPublisher()
@@ -33,7 +33,7 @@ struct BookService{
             }
             return data
         })
-        .decode(type: RespuestaApi.self, decoder: JSONDecoder())
+        .decode(type: Book.self, decoder: JSONDecoder())
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
     }

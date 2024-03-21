@@ -16,6 +16,7 @@
 		3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */; };
 		3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */; };
 		3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */; };
+		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
@@ -35,7 +36,7 @@
 		3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DE2BA8B78A00686105 /* NotificacionesView.swift */; };
 		3DE784E12BA8BBE600686105 /* MainViewBuzon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784E02BA8BBE600686105 /* MainViewBuzon.swift */; };
 		3DF524282BA888F000C7D10F /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF524272BA888F000C7D10F /* BookService.swift */; };
-		3DF5242B2BA889C300C7D10F /* RespuestaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5242A2BA889C300C7D10F /* RespuestaApi.swift */; };
+		3DF5242B2BA889C300C7D10F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5242A2BA889C300C7D10F /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBibloteca.swift; sourceTree = "<group>"; };
 		3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFotoPerfil.swift; sourceTree = "<group>"; };
 		3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecuContra.swift; sourceTree = "<group>"; };
+		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		3DE784DE2BA8B78A00686105 /* NotificacionesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionesView.swift; sourceTree = "<group>"; };
 		3DE784E02BA8BBE600686105 /* MainViewBuzon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewBuzon.swift; sourceTree = "<group>"; };
 		3DF524272BA888F000C7D10F /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
-		3DF5242A2BA889C300C7D10F /* RespuestaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RespuestaApi.swift; sourceTree = "<group>"; };
+		3DF5242A2BA889C300C7D10F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +227,8 @@
 		3DF524292BA8897A00C7D10F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3DF5242A2BA889C300C7D10F /* RespuestaApi.swift */,
+				3DF5242A2BA889C300C7D10F /* Book.swift */,
+				3D39A2FA2BACAEE400DDD168 /* BookModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,7 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DF5242B2BA889C300C7D10F /* RespuestaApi.swift in Sources */,
+				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
+				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,

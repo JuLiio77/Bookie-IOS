@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CeldaBibloteca: View {
+    
+    @ObservedObject var book: BookModel
+    
     var body: some View {
         ZStack{
             Image(systemName: "")
@@ -26,7 +29,7 @@ struct CeldaBibloteca: View {
           
                 VStack(alignment: .leading){
                     
-                    Text("La chica desaparecida")
+                    Text("\(book.books)")
                         .bold()
                         .padding(.leading, 90)
                         .padding(.trailing, 10)
@@ -64,5 +67,5 @@ struct CeldaBibloteca: View {
 }
 
 #Preview {
-    CeldaBibloteca()
+    CeldaBibloteca(book: BookModel())
 }
