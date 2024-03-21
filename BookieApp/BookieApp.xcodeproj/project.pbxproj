@@ -25,6 +25,11 @@
 		3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */; };
 		3DBC66E72B9F7BF9001A6B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */; };
 		3DBC66EA2B9F7BF9001A6B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */; };
+		3DC8655B2BAC9E32002B5D18 /* CeldaMisLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8655A2BAC9E32002B5D18 /* CeldaMisLibros.swift */; };
+		3DC8655D2BAC9E9E002B5D18 /* CeldaHistorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8655C2BAC9E9E002B5D18 /* CeldaHistorial.swift */; };
+		3DC8655F2BACA293002B5D18 /* CeldaReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8655E2BACA293002B5D18 /* CeldaReview.swift */; };
+		3DC865612BACA4DD002B5D18 /* TerminosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC865602BACA4DD002B5D18 /* TerminosView.swift */; };
+		3DC865632BACAC62002B5D18 /* ReporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC865622BACAC62002B5D18 /* ReporteView.swift */; };
 		3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */; };
 		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
 		3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D32BA88FFF00686105 /* PerfilView.swift */; };
@@ -58,6 +63,11 @@
 		3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DC8655A2BAC9E32002B5D18 /* CeldaMisLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaMisLibros.swift; sourceTree = "<group>"; };
+		3DC8655C2BAC9E9E002B5D18 /* CeldaHistorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaHistorial.swift; sourceTree = "<group>"; };
+		3DC8655E2BACA293002B5D18 /* CeldaReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaReview.swift; sourceTree = "<group>"; };
+		3DC865602BACA4DD002B5D18 /* TerminosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminosView.swift; sourceTree = "<group>"; };
+		3DC865622BACAC62002B5D18 /* ReporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteView.swift; sourceTree = "<group>"; };
 		3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
 		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
 		3DE784D32BA88FFF00686105 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
 				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
+				3DC865622BACAC62002B5D18 /* ReporteView.swift */,
 			);
 			path = ViewLogin;
 			sourceTree = "<group>";
@@ -189,6 +200,10 @@
 			children = (
 				3DE784D52BA8902700686105 /* ReviewView.swift */,
 				3DE784D32BA88FFF00686105 /* PerfilView.swift */,
+				3DC8655A2BAC9E32002B5D18 /* CeldaMisLibros.swift */,
+				3DC8655E2BACA293002B5D18 /* CeldaReview.swift */,
+				3DC8655C2BAC9E9E002B5D18 /* CeldaHistorial.swift */,
+				3DC865602BACA4DD002B5D18 /* TerminosView.swift */,
 			);
 			path = ViewPerfil;
 			sourceTree = "<group>";
@@ -303,11 +318,15 @@
 				3DF5242B2BA889C300C7D10F /* RespuestaApi.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
+				3DC8655F2BACA293002B5D18 /* CeldaReview.swift in Sources */,
+				3DC8655D2BAC9E9E002B5D18 /* CeldaHistorial.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
+				3DC865632BACAC62002B5D18 /* ReporteView.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
+				3DC8655B2BAC9E32002B5D18 /* CeldaMisLibros.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
@@ -319,6 +338,7 @@
 				3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */,
 				3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */,
 				3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */,
+				3DC865612BACA4DD002B5D18 /* TerminosView.swift in Sources */,
 				3DE784DD2BA8B76C00686105 /* MensajesView.swift in Sources */,
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
