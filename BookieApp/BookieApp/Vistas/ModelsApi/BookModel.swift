@@ -9,10 +9,13 @@ import Combine
 
 class BookModel: ObservableObject{
     
-    @Published public private(set) var books: [Book] = []
+    @Published public private(set) var libros: [Book] = []
     
     private var suscripcion = Set<AnyCancellable>()
     
-    
+    public func onAppear(){
+        
+       // .suscripcion = BookService.shared.fetch(query: "a")
+    }
 }
 

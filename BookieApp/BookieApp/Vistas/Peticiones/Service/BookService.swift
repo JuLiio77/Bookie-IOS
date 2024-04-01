@@ -12,9 +12,9 @@ struct BookService{
     
     public static let shared: BookService = BookService()
     
-    public func fetch(query: String) -> AnyPublisher<Book ,Error>{
+    public func fetch(query: String) -> AnyPublisher<Book,Error>{
         
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(query)") else {
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=a") else {
             let error = URLError(.badURL)
             return Fail(error: error)
                 .eraseToAnyPublisher()

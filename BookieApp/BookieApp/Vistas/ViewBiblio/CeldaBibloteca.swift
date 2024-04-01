@@ -29,18 +29,19 @@ struct CeldaBibloteca: View {
           
                 VStack(alignment: .leading){
                     
-                    Text("\(book.books)")
-                        .bold()
-                        .padding(.leading, 90)
-                        .padding(.trailing, 10)
-                        .lineLimit(2, reservesSpace: false)
-                        .font(.callout)
-                    
-                    Text("Autor")
-                        .padding(.leading, 90)
-                        .padding(.trailing, 10)
-                        .lineLimit(2, reservesSpace: false)
-                        .font(.caption)
+                        
+                        Text("nombre libro")
+                            .bold()
+                            .padding(.leading, 90)
+                            .padding(.trailing, 10)
+                            .lineLimit(2, reservesSpace: false)
+                            .font(.callout)
+                        
+                        Text("Autor")
+                            .padding(.leading, 90)
+                            .padding(.trailing, 10)
+                            .lineLimit(2, reservesSpace: false)
+                            .font(.caption)
                     
                     Button("Ver mas"){
                         
