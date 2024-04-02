@@ -13,35 +13,36 @@ struct CeldaBibloteca: View {
     
     var body: some View {
         ZStack{
-            Image(systemName: "")
-                .frame(width: 350, height: 150)
-                .background(Color.color.opacity(0.5))
-                .cornerRadius(20)
             
-         
-        
+                Image(systemName: "")
+                    .frame(width: 350, height: 150)
+                    .background(Color.color.opacity(0.5))
+                    .cornerRadius(20)
+                
+                
+                
                 Image(systemName: "")
                     .frame(width: 114, height: 122)
                     .background(Color.gray)
                     .cornerRadius(20)
                     .padding(.trailing, 200)
-            
-          
+                
+                
                 VStack(alignment: .leading){
                     
-                        
-                        Text("nombre libro")
-                            .bold()
-                            .padding(.leading, 90)
-                            .padding(.trailing, 10)
-                            .lineLimit(2, reservesSpace: false)
-                            .font(.callout)
-                        
-                        Text("Autor")
-                            .padding(.leading, 90)
-                            .padding(.trailing, 10)
-                            .lineLimit(2, reservesSpace: false)
-                            .font(.caption)
+                    
+                    Text("nombre libro")
+                        .bold()
+                        .padding(.leading, 90)
+                        .padding(.trailing, 10)
+                        .lineLimit(2, reservesSpace: false)
+                        .font(.callout)
+                    
+                    Text("Autor")
+                        .padding(.leading, 90)
+                        .padding(.trailing, 10)
+                        .lineLimit(2, reservesSpace: false)
+                        .font(.caption)
                     
                     Button("Ver mas"){
                         
@@ -60,9 +61,8 @@ struct CeldaBibloteca: View {
                 }
                 .padding(.leading, 50)
                 .frame(width: 350)
-
+                                
             
-                
         }
     }
 }

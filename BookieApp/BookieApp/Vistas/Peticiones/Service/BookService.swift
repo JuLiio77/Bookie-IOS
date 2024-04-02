@@ -12,30 +12,28 @@ struct BookService{
     
     public static let shared: BookService = BookService()
     
-    public func fetch(query: String) -> AnyPublisher<Book,Error>{
-        
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=a") else {
+    public func fetch(query: String) -> AnyPublisher<[Book], Error> {
+        let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(query)") else {
             let error = URLError(.badURL)
-            return Fail(error: error)
-                .eraseToAnyPublisher()
+            return Fail(error: error).eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url).tryMap({data, response in
-            
-            guard let httpResponse = response as? HTTPURLResponse else{
-                throw URLError(URLError.unknown)
-            }
-            
-            guard httpResponse.statusCode == 200 else {
-                
-                let code = URLError.Code(rawValue: httpResponse.statusCode)
-                throw URLError(code)
+        return URLSession.shared.dataTaskPublisher(for: url).tryMap({ data, response in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw URLError(.badServerResponse)
             }
             return data
         })
-        .decode(type: Book.self, decoder: JSONDecoder())
+        .decode(type: BooksResponse.self, decoder: JSONDecoder())
+        .map { $0.items }
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
+    }
+
+    // Estructura para manejar la respuesta de la API que incluye los libros
+    struct BooksResponse: Decodable {
+        let items: [Book]
     }
     
 }
