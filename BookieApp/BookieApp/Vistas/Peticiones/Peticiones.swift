@@ -47,9 +47,11 @@ class Peticiones{
     
     }
     
-    //funcion para mandar los datos
-    func enviarDatosApi(){}
-    
-    
+    func getToken(){
+        
+        
+        
+    }
+       
     
 }

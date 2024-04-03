@@ -98,7 +98,7 @@ struct RegistroView: View {
      
             Button("Siguiente"){
                 
-                userData.register()
+                
             }
             .padding(20)
             .padding(.horizontal, 30)
