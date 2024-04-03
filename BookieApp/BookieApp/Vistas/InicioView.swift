@@ -9,8 +9,7 @@ import SwiftUI
 
 struct InicioView: View {
     @State var nombre: String = ""
-<<<<<<< Updated upstream
-=======
+
     var category: [String] = ["Romance", "Fantasía", "Thriller", "Aventuras", "Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Mistério", "Clasico", "Ciencia Ficcion", "Poesia", "Psicologia", "Biográfico", "Aficiones", "Extranjeros", "Educativo"]
 >>>>>>> Stashed changes
         
