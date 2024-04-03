@@ -30,6 +30,7 @@ struct MainViewBuzon: View {
 
            Spacer()
        }
+        
     }
 }
 

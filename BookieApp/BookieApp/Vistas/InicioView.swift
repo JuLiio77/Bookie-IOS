@@ -10,7 +10,7 @@ import SwiftUI
 struct InicioView: View {
 
     @State var nombre: String = ""
-    var category: [String] = ["Romance","Fantasía","Thriller","Aventuras","Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Mistério", "Clasico", "Ciencia Ficcion", "Poesia", "Psicologia", "Biográfico", "Aficiones", "Extranjeros", "Educativo"]
+    var category: [String] = ["Romance","Fantasía","Thriller","Aventuras","Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Misterio", "Clásico", "Ciencia Ficción", "Poesía", "Psicología", "Biográfico", "Aficiones", "Extranjeros", "Educativo", "Ciencia", "Historia"]
         
         var body: some View {
             
@@ -311,7 +311,7 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[16])")
+                                Text("\(category[17])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -329,7 +329,7 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[17])")
+                                Text("\(category[18])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -343,7 +343,7 @@ struct InicioView: View {
                                     .cornerRadius(20)
                             }
                                 .overlay(
-                                Text("\(category[18])")
+                                Text("\(category[19])")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -362,7 +362,7 @@ struct InicioView: View {
                                 .bold()
                         }
                         .overlay(
-                        Text("\(category[18])")
+                        Text("\(category[20])")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
