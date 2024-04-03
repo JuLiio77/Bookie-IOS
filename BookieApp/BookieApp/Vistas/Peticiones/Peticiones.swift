@@ -12,7 +12,7 @@ class Peticiones{
     // funcion para descargar los datos
     func getDatosApi(apiResponse: @escaping(RespuestaApi)-> ()){
         
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=a") else {return}
+        guard let url = URL(string: "url donde hacer las peticiones") else {return}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
