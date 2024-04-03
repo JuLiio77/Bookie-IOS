@@ -20,10 +20,12 @@ struct TabarView: View {
                 .tabItem {
                     Label("Biblioteca", systemImage: "book")
                 }
+    
             SubirLibroView()
                 .tabItem {
                     Label("Buzon", systemImage: "plus.app.fill")
                 }
+            
             MainViewBuzon()
                 .tabItem {
                     Label("Perfil", systemImage: "message")

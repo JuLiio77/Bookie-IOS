@@ -13,7 +13,6 @@ struct ViewRecuContra: View {
     @State var contra: String = ""
     @State var reContra: String = ""
     @State var mostarContrasenia = false
-   
     var body: some View {
         
         Text("Recupareción de contraseña")

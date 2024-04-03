@@ -9,10 +9,7 @@ import SwiftUI
 
 struct RegistroView: View {
     
-    @State var nombre: String = ""
-    @State var repetirContrasenia: String = ""
-    @State var correo: String = ""
-    @State var contrasenia: String = ""
+    @EnvironmentObject var userData: FuncionLogin
     
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
@@ -27,14 +24,14 @@ struct RegistroView: View {
                 .padding()
             
             
-            TextField("Nombre", text: $nombre)
+            TextField("Nombre", text: $userData.name)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,90)
             
-            TextField("Correo electronico", text: $correo)
+            TextField("Correo electronico", text: $userData.email)
                 .bold()
                 .padding()
                 .background(Color.color)
@@ -44,14 +41,14 @@ struct RegistroView: View {
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia {
-                    TextField("Contraseña", text: $contrasenia)
+                    TextField("Contraseña", text: $userData.password)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
                  
                 } else {
-                    SecureField("Contraseña", text: $contrasenia)
+                    SecureField("Contraseña", text: $userData.password)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
@@ -71,14 +68,14 @@ struct RegistroView: View {
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia1 {
-                    TextField("Contraseña", text: $repetirContrasenia)
+                    TextField("Contraseña", text: $userData.repassword)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
                  
                 } else {
-                    SecureField("Contraseña", text: $repetirContrasenia)
+                    SecureField("Contraseña", text: $userData.repassword)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
@@ -101,6 +98,7 @@ struct RegistroView: View {
      
             Button("Siguiente"){
                 
+                
             }
             .padding(20)
             .padding(.horizontal, 30)
@@ -118,4 +116,5 @@ struct RegistroView: View {
 }
 #Preview {
     RegistroView()
+        .environmentObject(FuncionLogin())
 }
