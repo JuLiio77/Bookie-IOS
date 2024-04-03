@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistroView: View {
     
-    @EnvironmentObject var userData: FuncionLogin
+    //@EnvironmentObject var userData: FuncionLogin
     
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
@@ -24,37 +24,37 @@ struct RegistroView: View {
                 .padding()
             
             
-            TextField("Nombre", text: $userData.name)
+            //TextField("Nombre", text: $userData.name)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,90)
             
-            TextField("Correo electronico", text: $userData.email)
+            //TextField("Correo electronico", text: $userData.email)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,40)
-                
+            
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia {
-                    TextField("Contraseña", text: $userData.password)
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding(.top, 40)
-                 
+                    //TextField("Contraseña", text: $userData.password)
+                    //.padding()
+                    //.background(Color.color)
+                    //.cornerRadius(30)
+                    //.padding(.top, 40)
+                    //
                 } else {
-                    SecureField("Contraseña", text: $userData.password)
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding(.top, 40)
+                    // SecureField("Contraseña", text: $userData.password)
+                    //                        .padding()
+                    //                        .background(Color.color)
+                    //                        .cornerRadius(30)
+                    //                        .padding(.top, 40)
                 }
-
+                
                 Button(action: {
                     mostrarContrasenia.toggle()
                 }) {
@@ -64,57 +64,58 @@ struct RegistroView: View {
                 }
                 .padding(.trailing, 15)
             }
-
+            
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia1 {
-                    TextField("Contraseña", text: $userData.repassword)
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding(.top, 40)
-                 
+                    //                    //TextField("Contraseña", text: $userData.repassword)
+                    //                        .padding()
+                    //                        .background(Color.color)
+                    //                        .cornerRadius(30)
+                    //                        .padding(.top, 40)
+                    //
                 } else {
-                    SecureField("Contraseña", text: $userData.repassword)
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding(.top, 40)
+                    //                  //  SecureField("Contraseña", text: $userData.repassword)'
+                    //                        .padding()
+                    //                        .background(Color.color)
+                    //                        .cornerRadius(30)
+                    //                        .padding(.top, 40)
+                    //                }
+                    
+                    Button(action: {
+                        mostrarContrasenia1.toggle()
+                    }) {
+                        Image(systemName: mostrarContrasenia1 ? "eye.fill" : "eye.slash.fill")
+                            .foregroundColor(.primary)
+                            .padding(10)
+                    }
+                    .padding(.trailing, 15)
                 }
-
-                Button(action: {
-                    mostrarContrasenia1.toggle()
-                }) {
-                    Image(systemName: mostrarContrasenia1 ? "eye.fill" : "eye.slash.fill")
-                        .foregroundColor(.primary)
-                        .padding(10)
-                }
-                .padding(.trailing, 15)
-            }
-            
-          
-            
-
-     
-            Button("Siguiente"){
                 
                 
+                
+                
+                
+                Button("Siguiente"){
+                    
+                    
+                }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                
+                
+                
             }
-            .padding(20)
-            .padding(.horizontal, 30)
-            .background(Color.button)
-            .foregroundColor(.black)
-            .cornerRadius(20)
-            .padding([.leading, .trailing], 10)
-            .padding(.top, 75)
-            
-      
-            
+            .padding()
         }
-        .padding()
     }
 }
 #Preview {
     RegistroView()
-        .environmentObject(FuncionLogin())
+        //.environmentObject(FuncionLogin())
 }
