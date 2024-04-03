@@ -30,9 +30,15 @@ struct ViewChats: View {
                        
             Spacer()
             
-            TextField("texto", text: $texto)
-                .border(.black, width: 2)
-                .padding()
+            
+            HStack{
+                TextField("texto", text: $texto)
+                    .frame(width: 300, height: 20)
+                    //.border(.blue, width: 1)
+                    .cornerRadius(5)
+                Button("", systemImage: "paperplane", action: {})
+                
+            }
         }
     }
 }
