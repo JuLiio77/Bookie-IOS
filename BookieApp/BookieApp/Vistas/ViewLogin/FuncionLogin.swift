@@ -8,6 +8,7 @@
 import SwiftUI
 
 class FuncionLogin: ObservableObject{
+
     
     @Published var name: String = ""
     @Published var password: String = ""
@@ -26,6 +27,7 @@ class FuncionLogin: ObservableObject{
     }
     
     func register(){
+    
         
      print("registrado")
     }

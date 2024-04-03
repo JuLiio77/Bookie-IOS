@@ -47,6 +47,34 @@ class Peticiones{
     
     }
     
+    func postRegistrer(){
+        
+        let Url = String(format: "http://localhost:8080/api/auth/login")
+        guard let serviceUrl = URL(string: Url) else { return }
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "POST"
+        request.setValue("Application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let bodyData = "username=Pepe123&password=12345"
+        request.httpBody = bodyData.data(using: String.Encoding.utf8);
+
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print(response)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
+
+    }
+    
     func getToken(){
         
         

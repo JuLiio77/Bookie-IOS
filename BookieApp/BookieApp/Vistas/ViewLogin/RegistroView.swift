@@ -10,6 +10,7 @@ import SwiftUI
 struct RegistroView: View {
     
     @EnvironmentObject var userData: FuncionLogin
+    var peticiones = Peticiones()
     
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
@@ -97,8 +98,8 @@ struct RegistroView: View {
 
      
             Button("Siguiente"){
-                
-                
+                peticiones.postRegistrer()
+                userData.register()
             }
             .padding(20)
             .padding(.horizontal, 30)
