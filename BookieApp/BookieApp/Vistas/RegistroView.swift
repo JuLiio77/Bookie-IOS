@@ -34,7 +34,7 @@ struct RegistroView: View {
                 .cornerRadius(30)
                 .padding(.top,90)
             
-            TextField("Correo electronico", text: $nombre)
+            TextField("Correo electronico", text: $correo)
                 .bold()
                 .padding()
                 .background(Color.color)

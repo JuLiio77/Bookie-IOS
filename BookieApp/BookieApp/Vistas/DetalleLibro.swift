@@ -127,7 +127,7 @@ struct DetalleLibro: View {
                     
                     HStack{
                         
-                        NavigationLink("Intercambio", destination: TabarView())
+                        NavigationLink("Intercambio", destination: MensajesView())
                             .padding(15)
                             .padding(.horizontal, 20)
                             .background(.brown)

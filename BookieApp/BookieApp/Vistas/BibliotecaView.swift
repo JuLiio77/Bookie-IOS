@@ -8,18 +8,31 @@
 import SwiftUI
 
 struct BibliotecaView: View {
-    
-    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3"]
+    @State var search = ""
+    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4", "Mensaje 5"]
+
 
     var body: some View {
-
-        VStack {
-            ForEach(mensajes, id: \.self) { mensaje in
-                CeldaBibloteca()
+        NavigationStack{
+            ScrollView{
+                VStack {
+                    Text("Busca datos sobre libros en la biblioteca")
+                        .bold()
+                    
+                    
+                    ForEach(mensajes, id: \.self) { mensaje in
+                        CeldaBibloteca()
+                    }
+                }
             }
+//            .navigationTitle("Biblioteca")
+//            .navigationBarTitleDisplayMode(.inline)
         }
-
+        
+        .searchable(text: $search)
+     
     }
+    
 }
 
 #Preview {

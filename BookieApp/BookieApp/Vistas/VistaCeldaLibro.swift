@@ -21,6 +21,7 @@ struct VistaCeldaLibro: View {
                 Text("Harry Potter y la piedra filosofal")
                     .padding(.trailing, 10)
                     .font(.subheadline)
+                    .foregroundColor(.black)
                 //.multilineTextAlignment(.trailing)
             }
             .padding([.top, .bottom], 20)
