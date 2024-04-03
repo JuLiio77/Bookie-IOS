@@ -26,6 +26,9 @@
 		3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */; };
 		3DBC66E72B9F7BF9001A6B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */; };
 		3DBC66EA2B9F7BF9001A6B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */; };
+		3DDA10522BBDBAF600EFE48D /* Celda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA10512BBDBAF600EFE48D /* Celda.swift */; };
+		3DDA10542BBDBB1500EFE48D /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA10532BBDBB1500EFE48D /* Sheet.swift */; };
+		3DDA10562BBDBB4A00EFE48D /* SheetFiltrosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDA10552BBDBB4A00EFE48D /* SheetFiltrosView.swift */; };
 		3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */; };
 		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
 		3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D32BA88FFF00686105 /* PerfilView.swift */; };
@@ -61,6 +64,9 @@
 		3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DDA10512BBDBAF600EFE48D /* Celda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celda.swift; sourceTree = "<group>"; };
+		3DDA10532BBDBB1500EFE48D /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		3DDA10552BBDBB4A00EFE48D /* SheetFiltrosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetFiltrosView.swift; sourceTree = "<group>"; };
 		3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
 		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
 		3DE784D32BA88FFF00686105 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 		3D75B27E2BA0CF6A00B14A09 /* Vistas */ = {
 			isa = PBXGroup;
 			children = (
+				3DDA10502BBDBAE200EFE48D /* Sheet */,
 				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
 				3D19B5CA2BA9FABF00D892F3 /* ViewSubirLibro */,
 				3D09169D2BA8D80B00C88A88 /* Chats */,
@@ -187,6 +194,16 @@
 				3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DDA10502BBDBAE200EFE48D /* Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				3DDA10512BBDBAF600EFE48D /* Celda.swift */,
+				3DDA10532BBDBB1500EFE48D /* Sheet.swift */,
+				3DDA10552BBDBB4A00EFE48D /* SheetFiltrosView.swift */,
+			);
+			path = Sheet;
 			sourceTree = "<group>";
 		};
 		3DE784D22BA88FCA00686105 /* ViewPerfil */ = {
@@ -316,10 +333,13 @@
 			files = (
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
+				3DDA10542BBDBB1500EFE48D /* Sheet.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
+				3DDA10522BBDBAF600EFE48D /* Celda.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
+				3DDA10562BBDBB4A00EFE48D /* SheetFiltrosView.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
