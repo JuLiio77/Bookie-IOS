@@ -15,6 +15,9 @@ class FuncionLogin: ObservableObject{
     @Published var email: String = ""
     
     
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/FuncionLogin.swift
+
+=======
     func check(){
         
         if password == repassword{
@@ -29,6 +32,7 @@ class FuncionLogin: ObservableObject{
         
      print("registrado")
     }
+>>>>>>> jose:BookieApp/BookieApp/Vistas/ViewLogin/FuncionLogin.swift
 }
 
 

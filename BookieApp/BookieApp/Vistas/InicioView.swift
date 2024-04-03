@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct InicioView: View {
-
     @State var nombre: String = ""
-    var category: [String] = ["Romance","Fantasía","Thriller","Aventuras","Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Misterio", "Clásico", "Ciencia Ficción", "Poesía", "Psicología", "Biográfico", "Aficiones", "Extranjeros", "Educativo", "Ciencia", "Historia"]
+
+    var category: [String] = ["Romance", "Fantasía", "Thriller", "Aventuras", "Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Mistério", "Clasico", "Ciencia Ficcion", "Poesia", "Psicologia", "Biográfico", "Aficiones", "Extranjeros", "Educativo"]
+>>>>>>> Stashed changes
         
         var body: some View {
             
-                NavigationStack{
+            
+                VStack{
+                    
                     
                     Text("¡Bienvenido \(nombre)!")
                         .bold()
@@ -23,49 +26,75 @@ struct InicioView: View {
                     Text("Descubre a tu bookie favorita")
                         .padding(.trailing, 120)
                     
+<<<<<<< Updated upstream
+            ScrollView  {
+                    
+                    Image(systemName: "")
+                        .frame(width: 353, height: 100)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .bold()
+=======
                     ScrollView  {
                         
-                        NavigationLink(destination: ListaLibros()){
+                        NavigationLink(destination: ListaLibros(categoria: category[0])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
                                 .cornerRadius(20)
                                 .bold()
                         }
+>>>>>>> Stashed changes
                         .overlay(
-                            Text("\(category[0])")
+                        Text("Romance")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
                         alignment: .topLeading
-                        )
+                    )
                         
                     HStack{
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[1])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[1])")
+                                Text("Fantasía")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[2])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[2])")
+                                Text("Aventuras")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -76,28 +105,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[3])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[3])")
+                                Text("Thriller")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[4])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[4])")
+                                Text("Terror")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -108,15 +153,24 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                    
+                    Image(systemName: "")
+                        .frame(width: 353, height: 100)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .bold()
+=======
+                        NavigationLink(destination: ListaLibros(categoria: category[4])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
                                 .cornerRadius(20)
                                 .bold()
                         }
+>>>>>>> Stashed changes
                         .overlay(
-                        Text("\(category[5])")
+                        Text("Acción")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -126,28 +180,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[5])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[6])")
+                                Text("Infantil")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[6])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[7])")
+                                Text("Bélico")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -158,28 +228,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[7])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[8])")
+                                Text("Tragedia")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[8])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[9])")
+                                Text("Filosofia")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -190,15 +276,24 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                    
+                    Image(systemName: "")
+                        .frame(width: 353, height: 100)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .bold()
+=======
+                        NavigationLink(destination: ListaLibros(categoria: category[9])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
                                 .cornerRadius(20)
                                 .bold()
                         }
+>>>>>>> Stashed changes
                         .overlay(
-                        Text("\(category[10])")
+                        Text("Ciencia ficción")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -208,28 +303,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[10])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[11])")
+                                Text("Misterio")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[11])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[12])")
+                                Text("Clásico")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -240,28 +351,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[12])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[13])")
+                                Text("Poesía")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[13])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[14])")
+                                Text("Psicología")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -272,15 +399,23 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                    Image(systemName: "")
+                        .frame(width: 353, height: 100)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .bold()
+=======
+                        NavigationLink(destination: ListaLibros(categoria: category[14])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
                                 .cornerRadius(20)
                                 .bold()
                         }
+>>>>>>> Stashed changes
                         .overlay(
-                        Text("\(category[15])")
+                        Text("Biográfico")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),
@@ -290,28 +425,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[15])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[16])")
+                                Text("Aficiones")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[16])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[17])")
+                                Text("Educativo")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -322,28 +473,44 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 100)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[17])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[18])")
+                                Text("Historia")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                            
+                            Image(systemName: "")
+                                .frame(width: 172, height: 196)
+                                .background(Color.gray)
+                                .cornerRadius(20)
+=======
+                            NavigationLink(destination: ListaLibros(categoria: category[18])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
                                     .cornerRadius(20)
                             }
+>>>>>>> Stashed changes
                                 .overlay(
-                                Text("\(category[19])")
+                                Text("Extranjeros")
                                     .bold()
                                     .padding(8)
                                     .offset(x: 10, y: 10),
@@ -354,15 +521,23 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+<<<<<<< Updated upstream
+                    Image(systemName: "")
+                        .frame(width: 353, height: 100)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                        .bold()
+=======
+                        NavigationLink(destination: ListaLibros(categoria: category[18])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
                                 .cornerRadius(20)
                                 .bold()
                         }
+>>>>>>> Stashed changes
                         .overlay(
-                        Text("\(category[20])")
+                        Text("Ciencia")
                             .bold()
                             .padding(8)
                             .offset(x: 10, y: 10),

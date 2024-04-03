@@ -31,7 +31,11 @@ struct RegistroView: View {
                 .cornerRadius(30)
                 .padding(.top,90)
             
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/RegistroView.swift
+            TextField("Correo electronico", text: $correo)
+=======
             TextField("Correo electronico", text: $userData.email)
+>>>>>>> jose:BookieApp/BookieApp/Vistas/ViewLogin/RegistroView.swift
                 .bold()
                 .padding()
                 .background(Color.color)
