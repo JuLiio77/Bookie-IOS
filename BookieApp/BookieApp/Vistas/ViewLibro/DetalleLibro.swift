@@ -154,7 +154,7 @@ struct DetalleLibro: View {
             }
             
         }
-        .tint(.brown)
+        //.tint(.brown)
     }
 }
 
