@@ -31,6 +31,8 @@
 		3DBC66EA2B9F7BF9001A6B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */; };
 		3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */; };
 		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
+		3DE16F442BBF0B8D0073F864 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE16F432BBF0B8D0073F864 /* Chats.swift */; };
+		3DE16F462BBF0C7E0073F864 /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE16F452BBF0C7E0073F864 /* Mensajes.swift */; };
 		3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D32BA88FFF00686105 /* PerfilView.swift */; };
 		3DE784D62BA8902800686105 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D52BA8902700686105 /* ReviewView.swift */; };
 		3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */; };
@@ -69,6 +71,8 @@
 		3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
 		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
+		3DE16F432BBF0B8D0073F864 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
+		3DE16F452BBF0C7E0073F864 /* Mensajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
 		3DE784D32BA88FFF00686105 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		3DE784D52BA8902700686105 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesCeldaView.swift; sourceTree = "<group>"; };
@@ -144,12 +148,9 @@
 		3D75B27E2BA0CF6A00B14A09 /* Vistas */ = {
 			isa = PBXGroup;
 			children = (
-				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
 				3D19B5CA2BA9FABF00D892F3 /* ViewSubirLibro */,
 				3D09169D2BA8D80B00C88A88 /* Chats */,
 				3DE784D72BA89E9100686105 /* CeldasBuzonView */,
-				3DF524292BA8897A00C7D10F /* ModelsApi */,
-				3DF524252BA888C000C7D10F /* Peticiones */,
 				3D27D3872BA4BD7300DDDBBA /* ViewBiblio */,
 				3D27D3862BA4BCEF00DDDBBA /* ViewLibro */,
 				3DE784D22BA88FCA00686105 /* ViewPerfil */,
@@ -189,7 +190,11 @@
 		3DBC66E12B9F7BF8001A6B90 /* BookieApp */ = {
 			isa = PBXGroup;
 			children = (
+				3DE16F402BBF0AF90073F864 /* ModelChat */,
 				3D9D4F9E2BBDB73F00E46EEE /* ModelUser */,
+				3DF524292BA8897A00C7D10F /* ModelsApi */,
+				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
+				3DF524252BA888C000C7D10F /* Peticiones */,
 				3D75B27E2BA0CF6A00B14A09 /* Vistas */,
 				3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */,
 				3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */,
@@ -204,6 +209,15 @@
 				3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3DE16F402BBF0AF90073F864 /* ModelChat */ = {
+			isa = PBXGroup;
+			children = (
+				3DE16F432BBF0B8D0073F864 /* Chats.swift */,
+				3DE16F452BBF0C7E0073F864 /* Mensajes.swift */,
+			);
+			path = ModelChat;
 			sourceTree = "<group>";
 		};
 		3DE784D22BA88FCA00686105 /* ViewPerfil */ = {
@@ -341,6 +355,7 @@
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
 				3D9D4FA02BBDB78800E46EEE /* AuthRequest.swift in Sources */,
+				3DE16F462BBF0C7E0073F864 /* Mensajes.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
@@ -363,6 +378,7 @@
 				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
 				3D45A4FF2BBEFD940074299E /* RegisterRequest.swift in Sources */,
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
+				3DE16F442BBF0B8D0073F864 /* Chats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

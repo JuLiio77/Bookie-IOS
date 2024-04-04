@@ -12,8 +12,6 @@ struct ContentView: View {
     @EnvironmentObject var userData: FuncionLogin
     @StateObject var datosDefaults = FuncionLogin.sharec
     var peticiones = Peticiones()
-    
-    
     @State var user = AuthRequest(username: "sdfsdf", password: "sdfsfsdf")
     
     @State var toggle: Bool = false
