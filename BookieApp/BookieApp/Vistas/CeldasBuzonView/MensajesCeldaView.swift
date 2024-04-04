@@ -31,9 +31,13 @@ struct MensajesCeldaView: View {
                     .padding(.trailing, 45)
                     .font(.title3)
                     .bold()
+                    .foregroundColor(.black)
+
                 
                 Text("\(fecha.formatted(date: .numeric, time: .omitted))")
                     .padding(.leading, 20)
+                    .foregroundColor(.black)
+
         
             }
             .padding(.bottom, 60)
@@ -44,6 +48,7 @@ struct MensajesCeldaView: View {
             .frame(width: 345, height: 50)
             .padding(.top, 35)
             .font(.subheadline)
+            .foregroundColor(.black)
         }
     }
 }
