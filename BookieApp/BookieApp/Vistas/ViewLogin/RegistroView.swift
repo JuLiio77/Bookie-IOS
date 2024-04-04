@@ -14,6 +14,8 @@ struct RegistroView: View {
     
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
+    
+   @State var user = AuthRequest(username: "pepe1234", password: "12345")
 
 
     var body: some View {
@@ -98,7 +100,13 @@ struct RegistroView: View {
 
      
             Button("Siguiente"){
-                peticiones.postRegistrer()
+                
+                DispatchQueue.main.async {
+                    peticiones.registro{ newUser in
+                        user = newUser
+                    }
+                }
+                
                 userData.register()
             }
             .padding(20)

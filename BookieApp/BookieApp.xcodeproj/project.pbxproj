@@ -20,6 +20,7 @@
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
+		3D9D4FA02BBDB78800E46EEE /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D4F9F2BBDB78800E46EEE /* AuthRequest.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
 		3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */; };
 		3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */; };
@@ -54,6 +55,7 @@
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
+		3D9D4F9F2BBDB78800E46EEE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
 		3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaChat.swift; sourceTree = "<group>"; };
 		3DBC66DF2B9F7BF8001A6B90 /* BookieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,14 @@
 			path = Vistas;
 			sourceTree = "<group>";
 		};
+		3D9D4F9E2BBDB73F00E46EEE /* ModelUser */ = {
+			isa = PBXGroup;
+			children = (
+				3D9D4F9F2BBDB78800E46EEE /* AuthRequest.swift */,
+			);
+			path = ModelUser;
+			sourceTree = "<group>";
+		};
 		3DBC66D62B9F7BF8001A6B90 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +183,7 @@
 		3DBC66E12B9F7BF8001A6B90 /* BookieApp */ = {
 			isa = PBXGroup;
 			children = (
+				3D9D4F9E2BBDB73F00E46EEE /* ModelUser */,
 				3D75B27E2BA0CF6A00B14A09 /* Vistas */,
 				3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */,
 				3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */,
@@ -323,6 +334,7 @@
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
+				3D9D4FA02BBDB78800E46EEE /* AuthRequest.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
@@ -481,8 +493,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,8 +521,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

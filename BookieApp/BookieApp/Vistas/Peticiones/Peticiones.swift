@@ -9,6 +9,8 @@ import Foundation
 
 class Peticiones{
     
+    static let shared = Peticiones()
+
     // funcion para descargar los datos
     func getDatosApi(apiResponse: @escaping(Book)-> ()){
         
@@ -73,6 +75,50 @@ class Peticiones{
             }
         }.resume()
 
+    }
+    
+    func registro(completionHandler: @escaping (AuthRequest)-> Void ){
+        
+        var components = URLComponents()
+        components.scheme = "http"
+        components.host = "regres.in"
+        components.path = "/auth/login"
+        
+        guard let url = components.url else{
+            print("invalid url")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let firstUser = AuthRequest(username: "pepe1234", password: "12345")
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            print("Invalid httpBody")
+            return
+        }
+        
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let user = try decoder.decode(AuthRequest.self, from: data)
+                    
+                    completionHandler(user)
+                    
+                }catch(let error){
+                    print(error.localizedDescription)
+                }
+            }
+        }.resume()
+        
+        
+        
+        
     }
     
     func getToken(){
