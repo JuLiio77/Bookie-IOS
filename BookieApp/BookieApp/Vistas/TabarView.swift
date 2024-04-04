@@ -18,7 +18,7 @@ struct TabarView: View {
                 }
             BibliotecaView()
                 .tabItem {
-                    Label("Biblioteca", systemImage: "book")
+                    Label("Bibliotecaaaaa", systemImage: "book")
                 }
     
             SubirLibroView()
