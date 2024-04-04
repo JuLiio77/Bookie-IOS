@@ -14,7 +14,7 @@ struct TabarView: View {
         TabView {
             InicioView()
                 .tabItem {
-                    Label("Inicio", systemImage: "house")
+                    Label("Iniciooooo", systemImage: "house")
                 }
             BibliotecaView()
                 .tabItem {

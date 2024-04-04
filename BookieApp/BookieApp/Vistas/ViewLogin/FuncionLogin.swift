@@ -7,37 +7,27 @@
 
 import SwiftUI
 
-class FuncionLogin: ObservableObject{
-
-    static let sharec = FuncionLogin()
+class FuncionLogin : ObservableObject{
     
-    @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? ""
-    @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
-    @Published var repassword: String = UserDefaults.standard.string(forKey: "rePassword") ?? ""
-    @Published var recordarConta: Bool = UserDefaults.standard.bool(forKey: "toogle")
-    @Published var token: String = UserDefaults.standard.string(forKey: "token") ?? ""
+    @Published var name: String = ""
+    @Published var password: String = ""
+    @Published var repassword: String = ""
     @Published var email: String = ""
     
-    
     func check(){
-        
         if password == repassword{
-            print("contraseña igual")
+            print("Contraseña igual")
         }else{
-            print("contraseña diferente")
+            print("Contraseña diferente")
         }
-        
     }
     
     func register(){
-    
-        
-     print("registrado")
+        print("Registrado")
     }
     
-    init(){
-        
-    }
+    
+
 }
 
 

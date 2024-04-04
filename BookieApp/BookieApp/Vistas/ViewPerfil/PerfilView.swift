@@ -113,7 +113,6 @@ struct PerfilView: View {
                 }
         }
     }
-
 }
 
 #Preview {
