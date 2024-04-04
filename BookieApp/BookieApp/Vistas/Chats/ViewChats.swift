@@ -40,6 +40,8 @@ struct ViewChats: View {
                 
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(false)
     }
 }
 
