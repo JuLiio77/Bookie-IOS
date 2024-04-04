@@ -77,7 +77,7 @@ class Peticiones{
 
     }
     
-    func registro(completionHandler: @escaping (AuthRequest)-> Void ){
+    func login(completionHandler: @escaping (AuthRequest)-> Void ){
         
         var components = URLComponents()
         components.scheme = "http"
@@ -115,8 +115,6 @@ class Peticiones{
                 }
             }
         }.resume()
-        
-        
         
         
     }
