@@ -10,7 +10,7 @@ import SwiftUI
 struct MensajesView: View {
     
     @State private var mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3"]
-    @State private var mensajeSeleccionado: String?
+//    @State private var mensajeSeleccionado: String?
 
     var body: some View {
         ScrollView {
