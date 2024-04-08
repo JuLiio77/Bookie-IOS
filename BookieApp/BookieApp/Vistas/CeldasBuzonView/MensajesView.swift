@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct MensajesView: View {
-    
-    @State private var mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3"]
-//    @State private var mensajeSeleccionado: String?
+    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4"]
 
+    
     var body: some View {
         ScrollView {
             VStack {
                 ForEach(mensajes, id: \.self) { mensaje in
-                    NavigationLink(destination: ViewChats(texto: mensaje)) {
+                    NavigationLink(destination: ViewChats(texto: mensaje)){
                         MensajesCeldaView()
                     }
                 }

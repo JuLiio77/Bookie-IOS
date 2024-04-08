@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MainViewBuzon: View {
-    @State private var seleccionado = 0
     
+    @State private var seleccionado = 0
+
     var body: some View {
-        NavigationView {
+        
+        NavigationView{
             VStack {
                 Picker("", selection: $seleccionado) {
                     Text("Mensajes").tag(0)

@@ -40,7 +40,6 @@ struct ViewChats: View {
                 
             }
         }
-        
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(false)
     }
@@ -49,4 +48,3 @@ struct ViewChats: View {
 #Preview {
     ViewChats(texto: "")
 }
-
