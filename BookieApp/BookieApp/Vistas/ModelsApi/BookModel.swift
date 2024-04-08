@@ -11,6 +11,10 @@ import SwiftUI
 class BookModel: ObservableObject {
     
     @Published public private(set) var libros: [Book] = []
+    @Published public private(set) var imagenLibro: String = ""
+    @Published public private(set) var nombreLibro: String = ""
+    @Published public private(set) var nombreAutor: String = ""
+
     
     private var suscripcion = Set<AnyCancellable>()
     
@@ -27,6 +31,12 @@ class BookModel: ObservableObject {
                 }
             } receiveValue: { [weak self] books in
                 self?.libros = books
+                
+                if let book = books.first, let author = book.volumeInfo.authors.first, let image = book.volumeInfo.imageLinks?.thumbnail {
+                    self?.nombreLibro = book.volumeInfo.title
+                    self?.nombreAutor = author
+                    self?.imagenLibro = image
+                }
             }
             .store(in: &suscripcion)
     }

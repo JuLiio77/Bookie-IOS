@@ -70,5 +70,5 @@ struct CeldaBibloteca: View {
 }
 
 #Preview {
-    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100)))
+    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, imageLinks: ImageLinks(smallThumbnail: "", thumbnail: ""))))
 }

@@ -22,7 +22,7 @@ struct VolumeInfo: Codable {
     let categories: [String]
     let pageCount: Int
     //imagen
-    //let imageLinks
+    let imageLinks: ImageLinks?
     
     // Función auxiliar para obtener el ISBN 13
     func isbn13() -> String? {
@@ -33,4 +33,10 @@ struct VolumeInfo: Codable {
 struct IndustryIdentifier: Codable {
     let type: String
     let identifier: String
+}
+
+
+struct ImageLinks: Codable {
+    let smallThumbnail: String?
+    let thumbnail: String?
 }
