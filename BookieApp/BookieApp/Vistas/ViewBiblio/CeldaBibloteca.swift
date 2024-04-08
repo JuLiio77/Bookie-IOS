@@ -27,7 +27,7 @@ struct CeldaBibloteca: View {
                     .cornerRadius(20)
                     .padding(.trailing, 200)*/
             
-            if let urlString = book.volumeInfo.imageLinks?.thumbnail, 
+            if let urlString = book.volumeInfo.imageLinks?.smallThumbnail,
                 let url = URL(string: urlString) {
                 AsyncImage(url: url) { image in
                     image.resizable()
@@ -81,5 +81,5 @@ struct CeldaBibloteca: View {
 }
 
 #Preview {
-    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, imageLinks: ImageLinks(smallThumbnail: "", thumbnail: "http://books.google.com/books/content?id=W5jnCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"))))
+    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, imageLinks: ImageLinks(smallThumbnail: "http://books.google.com/books/content?id=W5jnCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: ""))))
 }
