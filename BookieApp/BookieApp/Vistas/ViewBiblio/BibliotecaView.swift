@@ -24,6 +24,7 @@ struct BibliotecaView: View {
                     
                     Text("Busca datos sobre libros en la biblioteca")
                         .bold()
+                        .padding()
                     
                     /*ForEach(mensajes, id: \.self) { mensaje in
                         CeldaBibloteca(book: BookModel())

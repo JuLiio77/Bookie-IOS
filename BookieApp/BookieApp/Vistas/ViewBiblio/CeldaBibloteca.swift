@@ -21,13 +21,24 @@ struct CeldaBibloteca: View {
                     .background(Color.color.opacity(0.5))
                     .cornerRadius(20)
                 
-                
-                
-                Image(systemName: "")
+                /*Image(systemName: "")
                     .frame(width: 114, height: 122)
                     .background(Color.gray)
                     .cornerRadius(20)
-                    .padding(.trailing, 200)
+                    .padding(.trailing, 200)*/
+            
+            if let urlString = book.volumeInfo.imageLinks?.thumbnail, 
+                let url = URL(string: urlString) {
+                AsyncImage(url: url) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 114, height: 122)
+                .background(Color.gray)
+                .cornerRadius(20)
+                .padding(.trailing, 200)
+            }
                 
                 
                 VStack(alignment: .leading){
@@ -70,5 +81,5 @@ struct CeldaBibloteca: View {
 }
 
 #Preview {
-    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, imageLinks: ImageLinks(smallThumbnail: "", thumbnail: ""))))
+    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, imageLinks: ImageLinks(smallThumbnail: "", thumbnail: "http://books.google.com/books/content?id=W5jnCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"))))
 }
