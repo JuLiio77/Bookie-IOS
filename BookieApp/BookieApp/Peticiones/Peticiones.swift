@@ -51,7 +51,7 @@ class Peticiones{
     
     func postRegistrer(){
         
-        let Url = String(format: "http://localhost:8080/api/auth/login")
+        let Url = String(format: "http://localhost:8080/api/auth/register")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "POST"
@@ -79,13 +79,20 @@ class Peticiones{
     
     func login(completionHandler: @escaping (AuthRequest)-> Void ){
         
-        var components = URLComponents()
-        components.scheme = "http"
-        components.host = "regres.in"
-        components.path = "/auth/login"
+//        var components = URLComponents()
+//        components.scheme = "http"
+//        components.host = "localhost:8080"
+//        components.path = "api/auth/login"
+//
+//        guard let url = components.url else{
+//            print("invalid url")
+//            return
+//        }
         
-        guard let url = components.url else{
-            print("invalid url")
+        var urlString = "http://localhost:8080/api/auth/login"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
             return
         }
         
@@ -93,7 +100,7 @@ class Peticiones{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let firstUser = AuthRequest(username: "pepe1234", password: "12345")
+        let firstUser = AuthRequest(username: "Pepe123", password: "12345")
         guard let httpBody = try? JSONEncoder().encode(firstUser) else {
             print("Invalid httpBody")
             return
@@ -106,7 +113,7 @@ class Peticiones{
                 do{
                     let decoder = JSONDecoder()
                     
-                    let user = try decoder.decode(AuthRequest.self, from: data)
+                    let user = try decoder.decode(ModelToken.self, from: data)
                     
                     completionHandler(user)
                     
@@ -127,3 +134,4 @@ class Peticiones{
        
     
 }
+
