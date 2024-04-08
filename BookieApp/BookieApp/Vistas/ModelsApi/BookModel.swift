@@ -6,16 +6,28 @@
 //
 
 import Combine
+import SwiftUI
 
-class BookModel: ObservableObject{
+class BookModel: ObservableObject {
     
     @Published public private(set) var libros: [Book] = []
     
     private var suscripcion = Set<AnyCancellable>()
     
-    public func onAppear(){
+    public func onAppear() {
         
-       // .suscripcion = BookService.shared.fetch(query: "a")
+        BookService.shared.fetch(query: "a")
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                    
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            } receiveValue: { [weak self] books in
+                self?.libros = books
+            }
+            .store(in: &suscripcion)
     }
 }
-
