@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainViewBuzon: View {
+    
     @State private var seleccionado = 0
 
     var body: some View {

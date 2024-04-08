@@ -13,5 +13,4 @@ struct ModelUser: Encodable, Decodable{
     var reportado: String
     var token: String
     
-    
 }
