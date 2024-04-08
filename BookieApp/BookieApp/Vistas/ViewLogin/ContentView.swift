@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var userData: FuncionLogin
-    @StateObject var datosDefaults = FuncionLogin.sharec
+    //@StateObject var datosDefaults = FuncionLogin.shared
     var peticiones = Peticiones()
     @State var user = AuthRequest(username: "sdfsdf", password: "sdfsfsdf")
     
