@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct Book: Decodable {
+struct Book: Decodable, Identifiable {
     let id: String
     let volumeInfo: VolumeInfo
 }
@@ -21,6 +21,8 @@ struct VolumeInfo: Codable {
     let industryIdentifiers: [IndustryIdentifier]
     let categories: [String]
     let pageCount: Int
+    //imagen
+    let imageLinks: ImageLinks?
     
     // Función auxiliar para obtener el ISBN 13
     func isbn13() -> String? {
@@ -31,4 +33,10 @@ struct VolumeInfo: Codable {
 struct IndustryIdentifier: Codable {
     let type: String
     let identifier: String
+}
+
+
+struct ImageLinks: Codable {
+    let smallThumbnail: String?
+    let thumbnail: String?
 }
