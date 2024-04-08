@@ -10,6 +10,7 @@ import SwiftUI
 struct BibliotecaView: View {
     @State var search = ""
     let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4", "Mensaje 5"]
+    @StateObject var bookmodel = BookModel()
 
 
     var body: some View {
@@ -20,8 +21,8 @@ struct BibliotecaView: View {
                         .bold()
                     
                     
-                    ForEach(mensajes, id: \.self) { mensaje in
-                        CeldaBibloteca(book: BookModel())
+                    ForEach(bookmodel.libros,id: \.id){ libro in
+                        CeldaBibloteca(book: libro)
                     }
                 }
             }
