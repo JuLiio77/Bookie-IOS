@@ -10,9 +10,17 @@ import SwiftUI
 struct ViewRecuContra: View {
 
     @State var nombre: String = ""
+    
     @State var contra: String = ""
+    @State var contra2: String = ""
+    
     @State var reContra: String = ""
+    @State var reContra2: String = ""
+    
     @State var mostarContrasenia = false
+    @State var mostarContrasenia2 = false
+
+    
     var body: some View {
         
         Text("Recupareción de contraseña")
@@ -62,7 +70,7 @@ struct ViewRecuContra: View {
                     .foregroundColor(.primary)
                     .padding(10)
             }
-            .padding(.trailing, 15)
+            .padding(.trailing, 25)
         }
         
         
@@ -73,15 +81,15 @@ struct ViewRecuContra: View {
             .padding(.trailing, 170)
         
         ZStack(alignment: .trailingFirstTextBaseline) {
-            if mostarContrasenia {
-                TextField("Contraseña", text: $reContra)
+            if mostarContrasenia2 {
+                TextField("Contraseña", text: $reContra2)
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
              
             } else {
-                SecureField("Contraseña", text: $contra)
+                SecureField("Contraseña", text: $contra2)
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
@@ -89,13 +97,13 @@ struct ViewRecuContra: View {
             }
 
             Button(action: {
-                mostarContrasenia.toggle()
+                mostarContrasenia2.toggle()
             }) {
-                Image(systemName: mostarContrasenia ? "eye.fill" : "eye.slash.fill")
+                Image(systemName: mostarContrasenia2 ? "eye.fill" : "eye.slash.fill")
                     .foregroundColor(.primary)
                     .padding(10)
             }
-            .padding(.trailing, 15)
+            .padding(.trailing, 25)
         }
         
         Button(action: {}, label: {
