@@ -10,7 +10,6 @@ import SwiftUI
 struct ListaLibros: View {
 
     @State var search = ""
-    var categoria: String
     
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
@@ -24,7 +23,7 @@ struct ListaLibros: View {
             
             Section{
                 
-                Text(categoria)
+                Text("Romance")
                     .padding(.trailing, 280)
                     .padding([.top, .bottom], 5)
                 
@@ -61,5 +60,5 @@ struct ListaLibros: View {
 }
 
 #Preview {
-    ListaLibros(categoria: "Romance")
+    ListaLibros()
 }

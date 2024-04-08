@@ -14,7 +14,7 @@ struct TabarView: View {
         TabView {
             InicioView()
                 .tabItem {
-                    Label("Inicio", systemImage: "house")
+                    Label("Iniciooooo", systemImage: "house")
                 }
             BibliotecaView()
                 .tabItem {
@@ -23,12 +23,12 @@ struct TabarView: View {
     
             SubirLibroView()
                 .tabItem {
-                    Label("Subir", systemImage: "plus.app.fill")
+                    Label("Buzon", systemImage: "plus.app.fill")
                 }
             
             MainViewBuzon()
                 .tabItem {
-                    Label("Buzón", systemImage: "message")
+                    Label("Perfil", systemImage: "message")
                 }
             PerfilView()
                 .tabItem {

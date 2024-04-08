@@ -9,9 +9,7 @@ import SwiftUI
 
 struct CeldaBibloteca: View {
     
-    //@ObservedObject var books: BookModel
-    
-    let book: Book
+    @ObservedObject var book: BookModel
     
     var body: some View {
         ZStack{
@@ -33,21 +31,21 @@ struct CeldaBibloteca: View {
                 VStack(alignment: .leading){
                     
                     
-                    Text(book.volumeInfo.title)
+                    Text("nombre libro")
                         .bold()
                         .padding(.leading, 90)
                         .padding(.trailing, 10)
                         .lineLimit(2, reservesSpace: false)
                         .font(.callout)
                     
-                    Text("Autor: \(book.volumeInfo.authors.joined(separator: ", "))")
+                    Text("Autor")
                         .padding(.leading, 90)
                         .padding(.trailing, 10)
                         .lineLimit(2, reservesSpace: false)
                         .font(.caption)
                     
                     Button("Ver mas"){
-    
+                        
                     }
                     .frame(width: 130, height: 25)
                     .background(Color.button)
@@ -70,5 +68,5 @@ struct CeldaBibloteca: View {
 }
 
 #Preview {
-    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100)))
+    CeldaBibloteca(book: BookModel())
 }
