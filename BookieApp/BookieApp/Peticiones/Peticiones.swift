@@ -77,18 +77,8 @@ class Peticiones{
 
     }
     
-    func login(completionHandler: @escaping (AuthRequest)-> Void ){
-        
-//        var components = URLComponents()
-//        components.scheme = "http"
-//        components.host = "localhost:8080"
-//        components.path = "api/auth/login"
-//
-//        guard let url = components.url else{
-//            print("invalid url")
-//            return
-//        }
-        
+    func login(username: String, password: String, completion: @escaping (Result<AuthRequest, Error>)-> Void ){
+
         var urlString = "http://localhost:8080/api/auth/login"
         
         guard let url = URL(string: urlString) else {
@@ -96,11 +86,12 @@ class Peticiones{
             return
         }
         
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let firstUser = AuthRequest(username: "Pepe123", password: "12345")
+        let firstUser = AuthRequest(username: username, password: password)
         guard let httpBody = try? JSONEncoder().encode(firstUser) else {
             print("Invalid httpBody")
             return
@@ -109,13 +100,14 @@ class Peticiones{
         request.httpBody = httpBody
         
         URLSession.shared.dataTask(with: request){ data, response, error in
+            
             if let data = data {
                 do{
                     let decoder = JSONDecoder()
                     
-                    let user = try decoder.decode(ModelToken.self, from: data)
+                    let token = try decoder.decode(ModelToken.self, from: data)
                     
-                    completionHandler(user)
+                    print(token)
                     
                 }catch(let error){
                     print(error.localizedDescription)

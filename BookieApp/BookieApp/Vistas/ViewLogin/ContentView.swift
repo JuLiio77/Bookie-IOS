@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var userData: FuncionLogin
-    //@StateObject var datosDefaults = FuncionLogin.shared
     var peticiones = Peticiones()
-    @State var user = AuthRequest(username: "sdfsdf", password: "sdfsfsdf")
+    //@State var user = AuthRequest(username: "Pepe123", password: "12345")
     
     @State var toggle: Bool = false
     
@@ -85,14 +84,15 @@ struct ContentView: View {
                 
 
                 Button("Iniciar Sesion"){
-                    
+                
                     DispatchQueue.main.async {
-                        peticiones.login{ newUser in
-                            user = newUser
-                        }
+                        userData.check(username: userData.email, password: userData.password)
+
                     }
                     
-                    userData.register()
+                    print("Datos defaults: \(userData.email) + \(userData.password)")
+                    
+                    //userData.register()
                 }
                 .padding(20)
                 .padding(.horizontal, 30)

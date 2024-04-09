@@ -95,8 +95,6 @@ struct RegistroView: View {
             
             
             
-            
-            
             Button("Siguiente"){
                 
                 userData.register()
