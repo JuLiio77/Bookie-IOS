@@ -83,11 +83,11 @@ struct PerfilView: View {
                 Spacer()
                 
                 if seleccionado == 0 {
-                    Text("Vista de Mis libros")
+                    VistaMisLibros()
                 } else if seleccionado == 1 {
-                    Text("Vista de Reseñas")
+                    VistaResenas()
                 } else if seleccionado == 2 {
-                    Text("Vista de Historial")
+                   VistaHistorial()
                     
                 }
                 

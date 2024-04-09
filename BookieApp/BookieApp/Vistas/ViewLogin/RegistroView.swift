@@ -103,14 +103,19 @@ struct RegistroView: View {
             }
             
             
+            .padding(20)
+            .padding(.horizontal, 30)
+            .background(Color.button)
+            .foregroundColor(.black)
+            .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
+            .padding(.top, 7)
+            
+            
         }
-        .padding(20)
-        .padding(.horizontal, 30)
-        .background(Color.button)
-        .foregroundColor(.black)
-        .cornerRadius(20)
-        .padding([.leading, .trailing], 10)
-        .padding(.top, 75)
+        .padding()
+
+    
         
         
     
