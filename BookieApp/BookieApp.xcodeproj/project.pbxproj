@@ -16,6 +16,7 @@
 		3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */; };
 		3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */; };
 		3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */; };
+		3D34BAC42BC45391004A0636 /* TerminosDeUso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34BAC32BC45390004A0636 /* TerminosDeUso.swift */; };
 		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
 		3D45A4FD2BBEFC680074299E /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45A4FC2BBEFC680074299E /* ModelUser.swift */; };
 		3D45A4FF2BBEFD940074299E /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45A4FE2BBEFD940074299E /* RegisterRequest.swift */; };
@@ -55,6 +56,7 @@
 		3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBibloteca.swift; sourceTree = "<group>"; };
 		3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFotoPerfil.swift; sourceTree = "<group>"; };
 		3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecuContra.swift; sourceTree = "<group>"; };
+		3D34BAC32BC45390004A0636 /* TerminosDeUso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminosDeUso.swift; sourceTree = "<group>"; };
 		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		3D45A4FC2BBEFC680074299E /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		3D45A4FE2BBEFD940074299E /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
 				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
+				3D34BAC32BC45390004A0636 /* TerminosDeUso.swift */,
 			);
 			path = ViewLogin;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
+				3D34BAC42BC45391004A0636 /* TerminosDeUso.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,

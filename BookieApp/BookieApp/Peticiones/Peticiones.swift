@@ -49,9 +49,9 @@ class Peticiones{
     
     }
     
-    func postRegistrer(){
+    func postRegistrer(username: String, password: String, rol: String, nombre: String, email: String, ciudad: String, provincia: String, codigoPostal: Int, foto: String, reportado: Bool, token: String){
         
-        let Url = String(format: "http://localhost:8080/api/auth/login")
+        let Url = String(format: "http://localhost:8080/api/auth/register")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "POST"
