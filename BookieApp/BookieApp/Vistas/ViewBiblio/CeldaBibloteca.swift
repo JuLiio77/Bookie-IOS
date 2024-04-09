@@ -17,7 +17,7 @@ struct CeldaBibloteca: View {
         ZStack{
             
                 Image(systemName: "")
-                    .frame(width: 350, height: 150)
+                    .frame(width: 350, height: 180)
                     .background(Color.color.opacity(0.5))
                     .cornerRadius(20)
                 
@@ -34,7 +34,7 @@ struct CeldaBibloteca: View {
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 114, height: 122)
+                .frame(width: 114, height: 152)
                 .background(Color.gray)
                 .cornerRadius(20)
                 .padding(.trailing, 200)
@@ -43,30 +43,39 @@ struct CeldaBibloteca: View {
                 
                 VStack(alignment: .leading){
                     
-                    
-                    Text(book.volumeInfo.title)
-                        .bold()
-                        .padding(.leading, 90)
-                        .padding(.trailing, 10)
-                        .lineLimit(2, reservesSpace: false)
-                        .font(.callout)
-                    
-                    Text("Autor: \(book.volumeInfo.authors.joined(separator: ", "))")
-                        .padding(.leading, 90)
-                        .padding(.trailing, 10)
-                        .lineLimit(2, reservesSpace: false)
-                        .font(.caption)
-                    
-                    Button("Ver mas"){
-    
+                    VStack {
+                        
+                        Text(book.volumeInfo.title)
+                            .bold()
+                            .padding(.leading, 90)
+                            .padding(.trailing, 10)
+                            .lineLimit(2, reservesSpace: false)
+                            .font(.callout)
                     }
-                    .frame(width: 130, height: 25)
-                    .background(Color.button)
-                    .cornerRadius(20)
-                    .padding(.leading, 150)
-                    .foregroundColor(.black)
-                    .font(.caption)
-                    .padding(.top, 18)
+                    
+                    VStack {
+                        
+                        Text("Autor: \(book.volumeInfo.authors.joined(separator: ", "))")
+                            .padding(.leading, 90)
+                            .padding(.trailing, 10)
+                            .padding(.top, 5)
+                            .lineLimit(2, reservesSpace: false)
+                            .font(.caption)
+                    }
+                    
+                    
+                    VStack {
+                        Button("Ver mas"){
+                            
+                        }
+                        .frame(width: 130, height: 25)
+                        .background(Color.button)
+                        .cornerRadius(20)
+                        .padding(.leading, 125)
+                        .foregroundColor(.black)
+                        .font(.caption)
+                        .padding(.top, 52)
+                    }
                     
                     
                     

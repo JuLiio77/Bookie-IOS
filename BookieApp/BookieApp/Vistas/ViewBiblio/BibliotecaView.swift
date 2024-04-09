@@ -32,6 +32,7 @@ struct BibliotecaView: View {
                     
                     ForEach(bookModel.libros, id: \.id) { libro in
                         CeldaBibloteca(book: libro)
+                            .padding(.bottom, 12)
                     }
                 }
             }

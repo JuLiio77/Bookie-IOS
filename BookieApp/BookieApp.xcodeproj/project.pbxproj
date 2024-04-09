@@ -21,6 +21,7 @@
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
+		3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */; };
 		3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */; };
 		3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */; };
 		3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */; };
@@ -56,6 +57,7 @@
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
 		3D96B0E92BC455730030322C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
+		3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibroBibliotecaView.swift; sourceTree = "<group>"; };
 		3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaChat.swift; sourceTree = "<group>"; };
 		3DBC66DF2B9F7BF8001A6B90 /* BookieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookieAppApp.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */,
 				3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */,
+				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
 			);
 			path = ViewBiblio;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
+				3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */,
 				3DE784E12BA8BBE600686105 /* MainViewBuzon.swift in Sources */,
 				3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */,
 				3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */,
