@@ -19,10 +19,12 @@ struct BibliotecaView: View {
                 VStack {
                     Text("Busca datos sobre libros en la biblioteca")
                         .bold()
+                        .padding()
                     
                     
                     ForEach(bookmodel.libros,id: \.id){ libro in
                         CeldaBibloteca(book: libro)
+                            .padding(.bottom, 12)
                     }
                 }
             }

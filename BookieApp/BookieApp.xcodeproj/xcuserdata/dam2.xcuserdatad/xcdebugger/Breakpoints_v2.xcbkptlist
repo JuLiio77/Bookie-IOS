@@ -23,17 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "780B7D38-9DB1-4FF3-94DF-128BBFD7348A"
-            shouldBeEnabled = "No"
+            uuid = "BADA9B6B-2540-438E-B8EB-836D5B127CA3"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BookieApp/Vistas/ViewLogin/FuncionLogin.swift"
+            filePath = "../../../../../../var/folders/1p/pxk49rdd5tq41k89kl96v2300000gq/T/swift-generated-sources/@__swiftmacro_9BookieApp33_99B0EE1E933CBCE54CECE0DBCCBB1970Ll7PreviewfMf0_.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "FuncionLogin"
-            landmarkType = "3">
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "$s9BookieApp33_99B0EE1E933CBCE54CECE0DBCCBB1970Ll7PreviewfMf0_15PreviewRegistryfMu_"
+            landmarkType = "37">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
