@@ -142,7 +142,10 @@
 		3D75B27E2BA0CF6A00B14A09 /* Vistas */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
+=======
+>>>>>>> parent of f5e6de2 (visita del perfil)
 				3D19B5CA2BA9FABF00D892F3 /* ViewSubirLibro */,
 				3D09169D2BA8D80B00C88A88 /* Chats */,
 				3DE784D72BA89E9100686105 /* CeldasBuzonView */,
@@ -349,6 +352,10 @@
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
 				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
+<<<<<<< HEAD
+=======
+				3DE16F442BBF0B8D0073F864 /* Chats.swift in Sources */,
+>>>>>>> parent of f5e6de2 (visita del perfil)
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
