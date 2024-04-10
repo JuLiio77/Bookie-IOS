@@ -9,6 +9,8 @@ import Foundation
 
 class Peticiones{
     
+    static let shared = Peticiones()
+
     // funcion para descargar los datos
     func getDatosApi(apiResponse: @escaping(Book)-> ()){
         
@@ -49,7 +51,7 @@ class Peticiones{
     
     func postRegistrer(){
         
-        let Url = String(format: "http://localhost:8080/api/auth/login")
+        let Url = String(format: "http://localhost:8080/api/auth/register")
         guard let serviceUrl = URL(string: Url) else { return }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = "POST"
@@ -75,9 +77,53 @@ class Peticiones{
 
     }
     
+    func login(username: String, password: String, completion: @escaping (Result<AuthRequest, Error>)-> Void ){
+
+        var urlString = "http://localhost:8080/api/auth/login"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let firstUser = AuthRequest(username: username, password: password)
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            print("Invalid httpBody")
+            return
+        }
+        
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let token = try decoder.decode(ModelToken.self, from: data)
+                    
+                    print(token)
+                    
+                }catch(let error){
+                    print(error.localizedDescription)
+                }
+            }
+        }.resume()
+        
+        
+    }
+    
     func getToken(){
         
         
         
     }
+       
+    
 }
+

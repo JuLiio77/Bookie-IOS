@@ -15,13 +15,12 @@ struct RegistroView: View {
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
     
-    
+
     var body: some View {
-        
         VStack {
             
             Text("Registro")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title)
                 .bold()
                 .padding()
             
@@ -67,6 +66,7 @@ struct RegistroView: View {
                 .padding(.trailing, 15)
             }
             
+            
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia1 {
                     TextField("Contraseña", text: $userData.repassword)
@@ -93,23 +93,29 @@ struct RegistroView: View {
                 .padding(.trailing, 15)
             }
             
+            
+            
             Button("Siguiente"){
                 
-                
+                userData.register()
             }
-            .padding(20)
-            .padding(.horizontal, 30)
-            .background(Color.button)
-            .foregroundColor(.black)
-            .cornerRadius(20)
-            .padding([.leading, .trailing], 10)
-            .padding(.top, 75)
+            
+            
         }
-        .padding()
-    }
+        .padding(20)
+        .padding(.horizontal, 30)
+        .background(Color.button)
+        .foregroundColor(.black)
+        .cornerRadius(20)
+        .padding([.leading, .trailing], 10)
+        .padding(.top, 75)
+        
+        
+    
+        }
+    
 }
-
 #Preview {
     RegistroView()
-        .environmentObject(FuncionLogin())
+.environmentObject(FuncionLogin())
 }

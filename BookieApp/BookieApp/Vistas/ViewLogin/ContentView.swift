@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var correo: String = ""
-    @State var contrasenia: String = ""
+    @EnvironmentObject var userData: FuncionLogin
+    var peticiones = Peticiones()
+    //@State var user = AuthRequest(username: "Pepe123", password: "12345")
+    
     @State var toggle: Bool = false
     
     @State var mostrarContrasenia: Bool = false
@@ -22,12 +24,12 @@ struct ContentView: View {
             VStack {
                 
                 Text("Bienvenido")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .font(.title)
                     .bold()
                     .padding()
                 
                 
-                TextField("Correo electronico", text: $correo)
+                TextField("Correo electronico", text: $userData.email)
                     .bold()
                     .padding()
                     .background(Color.color)
@@ -38,14 +40,14 @@ struct ContentView: View {
                 ZStack(alignment: .trailingFirstTextBaseline) {
                     
                     if mostrarContrasenia {
-                        TextField("Contraseña", text: $contrasenia)
+                        TextField("Contraseña", text: $userData.password)
                             .padding()
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
                         
                     } else {
-                        SecureField("Contraseña", text: $contrasenia)
+                        SecureField("Contraseña", text: $userData.password)
                             .padding()
                             .background(Color.color)
                             .cornerRadius(30)
@@ -80,16 +82,35 @@ struct ContentView: View {
                     .foregroundColor(.black)
                     .navigationBarBackButtonHidden(true)
                 
+
+                Button("Iniciar Sesion"){
                 
-                NavigationLink("Iniciar Sesion", destination: TabarView())
-                    .padding(20)
-                    .padding(.horizontal, 30)
-                    .background(Color.button)
-                    .foregroundColor(.black)
-                    .cornerRadius(20)
-                    .padding([.leading, .trailing], 10)
-                    .padding(.top, 75)
-                    .navigationBarBackButtonHidden(true)
+                    DispatchQueue.main.async {
+                        userData.check(username: userData.email, password: userData.password)
+
+                    }
+                    
+                    print("Datos defaults: \(userData.email) + \(userData.password)")
+                    
+                    //userData.register()
+                }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                
+//                NavigationLink("Iniciar Sesion", destination: TabarView())
+//                    .padding(20)
+//                    .padding(.horizontal, 30)
+//                    .background(Color.button)
+//                    .foregroundColor(.black)
+//                    .cornerRadius(20)
+//                    .padding([.leading, .trailing], 10)
+//                    .padding(.top, 75)
+//                    .navigationBarBackButtonHidden(true)
                 
                 NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                     .padding(.top, 30)
@@ -106,4 +127,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(FuncionLogin())
 }
