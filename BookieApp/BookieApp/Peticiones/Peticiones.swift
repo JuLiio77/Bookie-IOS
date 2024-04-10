@@ -49,7 +49,7 @@ class Peticiones{
     
     }
     
-    func postRegistrer(){
+    func postRegistrer(username: String, password: String, completion: @escaping (Result<RegisterRequest, Error>)-> Void ){
         
         let Url = String(format: "http://localhost:8080/api/auth/register")
         guard let serviceUrl = URL(string: Url) else { return }
@@ -118,11 +118,6 @@ class Peticiones{
         
     }
     
-    func getToken(){
-        
-        
-        
-    }
        
     
 }
