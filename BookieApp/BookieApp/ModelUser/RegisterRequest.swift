@@ -20,5 +20,4 @@ struct RegisterRequest: Encodable, Decodable{
     var foto: String
     var reportado: Bool
     var token: String
-    
 }

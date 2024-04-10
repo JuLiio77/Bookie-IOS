@@ -49,32 +49,44 @@ class Peticiones{
     
     }
     
-    func postRegistrer(username: String, password: String, completion: @escaping (Result<RegisterRequest, Error>)-> Void ){
+    func PostRegister(name: String,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int, completion: @escaping (Result<RegisterRequest, Error>)-> Void ){
         
-        let Url = String(format: "http://localhost:8080/api/auth/register")
-        guard let serviceUrl = URL(string: Url) else { return }
-        var request = URLRequest(url: serviceUrl)
+        var urlString = "http://localhost:8080/api/auth/register"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+        
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("Application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-        let bodyData = "username=Pepe123&password=12345"
-        request.httpBody = bodyData.data(using: String.Encoding.utf8);
-
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: "", password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            print("Invalid httpBody")
+            return
+        }
+        
+        request.httpBody = httpBody
+   
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            
             if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let token = try decoder.decode(ModelToken.self, from: data)
+                    
+                    print(token)
+                    
+                }catch(let error){
+                    print(error.localizedDescription)
                 }
             }
         }.resume()
-
+ 
     }
     
     func login(username: String, password: String, completion: @escaping (Result<AuthRequest, Error>)-> Void ){
@@ -96,9 +108,9 @@ class Peticiones{
             print("Invalid httpBody")
             return
         }
-        
+        print(firstUser)
         request.httpBody = httpBody
-        
+   
         URLSession.shared.dataTask(with: request){ data, response, error in
             
             if let data = data {

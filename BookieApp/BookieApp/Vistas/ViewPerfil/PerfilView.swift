@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PerfilView: View {
 
+    @StateObject var userData = FuncionLogin()
     @State private var seleccionado = 0
+    
+    
     
     var body: some View {
         
@@ -24,7 +27,7 @@ struct PerfilView: View {
                 
                 
                 VStack(alignment: .leading) {
-                    Text("Linares")
+                    Text("\(userData.ciudad)")
                     
                     Text("4,8 ★")
                     
@@ -99,7 +102,7 @@ struct PerfilView: View {
             
             
             
-                .navigationTitle("Julio Vera")
+                .navigationTitle("\(userData.name)")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     Button(action: {
@@ -118,4 +121,5 @@ struct PerfilView: View {
 
 #Preview {
     PerfilView()
+    
 }

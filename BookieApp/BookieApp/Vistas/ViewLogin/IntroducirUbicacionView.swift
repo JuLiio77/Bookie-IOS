@@ -9,6 +9,9 @@ import SwiftUI
 
 struct IntroducirUbicacionView: View {
     
+    @EnvironmentObject var userData: FuncionLogin
+    var peticiones = Peticiones()
+    
 @State var nombre: String = ""
 @State var repetirContrasenia: String = ""
 @State var correo: String = ""
@@ -22,21 +25,21 @@ var body: some View {
             .padding()
         
         
-        TextField("Provincia", text: $nombre)
+        TextField("Provincia", text: $userData.provincia)
             .bold()
             .padding()
             .background(Color.color)
             .cornerRadius(30)
             .padding(.top,150)
         
-        TextField("Ciudad", text: $nombre)
+        TextField("Ciudad", text: $userData.ciudad)
             .bold()
             .padding()
             .background(Color.color)
             .cornerRadius(30)
             .padding(.top,40)
         
-        TextField("Código postal", text: $nombre)
+        TextField("Código postal", text: $userData.codigoPostal)
             .bold()
             .padding()
             .background(Color.color)
@@ -45,7 +48,7 @@ var body: some View {
         
         
        Button("Siguiente"){
-           
+           userData.register()
        }
        .padding(20)
        .padding(.horizontal, 30)
@@ -55,9 +58,6 @@ var body: some View {
        .padding([.leading, .trailing], 10)
        .padding(.top, 75)
            
- 
-       
-        
         Spacer()
         
         }
@@ -67,4 +67,5 @@ var body: some View {
 
 #Preview {
     IntroducirUbicacionView()
+        .environmentObject(FuncionLogin())
 }

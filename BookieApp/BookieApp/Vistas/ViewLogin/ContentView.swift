@@ -87,12 +87,9 @@ struct ContentView: View {
                 
                     DispatchQueue.main.async {
                         userData.check(username: userData.email, password: userData.password)
-
+                        // no es el email si no que es el username que es el que uno modifica
                     }
                     
-                    print("Datos defaults: \(userData.email) + \(userData.password)")
-                    
-                    //userData.register()
                 }
                 .padding(20)
                 .padding(.horizontal, 30)
