@@ -1,14 +1,13 @@
 //
-//  CeldaHIstorial.swift
+//  CeldaAjenoReview.swift
 //  BookieApp
 //
-//  Created by dam2 on 9/4/24.
+//  Created by dam2 on 10/4/24.
 //
 
 import SwiftUI
 
-struct CeldaHIstorial: View {
-    
+struct CeldaAjenoReview: View {
     
     @State var fecha: Date = Date()
     
@@ -20,16 +19,10 @@ struct CeldaHIstorial: View {
                 .background(Color.button.opacity(0.3))
                 .cornerRadius(20)
             
-            
             HStack {
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 35, height: 35)
-                    .padding(.trailing, 15)
-                
                 Text("Lorem ipsum")
                     .frame(width: 125, height: 50)
-                    .padding(.trailing, 45)
+                    .padding(.trailing, 75)
                     .font(.title3)
                     .bold()
                 
@@ -37,20 +30,40 @@ struct CeldaHIstorial: View {
                     .padding(.leading, 20)
         
             }
+            
             .padding(.bottom, 60)
             
             VStack {
                 Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
+                
+               
+               
             }
             .frame(width: 345, height: 50)
             .padding(.top, 35)
             .font(.subheadline)
+            
+            HStack {
+                Text("4,8")
+                    .bold()
+                
+                Button(action: {
+                    //accion
+                }) {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                }
+            }
+            .padding(.leading, 280)
+            .padding(.top, 90)
+            
         }
+        
     }
 }
 
 
 
 #Preview {
-    CeldaHIstorial()
+    CeldaAjenoReview()
 }

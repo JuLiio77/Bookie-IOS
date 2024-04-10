@@ -1,14 +1,14 @@
 //
-//  PerfilView.swift
+//  ViewPerfilAjeno.swift
 //  BookieApp
 //
-//  Created by dam2 on 18/3/24.
+//  Created by dam2 on 10/4/24.
 //
 
 import SwiftUI
 
-struct PerfilView: View {
-
+struct ViewPerfilAjeno: View {
+    
     @State private var seleccionado = 0
     
     var body: some View {
@@ -83,11 +83,11 @@ struct PerfilView: View {
                 Spacer()
                 
                 if seleccionado == 0 {
-                    VistaHistorial()
+                    ViewAjenoLibros()
                 } else if seleccionado == 1 {
-                    VistaReview()
+                   ViewAjenoReview()
                 } else if seleccionado == 2 {
-                  VistaHistorial()
+                  ViewAjenoHistorial()
                     
                 }
                 
@@ -99,7 +99,7 @@ struct PerfilView: View {
             
             
             
-                .navigationTitle("Julio Vera")
+                .navigationTitle("Iñigo")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     Button(action: {
@@ -116,6 +116,7 @@ struct PerfilView: View {
 
 }
 
+
 #Preview {
-    PerfilView()
+    ViewPerfilAjeno()
 }

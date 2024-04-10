@@ -1,13 +1,13 @@
 //
-//  CeldaHIstorial.swift
+//  CeldaAjenoHistorial.swift
 //  BookieApp
 //
-//  Created by dam2 on 9/4/24.
+//  Created by dam2 on 10/4/24.
 //
 
 import SwiftUI
 
-struct CeldaHIstorial: View {
+struct CeldaAjenoHistorial: View {
     
     
     @State var fecha: Date = Date()
@@ -50,7 +50,6 @@ struct CeldaHIstorial: View {
 }
 
 
-
 #Preview {
-    CeldaHIstorial()
+    CeldaAjenoHistorial()
 }

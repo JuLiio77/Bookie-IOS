@@ -8,8 +8,53 @@
 import SwiftUI
 
 struct VistasMisLibros: View {
+    @State var search = ""
+    
+    let columnas = [
+        GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
+        GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0)
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+
+        NavigationStack{
+            
+            Section{
+                
+//                Text("Mis Libros")
+//                    .font(.title)
+//                    .bold()
+                
+                ScrollView(.vertical){
+
+                    LazyVGrid(columns: columnas, content: {
+                        
+                        NavigationLink(destination: VistasMisLibros()){
+                            CeldaMisLibros()
+                        }
+                        NavigationLink(destination: VistasMisLibros()){
+                            CeldaMisLibros()
+                        }
+                        NavigationLink(destination: VistasMisLibros()){
+                            CeldaMisLibros()
+                        }
+                        NavigationLink(destination: VistasMisLibros()){
+                            CeldaMisLibros()
+                        }
+                        NavigationLink(destination: VistasMisLibros()){
+                            CeldaMisLibros()
+                        }
+                        NavigationLink(destination: VistasMisLibros()){
+                            CeldaMisLibros()
+                        }
+                        
+                    })
+                }
+            }
+            
+        }
+        .searchable(text: $search)
     }
 }
 

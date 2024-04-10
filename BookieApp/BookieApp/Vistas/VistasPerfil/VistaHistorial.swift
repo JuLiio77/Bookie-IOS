@@ -8,10 +8,37 @@
 import SwiftUI
 
 struct VistaHistorial: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
+     
+        var body: some View {
+            
+            VStack{
+                
+                ScrollView(.vertical){
+
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+                    CeldaHIstorial()
+             
+                    
+                    
+                }
+                           
+                Spacer()
+                
+               
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(false)
+        }
     }
-}
+
 
 #Preview {
     VistaHistorial()

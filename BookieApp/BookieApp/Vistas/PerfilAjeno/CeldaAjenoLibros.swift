@@ -1,13 +1,13 @@
 //
-//  CeldaMisLibros.swift
+//  CeldaAjenoLibros.swift
 //  BookieApp
 //
-//  Created by dam2 on 9/4/24.
+//  Created by dam2 on 10/4/24.
 //
 
 import SwiftUI
 
-struct CeldaMisLibros: View {
+struct CeldaAjenoLibros: View {
     var body: some View {
         VStack{
             
@@ -17,11 +17,10 @@ struct CeldaMisLibros: View {
                 .background(Color.gray, in: .rect)
                 .cornerRadius(20)
             
-            Text("Harry Potter y la piedra filosofal")
+            Text("Harry Potter ")
                 .padding(.trailing, 10)
                 .font(.subheadline)
                 .foregroundColor(.black)
-            //.multilineTextAlignment(.trailing)
         }
         .padding([.top, .bottom], 20)
     
@@ -30,5 +29,5 @@ struct CeldaMisLibros: View {
 
 
 #Preview {
-    CeldaMisLibros()
+    CeldaAjenoLibros()
 }

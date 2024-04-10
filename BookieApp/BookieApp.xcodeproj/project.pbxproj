@@ -26,6 +26,19 @@
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
+		3D9A67462BC6E7A50027177D /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A673D2BC6E7A50027177D /* AuthRequest.swift */; };
+		3D9A67472BC6E7A50027177D /* ModelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A673E2BC6E7A50027177D /* ModelToken.swift */; };
+		3D9A67482BC6E7A50027177D /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A673F2BC6E7A50027177D /* ModelUser.swift */; };
+		3D9A67492BC6E7A50027177D /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67402BC6E7A50027177D /* RegisterRequest.swift */; };
+		3D9A674A2BC6E7A50027177D /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67422BC6E7A50027177D /* Chats.swift */; };
+		3D9A674B2BC6E7A50027177D /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67432BC6E7A50027177D /* Mensajes.swift */; };
+		3D9A674F2BC6EBAC0027177D /* ViewPerfilAjeno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A674E2BC6EBAC0027177D /* ViewPerfilAjeno.swift */; };
+		3D9A67512BC6ECC10027177D /* ViewAjenoLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67502BC6ECC10027177D /* ViewAjenoLibros.swift */; };
+		3D9A67532BC6EDBC0027177D /* ViewAjenoHistorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67522BC6EDBC0027177D /* ViewAjenoHistorial.swift */; };
+		3D9A67552BC6EE160027177D /* ViewAjenoReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67542BC6EE160027177D /* ViewAjenoReview.swift */; };
+		3D9A67572BC6EFAC0027177D /* CeldaAjenoHistorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67562BC6EFAC0027177D /* CeldaAjenoHistorial.swift */; };
+		3D9A67592BC6EFDA0027177D /* CeldaAjenoReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67582BC6EFDA0027177D /* CeldaAjenoReview.swift */; };
+		3D9A675B2BC6EFFA0027177D /* CeldaAjenoLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A675A2BC6EFFA0027177D /* CeldaAjenoLibros.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
 		3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */; };
 		3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */; };
@@ -68,6 +81,19 @@
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
 		3D96B0E92BC455730030322C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D9A673D2BC6E7A50027177D /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		3D9A673E2BC6E7A50027177D /* ModelToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelToken.swift; sourceTree = "<group>"; };
+		3D9A673F2BC6E7A50027177D /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		3D9A67402BC6E7A50027177D /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		3D9A67422BC6E7A50027177D /* Chats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
+		3D9A67432BC6E7A50027177D /* Mensajes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
+		3D9A674E2BC6EBAC0027177D /* ViewPerfilAjeno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPerfilAjeno.swift; sourceTree = "<group>"; };
+		3D9A67502BC6ECC10027177D /* ViewAjenoLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAjenoLibros.swift; sourceTree = "<group>"; };
+		3D9A67522BC6EDBC0027177D /* ViewAjenoHistorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAjenoHistorial.swift; sourceTree = "<group>"; };
+		3D9A67542BC6EE160027177D /* ViewAjenoReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAjenoReview.swift; sourceTree = "<group>"; };
+		3D9A67562BC6EFAC0027177D /* CeldaAjenoHistorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAjenoHistorial.swift; sourceTree = "<group>"; };
+		3D9A67582BC6EFDA0027177D /* CeldaAjenoReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAjenoReview.swift; sourceTree = "<group>"; };
+		3D9A675A2BC6EFFA0027177D /* CeldaAjenoLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAjenoLibros.swift; sourceTree = "<group>"; };
 		3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
 		3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibroBibliotecaView.swift; sourceTree = "<group>"; };
 		3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaChat.swift; sourceTree = "<group>"; };
@@ -167,6 +193,7 @@
 		3D75B27E2BA0CF6A00B14A09 /* Vistas */ = {
 			isa = PBXGroup;
 			children = (
+				3D9A674D2BC6EB0B0027177D /* PerfilAjeno */,
 				3D3EC74D2BC5A8160002F796 /* VistasPerfil */,
 				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
 				3D19B5CA2BA9FABF00D892F3 /* ViewSubirLibro */,
@@ -182,6 +209,40 @@
 				3D1CE92C2BA3484100844484 /* TabarView.swift */,
 			);
 			path = Vistas;
+			sourceTree = "<group>";
+		};
+		3D9A67412BC6E7A50027177D /* ModelUser */ = {
+			isa = PBXGroup;
+			children = (
+				3D9A673D2BC6E7A50027177D /* AuthRequest.swift */,
+				3D9A673E2BC6E7A50027177D /* ModelToken.swift */,
+				3D9A673F2BC6E7A50027177D /* ModelUser.swift */,
+				3D9A67402BC6E7A50027177D /* RegisterRequest.swift */,
+			);
+			path = ModelUser;
+			sourceTree = "<group>";
+		};
+		3D9A67452BC6E7A50027177D /* ModelChat */ = {
+			isa = PBXGroup;
+			children = (
+				3D9A67422BC6E7A50027177D /* Chats.swift */,
+				3D9A67432BC6E7A50027177D /* Mensajes.swift */,
+			);
+			path = ModelChat;
+			sourceTree = "<group>";
+		};
+		3D9A674D2BC6EB0B0027177D /* PerfilAjeno */ = {
+			isa = PBXGroup;
+			children = (
+				3D9A674E2BC6EBAC0027177D /* ViewPerfilAjeno.swift */,
+				3D9A67502BC6ECC10027177D /* ViewAjenoLibros.swift */,
+				3D9A67522BC6EDBC0027177D /* ViewAjenoHistorial.swift */,
+				3D9A67542BC6EE160027177D /* ViewAjenoReview.swift */,
+				3D9A67562BC6EFAC0027177D /* CeldaAjenoHistorial.swift */,
+				3D9A67582BC6EFDA0027177D /* CeldaAjenoReview.swift */,
+				3D9A675A2BC6EFFA0027177D /* CeldaAjenoLibros.swift */,
+			);
+			path = PerfilAjeno;
 			sourceTree = "<group>";
 		};
 		3DBC66D62B9F7BF8001A6B90 = {
@@ -203,10 +264,12 @@
 		3DBC66E12B9F7BF8001A6B90 /* BookieApp */ = {
 			isa = PBXGroup;
 			children = (
-				3D96B0E92BC455730030322C /* Info.plist */,
+				3D9A67452BC6E7A50027177D /* ModelChat */,
+				3D9A67412BC6E7A50027177D /* ModelUser */,
 				3D75B27E2BA0CF6A00B14A09 /* Vistas */,
 				3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */,
 				3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */,
+				3D96B0E92BC455730030322C /* Info.plist */,
 				3DBC66E82B9F7BF9001A6B90 /* Preview Content */,
 			);
 			path = BookieApp;
@@ -348,14 +411,18 @@
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
+				3D9A674B2BC6E7A50027177D /* Mensajes.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
+				3D9A67532BC6EDBC0027177D /* ViewAjenoHistorial.swift in Sources */,
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
+				3D9A674A2BC6E7A50027177D /* Chats.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
+				3D9A67472BC6E7A50027177D /* ModelToken.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
 				3D3EC7572BC5A8C50002F796 /* VistaReview.swift in Sources */,
 				3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */,
@@ -363,8 +430,11 @@
 				3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */,
 				3D3EC7532BC5A8400002F796 /* CeldaReview.swift in Sources */,
 				3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */,
+				3D9A67462BC6E7A50027177D /* AuthRequest.swift in Sources */,
 				3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */,
 				3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */,
+				3D9A67512BC6ECC10027177D /* ViewAjenoLibros.swift in Sources */,
+				3D9A67492BC6E7A50027177D /* RegisterRequest.swift in Sources */,
 				3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */,
 				3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */,
 				3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */,
@@ -372,15 +442,21 @@
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
 				3D3EC7592BC5A8D20002F796 /* VistaHistorial.swift in Sources */,
 				3D3EC7512BC5A8320002F796 /* CeldaHIstorial.swift in Sources */,
+				3D9A67552BC6EE160027177D /* ViewAjenoReview.swift in Sources */,
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
+				3D9A67482BC6E7A50027177D /* ModelUser.swift in Sources */,
 				3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */,
 				3DED65D72BBB1CE7001BB9C2 /* ModelLibro.swift in Sources */,
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
+				3D9A67592BC6EFDA0027177D /* CeldaAjenoReview.swift in Sources */,
+				3D9A674F2BC6EBAC0027177D /* ViewPerfilAjeno.swift in Sources */,
 				3D3EC7552BC5A8B80002F796 /* VistasMisLibros.swift in Sources */,
 				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
+				3D9A67572BC6EFAC0027177D /* CeldaAjenoHistorial.swift in Sources */,
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
 				3D3EC74F2BC5A8280002F796 /* CeldaMisLibros.swift in Sources */,
+				3D9A675B2BC6EFFA0027177D /* CeldaAjenoLibros.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
