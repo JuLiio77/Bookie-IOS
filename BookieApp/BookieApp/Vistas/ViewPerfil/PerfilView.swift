@@ -10,10 +10,33 @@ import SwiftUI
 struct PerfilView: View {
 
     @State private var seleccionado = 0
+    @State var isPresented: Bool = false
+
     
     var body: some View {
         
         NavigationStack {
+            
+            Button(action: {
+                //accion
+            }) {
+                Button(action: {
+                    isPresented = true
+                }) {
+                    Image(systemName: "gearshape")
+                        .foregroundColor(.black)
+                    
+                }
+            }
+            
+            .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
+                AjustesPerfil(isPresented: $isPresented)
+                    .presentationDetents([.large])
+            })
+        
+            
+            .padding(.leading, 320)
+            .font(.headline)
             
             
             HStack {
@@ -32,6 +55,11 @@ struct PerfilView: View {
                 }
             }
             .padding(.trailing, 70)
+            .padding(.top, -15)
+            
+            
+              
+            
             
             HStack {
                 
@@ -102,10 +130,11 @@ struct PerfilView: View {
                 .navigationTitle("Julio Vera")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    Button(action: {
-                        //accion
-                    }) {
-                        Image(systemName: "ellipsis")
+                        
+                        
+                        
+                     
+                       
                     }
                     .rotationEffect(.degrees(90))
                     .foregroundColor(Color.black)
@@ -114,7 +143,7 @@ struct PerfilView: View {
         }
     }
 
-}
+
 
 #Preview {
     PerfilView()
