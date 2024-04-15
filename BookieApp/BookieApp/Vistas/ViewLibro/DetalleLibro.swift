@@ -45,10 +45,10 @@ struct DetalleLibro: View {
                             
                             if bookmodelFav.isFavorite {
                                 //añadimos el libro a la pantalla favoritos
-                                librosFavoritos.librosFav.append(book)
+                                librosFavoritos.anadirFav(id: book.id)
                                 
                             } else {
-                                librosFavoritos.librosFav.removeAll(where: { $0.id == book.id })
+                                librosFavoritos.eliminarFav(id: book.id)
                             }
                         })
                         {

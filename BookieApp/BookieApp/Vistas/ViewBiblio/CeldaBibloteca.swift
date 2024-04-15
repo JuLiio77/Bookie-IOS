@@ -65,7 +65,7 @@ struct CeldaBibloteca: View {
                     
                     
                     VStack {
-                        NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: BookModelFavoritos(id: "", isFavorite: false))) {
+                        NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: BookModelFavoritos(id: book.id))) {
                             Text("Ver más")
                         }
                         .frame(width: 130, height: 25)

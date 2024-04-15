@@ -14,7 +14,12 @@ class BookModelFavoritos: ObservableObject, Identifiable {
     init(id: String, isFavorite: Bool = false) {
             self.id = id
             self.isFavorite = isFavorite
-        }
+    }
+    
+    init(id: String) {
+        self.id = id
+        self.isFavorite = UserDefaults.standard.bool(forKey: id)
+    }
 }
 
 extension BookModelFavoritos {
@@ -23,10 +28,12 @@ extension BookModelFavoritos {
     var isFav: Bool {
         
         get {
-            UserDefaults.standard.bool(forKey: id)
+//            UserDefaults.standard.bool(forKey: id)
+            isFavorite
         }
         
         set {
+            isFavorite = newValue
             UserDefaults.standard.set(newValue, forKey: id)
         }
     }
