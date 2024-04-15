@@ -9,6 +9,7 @@ import Foundation
 
 class Peticiones{
     
+    
     static let shared = Peticiones()
 
     // funcion para descargar los datos
@@ -49,9 +50,9 @@ class Peticiones{
     
     }
     
-    func PostRegister(name: String,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int, completion: @escaping (Result<RegisterRequest, Error>)-> Void ){
+    func PostRegister(name: String,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int, completion: @escaping (Result<RegisterRequest, Error>) -> Void ){
         
-        var urlString = "http://localhost:8080/api/auth/register"
+        let urlString = "http://localhost:8080/api/auth/register"
         
         guard let url = URL(string: urlString) else {
             print("URL no válida")
@@ -79,8 +80,9 @@ class Peticiones{
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
                     
-                    print(token)
                     
+                    //print(token.token)
+                    //print(response)
                 }catch(let error){
                     print(error.localizedDescription)
                 }
@@ -89,9 +91,9 @@ class Peticiones{
  
     }
     
-    func login(username: String, password: String, completion: @escaping (Result<AuthRequest, Error>)-> Void ){
+    func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
 
-        var urlString = "http://localhost:8080/api/auth/login"
+        let urlString = "http://localhost:8080/api/auth/login"
         
         guard let url = URL(string: urlString) else {
             print("URL no válida")
@@ -108,7 +110,7 @@ class Peticiones{
             print("Invalid httpBody")
             return
         }
-        print(firstUser)
+        //print(firstUser)
         request.httpBody = httpBody
    
         URLSession.shared.dataTask(with: request){ data, response, error in
@@ -119,7 +121,10 @@ class Peticiones{
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
                     
-                    print(token)
+                    //UserDefaults.standard.setValue(token.token, forKey: "token")
+                    UserDefaults.standard.setValue(token.token, forKey: "token")
+                    print("token peticion:\(token.token)")
+                    
                     
                 }catch(let error){
                     print(error.localizedDescription)

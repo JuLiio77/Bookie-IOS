@@ -81,33 +81,45 @@ struct ContentView: View {
                     .padding(.top, 20)
                     .foregroundColor(.black)
                     .navigationBarBackButtonHidden(true)
-                
 
-                Button("Iniciar Sesion"){
-                
-                    DispatchQueue.main.async {
-                        userData.check(username: userData.email, password: userData.password)
-                        // no es el email si no que es el username que es el que uno modifica
+//                NavigationLink("InicioSesion"){
+//                        TabarView()
+//                }
+//                .padding(20)
+//                .padding(.horizontal, 30)
+//                .background(Color.button)
+//                .foregroundColor(.black)
+//                .cornerRadius(20)
+//                .padding([.leading, .trailing], 10)
+//                .padding(.top, 75)
+//                .navigationBarBackButtonHidden(true)
+            
+            
+                NavigationLink(destination: TabarView()){
+                    
+                    Button("Iniciar Sesion"){
+                        
+                        if userData.tokeen.isEmpty{
+                            
+                           print("login incorrecto")
+                        }else{
+                            userData.check(username: userData.email, pasword: userData.password)
+                            print("login correcto")
+                        }
+                        //userData.check(username: userData.email, pasword: userData.password){
+                            
+                        //NavigationLink("", destination: TabarView())
+                        // no es el email si no que es el username que es el que uno modific
                     }
+                    .padding(20)
+                    .padding(.horizontal, 30)
+                    .background(Color.button)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 75)
                     
                 }
-                .padding(20)
-                .padding(.horizontal, 30)
-                .background(Color.button)
-                .foregroundColor(.black)
-                .cornerRadius(20)
-                .padding([.leading, .trailing], 10)
-                .padding(.top, 75)
-                
-//                NavigationLink("Iniciar Sesion", destination: TabarView())
-//                    .padding(20)
-//                    .padding(.horizontal, 30)
-//                    .background(Color.button)
-//                    .foregroundColor(.black)
-//                    .cornerRadius(20)
-//                    .padding([.leading, .trailing], 10)
-//                    .padding(.top, 75)
-//                    .navigationBarBackButtonHidden(true)
                 
                 NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                     .padding(.top, 30)
