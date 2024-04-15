@@ -52,7 +52,7 @@ struct EditarPerfil: View {
                 Label("Contraseña", systemImage: "")
                     .labelStyle(.titleOnly)
                     .padding(.top, 30)
-                    .padding(.trailing, 280)
+                    .padding(.trailing, 260)
                 TextField("Contraseña", text: $password)
                     .bold()
                     .padding()
@@ -62,52 +62,67 @@ struct EditarPerfil: View {
                 
                 Divider()
                 
-                Label("Nombre", systemImage: "")
+                Label("Provincia", systemImage: "")
                     .labelStyle(.titleOnly)
                     .padding(.top, 30)
                     .padding(.trailing, 280)
-                TextField("Nombre", text: $provincia)
+                TextField("Provincia", text: $provincia)
                     .bold()
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding()
                 
-                Label("Nombre", systemImage: "")
+                Label("Ciudad", systemImage: "")
                     .labelStyle(.titleOnly)
                     .padding(.top, 30)
-                    .padding(.trailing, 280)
-                TextField("Nombre", text: $ciudad)
+                    .padding(.trailing, 290)
+                TextField("Ciudad", text: $ciudad)
                     .bold()
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding()
                 
-                Label("Nombre", systemImage: "")
+                Label("Código Postal", systemImage: "")
                     .labelStyle(.titleOnly)
                     .padding(.top, 30)
-                    .padding(.trailing, 280)
-                TextField("Nombre", text: $codigoPostal)
+                    .padding(.trailing, 240)
+                TextField("Código Postal", text: $codigoPostal)
                     .bold()
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding()
                 
-                Label("Nombre", systemImage: "")
+                Divider()
+                
+                Label("Preferencias Literarias", systemImage: "")
                     .labelStyle(.titleOnly)
                     .padding(.top, 30)
-                    .padding(.trailing, 280)
-                TextField("Nombre", text: $prefeLite)
+                    .padding(.trailing, 180)
+                TextField("Preferencias Literarias", text: $prefeLite)
                     .bold()
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding()
+                
+                
+                Button("Guardar Cambios"){
+                    
+                    
+                }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
                 
             }
-            .navigationBarTitle("Editar Pérfil")
+            .navigationBarTitle("Editar Perfil")
             .navigationBarTitleDisplayMode(.inline)
         }
         
