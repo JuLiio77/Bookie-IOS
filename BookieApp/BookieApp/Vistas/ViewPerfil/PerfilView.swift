@@ -27,7 +27,7 @@ struct PerfilView: View {
                 
                 
                 VStack(alignment: .leading) {
-                    Text("\(userData.ciudad)")
+                    //Text("\(userData.ciudad)")
                     
                     Text("4,8 ★")
                     
