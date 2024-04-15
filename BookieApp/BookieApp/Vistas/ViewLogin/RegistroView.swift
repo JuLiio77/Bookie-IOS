@@ -9,16 +9,15 @@ import SwiftUI
 
 struct RegistroView: View {
     
-    @State var nombre: String = ""
-    @State var repetirContrasenia: String = ""
-    @State var correo: String = ""
-    @State var contrasenia: String = ""
+    @EnvironmentObject var userData: FuncionLogin
+    var peticiones = Peticiones()
     
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
-
-
+    
+    
     var body: some View {
+        
         VStack {
             
             Text("Registro")
@@ -27,37 +26,37 @@ struct RegistroView: View {
                 .padding()
             
             
-            TextField("Nombre", text: $nombre)
+            TextField("Nombre", text: $userData.name)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,90)
             
-            TextField("Correo electronico", text: $nombre)
+            TextField("Correo electronico", text: $userData.email)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,40)
-                
+            
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia {
-                    TextField("Contraseña", text: $contrasenia)
+                    TextField("Contraseña", text: $userData.password)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
-                 
+                    
                 } else {
-                    SecureField("Contraseña", text: $contrasenia)
+                    SecureField("Contraseña", text: $userData.password)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
                 }
-
+                
                 Button(action: {
                     mostrarContrasenia.toggle()
                 }) {
@@ -67,24 +66,23 @@ struct RegistroView: View {
                 }
                 .padding(.trailing, 15)
             }
-
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia1 {
-                    TextField("Contraseña", text: $repetirContrasenia)
+                    TextField("Contraseña", text: $userData.repassword)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
-                 
+                    
                 } else {
-                    SecureField("Contraseña", text: $repetirContrasenia)
+                    SecureField("Contraseña", text: $userData.repassword)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
                 }
-
+                
                 Button(action: {
                     mostrarContrasenia1.toggle()
                 }) {
@@ -95,11 +93,8 @@ struct RegistroView: View {
                 .padding(.trailing, 15)
             }
             
-          
-            
-
-     
             Button("Siguiente"){
+                
                 
             }
             .padding(20)
@@ -109,13 +104,12 @@ struct RegistroView: View {
             .cornerRadius(20)
             .padding([.leading, .trailing], 10)
             .padding(.top, 75)
-            
-      
-            
         }
         .padding()
     }
 }
+
 #Preview {
     RegistroView()
+        .environmentObject(FuncionLogin())
 }

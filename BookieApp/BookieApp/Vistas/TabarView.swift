@@ -7,28 +7,36 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct TabarView: View {
+    
     var body: some View {
+        
         TabView {
             InicioView()
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
-
             BibliotecaView()
                 .tabItem {
                     Label("Biblioteca", systemImage: "book")
                 }
+    
+            SubirLibroView()
+                .tabItem {
+                    Label("Subir", systemImage: "plus.app.fill")
+                }
             
             MainViewBuzon()
                 .tabItem {
-                    Label("Buzon", systemImage: "message")
+                    Label("Buzón", systemImage: "message")
                 }
-            
-            
             PerfilView()
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
+                }
+            ListaLibrosFavoritos()
+                .tabItem {
+                    Label("Favoritos", systemImage: "person.fill")
                 }
         }
         .accentColor(Color.button)
@@ -36,5 +44,6 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    TabarView()
+        .environmentObject(LibrosFavoritos())
 }

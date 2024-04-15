@@ -57,6 +57,7 @@ struct ReviewView: View {
 
                 .padding()
                 .navigationTitle("Escribe tu reseña")
+                //.navigationBarTitleDisplayMode(.inline)
 
             }
         }
