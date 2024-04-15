@@ -22,10 +22,10 @@ struct AjustesPerfil: View {
                                NavigationLink(destination: Text("Vista 1")) {
                                    Text("Editar Perfil")
                                }
-                               NavigationLink(destination: Text("Vista 2")) {
+                               NavigationLink(destination: LibrosFavoritos()) {
                                    Text("Favoritos")
                                }
-                               NavigationLink(destination: ReviewView()) {
+                               NavigationLink(destination: TerminosUso()) {
                                    Text("Ir a terminos de uso")
                                }
                            }
