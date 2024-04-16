@@ -11,11 +11,14 @@ struct AjustesPerfil: View {
     
     @Binding var isPresented: Bool
     @State private var showDeleteAlert = false
-       @State private var showLogoutAlert = false
+    @State private var showLogoutAlert = false
+    
+    @EnvironmentObject var color: ColorListAjustes
+
 
     var body: some View {
         ZStack{
-            NavigationView {
+            NavigationStack {
        
                List {
                    Section{
@@ -38,7 +41,7 @@ struct AjustesPerfil: View {
                       }
                       .alert(isPresented: $showDeleteAlert) {
                           Alert(
-                              title: Text("Alert"),
+                              title: Text("Eliminar Cuenta"),
                               message: Text("¿Estás seguro de que quieres eliminar tu cuenta?"),
                               primaryButton: .destructive(Text("Eliminar")) {
                                   // Aquí va el código para eliminar la cuenta
@@ -55,7 +58,7 @@ struct AjustesPerfil: View {
                       }
                       .alert(isPresented: $showLogoutAlert) {
                           Alert(
-                              title: Text("Alert"),
+                              title: Text("Cerrar Sesión"),
                               message: Text("¿Estás seguro de que quieres cerrar sesión?"),
                               primaryButton: .destructive(Text("Cerrar Sesión")) {
                                   // Aquí va el código para cerrar sesión
@@ -64,16 +67,27 @@ struct AjustesPerfil: View {
                           )
                       }
                   }
-                 
+   
                }
-        
+                
+                
+                .scrollContentBackground(.hidden)
+                .background(color.colorFondo)
+      
                .navigationBarTitle("Ajustes")
                .navigationBarTitleDisplayMode(.inline)
+                
+                
+               
+                
             }
+            
         }
         
     }
 }
 #Preview {
     AjustesPerfil(isPresented: .constant(true))
+        .environmentObject(ColorListAjustes())
+
 }

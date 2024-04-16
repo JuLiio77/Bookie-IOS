@@ -12,6 +12,8 @@ struct ReviewView: View {
     @State private var reviewText: String = ""
 
     @State private var rating: Int = 0
+    @State private var alert = false
+
 
     var body: some View {
 
@@ -41,10 +43,18 @@ struct ReviewView: View {
                     
                     .padding()
                     
-                    Button("Continuar"){
-                        
+                    Button("Continuar") {
+                        self.alert = true
                     }
-                    .padding(20)
+                    .alert(isPresented: $alert) {
+                        Alert(
+                            title: Text("Quieres publicar la reseña"),
+                            primaryButton: .destructive(Text("Sí")) {
+                                // Aquí puedes agregar el código para cerrar la vista y volver a la anterior
+                            },
+                            secondaryButton: .cancel()
+                        )
+                    }                    .padding(20)
                     .padding(.horizontal, 50)
                     .background(Color.button)
                     .foregroundColor(.white)

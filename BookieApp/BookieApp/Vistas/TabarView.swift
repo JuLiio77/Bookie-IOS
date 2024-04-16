@@ -41,4 +41,6 @@ struct TabarView: View {
 
 #Preview {
     TabarView()
+        .environmentObject(ColorListAjustes())
+
 }

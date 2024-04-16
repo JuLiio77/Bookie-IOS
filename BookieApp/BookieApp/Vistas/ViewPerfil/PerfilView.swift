@@ -147,4 +147,5 @@ struct PerfilView: View {
 
 #Preview {
     PerfilView()
+        .environmentObject(ColorListAjustes())
 }
