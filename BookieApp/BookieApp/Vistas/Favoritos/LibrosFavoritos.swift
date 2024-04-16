@@ -22,7 +22,6 @@ class LibrosFavoritos: ObservableObject {
     }
     
     //Método para añadir libro a favorito (recibe id)
-    //librosFavoritos.librosFav.append(book)
     func anadirFav(id: String) {
         if let book = librosFav.first(where: {$0.id == id}) {
             book.isFav = true
@@ -35,7 +34,6 @@ class LibrosFavoritos: ObservableObject {
 
     
     //Método para eliminar libro de favoritos (recibe id)
-    //librosFavoritos.librosFav.removeAll(where: { $0.id == book.id })
     func eliminarFav(id: String) {
         if let book = librosFav.first(where: { $0.id == id }) {
             book.isFav = false
@@ -47,5 +45,9 @@ class LibrosFavoritos: ObservableObject {
     //Método para buscar un libro en favoritos (recibe id, devuelve bool)
     func buscarFav(id: String) -> Bool {
         return librosFav.contains(where: { $0.id == id && $0.isFav })
+    }
+    
+    func bookModelFavoritos(for book: Book) -> BookModelFavoritos {
+        return BookModelFavoritos(id: book.id, book: book)
     }
 }

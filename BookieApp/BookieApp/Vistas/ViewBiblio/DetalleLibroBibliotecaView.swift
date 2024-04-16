@@ -10,14 +10,16 @@ import SwiftUI
 struct DetalleLibroBibliotecaView: View {
     
     @EnvironmentObject var librosFavoritos: LibrosFavoritos
-    
+
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
         GridItem(.adaptive(minimum: 60, maximum: 100), spacing: 60),
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60)]
     
     var book: Book
-    var bookmodelFav: BookModelFavoritos
+    @ObservedObject var bookmodelFav: BookModelFavoritos
+    
+    //var bookmodelFav: BookModelFavoritos
         
     var body: some View {
         

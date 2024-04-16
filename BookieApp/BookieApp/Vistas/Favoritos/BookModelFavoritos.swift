@@ -9,15 +9,19 @@ import Foundation
 
 class BookModelFavoritos: ObservableObject, Identifiable {
     let id: String
+    var book: Book?
+    
     @Published var isFavorite: Bool
     
-    init(id: String, isFavorite: Bool = false) {
-            self.id = id
-            self.isFavorite = isFavorite
+    init(id: String, book: Book? = nil , isFavorite: Bool = false) {
+        self.id = id
+        self.book = book
+        self.isFavorite = isFavorite
     }
     
-    init(id: String) {
+    init(id: String, book: Book? = nil) {
         self.id = id
+        self.book = book
         self.isFavorite = UserDefaults.standard.bool(forKey: id)
     }
 }
