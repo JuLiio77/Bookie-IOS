@@ -16,6 +16,10 @@ struct EditarPerfil: View {
     @State var codigoPostal = ""
     @State var prefeLite = ""
     
+    @State private var showSaveAlert = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -107,26 +111,37 @@ struct EditarPerfil: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding()
-                
-                
-                Button("Guardar Cambios"){
-                    
-                    
+             
+           
+                    Button("Guardar Cambios") {
+                        showSaveAlert = true
+                    }
+                    .alert(isPresented: $showSaveAlert) {
+                        Alert(
+                            title: Text("Guardar Cambios"),
+                            message: Text("¿Quieres guardar los cambios?"),
+                            primaryButton: .default(Text("Sí")) {
+                                // Aquí puedes poner el código para guardar los cambios
+                                self.presentationMode.wrappedValue.dismiss()
+                            },
+                            secondaryButton: .cancel(Text("No"))
+                        )
+                    }
+                    .padding(20)
+                    .padding(.horizontal, 30)
+                    .background(Color.button)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 75)
                 }
-                .padding(20)
-                .padding(.horizontal, 30)
-                .background(Color.button)
-                .foregroundColor(.black)
-                .cornerRadius(20)
-                .padding([.leading, .trailing], 10)
-                .padding(.top, 75)
                 
             }
             .navigationBarTitle("Editar Perfil")
             .navigationBarTitleDisplayMode(.inline)
         }
         
-    }
+    
     
 }
 
