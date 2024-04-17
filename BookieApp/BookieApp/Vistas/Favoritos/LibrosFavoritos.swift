@@ -12,17 +12,17 @@ class LibrosFavoritos: ObservableObject {
     @Published var librosFav: [BookModelFavoritos] = []
     
     //Init que recupera el array de UserDefaults
-    init() {
+    /*init() {
         let ids = UserDefaults.standard.array(forKey: "librosFav") as? [String] ?? []
         
         librosFav = ids.compactMap { id in
             let isFavorite = UserDefaults.standard.bool(forKey: id)
             return BookModelFavoritos(id: id, isFavorite: isFavorite)
         }
-    }
+    }*/
     
     //Método para añadir libro a favorito (recibe id)
-    func anadirFav(id: String) {
+    /*func anadirFav(id: String) {
         if let book = librosFav.first(where: {$0.id == id}) {
             book.isFav = true
         } else {
@@ -30,14 +30,31 @@ class LibrosFavoritos: ObservableObject {
             librosFav.append(book)
         }
         UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
+    }*/
+    
+    func anadirFav(book: Book) {
+        if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
+            librosFav[index].isFav = true
+        } else {
+            let bookmodelFav = BookModelFavoritos(id: book.id, isFavorite: true)
+            librosFav.append(bookmodelFav)
+        }
+        UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
     }
 
     
     //Método para eliminar libro de favoritos (recibe id)
-    func eliminarFav(id: String) {
+    /*func eliminarFav(id: String) {
         if let book = librosFav.first(where: { $0.id == id }) {
             book.isFav = false
             librosFav.removeAll(where: { $0.id == id })
+        }
+        UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
+    }*/
+    
+    func eliminarFav(book: Book) {
+        if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
+            librosFav[index].isFav = false
         }
         UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
     }
@@ -47,7 +64,12 @@ class LibrosFavoritos: ObservableObject {
         return librosFav.contains(where: { $0.id == id && $0.isFav })
     }
     
-    func bookModelFavoritos(for book: Book) -> BookModelFavoritos {
+    /*func bookModelFavoritos(for book: Book) -> BookModelFavoritos {
         return BookModelFavoritos(id: book.id, book: book)
+    }*/
+    
+    //funcion nueva
+    func bookModelFavoritos(for book: Book) -> BookModelFavoritos {
+        return librosFav.first(where: { $0.book?.id == book.id }) ?? BookModelFavoritos(id: book.id, book: book)
     }
 }

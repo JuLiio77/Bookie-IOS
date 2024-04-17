@@ -19,7 +19,7 @@ class BookModelFavoritos: ObservableObject, Identifiable {
         self.isFavorite = isFavorite
     }
     
-    init(id: String, book: Book? = nil) {
+    init(id: String, book: Book) {
         self.id = id
         self.book = book
         self.isFavorite = UserDefaults.standard.bool(forKey: id)
