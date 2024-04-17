@@ -22,10 +22,12 @@ struct DetalleLibro: View {
             ScrollView(.vertical){
                 
                 VStack{
-                    
-                    Label("Julio Vera", systemImage: "globe")
-                        .padding(.leading, 250)
-                        .padding([.top, .bottom], 15)
+                    NavigationLink(destination: ViewPerfilAjeno()) {
+                        Label( "Iñigo", systemImage: "person.circle.fill")
+                             .padding(.leading, 250)
+                             .padding([.top, .bottom], 15)
+                             .foregroundColor(.black)
+                     }
                     
                     Image(systemName: "globe")
                         .frame(width: 166, height: 196)
