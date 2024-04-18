@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct Book: Decodable, Identifiable {
+struct Book: Identifiable, Codable {
     let id: String
     let volumeInfo: VolumeInfo
 }

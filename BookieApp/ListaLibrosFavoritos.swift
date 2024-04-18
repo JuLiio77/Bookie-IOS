@@ -14,7 +14,6 @@ struct ListaLibrosFavoritos: View {
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0)]
     
     @EnvironmentObject var librosFavoritos: LibrosFavoritos
-    //let libros: [Book]
     
     var body: some View {
         
@@ -34,17 +33,6 @@ struct ListaLibrosFavoritos: View {
                                     CeldaLibroFavorito(book: book)
                                 }
                             }
-                            
-                            
-                            //nuevo foreach
-                            /*ForEach(librosFavoritos.librosFav) { bookmodelFav in
-                             
-                             if let book = bookmodelFav.book {
-                             
-                             NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: bookmodelFav)) {
-                             CeldaLibroFavorito(book: book)
-                             }
-                             }*/
                         }
                     }
                 }

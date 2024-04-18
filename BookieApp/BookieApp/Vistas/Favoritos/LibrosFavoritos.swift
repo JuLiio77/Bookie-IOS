@@ -33,7 +33,9 @@ class LibrosFavoritos: ObservableObject {
             let bookmodelFav = BookModelFavoritos(id: book.id, book: book, isFavorite: true)
             librosFav.append(bookmodelFav)
         }
-        UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
+        if let bookData = try? JSONEncoder().encode(book) {
+            UserDefaults.standard.set(bookData, forKey: book.id)
+        }
     }
 
     
@@ -43,7 +45,7 @@ class LibrosFavoritos: ObservableObject {
             librosFav[index].isFav = false
             librosFav.remove(at: index)
         }
-        UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
+        UserDefaults.standard.removeObject(forKey: book.id)
     }
     
     //Método para buscar un libro en favoritos (recibe id, devuelve bool)

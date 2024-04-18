@@ -25,15 +25,15 @@ struct CeldaLibroFavorito: View {
                 .frame(width: 156, height: 216)
                 .background(Color.gray, in: .rect)
                 .cornerRadius(20)
-                //.padding(.trailing, 200)
             }
             
             Text(book.volumeInfo.title)
+                .frame(width: 156)
                 .padding(.top, 10)
                 .padding(.trailing, 10)
                 .font(.subheadline)
                 .foregroundColor(.black)
-                .multilineTextAlignment(.trailing)
+                .multilineTextAlignment(.center)
         }
         .padding([.top, .bottom], 20)
     }
