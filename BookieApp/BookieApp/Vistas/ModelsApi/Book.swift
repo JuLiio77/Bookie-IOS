@@ -19,8 +19,9 @@ struct VolumeInfo: Codable {
     let publisher: String
     let description: String
     let industryIdentifiers: [IndustryIdentifier]
-    let categories: [String]
-    let pageCount: Int
+    let categories: [String]?
+    let pageCount: Int?
+    let language: String?
     //imagen
     let imageLinks: ImageLinks?
     

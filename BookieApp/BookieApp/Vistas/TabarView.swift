@@ -24,12 +24,12 @@ struct TabarView: View {
     
             SubirLibroView()
                 .tabItem {
-                    Label("Buzon", systemImage: "plus.app.fill")
+                    Label("Subir", systemImage: "plus.app.fill")
                 }
             
             MainViewBuzon()
                 .tabItem {
-                    Label("Perfil", systemImage: "message")
+                    Label("Buzón", systemImage: "message")
                 }
             PerfilView()
                 .tabItem {
@@ -44,4 +44,6 @@ struct TabarView: View {
 
 #Preview {
     TabarView()
+        .environmentObject(ColorListAjustes())
+
 }

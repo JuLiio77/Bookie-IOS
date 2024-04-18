@@ -1,13 +1,13 @@
 //
-//  DetalleLibro.swift
+//  ViewLibroNoDisponibel.swift
 //  BookieApp
 //
-//  Created by dam2 on 12/3/24.
+//  Created by dam2 on 18/4/24.
 //
 
 import SwiftUI
 
-struct DetalleLibro: View {
+struct ViewLibroNoDisponible: View {
     
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
@@ -22,25 +22,34 @@ struct DetalleLibro: View {
             ScrollView(.vertical){
                 
                 VStack{
-                    NavigationLink(destination: ViewPerfilAjeno()) {
-                        Label( "Iñigo", systemImage: "person.circle.fill")
-                             .padding(.leading, 250)
-                             .padding([.top, .bottom], 15)
-                             .foregroundColor(.black)
-                     }
+//                    NavigationLink(destination: ViewPerfilAjeno()) {
+//                        Label( "Iñigo", systemImage: "person.circle.fill")
+//                             .padding(.leading, 250)
+//                             .padding([.top, .bottom], 15)
+//                             .foregroundColor(.black)
+//                     }
                     
                     Image(systemName: "globe")
                         .frame(width: 166, height: 196)
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
+                        .padding(.top, 20)
                     
-                    HStack{
-                        Image(systemName: "heart")
-                            .foregroundStyle(.brown)
-                        Text("Disponible")
-                            .padding(.leading, 50)
+                    VStack{
+               
+                        Text("¿Has recibido tu libro de vuelta?")
                             .foregroundStyle(.cyan)
+                        
+                        NavigationLink("Finalizar Intercambio", destination: MensajesView())
+                           .padding(15)
+                           .padding(.horizontal, 20)
+                           .background(.button)
+                           .foregroundColor(.white)
+                           .cornerRadius(30)
+                           .padding([.leading, .trailing], 10)
+                           .padding(.top, 10)
+                           .navigationBarBackButtonHidden(true)
                     }
                     
                     ZStack{
@@ -125,29 +134,29 @@ struct DetalleLibro: View {
                             .frame(width: 50)
                         
                     }
-                    
-                    
-                    HStack{
-                        
-                        NavigationLink("Intercambio", destination: MensajesView())
-                            .padding(15)
-                            .padding(.horizontal, 20)
-                            .background(.brown)
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                            .padding([.leading, .trailing], 10)
-                            .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
-                        
-                        NavigationLink("Escribir Reseña", destination: ReviewView())
-                            .padding(15)
-                            .background(Color.button)
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                            .padding([.leading, .trailing], 10)
-                            .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
-                    }
+//                    
+//                    
+//                    HStack{
+//                        
+//                        NavigationLink("Intercambio", destination: MensajesView())
+//                            .padding(15)
+//                            .padding(.horizontal, 20)
+//                            .background(.brown)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(30)
+//                            .padding([.leading, .trailing], 10)
+//                            .padding(.top, 20)
+//                            .navigationBarBackButtonHidden(true)
+//                        
+//                        NavigationLink("Escribir Reseña", destination: ReviewView())
+//                            .padding(15)
+//                            .background(Color.button)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(30)
+//                            .padding([.leading, .trailing], 10)
+//                            .padding(.top, 20)
+//                            .navigationBarBackButtonHidden(true)
+//                    }
                     
                     
                     Spacer()
@@ -161,5 +170,5 @@ struct DetalleLibro: View {
 }
 
 #Preview {
-    DetalleLibro()
+    ViewLibroNoDisponible()
 }

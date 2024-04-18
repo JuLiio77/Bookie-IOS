@@ -18,23 +18,47 @@
 		3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */; };
 		3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */; };
 		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
-		3D45A4FD2BBEFC680074299E /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45A4FC2BBEFC680074299E /* ModelUser.swift */; };
-		3D45A4FF2BBEFD940074299E /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45A4FE2BBEFD940074299E /* RegisterRequest.swift */; };
+		3D3EC74F2BC5A8280002F796 /* CeldaMisLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3EC74E2BC5A8280002F796 /* CeldaMisLibros.swift */; };
+		3D3EC7512BC5A8320002F796 /* CeldaHIstorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3EC7502BC5A8320002F796 /* CeldaHIstorial.swift */; };
+		3D3EC7532BC5A8400002F796 /* CeldaReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3EC7522BC5A8400002F796 /* CeldaReview.swift */; };
+		3D3EC7552BC5A8B80002F796 /* VistasMisLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3EC7542BC5A8B80002F796 /* VistasMisLibros.swift */; };
+		3D3EC7572BC5A8C50002F796 /* VistaReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3EC7562BC5A8C50002F796 /* VistaReview.swift */; };
+		3D3EC7592BC5A8D20002F796 /* VistaHistorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3EC7582BC5A8D20002F796 /* VistaHistorial.swift */; };
+		3D4E24DE2BCD811F003C8497 /* LibrosFavoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E24DD2BCD811F003C8497 /* LibrosFavoritos.swift */; };
+		3D4E24E02BCD8423003C8497 /* EditarPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E24DF2BCD8423003C8497 /* EditarPerfil.swift */; };
+		3D5067C72BD01F22006DA6D5 /* ReporteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5067C62BD01F22006DA6D5 /* ReporteView.swift */; };
+		3D5067C92BD01F50006DA6D5 /* OpcionesPerfilAjeno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5067C82BD01F50006DA6D5 /* OpcionesPerfilAjeno.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
+		3D6E50A02BCD807B004843F2 /* TerminosUso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6E509F2BCD807B004843F2 /* TerminosUso.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
-		3D804D892BC451CC002250F5 /* ModelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D804D882BC451CC002250F5 /* ModelToken.swift */; };
+		3D80F1B02BCEDB2200F5738A /* ColorListAjustes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80F1AF2BCEDB2200F5738A /* ColorListAjustes.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
-		3D9D4FA02BBDB78800E46EEE /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D4F9F2BBDB78800E46EEE /* AuthRequest.swift */; };
+		3D9A67462BC6E7A50027177D /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A673D2BC6E7A50027177D /* AuthRequest.swift */; };
+		3D9A67472BC6E7A50027177D /* ModelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A673E2BC6E7A50027177D /* ModelToken.swift */; };
+		3D9A67482BC6E7A50027177D /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A673F2BC6E7A50027177D /* ModelUser.swift */; };
+		3D9A67492BC6E7A50027177D /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67402BC6E7A50027177D /* RegisterRequest.swift */; };
+		3D9A674A2BC6E7A50027177D /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67422BC6E7A50027177D /* Chats.swift */; };
+		3D9A674B2BC6E7A50027177D /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67432BC6E7A50027177D /* Mensajes.swift */; };
+		3D9A674F2BC6EBAC0027177D /* ViewPerfilAjeno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A674E2BC6EBAC0027177D /* ViewPerfilAjeno.swift */; };
+		3D9A67512BC6ECC10027177D /* ViewAjenoLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67502BC6ECC10027177D /* ViewAjenoLibros.swift */; };
+		3D9A67532BC6EDBC0027177D /* ViewAjenoHistorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67522BC6EDBC0027177D /* ViewAjenoHistorial.swift */; };
+		3D9A67552BC6EE160027177D /* ViewAjenoReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67542BC6EE160027177D /* ViewAjenoReview.swift */; };
+		3D9A67572BC6EFAC0027177D /* CeldaAjenoHistorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67562BC6EFAC0027177D /* CeldaAjenoHistorial.swift */; };
+		3D9A67592BC6EFDA0027177D /* CeldaAjenoReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A67582BC6EFDA0027177D /* CeldaAjenoReview.swift */; };
+		3D9A675B2BC6EFFA0027177D /* CeldaAjenoLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A675A2BC6EFFA0027177D /* CeldaAjenoLibros.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
+		3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */; };
 		3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */; };
 		3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */; };
 		3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */; };
 		3DBC66E72B9F7BF9001A6B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */; };
 		3DBC66EA2B9F7BF9001A6B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */; };
+		3DC0F3C92BC83A5900440628 /* AjustesPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC0F3C82BC83A5900440628 /* AjustesPerfil.swift */; };
 		3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */; };
 		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
-		3DE16F442BBF0B8D0073F864 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE16F432BBF0B8D0073F864 /* Chats.swift */; };
-		3DE16F462BBF0C7E0073F864 /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE16F452BBF0C7E0073F864 /* Mensajes.swift */; };
+		3DE3C8CC2BD170FC00328F2E /* ViewLibroNoDisponible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3C8CB2BD170FC00328F2E /* ViewLibroNoDisponible.swift */; };
+		3DE3C8CE2BD1734200328F2E /* LibroPropioDetallesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3C8CD2BD1734200328F2E /* LibroPropioDetallesView.swift */; };
+		3DE3C8D02BD1777200328F2E /* ModificarLibroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3C8CF2BD1777200328F2E /* ModificarLibroView.swift */; };
 		3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D32BA88FFF00686105 /* PerfilView.swift */; };
 		3DE784D62BA8902800686105 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D52BA8902700686105 /* ReviewView.swift */; };
 		3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */; };
@@ -59,24 +83,49 @@
 		3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFotoPerfil.swift; sourceTree = "<group>"; };
 		3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecuContra.swift; sourceTree = "<group>"; };
 		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
-		3D45A4FC2BBEFC680074299E /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
-		3D45A4FE2BBEFD940074299E /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		3D3EC74E2BC5A8280002F796 /* CeldaMisLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaMisLibros.swift; sourceTree = "<group>"; };
+		3D3EC7502BC5A8320002F796 /* CeldaHIstorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaHIstorial.swift; sourceTree = "<group>"; };
+		3D3EC7522BC5A8400002F796 /* CeldaReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaReview.swift; sourceTree = "<group>"; };
+		3D3EC7542BC5A8B80002F796 /* VistasMisLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasMisLibros.swift; sourceTree = "<group>"; };
+		3D3EC7562BC5A8C50002F796 /* VistaReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaReview.swift; sourceTree = "<group>"; };
+		3D3EC7582BC5A8D20002F796 /* VistaHistorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaHistorial.swift; sourceTree = "<group>"; };
+		3D4E24DD2BCD811F003C8497 /* LibrosFavoritos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrosFavoritos.swift; sourceTree = "<group>"; };
+		3D4E24DF2BCD8423003C8497 /* EditarPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPerfil.swift; sourceTree = "<group>"; };
+		3D5067C62BD01F22006DA6D5 /* ReporteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReporteView.swift; sourceTree = "<group>"; };
+		3D5067C82BD01F50006DA6D5 /* OpcionesPerfilAjeno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionesPerfilAjeno.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
+		3D6E509F2BCD807B004843F2 /* TerminosUso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminosUso.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
-		3D804D882BC451CC002250F5 /* ModelToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelToken.swift; sourceTree = "<group>"; };
+		3D80F1AF2BCEDB2200F5738A /* ColorListAjustes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListAjustes.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
-		3D9D4F9F2BBDB78800E46EEE /* AuthRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		3D96B0E92BC455730030322C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D9A673D2BC6E7A50027177D /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
+		3D9A673E2BC6E7A50027177D /* ModelToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelToken.swift; sourceTree = "<group>"; };
+		3D9A673F2BC6E7A50027177D /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
+		3D9A67402BC6E7A50027177D /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		3D9A67422BC6E7A50027177D /* Chats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
+		3D9A67432BC6E7A50027177D /* Mensajes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
+		3D9A674E2BC6EBAC0027177D /* ViewPerfilAjeno.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPerfilAjeno.swift; sourceTree = "<group>"; };
+		3D9A67502BC6ECC10027177D /* ViewAjenoLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAjenoLibros.swift; sourceTree = "<group>"; };
+		3D9A67522BC6EDBC0027177D /* ViewAjenoHistorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAjenoHistorial.swift; sourceTree = "<group>"; };
+		3D9A67542BC6EE160027177D /* ViewAjenoReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAjenoReview.swift; sourceTree = "<group>"; };
+		3D9A67562BC6EFAC0027177D /* CeldaAjenoHistorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAjenoHistorial.swift; sourceTree = "<group>"; };
+		3D9A67582BC6EFDA0027177D /* CeldaAjenoReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAjenoReview.swift; sourceTree = "<group>"; };
+		3D9A675A2BC6EFFA0027177D /* CeldaAjenoLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaAjenoLibros.swift; sourceTree = "<group>"; };
 		3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
+		3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibroBibliotecaView.swift; sourceTree = "<group>"; };
 		3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaChat.swift; sourceTree = "<group>"; };
 		3DBC66DF2B9F7BF8001A6B90 /* BookieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookieAppApp.swift; sourceTree = "<group>"; };
 		3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DC0F3C82BC83A5900440628 /* AjustesPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesPerfil.swift; sourceTree = "<group>"; };
 		3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
 		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
-		3DE16F432BBF0B8D0073F864 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
-		3DE16F452BBF0C7E0073F864 /* Mensajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
+		3DE3C8CB2BD170FC00328F2E /* ViewLibroNoDisponible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLibroNoDisponible.swift; sourceTree = "<group>"; };
+		3DE3C8CD2BD1734200328F2E /* LibroPropioDetallesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibroPropioDetallesView.swift; sourceTree = "<group>"; };
+		3DE3C8CF2BD1777200328F2E /* ModificarLibroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModificarLibroView.swift; sourceTree = "<group>"; };
 		3DE784D32BA88FFF00686105 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		3DE784D52BA8902700686105 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesCeldaView.swift; sourceTree = "<group>"; };
@@ -137,6 +186,9 @@
 				3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */,
 				3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */,
 				3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */,
+				3DE3C8CB2BD170FC00328F2E /* ViewLibroNoDisponible.swift */,
+				3DE3C8CD2BD1734200328F2E /* LibroPropioDetallesView.swift */,
+				3DE3C8CF2BD1777200328F2E /* ModificarLibroView.swift */,
 			);
 			path = ViewLibro;
 			sourceTree = "<group>";
@@ -146,16 +198,35 @@
 			children = (
 				3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */,
 				3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */,
+				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
 			);
 			path = ViewBiblio;
+			sourceTree = "<group>";
+		};
+		3D3EC74D2BC5A8160002F796 /* VistasPerfil */ = {
+			isa = PBXGroup;
+			children = (
+				3D3EC74E2BC5A8280002F796 /* CeldaMisLibros.swift */,
+				3D3EC7502BC5A8320002F796 /* CeldaHIstorial.swift */,
+				3D3EC7522BC5A8400002F796 /* CeldaReview.swift */,
+				3D3EC7542BC5A8B80002F796 /* VistasMisLibros.swift */,
+				3D3EC7562BC5A8C50002F796 /* VistaReview.swift */,
+				3D3EC7582BC5A8D20002F796 /* VistaHistorial.swift */,
+			);
+			path = VistasPerfil;
 			sourceTree = "<group>";
 		};
 		3D75B27E2BA0CF6A00B14A09 /* Vistas */ = {
 			isa = PBXGroup;
 			children = (
+				3D9A674D2BC6EB0B0027177D /* PerfilAjeno */,
+				3D3EC74D2BC5A8160002F796 /* VistasPerfil */,
+				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
 				3D19B5CA2BA9FABF00D892F3 /* ViewSubirLibro */,
 				3D09169D2BA8D80B00C88A88 /* Chats */,
 				3DE784D72BA89E9100686105 /* CeldasBuzonView */,
+				3DF524292BA8897A00C7D10F /* ModelsApi */,
+				3DF524252BA888C000C7D10F /* Peticiones */,
 				3D27D3872BA4BD7300DDDBBA /* ViewBiblio */,
 				3D27D3862BA4BCEF00DDDBBA /* ViewLibro */,
 				3DE784D22BA88FCA00686105 /* ViewPerfil */,
@@ -166,15 +237,40 @@
 			path = Vistas;
 			sourceTree = "<group>";
 		};
-		3D9D4F9E2BBDB73F00E46EEE /* ModelUser */ = {
+		3D9A67412BC6E7A50027177D /* ModelUser */ = {
 			isa = PBXGroup;
 			children = (
-				3D9D4F9F2BBDB78800E46EEE /* AuthRequest.swift */,
-				3D45A4FC2BBEFC680074299E /* ModelUser.swift */,
-				3D45A4FE2BBEFD940074299E /* RegisterRequest.swift */,
-				3D804D882BC451CC002250F5 /* ModelToken.swift */,
+				3D9A673D2BC6E7A50027177D /* AuthRequest.swift */,
+				3D9A673E2BC6E7A50027177D /* ModelToken.swift */,
+				3D9A673F2BC6E7A50027177D /* ModelUser.swift */,
+				3D9A67402BC6E7A50027177D /* RegisterRequest.swift */,
 			);
 			path = ModelUser;
+			sourceTree = "<group>";
+		};
+		3D9A67452BC6E7A50027177D /* ModelChat */ = {
+			isa = PBXGroup;
+			children = (
+				3D9A67422BC6E7A50027177D /* Chats.swift */,
+				3D9A67432BC6E7A50027177D /* Mensajes.swift */,
+			);
+			path = ModelChat;
+			sourceTree = "<group>";
+		};
+		3D9A674D2BC6EB0B0027177D /* PerfilAjeno */ = {
+			isa = PBXGroup;
+			children = (
+				3D9A674E2BC6EBAC0027177D /* ViewPerfilAjeno.swift */,
+				3D5067C62BD01F22006DA6D5 /* ReporteView.swift */,
+				3D9A67502BC6ECC10027177D /* ViewAjenoLibros.swift */,
+				3D9A67522BC6EDBC0027177D /* ViewAjenoHistorial.swift */,
+				3D9A67542BC6EE160027177D /* ViewAjenoReview.swift */,
+				3D9A67562BC6EFAC0027177D /* CeldaAjenoHistorial.swift */,
+				3D9A67582BC6EFDA0027177D /* CeldaAjenoReview.swift */,
+				3D9A675A2BC6EFFA0027177D /* CeldaAjenoLibros.swift */,
+				3D5067C82BD01F50006DA6D5 /* OpcionesPerfilAjeno.swift */,
+			);
+			path = PerfilAjeno;
 			sourceTree = "<group>";
 		};
 		3DBC66D62B9F7BF8001A6B90 = {
@@ -196,14 +292,12 @@
 		3DBC66E12B9F7BF8001A6B90 /* BookieApp */ = {
 			isa = PBXGroup;
 			children = (
-				3DE16F402BBF0AF90073F864 /* ModelChat */,
-				3D9D4F9E2BBDB73F00E46EEE /* ModelUser */,
-				3DF524292BA8897A00C7D10F /* ModelsApi */,
-				3DED65D52BBB1CBE001BB9C2 /* ModelLibro */,
-				3DF524252BA888C000C7D10F /* Peticiones */,
+				3D9A67452BC6E7A50027177D /* ModelChat */,
+				3D9A67412BC6E7A50027177D /* ModelUser */,
 				3D75B27E2BA0CF6A00B14A09 /* Vistas */,
 				3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */,
 				3DBC66E62B9F7BF9001A6B90 /* Assets.xcassets */,
+				3D96B0E92BC455730030322C /* Info.plist */,
 				3DBC66E82B9F7BF9001A6B90 /* Preview Content */,
 			);
 			path = BookieApp;
@@ -217,20 +311,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3DE16F402BBF0AF90073F864 /* ModelChat */ = {
-			isa = PBXGroup;
-			children = (
-				3DE16F432BBF0B8D0073F864 /* Chats.swift */,
-				3DE16F452BBF0C7E0073F864 /* Mensajes.swift */,
-			);
-			path = ModelChat;
-			sourceTree = "<group>";
-		};
 		3DE784D22BA88FCA00686105 /* ViewPerfil */ = {
 			isa = PBXGroup;
 			children = (
+				3DC0F3C82BC83A5900440628 /* AjustesPerfil.swift */,
 				3DE784D52BA8902700686105 /* ReviewView.swift */,
 				3DE784D32BA88FFF00686105 /* PerfilView.swift */,
+				3D6E509F2BCD807B004843F2 /* TerminosUso.swift */,
+				3D4E24DD2BCD811F003C8497 /* LibrosFavoritos.swift */,
+				3D4E24DF2BCD8423003C8497 /* EditarPerfil.swift */,
+				3D80F1AF2BCEDB2200F5738A /* ColorListAjustes.swift */,
 			);
 			path = ViewPerfil;
 			sourceTree = "<group>";
@@ -355,38 +445,62 @@
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
+				3D9A674B2BC6E7A50027177D /* Mensajes.swift in Sources */,
+				3DE3C8CE2BD1734200328F2E /* LibroPropioDetallesView.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
+				3D9A67532BC6EDBC0027177D /* ViewAjenoHistorial.swift in Sources */,
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
+				3D4E24DE2BCD811F003C8497 /* LibrosFavoritos.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
-				3D804D892BC451CC002250F5 /* ModelToken.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
-				3D9D4FA02BBDB78800E46EEE /* AuthRequest.swift in Sources */,
-				3DE16F462BBF0C7E0073F864 /* Mensajes.swift in Sources */,
+				3D9A674A2BC6E7A50027177D /* Chats.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
+				3D4E24E02BCD8423003C8497 /* EditarPerfil.swift in Sources */,
+				3D9A67472BC6E7A50027177D /* ModelToken.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
+				3D3EC7572BC5A8C50002F796 /* VistaReview.swift in Sources */,
+				3D5067C92BD01F50006DA6D5 /* OpcionesPerfilAjeno.swift in Sources */,
+				3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */,
 				3DE784E12BA8BBE600686105 /* MainViewBuzon.swift in Sources */,
 				3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */,
+				3D3EC7532BC5A8400002F796 /* CeldaReview.swift in Sources */,
+				3DE3C8CC2BD170FC00328F2E /* ViewLibroNoDisponible.swift in Sources */,
 				3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */,
+				3D9A67462BC6E7A50027177D /* AuthRequest.swift in Sources */,
 				3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */,
 				3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */,
+				3D80F1B02BCEDB2200F5738A /* ColorListAjustes.swift in Sources */,
+				3D9A67512BC6ECC10027177D /* ViewAjenoLibros.swift in Sources */,
+				3D9A67492BC6E7A50027177D /* RegisterRequest.swift in Sources */,
 				3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */,
 				3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */,
 				3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */,
 				3DE784DD2BA8B76C00686105 /* MensajesView.swift in Sources */,
+				3D5067C72BD01F22006DA6D5 /* ReporteView.swift in Sources */,
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
+				3D3EC7592BC5A8D20002F796 /* VistaHistorial.swift in Sources */,
+				3DE3C8D02BD1777200328F2E /* ModificarLibroView.swift in Sources */,
+				3D3EC7512BC5A8320002F796 /* CeldaHIstorial.swift in Sources */,
+				3D9A67552BC6EE160027177D /* ViewAjenoReview.swift in Sources */,
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
-				3D45A4FD2BBEFC680074299E /* ModelUser.swift in Sources */,
+				3D9A67482BC6E7A50027177D /* ModelUser.swift in Sources */,
 				3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */,
 				3DED65D72BBB1CE7001BB9C2 /* ModelLibro.swift in Sources */,
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
+				3D9A67592BC6EFDA0027177D /* CeldaAjenoReview.swift in Sources */,
+				3D9A674F2BC6EBAC0027177D /* ViewPerfilAjeno.swift in Sources */,
+				3D3EC7552BC5A8B80002F796 /* VistasMisLibros.swift in Sources */,
 				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
-				3D45A4FF2BBEFD940074299E /* RegisterRequest.swift in Sources */,
+				3D9A67572BC6EFAC0027177D /* CeldaAjenoHistorial.swift in Sources */,
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
-				3DE16F442BBF0B8D0073F864 /* Chats.swift in Sources */,
+				3DC0F3C92BC83A5900440628 /* AjustesPerfil.swift in Sources */,
+				3D6E50A02BCD807B004843F2 /* TerminosUso.swift in Sources */,
+				3D3EC74F2BC5A8280002F796 /* CeldaMisLibros.swift in Sources */,
+				3D9A675B2BC6EFFA0027177D /* CeldaAjenoLibros.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,11 +636,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookieApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookieApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,11 +665,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookieApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookieApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

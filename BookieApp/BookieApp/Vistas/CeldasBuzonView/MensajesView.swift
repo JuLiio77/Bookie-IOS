@@ -15,9 +15,7 @@ struct MensajesView: View {
         ScrollView {
             VStack {
                 ForEach(mensajes, id: \.self) { mensaje in
-                    NavigationLink(destination: ViewChats(texto: mensaje)){
-                        MensajesCeldaView()
-                    }
+                    MensajesCeldaView()
                 }
             }
         }

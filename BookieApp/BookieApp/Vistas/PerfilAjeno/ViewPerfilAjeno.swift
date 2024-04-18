@@ -1,14 +1,14 @@
 //
-//  PerfilView.swift
+//  ViewPerfilAjeno.swift
 //  BookieApp
 //
-//  Created by dam2 on 18/3/24.
+//  Created by dam2 on 10/4/24.
 //
 
 import SwiftUI
 
-struct PerfilView: View {
-
+struct ViewPerfilAjeno: View {
+    
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
 
@@ -30,14 +30,12 @@ struct PerfilView: View {
             }
             
             .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
-                AjustesPerfil(isPresented: $isPresented)
+                OpcionesPerfilAjeno(isPresented: $isPresented)
                     .presentationDetents([.large])
             })
-        
             
             .padding(.leading, 320)
             .font(.headline)
-            
             
             HStack {
                 
@@ -55,11 +53,6 @@ struct PerfilView: View {
                 }
             }
             .padding(.trailing, 70)
-            .padding(.top, -15)
-            
-            
-              
-            
             
             HStack {
                 
@@ -111,11 +104,11 @@ struct PerfilView: View {
                 Spacer()
                 
                 if seleccionado == 0 {
-                    VistasMisLibros()
+                    ViewAjenoLibros()
                 } else if seleccionado == 1 {
-                    VistaReview()
+                   ViewAjenoReview()
                 } else if seleccionado == 2 {
-                  VistaHistorial()
+                  ViewAjenoHistorial()
                     
                 }
                 
@@ -127,17 +120,16 @@ struct PerfilView: View {
             
             
             
-                .navigationTitle("Julio Vera")
+                .navigationTitle("Iñigo")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
-                    
-                }
+                
         }
     }
 
+}
 
 
 #Preview {
-    PerfilView()
-        .environmentObject(ColorListAjustes())
+    ViewPerfilAjeno()
+        
 }

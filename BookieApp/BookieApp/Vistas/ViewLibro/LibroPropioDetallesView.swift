@@ -1,14 +1,15 @@
 //
-//  DetalleLibro.swift
+//  LibroPropioDetallesView.swift
 //  BookieApp
 //
-//  Created by dam2 on 12/3/24.
+//  Created by dam2 on 18/4/24.
 //
 
 import SwiftUI
 
-struct DetalleLibro: View {
-    
+struct LibroPropioDetallesView: View {
+    @State var eliminarLibro = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
         GridItem(.adaptive(minimum: 60, maximum: 100), spacing: 60),
@@ -19,11 +20,11 @@ struct DetalleLibro: View {
         
         NavigationStack{
             
-            ScrollView(.vertical){
+            ScrollView(){
                 
                 VStack{
-                    NavigationLink(destination: ViewPerfilAjeno()) {
-                        Label( "Iñigo", systemImage: "person.circle.fill")
+                    NavigationLink(destination: PerfilView()) {
+                        Label( "Usuario ", systemImage: "person.circle.fill")
                              .padding(.leading, 250)
                              .padding([.top, .bottom], 15)
                              .foregroundColor(.black)
@@ -34,14 +35,7 @@ struct DetalleLibro: View {
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
-                    
-                    HStack{
-                        Image(systemName: "heart")
-                            .foregroundStyle(.brown)
-                        Text("Disponible")
-                            .padding(.leading, 50)
-                            .foregroundStyle(.cyan)
-                    }
+                  
                     
                     ZStack{
                         
@@ -129,7 +123,7 @@ struct DetalleLibro: View {
                     
                     HStack{
                         
-                        NavigationLink("Intercambio", destination: MensajesView())
+                        NavigationLink("Modificar", destination: ModificarLibroView())
                             .padding(15)
                             .padding(.horizontal, 20)
                             .background(.brown)
@@ -137,17 +131,32 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
+                            .navigationBarBackButtonHidden(true)
+                    
                         
-                        NavigationLink("Escribir Reseña", destination: ReviewView())
-                            .padding(15)
-                            .background(Color.button)
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                            .padding([.leading, .trailing], 10)
-                            .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
-                    }
+                         Button("Eliminar") {
+                             eliminarLibro = true
+                         }
+                         .alert(isPresented: $eliminarLibro) {
+                             Alert(
+                                 title: Text("Eliminar Libro"),
+                                 message: Text("¿Estas seguro de que quieres eliminar este libro?"),
+                                 primaryButton: .default(Text("Sí")) {
+                                     // Aquí puedes poner el código para guardar los cambios
+                                     self.presentationMode.wrappedValue.dismiss()
+                                 },
+                                 secondaryButton: .cancel(Text("No"))
+                             )
+                         }
+                         .padding(15)
+                         .padding(.horizontal, 20)
+                         .background(.button)
+                         .foregroundColor(.white)
+                         .cornerRadius(30)
+                         .padding([.leading, .trailing], 10)
+                         .padding(.top, 20)
+                         .navigationBarBackButtonHidden(true)
+                     }
                     
                     
                     Spacer()
@@ -159,7 +168,6 @@ struct DetalleLibro: View {
         //.tint(.brown)
     }
 }
-
 #Preview {
-    DetalleLibro()
+    LibroPropioDetallesView()
 }

@@ -8,31 +8,29 @@
 import SwiftUI
 
 struct MainViewBuzon: View {
-    
     @State private var seleccionado = 0
 
     var body: some View {
         
-        NavigationView{
-            VStack {
-                Picker("", selection: $seleccionado) {
-                    Text("Mensajes").tag(0)
-                    Text("Notificaciones").tag(1)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                Spacer()
-                
-                if seleccionado == 0 {
-                    MensajesView()
-                } else if seleccionado == 1 {
-                    NotificacionesView()
-                }
-                
-                Spacer()
-            }
-        }
+        VStack {
+           Picker("", selection: $seleccionado) {
+               Text("Mensajes").tag(0)
+               Text("Notificaciones").tag(1)
+           }
+           .pickerStyle(SegmentedPickerStyle())
+           .padding()
+
+           Spacer()
+
+           if seleccionado == 0 {
+               MensajesView()
+           } else if seleccionado == 1 {
+               NotificacionesView()
+           }
+
+           Spacer()
+       }
+        
     }
 }
 

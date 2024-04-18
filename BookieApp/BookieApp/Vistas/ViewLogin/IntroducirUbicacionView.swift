@@ -8,64 +8,82 @@
 import SwiftUI
 
 struct IntroducirUbicacionView: View {
-    
-    @EnvironmentObject var userData: FuncionLogin
-    var peticiones = Peticiones()
-    
-@State var nombre: String = ""
-@State var repetirContrasenia: String = ""
-@State var correo: String = ""
-@State var contrasenia: String = ""
+        
+    @State var nombre: String = ""
+    @State var repetirContrasenia: String = ""
+    @State var correo: String = ""
+    @State var contrasenia: String = ""
+        
+    @State private var selecciProvincia = 0
+        
+    let provincias = ["Álava", "Albacete", "Alicante", "Almería", "Asturias", "Ávila", "Badajoz", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "Cuenca", "Gerona", "Granada", "Guadalajara", "Guipúzcoa", "Huelva", "Huesca", "Islas Baleares", "Jaén", "La Coruña", "La Rioja", "Las Palmas", "León", "Lérida", "Lugo", "Madrid", "Málaga", "Melilla", "Murcia", "Navarra", "Orense", "Palencia", "Pontevedra", "Salamanca", "Santa Cruz de Tenerife", "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel", "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora", "Zaragoza"]
 
-var body: some View {
-    VStack{
-        Text("Introducir ubicación")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .bold()
+
+    var body: some View {
+        VStack{
+            Text("Introducir ubicación")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
+                .padding()
+            
+            
+            /*Picker("Provincia", selection: $selecciProvincia) {
+                ForEach(0 ..< provincias.count) { index in
+                    Text(self.provincias[index]).tag(index)
+                }
+            }
+            .padding()*/
+            Label("Provincia", systemImage: "")
+                .labelStyle(.titleOnly)
+                .padding(.top, 130)
+                .padding(.trailing, 280)
+            TextField("Provincia", text: $nombre)
+                .bold()
+                .padding()
+                .background(Color.color)
+                .cornerRadius(30)
+            
+            Label("Ciudad", systemImage: "")
+                .labelStyle(.titleOnly)
+                .padding(.top, 30)
+                .padding(.trailing, 280)
+            TextField("Ciudad", text: $nombre)
+                .bold()
+                .padding()
+                .background(Color.color)
+                .cornerRadius(30)
+            
+            Label("Codigo Postal", systemImage: "")
+                .labelStyle(.titleOnly)
+                .padding(.top, 30)
+                .padding(.trailing, 245)
+            TextField("Código postal", text: $nombre)
+                .bold()
+                .padding()
+                .background(Color.color)
+                .cornerRadius(30)
+            
+            
+           Button("Siguiente"){
+               
+           }
+           .padding(20)
+           .padding(.horizontal, 30)
+           .background(Color.button)
+           .foregroundColor(.black)
+           .cornerRadius(20)
+           .padding([.leading, .trailing], 10)
+           .padding(.top, 75)
+               
+     
+            Spacer()            
+            
+            }
             .padding()
-        
-        
-        TextField("Provincia", text: $userData.provincia)
-            .bold()
-            .padding()
-            .background(Color.color)
-            .cornerRadius(30)
-            .padding(.top,150)
-        
-        TextField("Ciudad", text: $userData.ciudad)
-            .bold()
-            .padding()
-            .background(Color.color)
-            .cornerRadius(30)
-            .padding(.top,40)
-        
-        TextField("Código postal", text: $userData.codigoPostal)
-            .bold()
-            .padding()
-            .background(Color.color)
-            .cornerRadius(30)
-            .padding(.top,40)
-        
-        
-       Button("Siguiente"){
-           userData.register()
-       }
-       .padding(20)
-       .padding(.horizontal, 30)
-       .background(Color.button)
-       .foregroundColor(.black)
-       .cornerRadius(20)
-       .padding([.leading, .trailing], 10)
-       .padding(.top, 75)
-           
-        Spacer()
-        
         }
-        .padding()
+
     }
-}
 
 #Preview {
     IntroducirUbicacionView()
-        .environmentObject(FuncionLogin())
 }

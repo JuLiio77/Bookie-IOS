@@ -32,7 +32,7 @@ class BookModel: ObservableObject {
             } receiveValue: { [weak self] books in
                 self?.libros = books
                 
-                if let book = books.first, let author = book.volumeInfo.authors.first, let image = book.volumeInfo.imageLinks?.thumbnail {
+                if let book = books.first, let author = book.volumeInfo.authors.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
                     self?.nombreLibro = book.volumeInfo.title
                     self?.nombreAutor = author
                     self?.imagenLibro = image
