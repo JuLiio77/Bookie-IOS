@@ -48,14 +48,15 @@ struct DetalleLibroBibliotecaView: View {
                     }
                     
                     HStack{
+                        
                         Button(action: {
                             
                             bookmodelFav.isFavorite.toggle()
                             
+                            /*librosFavoritos.actualizarFav(book: book, isFavorite: bookmodelFav.isFavorite)*/
+                            
                             if bookmodelFav.isFavorite {
-                                //añadimos el libro a la pantalla favoritos
                                 librosFavoritos.anadirFav(book: book)
-                                
                             } else {
                                 librosFavoritos.eliminarFav(book: book)
                             }

@@ -45,9 +45,7 @@ struct BibliotecaView: View {
         }
         
         .searchable(text: $search)
-     
     }
-    
 }
 
 #Preview {

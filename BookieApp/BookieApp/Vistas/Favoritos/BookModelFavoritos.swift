@@ -26,13 +26,13 @@ class BookModelFavoritos: ObservableObject, Identifiable {
     }
 }
 
+//extension para guardar favoritos como persistente
 extension BookModelFavoritos {
     
-    //guardar favoritos como persistente
     var isFav: Bool {
         
         get {
-//            UserDefaults.standard.bool(forKey: id)
+            //UserDefaults.standard.bool(forKey: id)
             isFavorite
         }
         

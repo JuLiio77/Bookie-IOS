@@ -22,10 +22,6 @@ struct ListaLibrosFavoritos: View {
             
             Section {
                 
-                //Text("Favoritos")
-                    //.padding(.trailing, 280)
-                    //.padding([.top, .bottom], 5)
-                
                 ScrollView(.vertical) {
                     
                     LazyVGrid(columns: columnas) {
