@@ -18,11 +18,11 @@ struct ReporteView: View {
             ScrollView{
                 VStack {
                     
-                    Label("Provincia", systemImage: "")
+                    Label("Motivo", systemImage: "")
                         .labelStyle(.titleOnly)
                         .padding(.top, 20)
                         .padding(.trailing, 280)
-                    TextField("Provincia", text: $reporte)
+                    TextField("Motivo", text: $reporte)
                         .bold()
                         .padding()
                         .background(Color.color)
