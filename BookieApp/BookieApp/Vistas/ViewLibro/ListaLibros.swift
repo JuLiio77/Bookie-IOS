@@ -34,6 +34,7 @@ struct ListaLibros: View {
                         NavigationLink(destination: DetalleLibro()){
                             VistaCeldaLibro()
                         }
+                        
                         NavigationLink(destination: DetalleLibro()){
                             VistaCeldaLibro()
                         }

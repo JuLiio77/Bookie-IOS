@@ -50,7 +50,7 @@ class Peticiones{
     
     }
     
-    func PostRegister(name: String,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int, completion: @escaping (Result<RegisterRequest, Error>) -> Void ){
+    func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
         
         let urlString = "http://localhost:8080/api/auth/register"
         
@@ -64,7 +64,7 @@ class Peticiones{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: "", password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
+        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
         guard let httpBody = try? JSONEncoder().encode(firstUser) else {
             print("Invalid httpBody")
             return
@@ -80,16 +80,22 @@ class Peticiones{
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
                     
-                    
+                    return
                     //print(token.token)
                     //print(response)
                 }catch(let error){
                     print(error.localizedDescription)
                 }
             }
+            
+            
         }.resume()
- 
+        
+    
     }
+    
+
+  
     
     func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
 
@@ -123,11 +129,11 @@ class Peticiones{
                     
                     //UserDefaults.standard.setValue(token.token, forKey: "token")
                     UserDefaults.standard.setValue(token.token, forKey: "token")
-                    print("token peticion:\(token.token)")
+                    //print("token peticion:\(token.token)")
                     
                     
                 }catch(let error){
-                    print(error.localizedDescription)
+                    print("error en el login")
                 }
             }
         }.resume()

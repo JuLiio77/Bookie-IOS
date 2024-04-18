@@ -33,6 +33,7 @@ struct RegistroView: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding(.top,90)
+                    .autocapitalization(.none)
                 
                 TextField("Correo electronico", text: $userData.email)
                     .bold()
@@ -40,6 +41,7 @@ struct RegistroView: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding(.top,40)
+                    .autocapitalization(.none)
                 
                 
                 ZStack(alignment: .trailingFirstTextBaseline) {
@@ -49,6 +51,7 @@ struct RegistroView: View {
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
+                            .autocapitalization(.none)
                         
                     } else {
                         SecureField("Contraseña", text: $userData.password)
@@ -56,6 +59,7 @@ struct RegistroView: View {
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
+                            .autocapitalization(.none)
                     }
                     
                     Button(action: {
@@ -76,6 +80,7 @@ struct RegistroView: View {
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
+                            .autocapitalization(.none)
                         
                     } else {
                         SecureField("Repetir contraseña", text: $userData.repassword)
@@ -83,6 +88,7 @@ struct RegistroView: View {
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
+                            .autocapitalization(.none)
                     }
                     
                     Button(action: {

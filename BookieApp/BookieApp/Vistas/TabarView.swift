@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabarView: View {
     
+    
     var body: some View {
         
         TabView {
@@ -36,7 +37,9 @@ struct TabarView: View {
                 }
         }
         .accentColor(Color.button)
+        .navigationBarBackButtonHidden(true)
     }
+
 }
 
 #Preview {

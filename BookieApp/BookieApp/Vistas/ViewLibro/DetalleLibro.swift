@@ -135,7 +135,7 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(false)
                         
                         NavigationLink("Escribir Reseña", destination: ReviewView())
                             .padding(15)
@@ -144,7 +144,7 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            .navigationBarBackButtonHidden(true)
+                            .navigationBarBackButtonHidden(false)
                     }
                     
                     

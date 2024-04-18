@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ViewRecuContra: View {
 
-    @State var nombre: String = ""
+    @State var email: String = ""
     @State var contra: String = ""
     @State var reContra: String = ""
     @State var mostarContrasenia = false
@@ -24,12 +24,13 @@ struct ViewRecuContra: View {
             .padding(.top, 90)
             .padding(.trailing, 280)
         
-        TextField("email", text: $nombre)
+        TextField("email", text: $email)
             .bold()
             .padding()
             .background(Color.color)
             .cornerRadius(30)
             .padding([.leading, .trailing], 20)
+            .autocapitalization(.none)
         
         
         
@@ -46,6 +47,7 @@ struct ViewRecuContra: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                    .autocapitalization(.none)
              
             } else {
                 SecureField("contraseña", text: $contra)
@@ -53,6 +55,7 @@ struct ViewRecuContra: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                    .autocapitalization(.none)
             }
 
             Button(action: {
@@ -79,6 +82,7 @@ struct ViewRecuContra: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                    .autocapitalization(.none)
              
             } else {
                 SecureField("Contraseña", text: $contra)
@@ -86,6 +90,7 @@ struct ViewRecuContra: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                    .autocapitalization(.none)
             }
 
             Button(action: {

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InicioView: View {
-
+    
+    @EnvironmentObject var userData: FuncionLogin
     @State var nombre: String = ""
     var category: [String] = ["Romance","Fantasía","Thriller","Aventuras","Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Misterio", "Clásico", "Ciencia Ficción", "Poesía", "Psicología", "Biográfico", "Aficiones", "Extranjeros", "Educativo", "Ciencia", "Historia"]
         
@@ -16,10 +17,16 @@ struct InicioView: View {
             
                 NavigationStack{
                     
-                    Text("¡Bienvenido \(nombre)!")
-                        .bold()
-                        .font(.title)
-                        .padding(.trailing, 175)
+                    HStack{
+                        Text("¡Bienvenido")
+                            .bold()
+                            .font(.title)
+                            .padding(.trailing, 50)
+                        
+                        Text("\(userData.username)")
+                            .font(.title)
+                            .padding(.trailing, 100)
+                    }
                     Text("Descubre a tu bookie favorita")
                         .padding(.trailing, 120)
                     
@@ -375,4 +382,5 @@ struct InicioView: View {
 
 #Preview {
     InicioView()
+        .environmentObject(FuncionLogin())
 }

@@ -10,8 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var userData: FuncionLogin
-    var peticiones = Peticiones()
-    //@State var user = AuthRequest(username: "Pepe123", password: "12345")
+    //var peticiones = Peticiones()
     
     @State var toggle: Bool = false
     
@@ -21,6 +20,22 @@ struct ContentView: View {
         
         NavigationStack{
             
+            if userData.tokeen.isEmpty{
+                
+                loginScreen
+                
+            }else{
+                TabarView()
+            }
+        }
+        .onAppear(perform: {
+            if let savedToken = UserDefaults.standard.string(forKey: "token"){
+                userData.tokeen = savedToken
+            }
+        })
+        
+    }
+    private var loginScreen: some View{
             VStack {
                 
                 Text("Bienvenido")
@@ -29,13 +44,14 @@ struct ContentView: View {
                     .padding()
                 
                 
-                TextField("Correo electronico", text: $userData.email)
+                TextField("Correo electronico", text: $userData.username)
                     .bold()
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
-                    .padding(.top,130)
-                    .textContentType(.emailAddress)
+                    .padding(.top,90)
+                    .textContentType(.name)
+                    .autocapitalization(.none)
                 
                 ZStack(alignment: .trailingFirstTextBaseline) {
                     
@@ -45,6 +61,7 @@ struct ContentView: View {
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
+                            .autocapitalization(.none)
                         
                     } else {
                         SecureField("Contraseña", text: $userData.password)
@@ -52,6 +69,7 @@ struct ContentView: View {
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
+                            .autocapitalization(.none)
                     }
                     
                     Button(action: {
@@ -80,36 +98,13 @@ struct ContentView: View {
                 NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
                     .padding(.top, 20)
                     .foregroundColor(.black)
-                    .navigationBarBackButtonHidden(true)
 
-//                NavigationLink("InicioSesion"){
-//                        TabarView()
-//                }
-//                .padding(20)
-//                .padding(.horizontal, 30)
-//                .background(Color.button)
-//                .foregroundColor(.black)
-//                .cornerRadius(20)
-//                .padding([.leading, .trailing], 10)
-//                .padding(.top, 75)
-//                .navigationBarBackButtonHidden(true)
-            
-            
                 NavigationLink(destination: TabarView()){
                     
-                    Button("Iniciar Sesion"){
+                    Button("iniciar sesion"){
                         
-                        if userData.tokeen.isEmpty{
-                            
-                           print("login incorrecto")
-                        }else{
-                            userData.check(username: userData.email, pasword: userData.password)
-                            print("login correcto")
-                        }
-                        //userData.check(username: userData.email, pasword: userData.password){
-                            
-                        //NavigationLink("", destination: TabarView())
-                        // no es el email si no que es el username que es el que uno modific
+                        userData.check(username: userData.username, password: userData.password)
+                        
                     }
                     .padding(20)
                     .padding(.horizontal, 30)
@@ -127,10 +122,11 @@ struct ContentView: View {
             }
             .padding()
             
-        }
-        .tint(.brown)
     }
 }
+        
+
+
 
 
 
