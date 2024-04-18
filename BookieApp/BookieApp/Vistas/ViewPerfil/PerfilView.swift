@@ -111,7 +111,7 @@ struct PerfilView: View {
                 Spacer()
                 
                 if seleccionado == 0 {
-                    VistaHistorial()
+                    VistasMisLibros()
                 } else if seleccionado == 1 {
                     VistaReview()
                 } else if seleccionado == 2 {
@@ -129,15 +129,7 @@ struct PerfilView: View {
             
                 .navigationTitle("Julio Vera")
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                        
-                        
-                        
-                     
-                       
-                    }
-                    .rotationEffect(.degrees(90))
-                    .foregroundColor(Color.black)
+                .navigationBarBackButtonHidden(true)
                     
                 }
         }
