@@ -32,7 +32,7 @@ struct InicioView: View {
                     
                     ScrollView  {
                         
-                        NavigationLink(destination: ListaLibros()){
+                        NavigationLink(destination: ListaLibros(categoria: "romance")){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -51,7 +51,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -65,7 +65,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -83,7 +83,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -97,7 +97,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -115,7 +115,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+                        NavigationLink(destination: ListaLibros(categoria: "romance")){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -133,7 +133,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -147,7 +147,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -165,7 +165,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -179,7 +179,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -197,7 +197,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+                        NavigationLink(destination: ListaLibros(categoria: "romance")){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -215,7 +215,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -229,7 +229,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -247,7 +247,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -261,7 +261,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -279,7 +279,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+                        NavigationLink(destination: ListaLibros(categoria: "romance")){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -297,7 +297,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -311,7 +311,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -329,7 +329,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -343,7 +343,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros()){
+                            NavigationLink(destination: ListaLibros(categoria: "romance")){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -361,7 +361,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros()){
+                        NavigationLink(destination: ListaLibros(categoria: "romance")){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
