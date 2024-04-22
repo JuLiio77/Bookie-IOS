@@ -33,27 +33,35 @@ struct IntroducirUbicacionView: View {
                 }
             }
             .padding()*/
-            
+            Label("Provincia", systemImage: "")
+                .labelStyle(.titleOnly)
+                .padding(.top, 130)
+                .padding(.trailing, 280)
             TextField("Provincia", text: $nombre)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
-                .padding(.top,150)
             
+            Label("Ciudad", systemImage: "")
+                .labelStyle(.titleOnly)
+                .padding(.top, 30)
+                .padding(.trailing, 280)
             TextField("Ciudad", text: $nombre)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
-                .padding(.top,40)
             
+            Label("Codigo Postal", systemImage: "")
+                .labelStyle(.titleOnly)
+                .padding(.top, 30)
+                .padding(.trailing, 245)
             TextField("Código postal", text: $nombre)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
-                .padding(.top,40)
             
             
            Button("Siguiente"){

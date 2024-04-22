@@ -1,18 +1,13 @@
 //
-//  DetalleLibro.swift
+//  ViewLibroNoDisponibel.swift
 //  BookieApp
 //
-//  Created by dam2 on 12/3/24.
+//  Created by dam2 on 18/4/24.
 //
 
 import SwiftUI
 
-struct DetalleLibro: View {
-    
-    @EnvironmentObject var librosFavoritos: LibrosFavoritos
-    
-    var book: Book
-    var bookmodelFav: BookModelFavoritos
+struct ViewLibroNoDisponible: View {
     
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
@@ -27,43 +22,35 @@ struct DetalleLibro: View {
             ScrollView(.vertical){
                 
                 VStack{
-                    NavigationLink(destination: ViewPerfilAjeno()) {
-                        Label( "Iñigo", systemImage: "person.circle.fill")
-                             .padding(.leading, 250)
-                             .padding([.top, .bottom], 15)
-                             .foregroundColor(.black)
-                     }
+//                    NavigationLink(destination: ViewPerfilAjeno()) {
+//                        Label( "Iñigo", systemImage: "person.circle.fill")
+//                             .padding(.leading, 250)
+//                             .padding([.top, .bottom], 15)
+//                             .foregroundColor(.black)
+//                     }
                     
                     Image(systemName: "globe")
                         .frame(width: 166, height: 196)
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
+                        .padding(.top, 20)
                     
-                    HStack{
-                        Button(action: {
-                            
-                            bookmodelFav.isFavorite.toggle()
-                            
-                            if bookmodelFav.isFavorite {
-                                //añadimos el libro a la pantalla favoritos
-                                librosFavoritos.anadirFav(book: book)
-                                
-                            } else {
-                                librosFavoritos.eliminarFav(book: book)
-                            }
-                        })
-                        {
-                            Image(systemName: bookmodelFav.isFavorite ? "heart.fill" : "heart")
-                                .foregroundColor(bookmodelFav.isFavorite ? .red : .black)
-                        }
-                      
-                            .foregroundStyle(.brown)
-                        Text("Disponible")
-                            .padding(.leading, 50)
+                    VStack{
+               
+                        Text("¿Has recibido tu libro de vuelta?")
                             .foregroundStyle(.cyan)
+                        
+                        NavigationLink("Finalizar Intercambio", destination: MensajesView())
+                           .padding(15)
+                           .padding(.horizontal, 20)
+                           .background(.button)
+                           .foregroundColor(.white)
+                           .cornerRadius(30)
+                           .padding([.leading, .trailing], 10)
+                           .padding(.top, 10)
+                           .navigationBarBackButtonHidden(true)
                     }
-                    .padding(.top, 15)
                     
                     ZStack{
                         
@@ -147,29 +134,29 @@ struct DetalleLibro: View {
                             .frame(width: 50)
                         
                     }
-                    
-                    
-                    HStack{
-                        
-                        NavigationLink("Intercambio", destination: MensajesView())
-                            .padding(15)
-                            .padding(.horizontal, 20)
-                            .background(.brown)
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                            .padding([.leading, .trailing], 10)
-                            .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
-                        
-                        NavigationLink("Escribir Reseña", destination: ReviewView())
-                            .padding(15)
-                            .background(Color.button)
-                            .foregroundColor(.white)
-                            .cornerRadius(30)
-                            .padding([.leading, .trailing], 10)
-                            .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
-                    }
+//                    
+//                    
+//                    HStack{
+//                        
+//                        NavigationLink("Intercambio", destination: MensajesView())
+//                            .padding(15)
+//                            .padding(.horizontal, 20)
+//                            .background(.brown)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(30)
+//                            .padding([.leading, .trailing], 10)
+//                            .padding(.top, 20)
+//                            .navigationBarBackButtonHidden(true)
+//                        
+//                        NavigationLink("Escribir Reseña", destination: ReviewView())
+//                            .padding(15)
+//                            .background(Color.button)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(30)
+//                            .padding([.leading, .trailing], 10)
+//                            .padding(.top, 20)
+//                            .navigationBarBackButtonHidden(true)
+//                    }
                     
                     
                     Spacer()
@@ -183,6 +170,5 @@ struct DetalleLibro: View {
 }
 
 #Preview {
-    DetalleLibro(book: Book(id: "7X6SRDD4_9sC", volumeInfo: VolumeInfo(title: "La invasión de Estados Unidos a Panamá", authors: ["Ricaurte Soler"], publisher: "Siglo XXI", description: "El 20 de diciembre de 1989 Panamá fue duramente bombardeada por las fuerzas aéreas estadunidenses e invadida por 24 000 infantes de Marina. En pocos días murieron cerca de 4 000 ciudadanos panameños entre civiles y militares. El presidente de la República fue secuestrado y se impuso un nuevo gobierno. En este libro, un destacado escritor panameño interpreta este acontecimiento.", industryIdentifiers: [], categories: ["History"], pageCount: 196, language: "es", imageLinks: ImageLinks(smallThumbnail: "http://books.google.com/books/content?id=7X6SRDD4_9sC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: "http://books.google.com/books/content?id=7X6SRDD4_9sC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"))), bookmodelFav: BookModelFavoritos(id: "", isFavorite: false))
-        .environmentObject(LibrosFavoritos())
+    ViewLibroNoDisponible()
 }
