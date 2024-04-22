@@ -25,7 +25,7 @@ class LibrosFavoritos: ObservableObject {
         }
     }
     
-    //Método para añadir libro a favorito (recibe id)
+    //Método para añadir libro a favorito
     func anadirFav(book: Book) {
         if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
             librosFav[index].isFav = true
@@ -39,7 +39,7 @@ class LibrosFavoritos: ObservableObject {
     }
 
     
-    //Método para eliminar libro de favoritos (recibe id)
+    //Método para eliminar libro de favoritos
     func eliminarFav(book: Book) {
         if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
             librosFav[index].isFav = false
@@ -48,13 +48,13 @@ class LibrosFavoritos: ObservableObject {
         UserDefaults.standard.removeObject(forKey: book.id)
     }
     
-    //Método para buscar un libro en favoritos (recibe id, devuelve bool)
+    //Método para buscar un libro en favoritos
     func buscarFav(id: String) -> Bool {
         return librosFav.contains(where: { $0.id == id && $0.isFav })
     }
     
     //funcion para actualizar el libro favorito
-    func actualizarFav(book: Book, isFavorite: Bool) {
+    /*func actualizarFav(book: Book, isFavorite: Bool) {
         if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
             librosFav[index].isFav = isFavorite
         } else if isFavorite {
@@ -62,9 +62,8 @@ class LibrosFavoritos: ObservableObject {
             librosFav.append(bookmodelFav)
         }
         UserDefaults.standard.set(librosFav.map { $0.id }, forKey: "librosFav")
-    }
+    }*/
     
-    //funcion nueva
     func bookModelFavoritos(for book: Book) -> BookModelFavoritos {
         return librosFav.first(where: { $0.book?.id == book.id }) ?? BookModelFavoritos(id: book.id, book: book)
     }

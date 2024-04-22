@@ -16,6 +16,7 @@ struct MensajesView: View {
             VStack {
                 ForEach(mensajes, id: \.self) { mensaje in
                     MensajesCeldaView()
+                        .padding(.bottom, 8)
                 }
             }
         }
