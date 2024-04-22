@@ -9,6 +9,9 @@ import Foundation
 
 class Peticiones{
     
+    
+    static let shared = Peticiones()
+
     // funcion para descargar los datos
     func getDatosApi(apiResponse: @escaping(Book)-> ()){
         
@@ -47,37 +50,97 @@ class Peticiones{
     
     }
     
-    func postRegistrer(){
+    func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
         
-        let Url = String(format: "http://localhost:8080/api/auth/login")
-        guard let serviceUrl = URL(string: Url) else { return }
-        var request = URLRequest(url: serviceUrl)
+        let urlString = "http://localhost:8080/api/auth/register"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+        
+        
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("Application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-
-        let bodyData = "username=Pepe123&password=12345"
-        request.httpBody = bodyData.data(using: String.Encoding.utf8);
-
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            print("Invalid httpBody")
+            return
+        }
+        
+        request.httpBody = httpBody
+   
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            
             if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let token = try decoder.decode(ModelToken.self, from: data)
+                    
+                    return
+                    //print(token.token)
+                    //print(response)
+                }catch(let error){
+                    print(error.localizedDescription)
+                }
+            }
+            
+            
+        }.resume()
+        
+    }
+    
+
+  
+    
+    func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
+
+        let urlString = "http://localhost:8080/api/auth/login"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let firstUser = AuthRequest(username: username, password: password)
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            print("Invalid httpBody")
+            return
+        }
+        //print(firstUser)
+        request.httpBody = httpBody
+   
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let token = try decoder.decode(ModelToken.self, from: data)
+                    
+                    //UserDefaults.standard.setValue(token.token, forKey: "token")
+                    UserDefaults.standard.setValue(token.token, forKey: "token")
+                    //print("token peticion:\(token.token)")
+                    
+                    
+                }catch(let error){
+                    print("error en el login")
                 }
             }
         }.resume()
-
+        
+        
     }
     
-    func getToken(){
-        
-        
-        
-    }
+       
+    
 }
+
