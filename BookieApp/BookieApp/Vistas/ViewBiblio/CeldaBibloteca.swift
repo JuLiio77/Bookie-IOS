@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CeldaBibloteca: View {
-    
-    //@ObservedObject var books: BookModel
-    
+        
+    @EnvironmentObject var librosFavoritos: LibrosFavoritos
     let book: Book
     
     var body: some View {
@@ -41,7 +40,7 @@ struct CeldaBibloteca: View {
             }
                 
                 
-                VStack(alignment: .leading){
+                VStack(alignment: .leading) {
                     
                     VStack {
                         
@@ -65,8 +64,11 @@ struct CeldaBibloteca: View {
                     
                     
                     VStack {
-                        Button("Ver mas"){
-                            
+                        /*NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: BookModelFavoritos(id: book.id))) {
+                            Text("Ver más")*/
+                        
+                        NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: librosFavoritos.bookModelFavoritos(for: book))) {
+                            Text("Ver más")
                         }
                         .frame(width: 130, height: 25)
                         .background(Color.button)
@@ -91,4 +93,5 @@ struct CeldaBibloteca: View {
 
 #Preview {
     CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, language: "", imageLinks: ImageLinks(smallThumbnail: "http://books.google.com/books/content?id=W5jnCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: ""))))
+        .environmentObject(LibrosFavoritos())
 }

@@ -34,6 +34,10 @@ struct TabarView: View {
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
                 }
+            ListaLibrosFavoritos()
+                .tabItem {
+                    Label("Favoritos", systemImage: "person.fill")
+                }
         }
         .accentColor(Color.button)
     }
@@ -41,6 +45,5 @@ struct TabarView: View {
 
 #Preview {
     TabarView()
-        .environmentObject(ColorListAjustes())
-
+        .environmentObject(LibrosFavoritos())
 }

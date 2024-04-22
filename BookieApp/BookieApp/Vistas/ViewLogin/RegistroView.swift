@@ -25,31 +25,24 @@ struct RegistroView: View {
                 .bold()
                 .padding()
             
-            Label("Nombre", systemImage: "")
-                .labelStyle(.titleOnly)
-                .padding(.top, 90)
-                .padding(.trailing, 280)
+            
             TextField("Nombre", text: $userData.name)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
-
+                .padding(.top,90)
             
-            Label("Email", systemImage: "")
-                .labelStyle(.titleOnly)
-                .padding(.top, 30)
-                .padding(.trailing, 280)
             TextField("Correo electronico", text: $userData.email)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
+                .padding(.top,40)
             
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia {
-                    
                     TextField("Contraseña", text: $userData.password)
                         .padding()
                         .background(Color.color)
@@ -57,10 +50,6 @@ struct RegistroView: View {
                         .padding(.top, 40)
                     
                 } else {
-                    Label("Email", systemImage: "")
-                        .labelStyle(.titleOnly)
-                        .padding(.top, 30)
-                        .padding(.trailing, 280)
                     SecureField("Contraseña", text: $userData.password)
                         .padding()
                         .background(Color.color)
@@ -80,9 +69,6 @@ struct RegistroView: View {
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia1 {
-                    Label("Email", systemImage: "")
-                        .labelStyle(.titleOnly)
-                        .padding(.top, 30)
                     TextField("Contraseña", text: $userData.repassword)
                         .padding()
                         .background(Color.color)
