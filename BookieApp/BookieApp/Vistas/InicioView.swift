@@ -10,20 +10,26 @@ import SwiftUI
 struct InicioView: View {
 
     @State var nombre: String = ""
+    @StateObject var userData = FuncionLogin()
+
+    
     var category: [String] = ["Romance", "Fantasía", "Thriller", "Aventuras", "Terror", "Acción", "Infantil", "Tragedia", "Bélico", "Filosofía", "Ciencia Ficción", "Misterio", "Poesía", "Clásico", "Psicología", "Biográfico", "Aficiones", "Historia", "Educativo", "Extranjeros", "Ciencia", ]
         
         var body: some View {
             
                 NavigationStack{
                     
-                    Text("¡Bienvenido \(nombre)!")
+                    Text("¡Bienvenido \(userData.name)!")
                         .bold()
                         .font(.title)
-                        .padding(.trailing, 175)
+                        .padding(.leading, 25)
+                        .padding(.top, 15)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
                     
                     Text("Descubre a tu bookie favorita")
                         .padding(.trailing, 120)
-                        .padding(.top, 5)
+                        .padding(.top, 1)
                         .padding(.bottom, 10)
                     
                     ScrollView  {
