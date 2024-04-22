@@ -35,7 +35,7 @@ class FuncionLogin: ObservableObject{
                 
             case .failure(let error):
                 
-                print("Login failed \(error.localizedDescription)")
+                print("Login error \(error.localizedDescription)")
 
             }
         }
