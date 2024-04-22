@@ -9,35 +9,14 @@ import SwiftUI
 
 struct PerfilView: View {
 
-    @EnvironmentObject var userData: FuncionLogin
+    @StateObject var userData = FuncionLogin()
     @State private var seleccionado = 0
-    @State var isPresented: Bool = false
-
+    
+    
     
     var body: some View {
         
         NavigationStack {
-            
-            Button(action: {
-                //accion
-            }) {
-                Button(action: {
-                    isPresented = true
-                }) {
-                    Image(systemName: "gearshape")
-                        .foregroundColor(.black)
-                    
-                }
-            }
-            
-            .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
-                AjustesPerfil(isPresented: $isPresented)
-                    .presentationDetents([.large])
-            })
-        
-            
-            .padding(.leading, 320)
-            .font(.headline)
             
             
             HStack {
@@ -48,7 +27,7 @@ struct PerfilView: View {
                 
                 
                 VStack(alignment: .leading) {
-                    Text("Linares")
+                    //Text("\(userData.ciudad)")
                     
                     Text("4,8 ★")
                     
@@ -56,11 +35,6 @@ struct PerfilView: View {
                 }
             }
             .padding(.trailing, 70)
-            .padding(.top, -15)
-            
-            
-              
-            
             
             HStack {
                 
@@ -112,11 +86,11 @@ struct PerfilView: View {
                 Spacer()
                 
                 if seleccionado == 0 {
-                    VistasMisLibros()
+                    Text("Vista de Mis libros")
                 } else if seleccionado == 1 {
-                    VistaReview()
+                    Text("Vista de Reseñas")
                 } else if seleccionado == 2 {
-                  VistaHistorial()
+                    Text("Vista de Historial")
                     
                 }
                 
@@ -128,17 +102,24 @@ struct PerfilView: View {
             
             
             
-                .navigationTitle("\(userData.username)")
+                .navigationTitle("\(userData.name)")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    Button(action: {
+                        //accion
+                    }) {
+                        Image(systemName: "ellipsis")
+                    }
+                    .rotationEffect(.degrees(90))
+                    .foregroundColor(Color.black)
                     
                 }
         }
     }
 
-
+}
 
 #Preview {
     PerfilView()
-        .environmentObject(FuncionLogin())
+    
 }

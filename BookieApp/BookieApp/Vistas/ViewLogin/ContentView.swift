@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var userData: FuncionLogin
-    //var peticiones = Peticiones()
+    @State var correo: String = ""
+    @State var contrasenia: String = ""
     @State var toggle: Bool = false
     
     @State var mostrarContrasenia: Bool = false
@@ -19,56 +19,37 @@ struct ContentView: View {
         
         NavigationStack{
             
-            if userData.tokeen.isEmpty{
-                
-                loginScreen
-                
-            }else{
-                TabarView()
-            }
-        }
-        .onAppear(perform: {
-            if let savedToken = UserDefaults.standard.string(forKey: "token"){
-                userData.tokeen = savedToken
-            }
-        })
-        
-    }
-    private var loginScreen: some View{
             VStack {
                 
                 Text("Bienvenido")
-                    .font(.title)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
                     .padding()
                 
                 
-                TextField("Correo electronico", text: $userData.username)
+                TextField("Correo electronico", text: $correo)
                     .bold()
                     .padding()
                     .background(Color.color)
                     .cornerRadius(30)
-                    .padding(.top,90)
-                    .textContentType(.name)
-                    .autocapitalization(.none)
+                    .padding(.top,130)
+                    .textContentType(.emailAddress)
                 
                 ZStack(alignment: .trailingFirstTextBaseline) {
                     
                     if mostrarContrasenia {
-                        TextField("Contraseña", text: $userData.password)
+                        TextField("Contraseña", text: $contrasenia)
                             .padding()
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
-                            .autocapitalization(.none)
                         
                     } else {
-                        SecureField("Contraseña", text: $userData.password)
+                        SecureField("Contraseña", text: $contrasenia)
                             .padding()
                             .background(Color.color)
                             .cornerRadius(30)
                             .padding(.top, 40)
-                            .autocapitalization(.none)
                     }
                     
                     Button(action: {
@@ -97,14 +78,10 @@ struct ContentView: View {
                 NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
                     .padding(.top, 20)
                     .foregroundColor(.black)
-
-                NavigationLink(destination: TabarView()){
-                    
-                    Button("iniciar sesion"){
-                        
-                        userData.check(username: userData.username, password: userData.password)
-                        print ("has pulsado el botón")
-                    }
+                    .navigationBarBackButtonHidden(true)
+                
+                
+                NavigationLink("Iniciar Sesion", destination: TabarView())
                     .padding(20)
                     .padding(.horizontal, 30)
                     .background(Color.button)
@@ -112,8 +89,7 @@ struct ContentView: View {
                     .cornerRadius(20)
                     .padding([.leading, .trailing], 10)
                     .padding(.top, 75)
-                    
-                }
+                    .navigationBarBackButtonHidden(true)
                 
                 NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                     .padding(.top, 30)
@@ -121,15 +97,13 @@ struct ContentView: View {
             }
             .padding()
             
+        }
+        .tint(.brown)
     }
 }
-        
-
-
 
 
 
 #Preview {
     ContentView()
-        .environmentObject(FuncionLogin())
 }
