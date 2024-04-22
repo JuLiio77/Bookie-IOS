@@ -10,32 +10,11 @@ import SwiftUI
 struct ViewPerfilAjeno: View {
     
     @State private var seleccionado = 0
-    @State var isPresented: Bool = false
-
     
     var body: some View {
         
         NavigationStack {
             
-            Button(action: {
-                //accion
-            }) {
-                Button(action: {
-                    isPresented = true
-                }) {
-                    Image(systemName: "gearshape")
-                        .foregroundColor(.black)
-                    
-                }
-            }
-            
-            .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
-                OpcionesPerfilAjeno(isPresented: $isPresented)
-                    .presentationDetents([.large])
-            })
-            
-            .padding(.leading, 320)
-            .font(.headline)
             
             HStack {
                 
@@ -122,7 +101,16 @@ struct ViewPerfilAjeno: View {
             
                 .navigationTitle("Iñigo")
                 .navigationBarTitleDisplayMode(.inline)
-                
+                .toolbar {
+                    Button(action: {
+                        //accion
+                    }) {
+                        Image(systemName: "ellipsis")
+                    }
+                    .rotationEffect(.degrees(90))
+                    .foregroundColor(Color.black)
+                    
+                }
         }
     }
 
@@ -131,5 +119,4 @@ struct ViewPerfilAjeno: View {
 
 #Preview {
     ViewPerfilAjeno()
-        
 }

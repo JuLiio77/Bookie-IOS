@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TabarView: View {
     
-    
     var body: some View {
         
         TabView {
@@ -35,15 +34,16 @@ struct TabarView: View {
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
                 }
+            ListaLibrosFavoritos()
+                .tabItem {
+                    Label("Favoritos", systemImage: "person.fill")
+                }
         }
         .accentColor(Color.button)
-        .navigationBarBackButtonHidden(true)
     }
-
 }
 
 #Preview {
     TabarView()
-        .environmentObject(ColorListAjustes())
-
+        .environmentObject(LibrosFavoritos())
 }
