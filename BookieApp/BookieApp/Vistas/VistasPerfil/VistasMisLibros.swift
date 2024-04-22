@@ -30,28 +30,22 @@ struct VistasMisLibros: View {
 
                     LazyVGrid(columns: columnas, content: {
                         
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: VistasMisLibros()){
                             CeldaMisLibros()
                         }
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: VistasMisLibros()){
                             CeldaMisLibros()
                         }
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: VistasMisLibros()){
                             CeldaMisLibros()
                         }
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: VistasMisLibros()){
                             CeldaMisLibros()
                         }
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: VistasMisLibros()){
                             CeldaMisLibros()
                         }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: VistasMisLibros()){
                             CeldaMisLibros()
                         }
                         

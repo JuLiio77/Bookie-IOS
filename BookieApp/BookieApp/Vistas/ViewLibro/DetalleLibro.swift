@@ -27,12 +27,10 @@ struct DetalleLibro: View {
             ScrollView(.vertical){
                 
                 VStack{
-                    NavigationLink(destination: ViewPerfilAjeno()) {
-                        Label( "Iñigo", systemImage: "person.circle.fill")
-                             .padding(.leading, 250)
-                             .padding([.top, .bottom], 15)
-                             .foregroundColor(.black)
-                     }
+                    
+                    Label("Julio Vera", systemImage: "globe")
+                        .padding(.leading, 250)
+                        .padding([.top, .bottom], 15)
                     
                     Image(systemName: "globe")
                         .frame(width: 166, height: 196)
@@ -159,7 +157,7 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
+                            .navigationBarBackButtonHidden(true)
                         
                         NavigationLink("Escribir Reseña", destination: ReviewView())
                             .padding(15)
@@ -168,7 +166,7 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            .navigationBarBackButtonHidden(false)
+                            .navigationBarBackButtonHidden(true)
                     }
                     
                     

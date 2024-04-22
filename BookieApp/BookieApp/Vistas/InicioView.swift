@@ -8,31 +8,27 @@
 import SwiftUI
 
 struct InicioView: View {
-    
-    @EnvironmentObject var userData: FuncionLogin
+
     @State var nombre: String = ""
-    var category: [String] = ["Romance","Fantasía","Thriller","Aventuras","Terror", "Acción", "Infantil", "Tragedia", "Filosofía","Bélico", "Misterio", "Clásico", "Ciencia Ficción", "Poesía", "Psicología", "Biográfico", "Aficiones", "Extranjeros", "Educativo", "Ciencia", "Historia"]
+    var category: [String] = ["Romance", "Fantasía", "Thriller", "Aventuras", "Terror", "Acción", "Infantil", "Tragedia", "Bélico", "Filosofía", "Ciencia Ficción", "Misterio", "Poesía", "Clásico", "Psicología", "Biográfico", "Aficiones", "Historia", "Educativo", "Extranjeros", "Ciencia", ]
         
         var body: some View {
             
                 NavigationStack{
                     
-                    HStack{
-                        Text("¡Bienvenido")
-                            .bold()
-                            .font(.title)
-                            .padding(.trailing, 50)
-                        
-                        Text("\(userData.username)")
-                            .font(.title)
-                            .padding(.trailing, 100)
-                    }
+                    Text("¡Bienvenido \(nombre)!")
+                        .bold()
+                        .font(.title)
+                        .padding(.trailing, 175)
+                    
                     Text("Descubre a tu bookie favorita")
                         .padding(.trailing, 120)
+                        .padding(.top, 5)
+                        .padding(.bottom, 10)
                     
                     ScrollView  {
                         
-                        NavigationLink(destination: ListaLibros(categoria: "romance")){
+                        NavigationLink(destination: ListaLibros(categoria: category[0])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -51,7 +47,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[1])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -65,7 +61,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[2])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -83,7 +79,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[3])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -97,7 +93,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[4])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -115,7 +111,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros(categoria: "romance")){
+                        NavigationLink(destination: ListaLibros(categoria: category[5])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -133,7 +129,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[6])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -147,7 +143,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[7])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -165,7 +161,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[8])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -179,7 +175,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[9])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -197,7 +193,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros(categoria: "romance")){
+                        NavigationLink(destination: ListaLibros(categoria: category[10])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -215,7 +211,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[11])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -229,7 +225,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[12])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -247,7 +243,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[13])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -261,7 +257,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[14])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -279,7 +275,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros(categoria: "romance")){
+                        NavigationLink(destination: ListaLibros(categoria: category[15])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -297,7 +293,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[16])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -311,7 +307,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[17])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -329,7 +325,7 @@ struct InicioView: View {
                         
                         VStack{
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[18])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 100)
                                     .background(Color.gray)
@@ -343,7 +339,7 @@ struct InicioView: View {
                                 alignment: .topLeading
                             )
                             
-                            NavigationLink(destination: ListaLibros(categoria: "romance")){
+                            NavigationLink(destination: ListaLibros(categoria: category[19])){
                                 Image(systemName: "")
                                     .frame(width: 172, height: 196)
                                     .background(Color.gray)
@@ -361,7 +357,7 @@ struct InicioView: View {
                         
                     }
                     
-                        NavigationLink(destination: ListaLibros(categoria: "romance")){
+                        NavigationLink(destination: ListaLibros(categoria: category[20])){
                             Image(systemName: "")
                                 .frame(width: 353, height: 100)
                                 .background(Color.gray)
@@ -382,5 +378,4 @@ struct InicioView: View {
 
 #Preview {
     InicioView()
-        .environmentObject(FuncionLogin())
 }
