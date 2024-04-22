@@ -11,7 +11,6 @@ struct ContentView: View {
     
     @EnvironmentObject var userData: FuncionLogin
     //var peticiones = Peticiones()
-    
     @State var toggle: Bool = false
     
     @State var mostrarContrasenia: Bool = false
@@ -104,7 +103,7 @@ struct ContentView: View {
                     Button("iniciar sesion"){
                         
                         userData.check(username: userData.username, password: userData.password)
-                        
+                        print ("has pulsado el botón")
                     }
                     .padding(20)
                     .padding(.horizontal, 30)

@@ -13,7 +13,7 @@ struct AjustesPerfil: View {
     @State private var showDeleteAlert = false
     @State private var showLogoutAlert = false
     
-    @EnvironmentObject var color: ColorListAjustes
+    @EnvironmentObject var coloor: ColorListAjustes
 
 
     var body: some View {
@@ -72,7 +72,7 @@ struct AjustesPerfil: View {
                 
                 
                 .scrollContentBackground(.hidden)
-                .background(color.colorFondo)
+                .background(coloor.colorFondo)
       
                .navigationBarTitle("Ajustes")
                .navigationBarTitleDisplayMode(.inline)

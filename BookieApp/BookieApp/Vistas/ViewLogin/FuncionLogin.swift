@@ -36,10 +36,7 @@ class FuncionLogin: ObservableObject{
             case .failure(let error):
                 
                 print("Login failed \(error.localizedDescription)")
-                // Present an alert indicating incorrect credentials or other error
-//                let alert = UIAlertController(title: "Error de inicio de sesión", message: error.localizedDescription, preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "Aceptar", style: .default))
-//                self.present(alert, animated: true)
+
             }
         }
     }

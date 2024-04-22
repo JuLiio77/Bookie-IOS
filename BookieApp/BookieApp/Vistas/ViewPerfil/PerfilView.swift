@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PerfilView: View {
 
+    @EnvironmentObject var userData: FuncionLogin
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
 
@@ -127,7 +128,7 @@ struct PerfilView: View {
             
             
             
-                .navigationTitle("Julio Vera")
+                .navigationTitle("\(userData.username)")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                     
@@ -139,5 +140,5 @@ struct PerfilView: View {
 
 #Preview {
     PerfilView()
-        .environmentObject(ColorListAjustes())
+        .environmentObject(FuncionLogin())
 }
