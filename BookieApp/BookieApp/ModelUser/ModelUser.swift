@@ -12,5 +12,4 @@ struct ModelUser: Encodable, Decodable{
     var foto: String
     var reportado: String
     var token: String
-    
 }

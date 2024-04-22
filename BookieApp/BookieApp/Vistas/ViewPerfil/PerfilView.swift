@@ -97,11 +97,8 @@ struct PerfilView: View {
                 Spacer()
             }
             
-            
             Spacer()
-            
-            
-            
+                
                 .navigationTitle("\(userData.name)")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -116,7 +113,6 @@ struct PerfilView: View {
                 }
         }
     }
-
 }
 
 #Preview {

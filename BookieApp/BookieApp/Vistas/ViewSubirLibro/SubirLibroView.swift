@@ -15,15 +15,19 @@ struct SubirLibroView: View {
 
     
     var body: some View {
-        VStack{
+        
+        NavigationStack{
+            
             ScrollView{
-                Text("Detalles del libro")
+                /*Text("Detalles del libro")
+                    .padding(.top)*/
                 
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
+                    .padding(.top)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
@@ -117,8 +121,10 @@ struct SubirLibroView: View {
                .padding([.leading, .trailing], 10)
                .padding(.top, 30)
                        
-                Spacer()
+                //Spacer()
             }
+            .navigationTitle("Detalle del libro")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

@@ -38,7 +38,6 @@ class LibrosFavoritos: ObservableObject {
         }
     }
 
-    
     //Método para eliminar libro de favoritos
     func eliminarFav(book: Book) {
         if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
