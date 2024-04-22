@@ -122,7 +122,6 @@
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
-				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 			);
 			path = ViewLogin;
 			sourceTree = "<group>";
@@ -142,6 +141,7 @@
 			children = (
 				3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */,
 				3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */,
+				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
 			);
 			path = ViewBiblio;

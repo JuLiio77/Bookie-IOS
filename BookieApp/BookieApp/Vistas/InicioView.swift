@@ -372,7 +372,6 @@ struct InicioView: View {
                         alignment: .topLeading
                     )
                 }
-                    .padding(.bottom, 8)
             }
         }
     }
