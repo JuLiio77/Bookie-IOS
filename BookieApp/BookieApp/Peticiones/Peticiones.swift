@@ -11,8 +11,10 @@ class Peticiones{
     
     
     static let shared = Peticiones()
+    private let constantes = Constant.self
 
-    // funcion para descargar los datos
+    // FUNCION GET PARA CONSEGUIR UN LISTADO DE LIBROS
+    
     func getDatosApi(apiResponse: @escaping(Book)-> ()){
         
         guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=a") else {return}
@@ -50,7 +52,11 @@ class Peticiones{
     
     }
     
+    
+    // FUNCION POST DE REGISTRO DEL USUARIO -- SE LE MANDA COMO PARAMETRO TODOS LOS DATOS
+    
     func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
+        
         
         let urlString = "http://localhost:8080/api/auth/register"
         
@@ -93,11 +99,10 @@ class Peticiones{
         
     }
     
-
-  
+  // FUNCION POST DE LOGIN DE USUARIO -- SE LE MANDA POR PARAMETRO EL USERNAME Y LA CONTRASELA Y SI ESTA CORRECTO NOS DEVUELVE UN TOKEN
     
     func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
-
+        
         let urlString = "http://localhost:8080/api/auth/login"
         
         guard let url = URL(string: urlString) else {
@@ -109,7 +114,7 @@ class Peticiones{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+    
         let firstUser = AuthRequest(username: username, password: password)
         guard let httpBody = try? JSONEncoder().encode(firstUser) else {
             print("Invalid httpBody")
@@ -141,6 +146,12 @@ class Peticiones{
     }
     
        
+    // FUNCION GET PARA CONSEGUIR LOS DATOS DEL USUARIO QUE SE HA LOGUEADO
+    
+    func getUserData(){
+        
+        
+    }
     
 }
 

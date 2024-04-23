@@ -96,12 +96,12 @@ struct SubirLibroView: View {
 
                 HStack{
                    
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
                     
                 }
                 .padding(.top, 20)

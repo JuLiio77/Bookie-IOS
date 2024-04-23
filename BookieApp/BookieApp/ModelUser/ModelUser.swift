@@ -1,6 +1,7 @@
 import Foundation
 
-struct ModelUser: Encodable, Decodable{
+
+struct ModelUser: Codable{
     
     var id: Int
     var username: String

@@ -10,10 +10,9 @@ import SwiftUI
 class FuncionLogin: ObservableObject{
     
     static let shared = FuncionLogin()
-    var taber = TabarView()
     var peticiones = Peticiones()
     
-    @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? "jose1"
+    @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? ""
     @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
     @Published var repassword: String = UserDefaults.standard.string(forKey: "repassword") ?? ""
     @Published var recordarConta: Bool = UserDefaults.standard.bool(forKey: "toogle")
@@ -26,20 +25,19 @@ class FuncionLogin: ObservableObject{
     @Published var prefeLite: String = UserDefaults.standard.string(forKey: "preferencia") ?? ""
     
     
-    func check(username: String, password: String) {
-        
+    func check(username: String, password: String, completion: @escaping (Result<ModelUser, Error>) -> Void) {
         peticiones.login(username: username, password: password) { result in
             switch result {
             case .success(let token):
-                print("Login successful with token: \(token)")
+                // Crea una instancia del modelo de usuario
+                print("todo bien en el checkeo")
                 
             case .failure(let error):
-                
-                print("Login error \(error.localizedDescription)")
-
+                print("error en el checkeo")
             }
         }
     }
+
 
 
     
