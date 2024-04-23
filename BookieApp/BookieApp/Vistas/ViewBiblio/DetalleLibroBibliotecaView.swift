@@ -27,12 +27,7 @@ struct DetalleLibroBibliotecaView: View {
             
             ScrollView(.vertical){
                 
-                VStack{
-                    
-                    Label("Julio Vera", systemImage: "globe")
-                        .padding(.leading, 230)
-                        .padding([.top, .bottom], 20)
-                    
+                VStack {
                     
                     if let urlString = book.volumeInfo.imageLinks?.smallThumbnail,
                        let url = URL(string: urlString) {
@@ -45,6 +40,7 @@ struct DetalleLibroBibliotecaView: View {
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
+                        .padding(.top, 30)
                     }
                     
                     HStack{
@@ -155,6 +151,8 @@ struct DetalleLibroBibliotecaView: View {
                 .padding(.horizontal, 30)
                 //.frame(maxWidth: .infinity)
             }
+            //.navigationTitle(book.volumeInfo.title)
+            //.navigationBarTitleDisplayMode(.inline)
         }
     }
 }

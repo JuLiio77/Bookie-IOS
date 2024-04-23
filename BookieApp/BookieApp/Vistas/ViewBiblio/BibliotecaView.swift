@@ -10,10 +10,10 @@ import SwiftUI
 struct BibliotecaView: View {
     
     @StateObject var bookModel = BookModel()
-    
     @State var search = ""
     
-    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4", "Mensaje 5"]
+    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3",
+                    "Mensaje 4", "Mensaje 5"]
     
     var body: some View {
         
@@ -43,11 +43,11 @@ struct BibliotecaView: View {
         .onAppear {
             bookModel.onAppear()
         }
-        
-        .searchable(text: $search)
+        .searchable(text: $bookModel.search)
     }
 }
 
 #Preview {
     BibliotecaView()
+        .environmentObject(LibrosFavoritos())
 }

@@ -14,7 +14,8 @@ class BookModel: ObservableObject {
     @Published public private(set) var imagenLibro: String = ""
     @Published public private(set) var nombreLibro: String = ""
     @Published public private(set) var nombreAutor: String = ""
-
+    
+    //guardar historial de busqueda api
     
     private var suscripcion = Set<AnyCancellable>()
     
@@ -39,5 +40,15 @@ class BookModel: ObservableObject {
                 }
             }
             .store(in: &suscripcion)
+    }
+    
+    //funcion para buscar con el buscador
+    func buscarlibro(nombre: String) {
+       
+        
+    }
+    
+    func agregarhistorial(buqueda: String) {
+        
     }
 }

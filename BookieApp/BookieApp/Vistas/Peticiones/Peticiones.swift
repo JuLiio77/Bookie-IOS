@@ -131,7 +131,7 @@ class Peticiones{
                     //print("token peticion:\(token.token)")
                     
                     
-                }catch(let error){
+                }catch (let error) {
                     print("error en el login")
                 }
             }
