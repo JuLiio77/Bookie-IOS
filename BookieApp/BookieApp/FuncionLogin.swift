@@ -8,7 +8,7 @@
 import SwiftUI
 
 class FuncionLogin: ObservableObject{
-    
+
     static let shared = FuncionLogin()
     var peticiones = Peticiones()
     
@@ -30,6 +30,7 @@ class FuncionLogin: ObservableObject{
             switch result {
             case .success(let token):
                 // Crea una instancia del modelo de usuario
+                
                 print("todo bien en el checkeo")
                 
             case .failure(let error):

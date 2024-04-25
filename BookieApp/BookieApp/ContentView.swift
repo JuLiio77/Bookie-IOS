@@ -9,31 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var isLoggedIn: Bool = false
+    @StateObject private var datos = FuncionLogin()
     @State private var userData: ModelUser?
     
     var body: some View {
         
         HStack{
             
-            if isLoggedIn {
+            if !datos.tokeen.isEmpty {
                 
                 InicioView()
                 
             }else{
                 
-                VistaLogin(correo: "", contrasenia: "", mostrarContrasenia: false, toggle: false)
+                VistaLogin()
             }
             
         }
-        .onAppear{
-            
-            if let _ = userData?.token {
-                isLoggedIn = true
-                // llamar a la funciones para obtener los datos del usuario
-            }
-        }
-        
         
     }
 }

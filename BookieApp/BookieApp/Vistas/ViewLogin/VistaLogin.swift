@@ -9,6 +9,8 @@ import SwiftUI
 
 struct VistaLogin: View {
     
+    @EnvironmentObject private var datos: FuncionLogin
+    @State private var modelo: ModelUser
     @State var correo: String
     @State var contrasenia: String
     @State var mostrarContrasenia: Bool
@@ -101,4 +103,5 @@ struct VistaLogin: View {
 
 #Preview {
     VistaLogin(correo: "", contrasenia: "", mostrarContrasenia: false, toggle: false)
+        .environmentObject(FuncionLogin())
 }
