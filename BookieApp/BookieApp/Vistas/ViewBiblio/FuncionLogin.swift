@@ -25,7 +25,6 @@ class FuncionLogin: ObservableObject{
     @Published var username: String = UserDefaults.standard.string(forKey: "username") ?? ""
     @Published var prefeLite: String = UserDefaults.standard.string(forKey: "preferencia") ?? ""
     
-    
     func check(username: String, password: String) {
         
         peticiones.login(username: username, password: password) { result in

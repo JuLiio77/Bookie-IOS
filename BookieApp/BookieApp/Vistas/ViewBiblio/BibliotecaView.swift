@@ -34,17 +34,19 @@ struct BibliotecaView: View {
         .onAppear {
             bookModel.onAppear()
         }
-        //.searchable(text: $bookModel.search)
         .searchable(text: $search)
     }
     
     var searchResults: [Book] {
-            if search.isEmpty {
-                return bookModel.libros
-            } else {
-                return bookModel.libros.filter { $0.volumeInfo.title.localizedCaseInsensitiveContains(search) }
+    
+        if search.isEmpty {
+            return bookModel.libros
+        } else {
+            return bookModel.libros.filter {
+                $0.volumeInfo.title.localizedCaseInsensitiveContains(search)
             }
         }
+    }
 }
 
 #Preview {
