@@ -39,13 +39,4 @@ class BookModel: ObservableObject {
             }
             .store(in: &suscripcion)
     }
-    
-    //funcion para buscar con el buscador
-    func buscarlibro(nombre: String) {
-        
-    }
-    
-    func agregarhistorial(buqueda: String) {
-        
-    }
 }

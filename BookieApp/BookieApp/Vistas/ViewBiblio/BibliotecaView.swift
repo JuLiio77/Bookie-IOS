@@ -12,9 +12,6 @@ struct BibliotecaView: View {
     @StateObject var bookModel = BookModel()
     @State var search = ""
     
-    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3",
-                    "Mensaje 4", "Mensaje 5"]
-    
     var body: some View {
         
         NavigationStack {
@@ -27,7 +24,7 @@ struct BibliotecaView: View {
                         .bold()
                         .padding()
                     
-                    ForEach(bookModel.libros, id: \.id) { libro in
+                    ForEach(searchResults, id: \.id) { libro in
                         CeldaBibloteca(book: libro)
                             .padding(.bottom, 12)
                     }
@@ -40,6 +37,14 @@ struct BibliotecaView: View {
         //.searchable(text: $bookModel.search)
         .searchable(text: $search)
     }
+    
+    var searchResults: [Book] {
+            if search.isEmpty {
+                return bookModel.libros
+            } else {
+                return bookModel.libros.filter { $0.volumeInfo.title.localizedCaseInsensitiveContains(search) }
+            }
+        }
 }
 
 #Preview {
