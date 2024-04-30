@@ -16,7 +16,7 @@ class FuncionLogin: ObservableObject{
     @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
     @Published var repassword: String = UserDefaults.standard.string(forKey: "repassword") ?? ""
     @Published var recordarConta: Bool = UserDefaults.standard.bool(forKey: "toogle")
-    @Published var tokeen: String = UserDefaults.standard.string(forKey: "token") ?? ""
+    @Published var tokeen: Bool = UserDefaults.standard.bool(forKey: "token")
     @Published var email: String = UserDefaults.standard.string(forKey: "email") ?? ""
     @Published var provincia: String = UserDefaults.standard.string(forKey: "provincia") ?? ""
     @Published var codigoPostal: String = UserDefaults.standard.string(forKey: "codigoPostal") ?? ""
@@ -25,18 +25,28 @@ class FuncionLogin: ObservableObject{
     @Published var prefeLite: String = UserDefaults.standard.string(forKey: "preferencia") ?? ""
     
     
-    func check(username: String, password: String, completion: @escaping (Result<ModelUser, Error>) -> Void) {
+    func check(username: String, password: String) {
+        
         peticiones.login(username: username, password: password) { result in
+            
             switch result {
-            case .success(let token):
-                // Crea una instancia del modelo de usuario
+                
+            case .success(_):
+                
+                var modelo = ModelUser(id: 2, username: "jose1", password: "12345", email: "jose@gmail", ciudad: "Baza", provincia: "Granada", codigoPostal: "18800", foto: "foto", reportado: false, token: "")
+                
+                self.tokeen = true
                 
                 print("todo bien en el checkeo")
+            
+            case .failure(_):
                 
-            case .failure(let error):
                 print("error en el checkeo")
+                
             }
+            
         }
+        
     }
 
 
@@ -49,7 +59,7 @@ class FuncionLogin: ObservableObject{
             
             if password.elementsEqual(repassword){
                 
-                UserDefaults.standard.setValue(name, forKey: "username")
+                UserDefaults.standard.setValue(name, forKey: "name")
                 UserDefaults.standard.setValue(email, forKey: "email")
                 UserDefaults.standard.setValue(password, forKey: "password")
                 UserDefaults.standard.setValue(repassword, forKey: "repassword")

@@ -9,12 +9,10 @@ import SwiftUI
 
 struct VistaLogin: View {
     
-    @EnvironmentObject private var datos: FuncionLogin
-    @State private var modelo: ModelUser
-    @State var correo: String
-    @State var contrasenia: String
-    @State var mostrarContrasenia: Bool
+    @EnvironmentObject var datos: FuncionLogin
+    //@State var modelo: ModelUser
     @State var toggle: Bool
+    @State var mostrarContrasenia: Bool
     
     var body: some View {
         
@@ -26,7 +24,7 @@ struct VistaLogin: View {
                 .padding()
             
             
-            TextField("Correo electronico", text: $correo)
+            TextField("Correo electronico", text: $datos.email)
                 .bold()
                 .padding()
                 .background(Color.color)
@@ -37,14 +35,14 @@ struct VistaLogin: View {
             ZStack(alignment: .trailingFirstTextBaseline) {
                 
                 if mostrarContrasenia {
-                    TextField("Contraseña", text: $contrasenia)
+                    TextField("Contraseña", text: $datos.password)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
                     
                 } else {
-                    SecureField("Contraseña", text: $contrasenia)
+                    SecureField("Contraseña", text: $datos.password)
                         .padding()
                         .background(Color.color)
                         .cornerRadius(30)
@@ -74,10 +72,15 @@ struct VistaLogin: View {
             .toggleStyle(SwitchToggleStyle(tint: Color.button))
             
             
+            
             NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
                 .padding(.top, 20)
                 .foregroundColor(.black)
                 .navigationBarBackButtonHidden(true)
+            
+            Button("Inicio Sesion"){
+                datos.check(username: "", password: "")
+            }
             
             
             NavigationLink("Iniciar Sesion", destination: TabarView())
@@ -102,6 +105,6 @@ struct VistaLogin: View {
 }
 
 #Preview {
-    VistaLogin(correo: "", contrasenia: "", mostrarContrasenia: false, toggle: false)
+    VistaLogin(toggle: false, mostrarContrasenia: false)
         .environmentObject(FuncionLogin())
 }

@@ -9,9 +9,10 @@ import Foundation
 
 @Observable
 class ModelUserDecoder {
+    
     //Aqui se pone el json
     var modelo: [ModelUser] = load("datosUser.json")
-    
+
 }
 
 func load<T: Decodable>(_ filename: String)-> T{

@@ -9,7 +9,6 @@ import Foundation
 
 class Peticiones{
     
-    
     static let shared = Peticiones()
     private let constantes = Constant.self
 
@@ -121,6 +120,7 @@ class Peticiones{
             return
         }
         //print(firstUser)
+        
         request.httpBody = httpBody
    
         URLSession.shared.dataTask(with: request){ data, response, error in
@@ -131,12 +131,9 @@ class Peticiones{
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
                     
-                    //UserDefaults.standard.setValue(token.token, forKey: "token")
                     UserDefaults.standard.setValue(token.token, forKey: "token")
-                    //print("token peticion:\(token.token)")
                     
-                    
-                }catch(let error){
+                }catch(_){
                     print("error en el login")
                 }
             }
@@ -150,6 +147,42 @@ class Peticiones{
     
     func getUserData(){
         
+        let urlString = "http://localhost:8080/api/auth/login"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+        
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+        let firstUser = ""
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            print("Invalid httpBody")
+            return
+        }
+        //print(firstUser)
+        
+        request.httpBody = httpBody
+   
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let token = try decoder.decode(ModelToken.self, from: data)
+                    
+                    UserDefaults.standard.setValue(token.token, forKey: "token")
+                    
+                }catch(_){
+                    print("error en el login")
+                }
+            }
+        }.resume()
         
     }
     

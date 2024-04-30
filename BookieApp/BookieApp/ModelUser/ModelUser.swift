@@ -11,7 +11,7 @@ struct ModelUser: Codable{
     var provincia: String
     var codigoPostal: String
     var foto: String
-    var reportado: String
+    var reportado: Bool
     var token: String
     
 }

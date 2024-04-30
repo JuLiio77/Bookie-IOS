@@ -16,13 +16,14 @@ struct ContentView: View {
         
         HStack{
             
-            if !datos.tokeen.isEmpty {
+            if userData?.token != nil {
                 
-                InicioView()
-                
+                TabarView()
+                               
             }else{
                 
-                VistaLogin()
+                VistaLogin(toggle: false, mostrarContrasenia: false)
+                
             }
             
         }
@@ -33,4 +34,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(FuncionLogin())
 }
