@@ -107,7 +107,7 @@ struct DetalleLibroBibliotecaView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    
+        
                     VStack(alignment: .leading) {
                         
                         Text("Páginas")
@@ -144,7 +144,6 @@ struct DetalleLibroBibliotecaView: View {
                             .padding(.bottom, 5)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    
                 }
                 .padding(.horizontal, 30)
                 //.frame(maxWidth: .infinity)

@@ -15,8 +15,6 @@ class BookModel: ObservableObject {
     @Published public private(set) var nombreLibro: String = ""
     @Published public private(set) var nombreAutor: String = ""
     
-    //guardar historial de busqueda api
-    
     private var suscripcion = Set<AnyCancellable>()
     
     public func onAppear() {
@@ -44,7 +42,6 @@ class BookModel: ObservableObject {
     
     //funcion para buscar con el buscador
     func buscarlibro(nombre: String) {
-       
         
     }
     

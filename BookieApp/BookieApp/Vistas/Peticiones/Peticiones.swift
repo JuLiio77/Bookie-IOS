@@ -7,8 +7,7 @@
 
 import Foundation
 
-class Peticiones{
-    
+class Peticiones {
     
     static let shared = Peticiones()
 
@@ -40,7 +39,8 @@ class Peticiones{
                 
                 DispatchQueue.main.async {
                     apiResponse(decodedData)
-                }                
+                }
+                
             } else {
                 print("No se ha podido descodificar el json")
             }

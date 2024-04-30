@@ -36,8 +36,11 @@ struct IndustryIdentifier: Codable {
     let identifier: String
 }
 
-
 struct ImageLinks: Codable {
     let smallThumbnail: String?
     let thumbnail: String?
+}
+
+struct BooksResponse: Codable {
+    let items: [Book]
 }

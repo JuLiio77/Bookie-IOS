@@ -39,10 +39,7 @@ class FuncionLogin: ObservableObject{
 
             }
         }
-    }
-
-
-    
+    }    
     
     func register(){
     

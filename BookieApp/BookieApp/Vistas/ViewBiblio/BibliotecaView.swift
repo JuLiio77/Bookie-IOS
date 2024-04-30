@@ -27,18 +27,12 @@ struct BibliotecaView: View {
                         .bold()
                         .padding()
                     
-                    /*ForEach(mensajes, id: \.self) { mensaje in
-                        CeldaBibloteca(book: BookModel())
-                    }*/
-                    
                     ForEach(bookModel.libros, id: \.id) { libro in
                         CeldaBibloteca(book: libro)
                             .padding(.bottom, 12)
                     }
                 }
             }
-//            .navigationTitle("Biblioteca")
-//            .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
             bookModel.onAppear()
