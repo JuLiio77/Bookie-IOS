@@ -11,12 +11,34 @@ struct PerfilView: View {
 
     @StateObject var userData = FuncionLogin()
     @State private var seleccionado = 0
-    
+    @State var isPresented: Bool = false
+
     
     
     var body: some View {
         
         NavigationStack {
+            
+            Button(action: {
+                //accion
+            }) {
+                Button(action: {
+                    isPresented = true
+                }) {
+                    Image(systemName: "gearshape")
+                        .foregroundColor(.black)
+                    
+                }
+            }
+            
+            .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
+                AjustesPerfil(isPresented: $isPresented)
+                    .presentationDetents([.large])
+            })
+        
+            
+            .padding(.leading, 320)
+            .font(.headline)
             
             
             HStack {
@@ -86,11 +108,11 @@ struct PerfilView: View {
                 Spacer()
                 
                 if seleccionado == 0 {
-                    Text("Vista de Mis libros")
+                   ViewMisLibros()
                 } else if seleccionado == 1 {
-                    Text("Vista de Reseñas")
+                    ViewReview()
                 } else if seleccionado == 2 {
-                    Text("Vista de Historial")
+                    ViewHistorial()
                     
                 }
                 
@@ -101,16 +123,9 @@ struct PerfilView: View {
                 
                 .navigationTitle("\(userData.name)")
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    Button(action: {
-                        //accion
-                    }) {
-                        Image(systemName: "ellipsis")
-                    }
-                    .rotationEffect(.degrees(90))
-                    .foregroundColor(Color.black)
+                
                     
-                }
+                
         }
     }
 }
