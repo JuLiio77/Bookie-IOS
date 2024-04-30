@@ -10,8 +10,10 @@ import SwiftUI
 struct SubirLibroView: View {
     @State var titulo: String = ""
     @State var autor: String = ""
-    @State var paginas: String = ""
+    @State var numeroPaginas: String = ""
     @State var genero: String = ""
+    @State var editorial: String = ""
+    @State var sinopsis: String = ""
 
     
     var body: some View {
@@ -55,7 +57,7 @@ struct SubirLibroView: View {
                     .padding(.top, 30)
                     .padding(.trailing, 220)
                 
-                TextField("Nº de páginas", text: $paginas)
+                TextField("Nº de páginas", text: $numeroPaginas)
                     .bold()
                     .padding()
                     .background(Color.color)
@@ -73,6 +75,31 @@ struct SubirLibroView: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                
+                Label("Editorial", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Editorial", text: $editorial)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Sinopsis", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Sinopsis", text: $sinopsis)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
                 
                 HStack{
                     
