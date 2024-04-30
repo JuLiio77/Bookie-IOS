@@ -12,7 +12,7 @@ struct DetalleLibro: View {
     @EnvironmentObject var librosFavoritos: LibrosFavoritos
     
     var book: Book
-    var bookmodelFav: BookModelFavoritos
+    @ObservedObject var bookmodelFav: BookModelFavoritos
     
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
@@ -44,9 +44,7 @@ struct DetalleLibro: View {
                             bookmodelFav.isFavorite.toggle()
                             
                             if bookmodelFav.isFavorite {
-                                //añadimos el libro a la pantalla favoritos
                                 librosFavoritos.anadirFav(book: book)
-                                
                             } else {
                                 librosFavoritos.eliminarFav(book: book)
                             }
@@ -55,8 +53,8 @@ struct DetalleLibro: View {
                             Image(systemName: bookmodelFav.isFavorite ? "heart.fill" : "heart")
                                 .foregroundColor(bookmodelFav.isFavorite ? .red : .black)
                         }
-                      
-                            .foregroundStyle(.brown)
+                        
+                        .foregroundStyle(.brown)
                         Text("Disponible")
                             .padding(.leading, 50)
                             .foregroundStyle(.cyan)
@@ -83,49 +81,48 @@ struct DetalleLibro: View {
                     }
                     .padding([.top,.bottom], 15)
                     //.background(Color.button)
-
                     
                     LazyVGrid(columns: [GridItem(.flexible(minimum: 140, maximum: 220), spacing: 100),
                                         GridItem(.adaptive(minimum: 140, maximum: 250), spacing: 100)], content: {
                         
-                                Text("Autor")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                Text("Genero")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                Text("Alexandre Duque")
-                                    
-                                    
-                                Text("Terror")
+                        Text("Autor")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                        Text("Genero")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                        Text("Alexandre Duque")
                         
-                                Text("Estado")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                    .padding(.top, 2)
                         
-                                Text("Nº Paginas")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                    .padding(.top, 2
-                                    )
-                                Text("Nuevo")
-                                Text("219")
-                                Text("Editorial")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                    .padding(.top, 2)
-                                Text("")
-                                
-                                
-                                Text("SM")
-                                    
-                            })
+                        Text("Terror")
+                        
+                        Text("Estado")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                            .padding(.top, 2)
+                        
+                        Text("Nº Paginas")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                            .padding(.top, 2
+                            )
+                        Text("Nuevo")
+                        Text("219")
+                        Text("Editorial")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                            .padding(.top, 2)
+                        Text("")
+                        
+                        
+                        Text("SM")
+                        
+                    })
                     
                     Text("Filtros")
                         .font(.title2)
@@ -133,7 +130,7 @@ struct DetalleLibro: View {
                         .bold()
                         .padding(.trailing, 250)
                         .padding(.top, 25)
-                       
+                    
                     HStack{
                         ViewFotoPerfil()
                             .frame(width: 50)
@@ -143,7 +140,6 @@ struct DetalleLibro: View {
                             .frame(width: 50)
                         ViewFotoPerfil()
                             .frame(width: 50)
-                        
                     }
                     
                     
@@ -169,12 +165,9 @@ struct DetalleLibro: View {
                             .navigationBarBackButtonHidden(true)
                     }
                     
-                    
                     Spacer()
                 }
-                
             }
-            
         }
         //.tint(.brown)
     }

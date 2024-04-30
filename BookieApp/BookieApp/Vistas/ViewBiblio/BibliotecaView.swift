@@ -43,7 +43,8 @@ struct BibliotecaView: View {
         .onAppear {
             bookModel.onAppear()
         }
-        .searchable(text: $bookModel.search)
+        //.searchable(text: $bookModel.search)
+        .searchable(text: $search)
     }
 }
 

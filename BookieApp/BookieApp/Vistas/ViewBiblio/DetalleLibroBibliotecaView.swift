@@ -18,9 +18,7 @@ struct DetalleLibroBibliotecaView: View {
     
     var book: Book
     @ObservedObject var bookmodelFav: BookModelFavoritos
-    
-    //var bookmodelFav: BookModelFavoritos
-        
+            
     var body: some View {
         
         NavigationStack{
