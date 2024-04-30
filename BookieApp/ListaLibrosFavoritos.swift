@@ -38,7 +38,7 @@ struct ListaLibrosFavoritos: View {
                 }
             }
             .navigationTitle("Favoritos")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
