@@ -141,7 +141,7 @@ struct DetalleLibroBibliotecaView: View {
                         
                         Text(book.volumeInfo.categories?.joined(separator: ", ") ?? "Desconocido")
                             .padding(.top, 1)
-                            .padding(.bottom, 5)
+                            .padding(.bottom, 15)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }

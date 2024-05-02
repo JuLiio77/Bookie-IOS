@@ -17,7 +17,7 @@ struct InicioView: View {
         
         var body: some View {
             
-                NavigationStack{
+                NavigationStack {
                     
                     Text("¡Bienvenido \(userData.name)!")
                         .bold()
