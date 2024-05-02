@@ -14,7 +14,9 @@ struct SubirLibroView: View {
     @State var genero: String = ""
     @State var editorial: String = ""
     @State var sinopsis: String = ""
-
+    
+    @EnvironmentObject var subirLibro: SubirLibroRequest
+    var
     
     var body: some View {
         VStack{
@@ -119,10 +121,10 @@ struct SubirLibroView: View {
                 
                 Divider()
                 
-                .padding(.top, 10)
-
+                    .padding(.top, 10)
+                
                 HStack{
-                   
+                    
                     ViewFotoPerfil()
                         .frame(width: 50)
                     ViewFotoPerfil()
@@ -133,23 +135,27 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
-               Button("Siguiente"){
-                   
-               }
-               .padding(20)
-               .padding(.horizontal, 30)
-               .background(Color.button)
-               .foregroundColor(.black)
-               .cornerRadius(20)
-               .padding([.leading, .trailing], 10)
-               .padding(.top, 30)
-                       
-                Spacer()
+                Button(action: {
+                    // Crear una instancia de Libro con los datos del formulario
+                    let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
+                    
+                    // Llamar a la función subirLibro
+                    subirLibro(libro: libro)
+                }) {
+                    .padding(20)
+                    .padding(.horizontal, 30)
+                    .background(Color.button)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 30)
+                    
+                    Spacer()
+                }
             }
         }
     }
 }
-
 
 #Preview {
     SubirLibroView()

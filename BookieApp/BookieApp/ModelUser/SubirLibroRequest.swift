@@ -8,15 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct SubirLibroRequest: Encodable, Decodable{
-    
+struct SubirLibroRequest: Codable {
     var titulo: String
     var autor: String
-    var numeroPaginas: String
- // var foto: Image
-    var sinopsis: String
+    var numeroPaginas: Int
     var editorial: String
-
-    
+    var sinopsis: String
+    var genero: String
+    var foto: String
 }
+
 
