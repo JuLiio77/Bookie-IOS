@@ -15,8 +15,7 @@ struct SubirLibroView: View {
     @State var editorial: String = ""
     @State var sinopsis: String = ""
     
-    @EnvironmentObject var subirLibro: SubirLibroRequest
-    var
+   
     
     var body: some View {
         VStack{
@@ -136,11 +135,9 @@ struct SubirLibroView: View {
                 .padding(.top, 20)
                 
                 Button(action: {
-                    // Crear una instancia de Libro con los datos del formulario
                     let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
                     
-                    // Llamar a la función subirLibro
-                    subirLibro(libro: libro)
+               
                 }) {
                     .padding(20)
                     .padding(.horizontal, 30)
