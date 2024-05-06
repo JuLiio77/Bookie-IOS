@@ -1,6 +1,7 @@
 import Foundation
 
-struct ModelUser: Encodable, Decodable{
+
+struct ModelUser: Codable{
     
     var id: Int
     var username: String
@@ -10,7 +11,7 @@ struct ModelUser: Encodable, Decodable{
     var provincia: String
     var codigoPostal: String
     var foto: String
-    var reportado: String
+    var reportado: Bool
     var token: String
     
 }
