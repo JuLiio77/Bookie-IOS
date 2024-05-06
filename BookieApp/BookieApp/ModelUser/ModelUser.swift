@@ -1,7 +1,7 @@
 import Foundation
 
 
-struct ModelUser: Codable{
+struct ModelUser: Decodable{
   
     var username: String
     var id: Int
