@@ -16,7 +16,7 @@ class FuncionLogin: ObservableObject{
     @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
     @Published var repassword: String = UserDefaults.standard.string(forKey: "repassword") ?? ""
     @Published var recordarConta: Bool = UserDefaults.standard.bool(forKey: "toogle")
-    @Published var tokeen: Bool = UserDefaults.standard.bool(forKey: "token")
+    @Published var tokeen: String = (UserDefaults.standard.string(forKey: "token") ?? "")
     @Published var email: String = UserDefaults.standard.string(forKey: "email") ?? ""
     @Published var provincia: String = UserDefaults.standard.string(forKey: "provincia") ?? ""
     @Published var codigoPostal: String = UserDefaults.standard.string(forKey: "codigoPostal") ?? ""
@@ -27,15 +27,18 @@ class FuncionLogin: ObservableObject{
     
     func check(username: String, password: String) {
         
-        peticiones.login(username: username, password: password) { result in
+        peticiones.login(username: username, password: password) { [self] result in
             
             switch result {
                 
             case .success(_):
                 
-                var modelo = ModelUser(id: 2, username: "jose1", password: "12345", email: "jose@gmail", ciudad: "Baza", provincia: "Granada", codigoPostal: "18800", foto: "foto", reportado: false, token: "")
+                //var modelo = ModelUser(id: 2, username: "jose1", password: "12345", email: "jose@gmail", ciudad: "Baza", provincia: "Granada", codigoPostal: "18800", foto: "foto", reportado: false, token: "")
                 
-                self.tokeen = true
+                self.tokeen = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpbmlnbzEyMzE0IiwiaWF0IjoxNzE0NDkwODM0LCJleHAiOjE3MTQ1NzcyMzR9.dYV6z5BSWIdDdBROnWTZnTCh12bs3-V4Nhq71k8NNDM"
+                
+                peticiones.getUserData()
+                            
                 
                 print("todo bien en el checkeo")
             
@@ -48,6 +51,12 @@ class FuncionLogin: ObservableObject{
         }
         
     }
+    
+    
+    func user(){
+        peticiones.getUserData()
+    }
+    
 
 
 

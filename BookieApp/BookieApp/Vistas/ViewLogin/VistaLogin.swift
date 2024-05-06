@@ -78,20 +78,24 @@ struct VistaLogin: View {
                 .foregroundColor(.black)
                 .navigationBarBackButtonHidden(true)
             
-            Button("Inicio Sesion"){
-                datos.check(username: "", password: "")
-            }
+            
+            Button("Inicio Sesion", action: {
+                datos.check(username: "inigo12314", password: "12345")
+                
+                datos.user()
+            })
+            .padding(20)
+            .padding(.horizontal, 30)
+            .background(Color.button)
+            .foregroundColor(.black)
+            .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
+            .padding(.top, 75)
+            .navigationBarBackButtonHidden(true)
             
             
-            NavigationLink("Iniciar Sesion", destination: TabarView())
-                .padding(20)
-                .padding(.horizontal, 30)
-                .background(Color.button)
-                .foregroundColor(.black)
-                .cornerRadius(20)
-                .padding([.leading, .trailing], 10)
-                .padding(.top, 75)
-                .navigationBarBackButtonHidden(true)
+            
+
             
             NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                 .padding(.top, 30)
