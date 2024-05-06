@@ -248,7 +248,7 @@ class Peticiones{
                   print("Se ha traido la lista de libros correctamente")
 
                   DispatchQueue.main.async {
-                      //apiResponse(decodedData)
+                      apiResponse(decodedData)
                   }
               }else{
                   print("No se ha podido descodificar el json")
@@ -320,7 +320,7 @@ class Peticiones{
                 print("Se ha traido la lista de libros con genero correctamente")
 
                 DispatchQueue.main.async {
-                    //apiResponse(decodedData)
+                    apiResponse(decodedData)
                 }
             }else{
                 print("No se ha podido descodificar el json")
@@ -331,44 +331,43 @@ class Peticiones{
         
       }
 
-    // ESTA FUNCION LA TIENE HECHA JULIO
-    
-//      func subirLibro(book: ModelBook, completion: @escaping (Result<String, Error>)-> Void){
-//
-//          let urlString = "http://localhost:8080/api/libro"
-//
-//          guard let url = URL(string: urlString) else {
-//              print("URL no válida")
-//              return
-//          }
-//
-//          var request = URLRequest(url: url)
-//          request.httpMethod = "POST"
-//          request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//          //let user = ModelUser.self
-//          guard let httpBody = try? JSONEncoder().encode(user) else{
-//              print("Invalid httpBody")
-//              return
-//          }
-//
-//          request.httpBody = httpBody
-//
-//          URLSession.shared.dataTask(with: request){ data, response, error in
-//
-//              if let data = data {
-//                  do{
-//                      let decoder = JSONDecoder()
-//                      let respuesta = data
-//                      print("Se subio el libro correctamente")
-//                  }catch(_){
-//                      print("error en el post del libro")
-//                  }
-//              }
-//          }.resume()
-//
-//
-//      }
+
+      func subirLibro(libro: Book, completion: @escaping (Result<String, Error>)-> Void){
+
+          let urlString = "http://localhost:8080/api/libro"
+
+          guard let url = URL(string: urlString) else {
+              print("URL no válida")
+              return
+          }
+
+          var request = URLRequest(url: url)
+          request.httpMethod = "POST"
+          request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+          let user = ModelUser.self
+          guard let httpBody = try? JSONEncoder().encode(user) else{
+              print("Invalid httpBody")
+              return
+          }
+
+          request.httpBody = httpBody
+
+          URLSession.shared.dataTask(with: request){ data, response, error in
+
+              if let data = data {
+                  do{
+                      let decoder = JSONDecoder()
+                      let respuesta = data
+                      print("Se subio el libro correctamente")
+                  }catch(_){
+                      print("error en el post del libro")
+                  }
+              }
+          }.resume()
+
+
+      }
 
       // Funcion para borrar un libro
       func borrarLibro(id: Int, completion: @escaping (Result<String, Error>)-> Void){
@@ -399,7 +398,7 @@ class Peticiones{
 
               guard let data = data else {return}
 
-              if let decodedData = try? JSONDecoder().decode(ModelChat.self, from: data){
+              if let decodedData = try? JSONDecoder().decode(Book.self, from: data){
                   print("Se ha traido los chats correctamente")
 
                   DispatchQueue.main.async {
@@ -426,8 +425,8 @@ class Peticiones{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let chat = ModelChat.self
-        guard let httpBody = try? JSONEncoder().encode(chat) else {
+        let libro = Book.self
+        guard let httpBody = try? JSONEncoder().encode(libro) else {
             print("Invalid httpBody")
             return
         }
