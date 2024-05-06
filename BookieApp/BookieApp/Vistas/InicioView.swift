@@ -9,15 +9,14 @@ import SwiftUI
 
 struct InicioView: View {
 
-    //@Binding var userData: ModelUser
-    
+    @State var nombre: String = ""
     var category: [String] = ["Romance", "Fantasía", "Thriller", "Aventuras", "Terror", "Acción", "Infantil", "Tragedia", "Bélico", "Filosofía", "Ciencia Ficción", "Misterio", "Poesía", "Clásico", "Psicología", "Biográfico", "Aficiones", "Historia", "Educativo", "Extranjeros", "Ciencia", ]
         
         var body: some View {
             
                 NavigationStack{
                     
-                    Text("¡Bienvenido!")
+                    Text("¡Bienvenido \(nombre)!")
                         .bold()
                         .font(.title)
                         .padding(.trailing, 175)

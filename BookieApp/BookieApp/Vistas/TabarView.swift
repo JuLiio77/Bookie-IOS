@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TabarView: View {
     
-
-    
     var body: some View {
         
         TabView {
