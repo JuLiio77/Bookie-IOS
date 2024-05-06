@@ -10,12 +10,9 @@ import SwiftUI
 struct SubirLibroView: View {
     @State var titulo: String = ""
     @State var autor: String = ""
-    @State var numeroPaginas: String = ""
+    @State var paginas: String = ""
     @State var genero: String = ""
-    @State var editorial: String = ""
-    @State var sinopsis: String = ""
-    
-   
+
     
     var body: some View {
         VStack{
@@ -58,7 +55,7 @@ struct SubirLibroView: View {
                     .padding(.top, 30)
                     .padding(.trailing, 220)
                 
-                TextField("Nº de páginas", text: $numeroPaginas)
+                TextField("Nº de páginas", text: $paginas)
                     .bold()
                     .padding()
                     .background(Color.color)
@@ -76,31 +73,6 @@ struct SubirLibroView: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
-                
-                Label("Editorial", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .padding(.top, 30)
-                    .padding(.trailing, 280)
-                
-                TextField("Editorial", text: $editorial)
-                    .bold()
-                    .padding()
-                    .background(Color.color)
-                    .cornerRadius(30)
-                    .padding([.leading, .trailing], 20)
-                
-                Label("Sinopsis", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .padding(.top, 30)
-                    .padding(.trailing, 280)
-                
-                TextField("Sinopsis", text: $sinopsis)
-                    .bold()
-                    .padding()
-                    .background(Color.color)
-                    .cornerRadius(30)
-                    .padding([.leading, .trailing], 20)
-                
                 
                 HStack{
                     
@@ -120,38 +92,36 @@ struct SubirLibroView: View {
                 
                 Divider()
                 
-                    .padding(.top, 10)
-                
+                .padding(.top, 10)
+
                 HStack{
-                    
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
+                   
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
                     
                 }
                 .padding(.top, 20)
                 
-//                Button(action: {
-////                    let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
-//                    
-//               
-//                }
-//                    .padding(20)
-//                    .padding(.horizontal, 30)
-//                    .background(Color.button)
-//                    .foregroundColor(.black)
-//                    .cornerRadius(20)
-//                    .padding([.leading, .trailing], 10)
-//                    .padding(.top, 30)
-//                    
-//                    Spacer()
-                }
+               Button("Siguiente"){
+                   
+               }
+               .padding(20)
+               .padding(.horizontal, 30)
+               .background(Color.button)
+               .foregroundColor(.black)
+               .cornerRadius(20)
+               .padding([.leading, .trailing], 10)
+               .padding(.top, 30)
+                       
+                Spacer()
             }
         }
     }
+}
 
 
 #Preview {

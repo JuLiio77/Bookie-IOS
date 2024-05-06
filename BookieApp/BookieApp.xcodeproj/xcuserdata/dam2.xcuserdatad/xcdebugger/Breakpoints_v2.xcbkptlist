@@ -46,6 +46,7 @@
             filePath = "BookieApp/Peticiones/Peticiones.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+<<<<<<< HEAD
             startingLineNumber = "86"
             endingLineNumber = "86"
             landmarkName = "PostRegister(name:username:password:email:repass:provincia:ciudad:codigoPos:)"
@@ -65,6 +66,11 @@
             startingLineNumber = "112"
             endingLineNumber = "112"
             landmarkName = "login(username:password:completion:)"
+=======
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "PostRegister(name:username:password:email:repass:provincia:ciudad:codigoPos:)"
+>>>>>>> parent of 1367b20 (Merge remote-tracking branch 'origin/julio' into jose)
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
