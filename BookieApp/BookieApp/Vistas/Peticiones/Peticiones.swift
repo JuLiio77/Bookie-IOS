@@ -12,9 +12,10 @@ class Peticiones {
     static let shared = Peticiones()
 
     // funcion para descargar los datos
-    func getDatosApi(apiResponse: @escaping(Book)-> ()){
+    func getDatosApi(query: String, apiResponse: @escaping(Book)-> ()){
         
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=a") else {return}
+        let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(query)") else {return}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

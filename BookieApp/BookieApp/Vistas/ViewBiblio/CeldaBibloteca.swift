@@ -54,7 +54,7 @@ struct CeldaBibloteca: View {
                     
                     VStack {
                         
-                        Text("Autor: \(book.volumeInfo.authors.joined(separator: ", "))")
+                        Text("Autor: \(book.volumeInfo.authors?.joined(separator: ", ") ?? "Desconocido")")
                             .padding(.leading, 90)
                             .padding(.trailing, 10)
                             .padding(.top, 5)

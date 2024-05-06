@@ -10,6 +10,8 @@ import SwiftUI
 
 class BookModel: ObservableObject {
     
+    private var bookservice = BookService()
+    
     @Published public private(set) var libros: [Book] = []
     @Published public private(set) var imagenLibro: String = ""
     @Published public private(set) var nombreLibro: String = ""
@@ -19,6 +21,7 @@ class BookModel: ObservableObject {
     
     public func onAppear() {
         
+        
         BookService.shared.fetch(query: "a")
             .sink { completion in
                 switch completion {
@@ -27,11 +30,33 @@ class BookModel: ObservableObject {
                     
                 case .failure(let error):
                     print("Error: \(error)")
+                    return
                 }
             } receiveValue: { [weak self] books in
-                self?.libros = books
+                self?.libros.append(contentsOf: books)
                 
-                if let book = books.first, let author = book.volumeInfo.authors.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
+                if let book = books.first, let author = book.volumeInfo.authors?.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
+                    self?.nombreLibro = book.volumeInfo.title
+                    self?.nombreAutor = author
+                    self?.imagenLibro = image
+                }
+            }
+            .store(in: &suscripcion)
+        
+        BookService.shared.fetch(query: "c")
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                    
+                case .failure(let error):
+                    print("Error: \(error)")
+                    return
+                }
+            } receiveValue: { [weak self] books in
+                self?.libros.append(contentsOf: books)
+                
+                if let book = books.first, let author = book.volumeInfo.authors?.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
                     self?.nombreLibro = book.volumeInfo.title
                     self?.nombreAutor = author
                     self?.imagenLibro = image

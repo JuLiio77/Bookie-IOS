@@ -331,8 +331,8 @@
 		3DF524292BA8897A00C7D10F /* ModelsApi */ = {
 			isa = PBXGroup;
 			children = (
-				3DF5242A2BA889C300C7D10F /* Book.swift */,
 				3D39A2FA2BACAEE400DDD168 /* BookModel.swift */,
+				3DF5242A2BA889C300C7D10F /* Book.swift */,
 			);
 			path = ModelsApi;
 			sourceTree = "<group>";

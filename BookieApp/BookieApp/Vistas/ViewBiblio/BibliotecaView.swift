@@ -12,9 +12,6 @@ struct BibliotecaView: View {
     @StateObject var bookModel = BookModel()
     @State var search = ""
     
-    //guardar historial de busquedas
-    @State var historial: [String] = UserDefaults.standard.array(forKey: "historial") as? [String] ?? []
-    
     var body: some View {
         
         NavigationStack {
@@ -37,29 +34,12 @@ struct BibliotecaView: View {
         .onAppear {
             bookModel.onAppear()
         }
-        .searchable(text: $search, prompt: "Buscar libro") {
-            if !historial.isEmpty {
-                ForEach(historial, id: \.self) { busqueda in
-                    Text(busqueda).onTapGesture {
-                        search = busqueda
-                    }
-                }
-            }
-        }
-        .onChange(of: search) { newValue in
-            if !newValue.isEmpty && !historial.contains(newValue) {
-                historial.insert(newValue, at: 0)
-                
-                if historial.count > 3 {
-                    historial.removeLast()
-                }
-                UserDefaults.standard.set(historial, forKey: "historial")
-            }
-        }
+        .searchable(text: $search, prompt: "Buscar libro")
+        
     }
     
     var searchResults: [Book] {
-    
+        
         if search.isEmpty {
             return bookModel.libros
         } else {
@@ -69,6 +49,8 @@ struct BibliotecaView: View {
         }
     }
 }
+
+
 
 #Preview {
     BibliotecaView()
