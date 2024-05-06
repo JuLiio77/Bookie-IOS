@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct Chats{
-    
-    let id: Int
+struct ModelChat: Decodable{
+    var id: Int
     var usuarioEmisor: ModelUser
     var usuarioReceptor: ModelUser
     var mensajes: [Mensajes]

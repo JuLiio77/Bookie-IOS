@@ -86,10 +86,7 @@ class FuncionLogin: ObservableObject{
         }
     
     }
-    
-    func mostrarDefault(){
-        
-    }
+
     
     init(){
         
