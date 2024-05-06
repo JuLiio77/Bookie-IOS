@@ -11,7 +11,7 @@ class PeticionesSubirLibro{
     
     static let shared = PeticionesSubirLibro()
     
-    func SubirLibro(titulo: String, autor: String, numeroPaginas: Int, sinopsis: String, editorial: String ){
+    func SubirLibro(id: Int, titulo: String, autor: String, numeroPaginas: Int, sinopsis: String, genero: String, foto: String, editorial: String ){
         let urlString = "http://localhost:8080/api/libro"
         
         guard let url = URL(string: urlString) else {
@@ -23,7 +23,8 @@ class PeticionesSubirLibro{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let book = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: numeroPaginas, editorial: editorial, sinopsis: sinopsis)
+        let book = SubirLibroRequest(id: id, titulo: titulo, autor: autor, numeroPaginas: numeroPaginas, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
+
         guard let httpBody = try? JSONEncoder().encode(book) else {
             print("Invalid httpBody")
             return
@@ -35,7 +36,11 @@ class PeticionesSubirLibro{
             if let data = data {
                 do{
                     let decoder = JSONDecoder()
+                    //let libro = try decoder.decode(ModelLibro.self, from: data)
+                    
+                    print(data)
                     return
+                    
                 } catch(let error){
                     print(error.localizedDescription)
                 }

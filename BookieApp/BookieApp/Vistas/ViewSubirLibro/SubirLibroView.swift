@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SubirLibroView: View {
+    
+    var fun = PeticionesSubirLibro()
+    
     @State var titulo: String = ""
     @State var autor: String = ""
     @State var numeroPaginas: String = ""
@@ -15,9 +18,10 @@ struct SubirLibroView: View {
     @State var editorial: String = ""
     @State var sinopsis: String = ""
     
-   
-    
+
     var body: some View {
+        
+    
         VStack{
             ScrollView{
                 Text("Detalles del libro")
@@ -134,10 +138,14 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
+                Button("Subir libro", action: {
+                    
+                })
+                
 //                Button(action: {
 ////                    let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
 //                    
-//               
+//                
 //                }
 //                    .padding(20)
 //                    .padding(.horizontal, 30)
