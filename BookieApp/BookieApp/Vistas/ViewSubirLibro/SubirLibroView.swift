@@ -134,25 +134,25 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
-                Button(action: {
-                    let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
-                    
-               
-                }) {
-                    .padding(20)
-                    .padding(.horizontal, 30)
-                    .background(Color.button)
-                    .foregroundColor(.black)
-                    .cornerRadius(20)
-                    .padding([.leading, .trailing], 10)
-                    .padding(.top, 30)
-                    
-                    Spacer()
+//                Button(action: {
+////                    let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
+//                    
+//               
+//                }
+//                    .padding(20)
+//                    .padding(.horizontal, 30)
+//                    .background(Color.button)
+//                    .foregroundColor(.black)
+//                    .cornerRadius(20)
+//                    .padding([.leading, .trailing], 10)
+//                    .padding(.top, 30)
+//                    
+//                    Spacer()
                 }
             }
         }
     }
-}
+
 
 #Preview {
     SubirLibroView()
