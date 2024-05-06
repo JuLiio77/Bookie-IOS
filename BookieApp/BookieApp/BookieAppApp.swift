@@ -11,8 +11,8 @@ import SwiftUI
 struct BookieAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(FuncionLogin())
+            TabarView()
+                .environmentObject(LibrosFavoritos())
         }
     }
 }
