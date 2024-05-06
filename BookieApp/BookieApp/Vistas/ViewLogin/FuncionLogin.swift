@@ -9,8 +9,8 @@ import SwiftUI
 
 class FuncionLogin: ObservableObject{
     
-    static let shared = FuncionLogin()
-    var taber = TabarView()
+// static let shared = FuncionLogin()
+ //   var taber = TabarView()
     var peticiones = Peticiones()
     
     @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? "jose1"

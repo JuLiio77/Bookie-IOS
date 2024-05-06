@@ -14,8 +14,12 @@ struct SubirLibroRequest: Codable {
     var numeroPaginas: Int
     var editorial: String
     var sinopsis: String
-    var genero: String
-    var foto: String
+//    var genero: String
+//    var foto: String
+//    var id: Int
+//    var usuario: Int{
+//        Int(id)
+//    }
 }
 
 
