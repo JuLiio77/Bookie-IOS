@@ -20,30 +20,13 @@ class BookModel: ObservableObject {
     private var suscripcion = Set<AnyCancellable>()
     
     public func onAppear() {
+        fetchBooks(query: "a")
+        fetchBooks(query: "c")
+    }
+    
+    private func fetchBooks(query: String) {
         
-        
-        BookService.shared.fetch(query: "a")
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    break
-                    
-                case .failure(let error):
-                    print("Error: \(error)")
-                    return
-                }
-            } receiveValue: { [weak self] books in
-                self?.libros.append(contentsOf: books)
-                
-                if let book = books.first, let author = book.volumeInfo.authors?.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
-                    self?.nombreLibro = book.volumeInfo.title
-                    self?.nombreAutor = author
-                    self?.imagenLibro = image
-                }
-            }
-            .store(in: &suscripcion)
-        
-        BookService.shared.fetch(query: "c")
+        BookService.shared.fetch(query: query)
             .sink { completion in
                 switch completion {
                 case .finished:

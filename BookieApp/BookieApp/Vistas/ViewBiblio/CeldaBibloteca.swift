@@ -19,12 +19,6 @@ struct CeldaBibloteca: View {
                     .frame(width: 350, height: 180)
                     .background(Color.color.opacity(0.5))
                     .cornerRadius(20)
-                
-                /*Image(systemName: "")
-                    .frame(width: 114, height: 122)
-                    .background(Color.gray)
-                    .cornerRadius(20)
-                    .padding(.trailing, 200)*/
             
             if let urlString = book.volumeInfo.imageLinks?.smallThumbnail,
                 let url = URL(string: urlString) {
@@ -78,15 +72,9 @@ struct CeldaBibloteca: View {
                         .font(.caption)
                         .padding(.top, 52)
                     }
-                    
-                    
-                    
-                    
                 }
                 .padding(.leading, 50)
                 .frame(width: 350)
-                                
-            
         }
     }
 }

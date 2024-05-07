@@ -61,9 +61,10 @@ struct DetalleLibroBibliotecaView: View {
                         }
                       
                             .foregroundStyle(.brown)
-                        Text("Disponible")
+                      
+                        /*Text("Disponible")
                             .padding(.leading, 50)
-                            .foregroundStyle(.cyan)
+                            .foregroundStyle(.cyan)*/
                     }
                     .padding(.top, 15)
                     
