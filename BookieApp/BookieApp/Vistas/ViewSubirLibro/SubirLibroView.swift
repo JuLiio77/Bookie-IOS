@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SubirLibroView: View {
     
-    var fun = PeticionesSubirLibro()
+    //var fun = PeticionesSubirLibro()
     
     @State var titulo: String = ""
     @State var autor: String = ""
@@ -128,12 +128,12 @@ struct SubirLibroView: View {
                 
                 HStack{
                     
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
                     
                 }
                 .padding(.top, 20)

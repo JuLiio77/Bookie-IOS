@@ -13,32 +13,34 @@ class FuncionLogin: ObservableObject{
  //   var taber = TabarView()
     var peticiones = Peticiones()
     
-    @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? "jose1"
+    @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? ""
     @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
     @Published var repassword: String = UserDefaults.standard.string(forKey: "repassword") ?? ""
     @Published var recordarConta: Bool = UserDefaults.standard.bool(forKey: "toogle")
     @Published var tokeen: String = UserDefaults.standard.string(forKey: "token") ?? ""
     @Published var email: String = UserDefaults.standard.string(forKey: "email") ?? ""
     @Published var provincia: String = UserDefaults.standard.string(forKey: "provincia") ?? ""
-    @Published var codigoPostal: String = UserDefaults.standard.string(forKey: "codigoPostal") ?? ""
+    @Published var codigoPostal: Int = UserDefaults.standard.integer(forKey: "codigoPostal")
     @Published var ciudad: String = UserDefaults.standard.string(forKey: "ciudad") ?? ""
+    @Published var foto: String = UserDefaults.standard.string(forKey: "foto") ?? ""
     @Published var username: String = UserDefaults.standard.string(forKey: "username") ?? ""
     @Published var prefeLite: String = UserDefaults.standard.string(forKey: "preferencia") ?? ""
     
     
     func check(username: String, password: String) {
-        
-        peticiones.login(username: username, password: password) { result in
-            switch result {
+  
+        peticiones.login(AuthRequest(username: name, password: password)){ result in
+            
+            switch result{
             case .success(let token):
-                print("Login successful with token: \(token)")
+                print("Login correcto \(token)")
                 
             case .failure(let error):
+                print("Error en el login \(error)")
                 
-                print("Login error \(error.localizedDescription)")
-
             }
         }
+
     }
 
 
@@ -59,8 +61,8 @@ class FuncionLogin: ObservableObject{
                 UserDefaults.standard.setValue(codigoPostal, forKey: "codigoPostal")
                 UserDefaults.standard.setValue(username, forKey: "username")
                 
-                peticiones.PostRegister(name: name, username: username, password: password, email: email, repass: repassword, provincia: provincia, ciudad: ciudad, codigoPos: Int(codigoPostal)!)
-                    
+                peticiones.PostRegister(RegisterRequest(nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, foto: foto, reportado: false, token: tokeen))
+
             }
 
         }else{

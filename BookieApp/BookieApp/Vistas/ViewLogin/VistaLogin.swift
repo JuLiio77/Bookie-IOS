@@ -24,13 +24,15 @@ struct VistaLogin: View {
                 .padding()
             
             
-            TextField("Correo electronico", text: $datos.email)
+            TextField("Nombre de Usuario", text: $datos.username)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,130)
-                .textContentType(.emailAddress)
+                .textContentType(.username)
+                .textInputAutocapitalization(.never)
+                
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 
