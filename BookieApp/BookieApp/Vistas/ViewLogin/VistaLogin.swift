@@ -82,7 +82,7 @@ struct VistaLogin: View {
             Button("Inicio Sesion", action: {
                 datos.check(username: "inigo12314", password: "12345")
                 
-                $datos.user
+                //$datos.user
             })
             .padding(20)
             .padding(.horizontal, 30)

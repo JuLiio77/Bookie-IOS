@@ -73,6 +73,8 @@ class FuncionLogin: ObservableObject{
         
     }
     
+    
+    
     init(){
         
     }

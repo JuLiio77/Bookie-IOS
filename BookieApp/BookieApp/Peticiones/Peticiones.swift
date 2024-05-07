@@ -284,7 +284,7 @@ class Peticiones{
                 print("Se ha traido la lista de libros correctamente")
 
                 DispatchQueue.main.async {
-                    apiResponse(decodedData)
+                    //apiResponse(decodedData)
                 }
             }else{
                 print("No se ha podido descodificar el json")
@@ -320,7 +320,7 @@ class Peticiones{
                 print("Se ha traido la lista de libros con genero correctamente")
 
                 DispatchQueue.main.async {
-                    apiResponse(decodedData)
+                    //apiResponse(decodedData)
                 }
             }else{
                 print("No se ha podido descodificar el json")
