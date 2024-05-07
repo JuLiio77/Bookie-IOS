@@ -64,6 +64,4 @@ class BookModel: ObservableObject {
             }
             .store(in: &suscripcion)
     }
-    
-    
 }

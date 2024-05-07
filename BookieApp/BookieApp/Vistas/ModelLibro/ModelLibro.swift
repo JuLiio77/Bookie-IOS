@@ -6,14 +6,3 @@
 //
 
 import Foundation
-
-struct ModelLibro: Encodable, Decodable{
-    var id: Int
-    var titulo: String
-    var autor: String
-    var paginas: Int
-    var genero: String
-    var editorial: String
-    var sinopsis: String
-    var filros: [String]
-}
