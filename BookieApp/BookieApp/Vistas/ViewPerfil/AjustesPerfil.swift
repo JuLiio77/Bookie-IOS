@@ -19,10 +19,10 @@ struct AjustesPerfil: View {
                
                        List {
                            Section{
-                               NavigationLink(destination: EditarPerfil()) {
+                               NavigationLink(destination: Text("Vista 1")) {
                                    Text("Editar Perfil")
                                }
-                               NavigationLink(destination: ListaLibrosFavoritos()) {
+                               NavigationLink(destination: Text("Vista 2")) {
                                    Text("Favoritos")
                                }
                                NavigationLink(destination: TerminosUsoView()) {
@@ -75,7 +75,4 @@ struct AjustesPerfil: View {
 }
 #Preview {
     AjustesPerfil(isPresented: .constant(true))
-        .environmentObject(LibrosFavoritos())
-
-    
 }

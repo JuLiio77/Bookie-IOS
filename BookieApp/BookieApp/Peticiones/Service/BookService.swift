@@ -38,4 +38,10 @@ struct BookService {
     struct BooksResponse: Decodable {
         let items: [Book]
     }
+    
+    
+    public func getBooks(){
+        
+    }
+    
 }
