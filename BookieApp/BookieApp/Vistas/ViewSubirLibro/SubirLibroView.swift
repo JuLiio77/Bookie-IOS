@@ -19,6 +19,7 @@ struct SubirLibroView: View {
     @State var sinopsis: String = ""
     
 
+    
     var body: some View {
         
     
