@@ -24,15 +24,13 @@ struct VistaLogin: View {
                 .padding()
             
             
-            TextField("Nombre de Usuario", text: $datos.username)
+            TextField("Correo electronico", text: $datos.email)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,130)
-                .textContentType(.username)
-                .textInputAutocapitalization(.never)
-                
+                .textContentType(.emailAddress)
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 
@@ -64,7 +62,7 @@ struct VistaLogin: View {
             
             HStack {
                 
-                Toggle("", isOn: $toggle)
+                Toggle("",isOn: $toggle)
                 Text("Recordar contraseña")
                 
             }
@@ -84,7 +82,7 @@ struct VistaLogin: View {
             Button("Inicio Sesion", action: {
                 datos.check(username: "inigo12314", password: "12345")
                 
-                //$datos.user
+                datos.user()
             })
             .padding(20)
             .padding(.horizontal, 30)
