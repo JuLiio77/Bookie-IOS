@@ -25,15 +25,14 @@ struct ListaLibrosFavoritos: View {
                     
                     LazyVGrid(columns: columnas) {
                         
-                        ForEach($librosFavoritos.librosFav, id: \.userID) { bookmodelFav in
+                        ForEach(librosFavoritos.librosFav) { bookmodelFav in
+                            
+                            if let book = bookmodelFav.book {
                                 
-                            NavigationLink("", destination: DetalleLibro())
-                            //if let book = Book {
-//
-//                                NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: bookmodelFav)) {
-//                                    CeldaLibroFavorito(book: book)
-//                                }
-//                            }
+                                NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: librosFavoritos)) {
+                                    CeldaLibroFavorito(book: book)
+                                }
+                            }
                         }
                     }
                 }

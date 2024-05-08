@@ -16,9 +16,9 @@ struct ContentView: View {
         
         HStack{
             
-            var token = false
-            
-            if  datos.tokeen.isEmpty {
+            var token = true
+            // datos.tokeen.isEmpty
+            if token{
                 
                 TabarView()
                                

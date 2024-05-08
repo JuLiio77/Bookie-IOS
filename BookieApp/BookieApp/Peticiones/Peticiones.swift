@@ -81,7 +81,8 @@ class Peticiones{
                 do{
                     let decoder = JSONDecoder()
                     
-                    let token = try decoder.decode(ModelToken.self, from: data)
+                    //let token = try decoder.decode(ModelToken.self, from: data)
+                    print("Registro completado")
                     return
                     
                 }catch(let error){
@@ -95,7 +96,6 @@ class Peticiones{
     }
     
   // FUNCION POST DE LOGIN DE USUARIO -- SE LE MANDA POR PARAMETRO EL USERNAME Y LA CONTRASELA Y SI ESTA CORRECTO NOS DEVUELVE UN TOKEN
-    
     func login(_ user: AuthRequest, completion: @escaping (Result<String, Error>)-> Void){
         
         let urlString = "http://localhost:8080/api/auth/login"
@@ -108,12 +108,11 @@ class Peticiones{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    
+        
         guard let httpBody = try? JSONEncoder().encode(user) else {
             print("Invalid httpBody")
             return
         }
-        //print(firstUser)
         
         request.httpBody = httpBody
    
@@ -394,7 +393,7 @@ class Peticiones{
       }
 
 
-    /////////////////////////////////  CHAT
+    ////////////////////////////////  CHAT
 
       func listaChat(_ id: Int){
         

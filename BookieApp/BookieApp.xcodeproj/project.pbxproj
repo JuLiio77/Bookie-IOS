@@ -23,6 +23,9 @@
 		3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF472BD6C5550007CA17 /* ModelUser.swift */; };
 		3D2FDF4D2BD6C5550007CA17 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF482BD6C5550007CA17 /* RegisterRequest.swift */; };
 		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
+		3D5BCB612BEBDC410029C289 /* FuncionesLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5BCB602BEBDC410029C289 /* FuncionesLibro.swift */; };
+		3D5BCB632BEBE3CD0029C289 /* ListaLibrosFavoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5BCB622BEBE3CD0029C289 /* ListaLibrosFavoritos.swift */; };
+		3D5BCB672BEBE46E0029C289 /* BookModelFavoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5BCB662BEBE46E0029C289 /* BookModelFavoritos.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
@@ -49,7 +52,6 @@
 		3DF524282BA888F000C7D10F /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF524272BA888F000C7D10F /* BookService.swift */; };
 		3DF5242B2BA889C300C7D10F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5242A2BA889C300C7D10F /* Book.swift */; };
 		3DF9E91E2BC6F47600801D26 /* CeldaLibroFavorito.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9E91D2BC6F47600801D26 /* CeldaLibroFavorito.swift */; };
-		3DF9E9202BC6F51000801D26 /* ListaLibrosFavoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF9E91F2BC6F51000801D26 /* ListaLibrosFavoritos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,9 @@
 		3D2FDF472BD6C5550007CA17 /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		3D2FDF482BD6C5550007CA17 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		3D5BCB602BEBDC410029C289 /* FuncionesLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionesLibro.swift; sourceTree = "<group>"; };
+		3D5BCB622BEBE3CD0029C289 /* ListaLibrosFavoritos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaLibrosFavoritos.swift; sourceTree = "<group>"; };
+		3D5BCB662BEBE46E0029C289 /* BookModelFavoritos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookModelFavoritos.swift; path = ../../../../../../../Downloads/BookieApp/BookieApp/Vistas/Favoritos/BookModelFavoritos.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
@@ -97,7 +102,6 @@
 		3DF524272BA888F000C7D10F /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		3DF5242A2BA889C300C7D10F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		3DF9E91D2BC6F47600801D26 /* CeldaLibroFavorito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaLibroFavorito.swift; sourceTree = SOURCE_ROOT; };
-		3DF9E91F2BC6F51000801D26 /* ListaLibrosFavoritos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibrosFavoritos.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,8 +328,10 @@
 			isa = PBXGroup;
 			children = (
 				3DF9E91D2BC6F47600801D26 /* CeldaLibroFavorito.swift */,
-				3DF9E91F2BC6F51000801D26 /* ListaLibrosFavoritos.swift */,
+				3D5BCB662BEBE46E0029C289 /* BookModelFavoritos.swift */,
+				3D5BCB622BEBE3CD0029C289 /* ListaLibrosFavoritos.swift */,
 				3D11CD7D2BEA939A002BCECD /* LibrosFavoritos.swift */,
+				3D5BCB602BEBDC410029C289 /* FuncionesLibro.swift */,
 			);
 			path = ViewFavoritos;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				3D2FDF4B2BD6C5550007CA17 /* ModelToken.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
+				3D5BCB612BEBDC410029C289 /* FuncionesLibro.swift in Sources */,
 				3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */,
 				3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */,
 				3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */,
@@ -433,8 +440,9 @@
 				3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */,
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
 				3D11CD7E2BEA939A002BCECD /* LibrosFavoritos.swift in Sources */,
+				3D5BCB672BEBE46E0029C289 /* BookModelFavoritos.swift in Sources */,
+				3D5BCB632BEBE3CD0029C289 /* ListaLibrosFavoritos.swift in Sources */,
 				3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */,
-				3DF9E9202BC6F51000801D26 /* ListaLibrosFavoritos.swift in Sources */,
 				3DED65D72BBB1CE7001BB9C2 /* ModelLibro.swift in Sources */,
 				3DCC23A52BD80BE100E35C93 /* VistaLogin.swift in Sources */,
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
