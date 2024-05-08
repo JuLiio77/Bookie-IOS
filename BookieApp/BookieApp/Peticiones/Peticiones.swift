@@ -54,7 +54,7 @@ class Peticiones{
     
     // FUNCION POST DE REGISTRO DEL USUARIO -- SE LE MANDA COMO PARAMETRO TODOS LOS DATOS
     
-    func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
+    func PostRegister(_ userRegister: RegisterRequest){
         
         
         let urlString = "http://localhost:8080/api/auth/register"
@@ -64,13 +64,11 @@ class Peticiones{
             return
         }
         
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
-        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+        guard let httpBody = try? JSONEncoder().encode(userRegister) else {
             print("Invalid httpBody")
             return
         }
@@ -84,10 +82,8 @@ class Peticiones{
                     let decoder = JSONDecoder()
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
-                    
                     return
-                    //print(token.token)
-                    //print(response)
+                    
                 }catch(let error){
                     print(error.localizedDescription)
                 }
@@ -100,7 +96,7 @@ class Peticiones{
     
   // FUNCION POST DE LOGIN DE USUARIO -- SE LE MANDA POR PARAMETRO EL USERNAME Y LA CONTRASELA Y SI ESTA CORRECTO NOS DEVUELVE UN TOKEN
     
-    func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
+    func login(_ user: AuthRequest, completion: @escaping (Result<String, Error>)-> Void){
         
         let urlString = "http://localhost:8080/api/auth/login"
         
@@ -109,13 +105,11 @@ class Peticiones{
             return
         }
         
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     
-        let firstUser = AuthRequest(username: username, password: password)
-        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+        guard let httpBody = try? JSONEncoder().encode(user) else {
             print("Invalid httpBody")
             return
         }
@@ -153,9 +147,9 @@ class Peticiones{
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = "POST" // Assuming GET request for retrieving data
-
-        let tokenUser = UserDefaults.standard.string(forKey: "token")    //"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpbmlnbzEyMzE0IiwiaWF0IjoxNzE0NDkwODM0LCJleHAiOjE3MTQ1NzcyMzR9.dYV6z5BSWIdDdBROnWTZnTCh12bs3-V4Nhq71k8NNDM"
+        request.httpMethod = "POST"
+        
+        let tokenUser = UserDefaults.standard.string(forKey: "token") // Si llega a fallar cambiar el UserDefault por un token
 
         request.setValue("Bearer \(tokenUser!)", forHTTPHeaderField: "Authorization")
 
@@ -163,9 +157,8 @@ class Peticiones{
             let decoder = JSONDecoder()
 
             if let data = data {
-                print(response)
+                
                 do {
-                    
                     let user = try decoder.decode(ModelUser.self, from: data)
                     print("Usuario decodificado:", user)
                 } catch {
@@ -185,7 +178,7 @@ class Peticiones{
           var request = URLRequest(url: url)
           request.httpMethod = "GET"
           request.addValue("application/json", forHTTPHeaderField: "Content-type")
-          request.timeoutInterval = 20
+          
 
           let session = URLSession.shared
           session.dataTask(with: request){ (data, response, error) in
@@ -200,15 +193,16 @@ class Peticiones{
 
               guard let data = data else {return}
 
-              if let decodedData = try? JSONDecoder().decode(UserModel.self, from: data){
-                  print("Se ha traido los datos correctamente")
-
-                  DispatchQueue.main.async {
-                      //self.listaUsuarios = decodedData
-                  }
-              }else{
-                  print("No se ha podido descodificar el json")
-              }
+              // Ver como descodificar los datos correctamente
+//              if let decodedData = try? JSONDecoder().decode(UserModel.self, from: data){
+//                  print("Se ha traido los datos correctamente")
+//
+//                  DispatchQueue.main.async {
+//                      //self.listaUsuarios = decodedData
+//                  }
+//              }else{
+//                  print("No se ha podido descodificar el json")
+//              }
 
 
           }.resume()
@@ -216,7 +210,33 @@ class Peticiones{
       }
 
 
-      func borrarUser(id: Int){
+      func borrarUser(_ id: Int){
+          
+          let urlString = "http://localhost:8080/api/usuario/\(id)"
+
+          guard let url = URL(string: urlString) else {
+              print("URL no válida")
+              return
+          }
+
+          var request = URLRequest(url: url)
+          request.httpMethod = "DELETE"
+          request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+
+          URLSession.shared.dataTask(with: request){ data, response, error in
+
+              if let data = data {
+                  
+                let decoder = JSONDecoder()
+                let respuesta = data
+                print("Se ha borrado el usuario correctamente")
+                  
+              }else if let error = error {
+                  print("Ha ocurrido un error \(error)")
+              }
+            
+          }.resume()
         
       }
 
@@ -244,11 +264,12 @@ class Peticiones{
 
               guard let data = data else {return}
 
-              if let decodedData = try? JSONDecoder().decode(Book.self, from: data){
+              if let modelLibro = try? JSONDecoder().decode(ModelLibro.self, from: data){
+                  
                   print("Se ha traido la lista de libros correctamente")
 
                   DispatchQueue.main.async {
-                      apiResponse(decodedData)
+                      print("Listado de libros ---> \(modelLibro)")
                   }
               }else{
                   print("No se ha podido descodificar el json")
@@ -259,7 +280,7 @@ class Peticiones{
 
       }
 
-      func listaLibrosUser(id: Int){
+      func listaLibrosUser(_ id: Int){
 
         guard let url = URL(string: "http://localhost:8080/api/libro/usuario/\(id)") else {return}
 
@@ -280,11 +301,11 @@ class Peticiones{
 
             guard let data = data else {return}
 
-            if let decodedData = try? JSONDecoder().decode(Book.self, from: data){
+            if let modelLibro = try? JSONDecoder().decode(ModelLibro.self, from: data){
                 print("Se ha traido la lista de libros correctamente")
 
                 DispatchQueue.main.async {
-                    apiResponse(decodedData)
+                    print("Listado de libros del usuario ---> \(modelLibro)")
                 }
             }else{
                 print("No se ha podido descodificar el json")
@@ -295,7 +316,7 @@ class Peticiones{
         
       }
 
-      func listaLibrosGender(gender: String){
+      func listaLibrosGender(_ gender: String){
         
         guard let url = URL(string: "http://localhost:8080/api/libro/genero/\(gender)") else {return}
 
@@ -316,11 +337,11 @@ class Peticiones{
 
             guard let data = data else {return}
 
-            if let decodedData = try? JSONDecoder().decode(Book.self, from: data){
+            if let modelLibro = try? JSONDecoder().decode(ModelLibro.self, from: data){
                 print("Se ha traido la lista de libros con genero correctamente")
 
                 DispatchQueue.main.async {
-                    apiResponse(decodedData)
+                    print("Listado de libros por genero ---> \(modelLibro)")
                 }
             }else{
                 print("No se ha podido descodificar el json")
@@ -332,7 +353,7 @@ class Peticiones{
       }
 
 
-      func subirLibro(libro: Book, completion: @escaping (Result<String, Error>)-> Void){
+      func subirLibro(_ libro: ModelLibro){
 
           let urlString = "http://localhost:8080/api/libro"
 
@@ -345,8 +366,8 @@ class Peticiones{
           request.httpMethod = "POST"
           request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-          let user = ModelUser.self
-          guard let httpBody = try? JSONEncoder().encode(user) else{
+          
+          guard let httpBody = try? JSONEncoder().encode(libro) else{
               print("Invalid httpBody")
               return
           }
@@ -356,14 +377,13 @@ class Peticiones{
           URLSession.shared.dataTask(with: request){ data, response, error in
 
               if let data = data {
-                  do{
-                      let decoder = JSONDecoder()
-                      let respuesta = data
-                      print("Se subio el libro correctamente")
-                  }catch(_){
-                      print("error en el post del libro")
-                  }
+                  
+                let decoder = JSONDecoder()
+                let respuesta = data
+                print("Se subio el libro correctamente")
+                  
               }
+            
           }.resume()
 
 
@@ -376,7 +396,7 @@ class Peticiones{
 
     /////////////////////////////////  CHAT
 
-      func listaChat(id: Int){
+      func listaChat(_ id: Int){
         
          guard let url = URL(string: "http://localhost:8080/api/chats/\(id)") else {return}
 
@@ -398,7 +418,7 @@ class Peticiones{
 
               guard let data = data else {return}
 
-              if let decodedData = try? JSONDecoder().decode(Book.self, from: data){
+              if let decodedData = try? JSONDecoder().decode(ModelChat.self, from: data){
                   print("Se ha traido los chats correctamente")
 
                   DispatchQueue.main.async {
@@ -411,10 +431,10 @@ class Peticiones{
 
           }.resume()
       }
-
-      func subirChat(){
-
-        let urlString = "http://localhost:8080/api/chats"
+    
+    func sendMensaje(_ mensaje: ModelMensaje){
+        
+        let urlString = "http://localhost:8080/api/mensaje"
 
         guard let url = URL(string: urlString) else {
             print("URL no válida")
@@ -425,8 +445,8 @@ class Peticiones{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let libro = Book.self
-        guard let httpBody = try? JSONEncoder().encode(libro) else {
+        
+        guard let httpBody = try? JSONEncoder().encode(mensaje) else{
             print("Invalid httpBody")
             return
         }
@@ -436,16 +456,54 @@ class Peticiones{
         URLSession.shared.dataTask(with: request){ data, response, error in
 
             if let data = data {
-                do{
-                    let decoder = JSONDecoder()
-                    let respuesta = data
-                    print("Se subio el chat correctamente")
-                }catch(_){
-                    print("error en el chat")
-                }
+                
+              let decoder = JSONDecoder()
+              let respuesta = data
+              print("Se mando el mensaje correctamente")
+                
             }
+          
         }.resume()
-      }
+                
+    }
+
+    
+    // Revisar funcion por que se han cambiado cosas del modelo y la forma de hacerlo
+    
+//      func subirChat(){
+//
+//        let urlString = "http://localhost:8080/api/chats"
+//
+//        guard let url = URL(string: urlString) else {
+//            print("URL no válida")
+//            return
+//        }
+//
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let chat = ModelChat.self
+//        guard let httpBody = try? JSONEncoder().encode(chat) else {
+//            print("Invalid httpBody")
+//            return
+//        }
+//
+//        request.httpBody = httpBody
+//
+//        URLSession.shared.dataTask(with: request){ data, response, error in
+//
+//            if let data = data {
+//                do{
+//                    let decoder = JSONDecoder()
+//                    let respuesta = data
+//                    print("Se subio el chat correctamente")
+//                }catch(_){
+//                    print("error en el chat")
+//                }
+//            }
+//        }.resume()
+//      }
 
 }
 

@@ -28,12 +28,9 @@ struct DetalleLibro: View {
                 
                 VStack{
                     
-                    NavigationLink(destination: ViewPerfilAjeno()) {
-                      Label( "Iñigo", systemImage: "person.circle.fill")
-                           .padding(.leading, 250)
-                           .padding([.top, .bottom], 15)
-                           .foregroundColor(.black)
-                   }
+                    Label("Julio Vera", systemImage: "globe")
+                        .padding(.leading, 250)
+                        .padding([.top, .bottom], 15)
                     
                     Image(systemName: "globe")
                         .frame(width: 166, height: 196)
@@ -138,14 +135,14 @@ struct DetalleLibro: View {
                         .padding(.top, 25)
                        
                     HStack{
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        ViewFotoPerfil()
-                            .frame(width: 50)
+//                        ViewFotoPerfil()
+//                            .frame(width: 50)
+//                        ViewFotoPerfil()
+//                            .frame(width: 50)
+//                        ViewFotoPerfil()
+//                            .frame(width: 50)
+//                        ViewFotoPerfil()
+//                            .frame(width: 50)
                         
                     }
                     
