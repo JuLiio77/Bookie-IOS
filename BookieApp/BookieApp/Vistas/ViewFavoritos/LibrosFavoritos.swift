@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct LibrosFavoritos: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+class LibrosFavoritos: ObservableObject {
+    
+    
 }
 
-#Preview {
-    LibrosFavoritos()
-}
