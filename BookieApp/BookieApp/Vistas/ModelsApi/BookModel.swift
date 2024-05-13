@@ -22,6 +22,12 @@ class BookModel: ObservableObject {
     public func onAppear() {
         fetchBooks(query: "a")
         fetchBooks(query: "c")
+        fetchBooks(query: "d")
+        fetchBooks(query: "f")
+        fetchBooks(query: "j")
+        fetchBooks(query: "l")
+        fetchBooks(query: "m")
+        fetchBooks(query: "p")
     }
     
     private func fetchBooks(query: String) {
