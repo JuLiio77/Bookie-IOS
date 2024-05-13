@@ -57,6 +57,7 @@ struct CeldaBibloteca: View {
                     }
                     
                     
+<<<<<<< HEAD
                     VStack {
                         /*NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: BookModelFavoritos(id: book.id))) {
                             Text("Ver más")*/
@@ -72,6 +73,27 @@ struct CeldaBibloteca: View {
                         .font(.caption)
                         .padding(.top, 52)
                     }
+=======
+//                    VStack {
+//                        /*NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: BookModelFavoritos(id: book.id))) {
+//                            Text("Ver más")*/
+//                        
+//                        NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: librosFavoritos.bookModelFavoritos(for: book))) {
+//                            Text("Ver más")
+//                        }
+//                        .frame(width: 130, height: 25)
+//                        .background(Color.button)
+//                        .cornerRadius(20)
+//                        .padding(.leading, 125)
+//                        .foregroundColor(.black)
+//                        .font(.caption)
+//                        .padding(.top, 52)
+//                    }
+                    
+                    
+                    
+                    
+>>>>>>> jose
                 }
                 .padding(.leading, 50)
                 .frame(width: 350)
