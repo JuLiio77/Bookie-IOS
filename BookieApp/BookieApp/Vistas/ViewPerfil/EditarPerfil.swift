@@ -133,11 +133,7 @@ struct EditarPerfil: View {
               
                 
             }
-<<<<<<< HEAD
             .navigationBarTitle("Editar Perfil")
-=======
-            .navigationBarTitle("Editar Pérfil")
->>>>>>> julio
             .navigationBarTitleDisplayMode(.inline)
         }
         

@@ -17,15 +17,8 @@ struct DetalleLibroBibliotecaView: View {
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60)]
     
     var book: Book
-<<<<<<< HEAD
     @ObservedObject var bookmodelFav: BookModelFavoritos
             
-=======
-    @ObservedObject var bookmodelFav: LibrosFavoritos 
-    
-    //var bookmodelFav: BookModelFavoritos
-        
->>>>>>> jose
     var body: some View {
         
         NavigationStack{
@@ -50,7 +43,6 @@ struct DetalleLibroBibliotecaView: View {
                     
                     HStack{
                         
-<<<<<<< HEAD
                         Button(action: {
                             
                             bookmodelFav.isFavorite.toggle()
@@ -71,27 +63,6 @@ struct DetalleLibroBibliotecaView: View {
                             .foregroundStyle(.brown)
                       
                         /*Text("Disponible")
-=======
-//                        Button(action: {
-//                            
-//                            bookmodelFav.isFavorite.toggle
-//                            
-//                            /*librosFavoritos.actualizarFav(book: book, isFavorite: bookmodelFav.isFavorite)*/
-//                            
-//                            if bookmodelFav.isFavorite {
-//                                librosFavoritos.anadirFav(book: book)
-//                            } else {
-//                                librosFavoritos.eliminarFav(book: book)
-//                            }
-//                        })
-//                        {
-//                            Image(systemName: bookmodelFav.isFavorite ? "heart.fill" : "heart")
-//                                .foregroundColor(bookmodelFav.isFavorite ? .red : .black)
-//                        }
-//                      
-//                            .foregroundStyle(.brown)
-                        Text("Disponible")
->>>>>>> jose
                             .padding(.leading, 50)
                             .foregroundStyle(.cyan)*/
                     }
@@ -186,6 +157,6 @@ struct DetalleLibroBibliotecaView: View {
 }
 
 #Preview {
-    DetalleLibro()
+    DetalleLibroBibliotecaView(book: Book(id: "7X6SRDD4_9sC", volumeInfo: VolumeInfo(title: "La invasión de Estados Unidos a Panamá", authors: ["Ricaurte Soler"], publisher: "Siglo XXI", description: "El 20 de diciembre de 1989 Panamá fue duramente bombardeada por las fuerzas aéreas estadunidenses e invadida por 24 000 infantes de Marina. En pocos días murieron cerca de 4 000 ciudadanos panameños entre civiles y militares. El presidente de la República fue secuestrado y se impuso un nuevo gobierno. En este libro, un destacado escritor panameño interpreta este acontecimiento.", industryIdentifiers: [], categories: ["History"], pageCount: 196, language: "es", imageLinks: ImageLinks(smallThumbnail: "http://books.google.com/books/content?id=7X6SRDD4_9sC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: "http://books.google.com/books/content?id=7X6SRDD4_9sC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"))), bookmodelFav: BookModelFavoritos(id: "", isFavorite: false))
         .environmentObject(LibrosFavoritos())
 }
