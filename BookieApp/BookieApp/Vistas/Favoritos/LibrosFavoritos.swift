@@ -19,17 +19,18 @@ class LibrosFavoritos: ObservableObject {
             
             if let bookData = UserDefaults.standard.data(forKey: id) {
                 
-                do {
+//                do {
                     let book = try? JSONDecoder().decode(Book.self, from: bookData)
                     print("Libro recuperado de favoritos: \(book?.volumeInfo.title ?? "")")
                     
                     return BookModelFavoritos(id: id, book: book, isFavorite: true)
                     
-                } catch {
-                    print("Error al decodificar el libro: \(error)")
-                    return nil
-                }
+//                } catch {
+//                    print("Error al decodificar el libro: \(error)")
+//                    return nil
+//                }
             } else {
+                print("Error al decodificar el libro: \(id)")
                 return nil
             }
         }

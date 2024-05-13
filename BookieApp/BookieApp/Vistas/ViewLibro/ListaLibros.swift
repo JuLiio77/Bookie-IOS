@@ -25,8 +25,9 @@ struct ListaLibros: View {
             Section {
                 
                 Text(categoria)
-                    .padding(.trailing, 280)
-                    .padding([.top, .bottom], 5)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 22)
+                    .padding([.top, .bottom], 4)
                 
                 ScrollView(.vertical){
 
@@ -57,8 +58,7 @@ struct ListaLibros: View {
                         }
                     })
                 }
-            }
-            
+            }            
         }
         .searchable(text: $search)
     }

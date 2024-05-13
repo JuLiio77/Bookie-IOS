@@ -68,5 +68,83 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1859AAAF-EF21-4508-B86A-D0EC77DF267F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookieApp/Vistas/Favoritos/LibrosFavoritos.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1859AAAF-EF21-4508-B86A-D0EC77DF267F - 6f89fde3c707a899"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BookieApp.LibrosFavoritos.init() -&gt; BookieApp.LibrosFavoritos"
+                  moduleName = "BookieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dam2/Documents/GitHub/Bookie-IOS/BookieApp/BookieApp/Vistas/Favoritos/LibrosFavoritos.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+               <Location
+                  uuid = "1859AAAF-EF21-4508-B86A-D0EC77DF267F - 251cb6d280ff1362"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; Swift.Optional&lt;BookieApp.BookModelFavoritos&gt; in BookieApp.LibrosFavoritos.init() -&gt; BookieApp.LibrosFavoritos"
+                  moduleName = "BookieApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dam2/Documents/GitHub/Bookie-IOS/BookieApp/BookieApp/Vistas/Favoritos/LibrosFavoritos.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAA6B6D8-B2EA-4945-81A9-8198C5B3BB1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookieApp/Vistas/Favoritos/LibrosFavoritos.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03E802EA-D391-4287-8D0D-9E9A1B40B542"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookieApp/Vistas/ViewBiblio/DetalleLibroBibliotecaView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
