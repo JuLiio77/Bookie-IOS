@@ -62,7 +62,7 @@ struct CeldaBibloteca: View {
                             Text("Ver más")*/
                         
                         NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: librosFavoritos.bookModelFavoritos(for: book))) {
-                            Text("Ver más")
+                            Text("Ver másss")
                         }
                         .frame(width: 130, height: 25)
                         .background(Color.button)
