@@ -36,7 +36,7 @@ class PeticionesSubirLibro{
             if let data = data {
                 do{
                     let decoder = JSONDecoder()
-                    //let libro = try decoder.decode(ModelLibro.self, from: data)
+                    let libro = try decoder.decode(ModelLibro.self, from: data)
                     
                     print(data)
                     return

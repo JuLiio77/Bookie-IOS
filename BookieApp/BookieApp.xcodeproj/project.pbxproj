@@ -16,8 +16,8 @@
 		3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */; };
 		3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */; };
 		3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */; };
-		3D2FDF432BD6C5490007CA17 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF402BD6C5490007CA17 /* Chats.swift */; };
-		3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF412BD6C5490007CA17 /* Mensajes.swift */; };
+		3D2FDF432BD6C5490007CA17 /* ModelChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF402BD6C5490007CA17 /* ModelChat.swift */; };
+		3D2FDF442BD6C5490007CA17 /* ModelMensaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF412BD6C5490007CA17 /* ModelMensaje.swift */; };
 		3D2FDF4A2BD6C5550007CA17 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */; };
 		3D2FDF4B2BD6C5550007CA17 /* ModelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF462BD6C5550007CA17 /* ModelToken.swift */; };
 		3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF472BD6C5550007CA17 /* ModelUser.swift */; };
@@ -82,8 +82,8 @@
 		3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBibloteca.swift; sourceTree = "<group>"; };
 		3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFotoPerfil.swift; sourceTree = "<group>"; };
 		3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecuContra.swift; sourceTree = "<group>"; };
-		3D2FDF402BD6C5490007CA17 /* Chats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
-		3D2FDF412BD6C5490007CA17 /* Mensajes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
+		3D2FDF402BD6C5490007CA17 /* ModelChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelChat.swift; sourceTree = "<group>"; };
+		3D2FDF412BD6C5490007CA17 /* ModelMensaje.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMensaje.swift; sourceTree = "<group>"; };
 		3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		3D2FDF462BD6C5550007CA17 /* ModelToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelToken.swift; sourceTree = "<group>"; };
 		3D2FDF472BD6C5550007CA17 /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 		3D2FDF422BD6C5490007CA17 /* ModelChat */ = {
 			isa = PBXGroup;
 			children = (
-				3D2FDF402BD6C5490007CA17 /* Chats.swift */,
-				3D2FDF412BD6C5490007CA17 /* Mensajes.swift */,
+				3D2FDF402BD6C5490007CA17 /* ModelChat.swift */,
+				3D2FDF412BD6C5490007CA17 /* ModelMensaje.swift */,
 			);
 			path = ModelChat;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 				3DF4712F2BC840C900FF5669 /* BookModelFavoritos.swift in Sources */,
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
-				3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */,
+				3D2FDF442BD6C5490007CA17 /* ModelMensaje.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3DFBB7AA2BD8107400719F60 /* CeldaMisLibros.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
@@ -469,7 +469,7 @@
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
 				3DFBB7772BD8081D00719F60 /* ViewPerfilAjeno.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
-				3D2FDF432BD6C5490007CA17 /* Chats.swift in Sources */,
+				3D2FDF432BD6C5490007CA17 /* ModelChat.swift in Sources */,
 				3DFBB7B02BD81D1600719F60 /* ViewLibroNoDisponible.swift in Sources */,
 				3D2FDF4B2BD6C5550007CA17 /* ModelToken.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
