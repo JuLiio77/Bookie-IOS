@@ -10,7 +10,6 @@ import SwiftUI
 struct VistaLogin: View {
     
     @EnvironmentObject var datos: FuncionLogin
-    //@State var modelo: ModelUser
     @State var toggle: Bool
     @State var mostrarContrasenia: Bool
     
@@ -27,7 +26,7 @@ struct VistaLogin: View {
             TextField("Nombre de Usuario", text: $datos.username)
                 .bold()
                 .padding()
-                .background(Color.color)
+                .background(Color.mensajefondo)
                 .cornerRadius(30)
                 .padding(.top,130)
                 .textContentType(.username)
@@ -39,14 +38,14 @@ struct VistaLogin: View {
                 if mostrarContrasenia {
                     TextField("Contraseña", text: $datos.password)
                         .padding()
-                        .background(Color.color)
+                        .background(Color.mensajefondo)
                         .cornerRadius(30)
                         .padding(.top, 40)
                     
                 } else {
                     SecureField("Contraseña", text: $datos.password)
                         .padding()
-                        .background(Color.color)
+                        .background(Color.mensajefondo)
                         .cornerRadius(30)
                         .padding(.top, 40)
                 }
@@ -82,7 +81,7 @@ struct VistaLogin: View {
             
             
             Button("Inicio Sesion", action: {
-                datos.check(username: "inigo12314", password: "12345")
+                datos.check(username: datos.username, password: datos.password)
                 
                 //$datos.user
             })
@@ -95,9 +94,7 @@ struct VistaLogin: View {
             .padding(.top, 75)
             .navigationBarBackButtonHidden(true)
             
-            
-            
-
+            NavigationLink("registreo", destination: RegistroView())
             
             NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                 .padding(.top, 30)

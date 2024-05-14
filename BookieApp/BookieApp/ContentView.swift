@@ -16,7 +16,7 @@ struct ContentView: View {
         
         HStack{
             
-            var token = true
+            var token = false
             // datos.tokeen.isEmpty
             if token{
                 

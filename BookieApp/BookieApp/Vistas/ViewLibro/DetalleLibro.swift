@@ -181,4 +181,5 @@ struct DetalleLibro: View {
 
 #Preview {
     DetalleLibro()
+        .environmentObject(LibrosFavoritos())
 }

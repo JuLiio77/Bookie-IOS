@@ -431,7 +431,7 @@ class Peticiones{
           }.resume()
       }
     
-    func sendMensaje(_ mensaje: ModelMensaje){
+    func sendMensaje(_ mensaje: Mensaje){
         
         let urlString = "http://localhost:8080/api/mensaje"
 

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SubirLibroView: View {
     
-    //var fun = PeticionesSubirLibro()
+    var funciones = Peticiones()
+    
     
     @State var titulo: String = ""
     @State var autor: String = ""
@@ -17,8 +18,6 @@ struct SubirLibroView: View {
     @State var genero: String = ""
     @State var editorial: String = ""
     @State var sinopsis: String = ""
-    
-
     
     var body: some View {
         
@@ -41,7 +40,7 @@ struct SubirLibroView: View {
                 TextField("Título", text: $titulo)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.mensajefondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -53,7 +52,7 @@ struct SubirLibroView: View {
                 TextField("Autor", text: $autor)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.mensajefondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -66,7 +65,7 @@ struct SubirLibroView: View {
                 TextField("Nº de páginas", text: $numeroPaginas)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.mensajefondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -78,7 +77,7 @@ struct SubirLibroView: View {
                 TextField("Género", text: $genero)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.mensajefondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -90,7 +89,7 @@ struct SubirLibroView: View {
                 TextField("Editorial", text: $editorial)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.mensajefondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -102,7 +101,7 @@ struct SubirLibroView: View {
                 TextField("Sinopsis", text: $sinopsis)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.mensajefondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -124,7 +123,6 @@ struct SubirLibroView: View {
                 .padding(.trailing, 200)
                 
                 Divider()
-                
                     .padding(.top, 10)
                 
                 HStack{
@@ -140,23 +138,17 @@ struct SubirLibroView: View {
                 .padding(.top, 20)
                 
                 Button("Subir libro", action: {
-                    
+                    funciones.subirLibro(ModelLibro(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, genero: genero, foto: "", sinopsis: sinopsis, editorial: editorial, usuario: "", userID: 2))
                 })
-                
-//                Button(action: {
-////                    let libro = SubirLibroRequest(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, editorial: editorial, sinopsis: sinopsis, genero: genero, foto: "")
-//                    
-//                
-//                }
-//                    .padding(20)
-//                    .padding(.horizontal, 30)
-//                    .background(Color.button)
-//                    .foregroundColor(.black)
-//                    .cornerRadius(20)
-//                    .padding([.leading, .trailing], 10)
-//                    .padding(.top, 30)
-//                    
-//                    Spacer()
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 30)
+                    
+                    Spacer()
                 }
             }
         }

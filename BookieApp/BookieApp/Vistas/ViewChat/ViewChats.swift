@@ -9,40 +9,35 @@ import SwiftUI
 
 struct ViewChats: View {
     
-    let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3"]
-    @State var texto: String
+    @EnvironmentObject var chats: ModelMensaje
+    @State var textoChat: String = ""
     
     var body: some View {
         
-        VStack{
+        NavigationStack{
             
-            ScrollView(.vertical){
+            List(chats.mensajes, id: \.idChat){ mensaje in
 
-                VistaCeldaChat()
-                VistaCeldaChat()
-                VistaCeldaChat()
-                VistaCeldaChat()
-                VistaCeldaChat()
-                VistaCeldaChat()
-                VistaCeldaChat()
-                
+                VistaCeldaChat(message: Mensaje(texto: mensaje.texto, idusuario: mensaje.idusuario, idChat: mensaje.idChat, fechaMensaje: mensaje.fechaMensaje), isSendMensaje: true)
             }
-                       
-            Spacer()
-            
+            .padding(0)
             
             HStack{
-                TextField("texto", text: $texto)
-                    .frame(width: 300, height: 20)
-                    //.border(.blue, width: 1)
-                    .cornerRadius(5)
-                Button("", systemImage: "paperplane", action: {})
-                
+                TextField("", text: $textoChat)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                Button("", systemImage: "paperplane", action: {
+                    chats.sendMensaje(Mensaje(texto: textoChat, idusuario: 2, idChat: 2, fechaMensaje: "fecha"))
+                    textoChat = ""
+                })
+                .padding(.trailing, 10)
             }
+                    
         }
     }
 }
 
 #Preview {
-    ViewChats(texto: "")
+    ViewChats(textoChat: "")
+        .environmentObject(ModelMensaje(mensajes: []))
 }

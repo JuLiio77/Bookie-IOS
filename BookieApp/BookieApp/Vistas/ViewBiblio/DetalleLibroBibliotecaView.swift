@@ -17,7 +17,7 @@ struct DetalleLibroBibliotecaView: View {
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60)]
     
     var book: Book
-    @ObservedObject var bookmodelFav: LibrosFavoritos 
+    @ObservedObject var bookmodelFav: LibrosFavoritos
     
     //var bookmodelFav: BookModelFavoritos
         
