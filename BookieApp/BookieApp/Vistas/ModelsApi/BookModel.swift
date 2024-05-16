@@ -24,10 +24,12 @@ class BookModel: ObservableObject {
         fetchBooks(query: "c")
         fetchBooks(query: "d")
         fetchBooks(query: "f")
-        fetchBooks(query: "j")
         fetchBooks(query: "l")
         fetchBooks(query: "m")
         fetchBooks(query: "p")
+        fetchBooks(query: "s")
+        fetchBooks(query: "t")
+        fetchBooks(query: "u")
     }
     
     private func fetchBooks(query: String) {

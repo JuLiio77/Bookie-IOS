@@ -47,8 +47,6 @@ struct DetalleLibroBibliotecaView: View {
                             
                             bookmodelFav.isFavorite.toggle()
                             
-                            /*librosFavoritos.actualizarFav(book: book, isFavorite: bookmodelFav.isFavorite)*/
-                            
                             if bookmodelFav.isFavorite {
                                 librosFavoritos.anadirFav(book: book)
                             } else {
@@ -61,10 +59,6 @@ struct DetalleLibroBibliotecaView: View {
                         }
                       
                             .foregroundStyle(.brown)
-                      
-                        /*Text("Disponible")
-                            .padding(.leading, 50)
-                            .foregroundStyle(.cyan)*/
                     }
                     .padding(.top, 15)
                     

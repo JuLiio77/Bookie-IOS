@@ -8,71 +8,54 @@
 import Foundation
 
 class LibrosFavoritos: ObservableObject {
-    //publicar el estado del libro favorito
+    
+    //publicamos el estado del libro fav
     @Published var librosFav: [BookModelFavoritos] = []
     
-    //Init que recupera el array de UserDefaults
+    private let favoritoskey = "librosfavoritos"
+    
+    //init para recuperar el array de userdefaults
     init() {
+        self.librosFav = loadFavorites()
+    }
+    
+    //func para añadir libro a fav
+    func anadirfav(book: Book) {
+        let bookmodel = BookModelFavoritos(id: book.id, book: book, isFavorite: true)
         
-        let ids = UserDefaults.standard.array(forKey: "librosFav") as? [String] ?? []
-        librosFav = ids.compactMap { id in
+        librosFav.append(bookmodel)
+        saveFavorites()
+    }
+    
+    //func para eliminar libro de fav
+    func eliminarfav(book: Book) {
+        if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
+            librosFav.remove(at: index)
+            saveFavorites()
+        }
+    }
+    
+    //func para guardar libro fav
+    func saveFavorites() {
+        let encoder = JSONEncoder()
+        
+        if  let encoded = try? encoder.encode(librosFav.map { $0.book }) {
+            UserDefaults.standard.set(encoded, forKey: favoritoskey)
+        }
+    }
+    
+    func loadFavorites() -> [BookModelFavoritos] {
+        if let savedData = UserDefaults.standard.data(forKey: favoritoskey) {
+            let decoder = JSONDecoder()
             
-            if let bookData = UserDefaults.standard.data(forKey: id) {
-                
-//                do {
-                    let book = try? JSONDecoder().decode(Book.self, from: bookData)
-                    print("Libro recuperado de favoritos: \(book?.volumeInfo.title ?? "")")
-                    
-                    return BookModelFavoritos(id: id, book: book, isFavorite: true)
-                    
-//                } catch {
-//                    print("Error al decodificar el libro: \(error)")
-//                    return nil
-//                }
-            } else {
-                print("Error al decodificar el libro: \(id)")
-                return nil
+            if let decodedBooks = try? decoder.decode([Book].self, from: savedData) {
+                return decodedBooks.map { BookModelFavoritos(id: $0.id, book: $0, isFavorite: true)}
             }
         }
-    }
-
-    
-    //Método para añadir libro a favorito
-    func anadirFav(book: Book) {
-        if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
-            librosFav[index].isFav = true
-        } else {
-            let bookmodelFav = BookModelFavoritos(id: book.id, book: book, isFavorite: true)
-            librosFav.append(bookmodelFav)
-        }
-        if let bookData = try? JSONEncoder().encode(book) {
-            print("Datos del libro codificados: \(bookData)")
-            UserDefaults.standard.set(bookData, forKey: book.id)
-            UserDefaults.standard.synchronize()
-        }
-        //comprobar que el libro se añade a fav
-        print("Libro añadido a favoritos: \(book.volumeInfo.title)")
-    }
-
-    //Método para eliminar libro de favoritos
-    func eliminarFav(book: Book) {
-        if let index = librosFav.firstIndex(where: { $0.book?.id == book.id }) {
-            librosFav[index].isFav = false
-            librosFav.remove(at: index)
-        }
-        UserDefaults.standard.removeObject(forKey: book.id)
-        UserDefaults.standard.synchronize()
-        
-        //comprobar que el libro se elimina de fav
-        print("Libro eliminado de favoritos: \(book.volumeInfo.title)")
-    }
-    
-    //Método para buscar un libro en favoritos
-    func buscarFav(id: String) -> Bool {
-        return librosFav.contains(where: { $0.id == id && $0.isFav })
+        return []
     }
     
     func bookModelFavoritos(for book: Book) -> BookModelFavoritos {
-        return librosFav.first(where: { $0.book?.id == book.id }) ?? BookModelFavoritos(id: book.id, book: book)
+        return librosFav.first(where: { $0.book?.id == book.id }) ?? BookModelFavoritos(id: book.id, book: book, isFavorite: false)
     }
 }

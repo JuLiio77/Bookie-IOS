@@ -36,7 +36,7 @@ struct ListaLibros: View {
                         
                         ForEach(searchResults, id: \.id) { book in
                             
-                            NavigationLink(destination: DetalleLibro(book: book, bookmodelFav: BookModelFavoritos(id: "", isFavorite: false))) {
+                            NavigationLink(destination: DetalleLibro(book: book, bookmodelFav: BookModelFavoritos(id: "", book: book, isFavorite: false))) {
                                 VistaCeldaLibro()
                             }
                         }
