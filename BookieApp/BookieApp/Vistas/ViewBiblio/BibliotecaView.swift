@@ -35,8 +35,7 @@ struct BibliotecaView: View {
             bookModel.onAppear()
         }
         .searchable(text: $search, prompt: "Buscar libro")
-        
-    }
+    }    
     
     var searchResults: [Book] {
         
@@ -49,7 +48,6 @@ struct BibliotecaView: View {
         }
     }
 }
-
 
 
 #Preview {
