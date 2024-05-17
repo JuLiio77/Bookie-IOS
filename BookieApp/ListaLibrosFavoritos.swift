@@ -17,7 +17,7 @@ struct ListaLibrosFavoritos: View {
     
     var body: some View {
         
-        NavigationStack{
+        NavigationStack {
             
             Section {
                 
@@ -25,7 +25,13 @@ struct ListaLibrosFavoritos: View {
                     
                     LazyVGrid(columns: columnas) {
                         
-                        ForEach(librosFavoritos.librosFav) { bookmodelFav in
+                        ForEach(librosFavoritos.librosFav) { model in
+                            if let book = model.book {
+                                CeldaBibloteca(book: book)
+                            }
+                        }
+                        
+                        /*ForEach(librosFavoritos.librosFav) { bookmodelFav in
                             
                             if let book = bookmodelFav.book {
                                 
@@ -33,7 +39,7 @@ struct ListaLibrosFavoritos: View {
                                     CeldaLibroFavorito(book: book)
                                 }
                             }
-                        }
+                        }*/
                     }
                 }
             }
