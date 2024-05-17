@@ -7,24 +7,22 @@
 
 import Foundation
 
-struct Message: Codable{
-
-    var texto: String
-    var idUsuario: Int
-    var idChat: Int
-    var fechaMensaje: String
+struct Mensaje: Codable {
+    let texto: String
+    let idusuario: Int
+    let idChat: Int
+    let fechaMensaje: String
 }
 
-
-class ModelMensaje: ObservableObject {
+class ModelMensaje: ObservableObject{
     
-    @Published var mensajes: [Message]
+    @Published var mensajes: [Mensaje]
     
-    init(mensajes: [Message]) {
+    init(mensajes: [Mensaje]) {
         self.mensajes = mensajes
     }
     
-    func sendMensaje(_ mensaje: Message){
+    func sendMensaje(_ mensaje: Mensaje){
         
         let urlString = "http://localhost:8080/api/mensaje"
 
@@ -47,10 +45,10 @@ class ModelMensaje: ObservableObject {
 
         URLSession.shared.dataTask(with: request){ data, response, error in
 
-            if let data = data {
+            if data != nil {
                 
               let decoder = JSONDecoder()
-                self.mensajes.append(Message.init(texto: "", idUsuario: 1,idChat: 1, fechaMensaje: "12345"))
+                self.mensajes.append(Mensaje(texto: "", idusuario: 1, idChat: 1, fechaMensaje: "1342324"))
               print("Se mando el mensaje correctamente")
                 
             }
