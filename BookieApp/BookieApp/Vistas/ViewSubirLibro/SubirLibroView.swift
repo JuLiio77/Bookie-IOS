@@ -8,26 +8,29 @@
 import SwiftUI
 
 struct SubirLibroView: View {
+    
+    var fun = PeticionesSubirLibro()
+    
     @State var titulo: String = ""
     @State var autor: String = ""
-    @State var paginas: String = ""
+    @State var numeroPaginas: String = ""
     @State var genero: String = ""
-
+    @State var editorial: String = ""
+    @State var sinopsis: String = ""
     
+
     var body: some View {
         
-        NavigationStack{
-            
+    
+        VStack{
             ScrollView{
-                /*Text("Detalles del libro")
-                    .padding(.top)*/
+                Text("Detalles del libro")
                 
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
-                    .padding(.top)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
@@ -59,7 +62,7 @@ struct SubirLibroView: View {
                     .padding(.top, 30)
                     .padding(.trailing, 220)
                 
-                TextField("Nº de páginas", text: $paginas)
+                TextField("Nº de páginas", text: $numeroPaginas)
                     .bold()
                     .padding()
                     .background(Color.color)
@@ -77,6 +80,31 @@ struct SubirLibroView: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                
+                Label("Editorial", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Editorial", text: $editorial)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Sinopsis", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Sinopsis", text: $sinopsis)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
                 
                 HStack{
                     
@@ -96,10 +124,10 @@ struct SubirLibroView: View {
                 
                 Divider()
                 
-                .padding(.top, 10)
-
+                    .padding(.top, 10)
+                
                 HStack{
-                   
+                    
                     ViewFotoPerfil()
                         .frame(width: 50)
                     ViewFotoPerfil()
@@ -110,24 +138,23 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
-               Button("Siguiente"){
-                   
-               }
-               .padding(20)
-               .padding(.horizontal, 30)
-               .background(Color.button)
-               .foregroundColor(.black)
-               .cornerRadius(20)
-               .padding([.leading, .trailing], 10)
-               .padding(.top, 30)
-                       
-                //Spacer()
+                Button("Subir libro", action: {
+                    
+                })
+      
+                    .padding(20)
+                    .padding(.horizontal, 30)
+                    .background(Color.button)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 30)
+                    
+                    Spacer()
+                }
             }
-            .navigationTitle("Detalle del libro")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
-}
 
 
 #Preview {
