@@ -21,7 +21,7 @@ struct ReviewView: View {
                 TextEditor(text: $reviewText)
                 .frame(height: 400)
                 .padding()
-                .background(Color.mensajefondo.opacity(0.6))
+                .background(Color.color .opacity(0.6))
                 .cornerRadius(20)
                 .scrollContentBackground(.hidden)
                 

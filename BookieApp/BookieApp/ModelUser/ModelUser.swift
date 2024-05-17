@@ -1,13 +1,15 @@
 import Foundation
 
-
-struct ModelUser: Decodable{
-  
-    var username: String
+struct ModelUser: Encodable, Decodable{
+    
     var id: Int
-    var nombre: String
+    var username: String
+    var password: String
     var email: String
     var ciudad: String
-    var provicia: String
-    var codigoPosta: Int
+    var provincia: String
+    var codigoPostal: String
+    var foto: String
+    var reportado: String
+    var token: String
 }

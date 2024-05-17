@@ -8,29 +8,26 @@
 import SwiftUI
 
 struct SubirLibroView: View {
-    
-    var funciones = Peticiones()
-    
-    
     @State var titulo: String = ""
     @State var autor: String = ""
-    @State var numeroPaginas: String = ""
+    @State var paginas: String = ""
     @State var genero: String = ""
-    @State var editorial: String = ""
-    @State var sinopsis: String = ""
+
     
     var body: some View {
         
-    
-        VStack{
+        NavigationStack{
+            
             ScrollView{
-                Text("Detalles del libro")
+                /*Text("Detalles del libro")
+                    .padding(.top)*/
                 
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
+                    .padding(.top)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
@@ -40,7 +37,7 @@ struct SubirLibroView: View {
                 TextField("Título", text: $titulo)
                     .bold()
                     .padding()
-                    .background(Color.mensajefondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -52,7 +49,7 @@ struct SubirLibroView: View {
                 TextField("Autor", text: $autor)
                     .bold()
                     .padding()
-                    .background(Color.mensajefondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -62,10 +59,10 @@ struct SubirLibroView: View {
                     .padding(.top, 30)
                     .padding(.trailing, 220)
                 
-                TextField("Nº de páginas", text: $numeroPaginas)
+                TextField("Nº de páginas", text: $paginas)
                     .bold()
                     .padding()
-                    .background(Color.mensajefondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -77,34 +74,9 @@ struct SubirLibroView: View {
                 TextField("Género", text: $genero)
                     .bold()
                     .padding()
-                    .background(Color.mensajefondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
-                
-                Label("Editorial", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .padding(.top, 30)
-                    .padding(.trailing, 280)
-                
-                TextField("Editorial", text: $editorial)
-                    .bold()
-                    .padding()
-                    .background(Color.mensajefondo)
-                    .cornerRadius(30)
-                    .padding([.leading, .trailing], 20)
-                
-                Label("Sinopsis", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .padding(.top, 30)
-                    .padding(.trailing, 280)
-                
-                TextField("Sinopsis", text: $sinopsis)
-                    .bold()
-                    .padding()
-                    .background(Color.mensajefondo)
-                    .cornerRadius(30)
-                    .padding([.leading, .trailing], 20)
-                
                 
                 HStack{
                     
@@ -123,36 +95,39 @@ struct SubirLibroView: View {
                 .padding(.trailing, 200)
                 
                 Divider()
-                    .padding(.top, 10)
                 
+                .padding(.top, 10)
+
                 HStack{
-                    
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
+                   
+                    ViewFotoPerfil()
+                        .frame(width: 50)
+                    ViewFotoPerfil()
+                        .frame(width: 50)
+                    ViewFotoPerfil()
+                        .frame(width: 50)
                     
                 }
                 .padding(.top, 20)
                 
-                Button("Subir libro", action: {
-                    funciones.subirLibro(ModelLibro(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, genero: genero, foto: "", sinopsis: sinopsis, editorial: editorial, usuario: "", userID: 2))
-                })
-                .padding(20)
-                .padding(.horizontal, 30)
-                .background(Color.button)
-                .foregroundColor(.black)
-                .cornerRadius(20)
-                .padding([.leading, .trailing], 10)
-                .padding(.top, 30)
-                    
-                    Spacer()
-                }
+               Button("Siguiente"){
+                   
+               }
+               .padding(20)
+               .padding(.horizontal, 30)
+               .background(Color.button)
+               .foregroundColor(.black)
+               .cornerRadius(20)
+               .padding([.leading, .trailing], 10)
+               .padding(.top, 30)
+                       
+                //Spacer()
             }
+            .navigationTitle("Detalle del libro")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
+}
 
 
 #Preview {
