@@ -19,7 +19,7 @@ struct SubirLibroView: View {
     @State private var alertMessage = ""
     
     @State private var mostrarSheet = false
-    @State private var categoriaseleccionada = ""
+    @State private var categoriaseleccionada = [Categorias]()
     
     var body: some View {
         
@@ -129,32 +129,37 @@ struct SubirLibroView: View {
                 .padding(.trailing, 200)
                 
                 Divider()
+                    .padding(.top, 15)
                 
-                    .padding(.top, 10)
-                
-                HStack{
+                VStack {
                     
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    ViewFotoPerfil()
-                        .frame(width: 50)
-                    
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 20) {
+                        
+                        if !categoriaseleccionada.isEmpty {
+                            
+                            ForEach(categoriaseleccionada) { categoria in
+                                
+                                VStack {
+                                    
+                                    Image(categoria.imagen).resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 40, height: 40)
+                                    
+                                    Text(categoria.nombre)
+                                        .font(.footnote)
+                                        .foregroundColor(.black)
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
+                        }
+                    }
                 }
-                .padding(.top, 20)
-                
-                if !categoriaseleccionada.isEmpty {
-                    Text("Categoria seleccionada: \(categoriaseleccionada)")
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(10)
-                        .padding([.leading, .trailing], 20)
-                }
+                .padding(.top, 15)
                 
                 Button(action: subirLibro) {
                     Text("Subir Libro")
                 }
+                .padding(.top, 25)
                 
                 //boton para simular el registro y almacenar el token
                 Button(action: {
