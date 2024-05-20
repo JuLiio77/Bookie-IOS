@@ -21,13 +21,9 @@ struct ViewReview: View {
                 CeldaReview()
                 CeldaReview()
                 CeldaReview()
-                 
-                 
             }
             
             Spacer()
-            
-            
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(false)

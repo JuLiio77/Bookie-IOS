@@ -13,6 +13,7 @@ struct MainViewBuzon: View {
     var body: some View {
         
         VStack {
+            
            Picker("", selection: $seleccionado) {
                Text("Mensajes").tag(0)
                Text("Notificaciones").tag(1)
@@ -30,7 +31,6 @@ struct MainViewBuzon: View {
 
            Spacer()
        }
-        
     }
 }
 

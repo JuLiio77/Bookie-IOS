@@ -16,8 +16,8 @@
 		3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */; };
 		3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */; };
 		3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */; };
-		3D2FDF432BD6C5490007CA17 /* ModelChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF402BD6C5490007CA17 /* ModelChat.swift */; };
-		3D2FDF442BD6C5490007CA17 /* ModelMensaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF412BD6C5490007CA17 /* ModelMensaje.swift */; };
+		3D2FDF432BD6C5490007CA17 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF402BD6C5490007CA17 /* Chats.swift */; };
+		3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF412BD6C5490007CA17 /* Mensajes.swift */; };
 		3D2FDF4A2BD6C5550007CA17 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */; };
 		3D2FDF4B2BD6C5550007CA17 /* ModelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF462BD6C5550007CA17 /* ModelToken.swift */; };
 		3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF472BD6C5550007CA17 /* ModelUser.swift */; };
@@ -25,10 +25,12 @@
 		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
+		3D86F4652BFB9F8A00CD44E3 /* FiltroLibrosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */; };
+		3D86F4672BFBA3CC00CD44E3 /* Categorias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */; };
+		3D86F4692BFBAAE100CD44E3 /* Libro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D86F4682BFBAAE100CD44E3 /* Libro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
+		3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
-		3DA51A292BE1524000F8C28E /* SubirLibroRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA51A282BE1524000F8C28E /* SubirLibroRequest.swift */; };
-		3DA9976C2BFBA41D00C6421E /* Libro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9976B2BFBA41D00C6421E /* Libro.swift */; };
 		3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */; };
 		3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */; };
 		3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */; };
@@ -81,8 +83,8 @@
 		3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBibloteca.swift; sourceTree = "<group>"; };
 		3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFotoPerfil.swift; sourceTree = "<group>"; };
 		3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecuContra.swift; sourceTree = "<group>"; };
-		3D2FDF402BD6C5490007CA17 /* ModelChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelChat.swift; sourceTree = "<group>"; };
-		3D2FDF412BD6C5490007CA17 /* ModelMensaje.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelMensaje.swift; sourceTree = "<group>"; };
+		3D2FDF402BD6C5490007CA17 /* Chats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
+		3D2FDF412BD6C5490007CA17 /* Mensajes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
 		3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		3D2FDF462BD6C5550007CA17 /* ModelToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelToken.swift; sourceTree = "<group>"; };
 		3D2FDF472BD6C5550007CA17 /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
@@ -90,11 +92,13 @@
 		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
+		3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroLibrosView.swift; sourceTree = "<group>"; };
+		3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorias.swift; sourceTree = "<group>"; };
+		3D86F4682BFBAAE100CD44E3 /* Libro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
+		3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminosUsoView.swift; sourceTree = "<group>"; };
 		3D96B0E92BC455730030322C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
-		3DA51A282BE1524000F8C28E /* SubirLibroRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubirLibroRequest.swift; sourceTree = "<group>"; };
-		3DA9976B2BFBA41D00C6421E /* Libro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libro.swift; sourceTree = "<group>"; };
 		3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibroBibliotecaView.swift; sourceTree = "<group>"; };
 		3DB972792BA9FA0B005849B7 /* VistaCeldaChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaChat.swift; sourceTree = "<group>"; };
 		3DBC66DF2B9F7BF8001A6B90 /* BookieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,8 +165,10 @@
 		3D19B5CA2BA9FABF00D892F3 /* ViewSubirLibro */ = {
 			isa = PBXGroup;
 			children = (
+				3D86F4682BFBAAE100CD44E3 /* Libro.swift */,
 				3D19B5CB2BA9FD0A00D892F3 /* SubirLibroView.swift */,
-				3DA9976B2BFBA41D00C6421E /* Libro.swift */,
+				3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */,
+				3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */,
 			);
 			path = ViewSubirLibro;
 			sourceTree = "<group>";
@@ -175,7 +181,6 @@
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
-				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 			);
 			path = ViewLogin;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			children = (
 				3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */,
 				3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */,
+				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
 			);
 			path = ViewBiblio;
@@ -204,8 +210,8 @@
 		3D2FDF422BD6C5490007CA17 /* ModelChat */ = {
 			isa = PBXGroup;
 			children = (
-				3D2FDF402BD6C5490007CA17 /* ModelChat.swift */,
-				3D2FDF412BD6C5490007CA17 /* ModelMensaje.swift */,
+				3D2FDF402BD6C5490007CA17 /* Chats.swift */,
+				3D2FDF412BD6C5490007CA17 /* Mensajes.swift */,
 			);
 			path = ModelChat;
 			sourceTree = "<group>";
@@ -217,7 +223,6 @@
 				3D2FDF462BD6C5550007CA17 /* ModelToken.swift */,
 				3D2FDF472BD6C5550007CA17 /* ModelUser.swift */,
 				3D2FDF482BD6C5550007CA17 /* RegisterRequest.swift */,
-				3DA51A282BE1524000F8C28E /* SubirLibroRequest.swift */,
 			);
 			path = ModelUser;
 			sourceTree = "<group>";
@@ -335,8 +340,8 @@
 		3DF524292BA8897A00C7D10F /* ModelsApi */ = {
 			isa = PBXGroup;
 			children = (
-				3DF5242A2BA889C300C7D10F /* Book.swift */,
 				3D39A2FA2BACAEE400DDD168 /* BookModel.swift */,
+				3DF5242A2BA889C300C7D10F /* Book.swift */,
 			);
 			path = ModelsApi;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				3DFBB7A52BD8105B00719F60 /* CeldaReview.swift */,
 				3DFBB7A72BD8106600719F60 /* CeldaHistorial.swift */,
 				3DFBB7A92BD8107400719F60 /* CeldaMisLibros.swift */,
+				3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */,
 			);
 			path = VistasPerfil;
 			sourceTree = "<group>";
@@ -453,21 +459,22 @@
 				3DF4712F2BC840C900FF5669 /* BookModelFavoritos.swift in Sources */,
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
-				3D2FDF442BD6C5490007CA17 /* ModelMensaje.swift in Sources */,
+				3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */,
+				3D86F4672BFBA3CC00CD44E3 /* Categorias.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3DFBB7AA2BD8107400719F60 /* CeldaMisLibros.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
 				3DFBB79D2BD80DD300719F60 /* EditarPerfil.swift in Sources */,
 				3DFBB7722BD8081D00719F60 /* CeldaAjenoLibros.swift in Sources */,
 				3DFBB7732BD8081D00719F60 /* CeldaAjenoReview.swift in Sources */,
+				3D86F4692BFBAAE100CD44E3 /* Libro.swift in Sources */,
 				3DF4712D2BC8366B00FF5669 /* LibrosFavoritos.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
 				3DFBB7772BD8081D00719F60 /* ViewPerfilAjeno.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
-				3D2FDF432BD6C5490007CA17 /* ModelChat.swift in Sources */,
+				3D2FDF432BD6C5490007CA17 /* Chats.swift in Sources */,
 				3DFBB7B02BD81D1600719F60 /* ViewLibroNoDisponible.swift in Sources */,
-				3DA9976C2BFBA41D00C6421E /* Libro.swift in Sources */,
 				3D2FDF4B2BD6C5550007CA17 /* ModelToken.swift in Sources */,
 				3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */,
 				3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */,
@@ -496,12 +503,13 @@
 				3DFBB7A42BD8104400719F60 /* ViewMisLibros.swift in Sources */,
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
 				3DFBB7762BD8081D00719F60 /* ViewAjenoReview.swift in Sources */,
-				3DA51A292BE1524000F8C28E /* SubirLibroRequest.swift in Sources */,
 				3DFBB7752BD8081D00719F60 /* ViewAjenoLibros.swift in Sources */,
 				3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */,
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
 				3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */,
 				3DFBB77F2BD80A3E00719F60 /* PerfilView.swift in Sources */,
+				3D86F4652BFB9F8A00CD44E3 /* FiltroLibrosView.swift in Sources */,
+				3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */,
 				3DF9E9202BC6F51000801D26 /* ListaLibrosFavoritos.swift in Sources */,
 				3DFBB7742BD8081D00719F60 /* ViewAjenoHistorial.swift in Sources */,
 				3DED65D72BBB1CE7001BB9C2 /* ModelLibro.swift in Sources */,
@@ -650,6 +658,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -679,6 +688,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

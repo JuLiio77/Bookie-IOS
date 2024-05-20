@@ -7,13 +7,10 @@
 
 import Foundation
 
-struct ModelChat: Codable{
+struct Chats{
     
     let id: Int
-    var usuarioEmisor: String
-    var usuarioReceptor: Int
-
+    var usuarioEmisor: ModelUser
+    var usuarioReceptor: ModelUser
+    var mensajes: [Mensajes]
 }
-
-
-

@@ -9,8 +9,8 @@ import SwiftUI
 
 class FuncionLogin: ObservableObject{
     
-// static let shared = FuncionLogin()
- //   var taber = TabarView()
+    static let shared = FuncionLogin()
+    var taber = TabarView()
     var peticiones = Peticiones()
     
     @Published var name: String = UserDefaults.standard.string(forKey: "username") ?? "jose1"
@@ -25,7 +25,6 @@ class FuncionLogin: ObservableObject{
     @Published var username: String = UserDefaults.standard.string(forKey: "username") ?? ""
     @Published var prefeLite: String = UserDefaults.standard.string(forKey: "preferencia") ?? ""
     
-    
     func check(username: String, password: String) {
         
         peticiones.login(username: username, password: password) { result in
@@ -39,10 +38,7 @@ class FuncionLogin: ObservableObject{
 
             }
         }
-    }
-
-
-    
+    }    
     
     func register(){
     

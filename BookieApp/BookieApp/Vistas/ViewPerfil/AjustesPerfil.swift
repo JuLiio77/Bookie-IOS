@@ -25,7 +25,7 @@ struct AjustesPerfil: View {
                                NavigationLink(destination: ListaLibrosFavoritos()) {
                                    Text("Favoritos")
                                }
-                               NavigationLink(destination: ReviewView()) {
+                               NavigationLink(destination: TerminosUsoView()) {
                                    Text("Ir a terminos de uso")
                                }
                            }

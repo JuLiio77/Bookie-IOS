@@ -7,38 +7,36 @@
 
 import Foundation
 
-class BookModelFavoritos: ObservableObject, Identifiable {
-    let id: String
-    var book: Book?
+class BookModelFavoritos: ObservableObject, Identifiable, Codable {
     
+    var id: String
+    
+    @Published var book: Book?
     @Published var isFavorite: Bool
     
-    init(id: String, book: Book? = nil , isFavorite: Bool = false) {
+    init(id: String, book: Book?, isFavorite: Bool = false) {
         self.id = id
         self.book = book
         self.isFavorite = isFavorite
     }
     
-    init(id: String, book: Book) {
-        self.id = id
-        self.book = book
-        self.isFavorite = UserDefaults.standard.bool(forKey: id)
+    enum CodingKeys: CodingKey {
+        case id, book, isFavorite
     }
-}
-
-//extension para guardar favoritos como persistente
-extension BookModelFavoritos {
     
-    var isFav: Bool {
+    required init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        get {
-            //UserDefaults.standard.bool(forKey: id)
-            isFavorite
-        }
+        id = try container.decode(String.self, forKey: .id)
+        book = try container.decode(Book.self, forKey: .book)
+        isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
         
-        set {
-            isFavorite = newValue
-            UserDefaults.standard.set(newValue, forKey: id)
-        }
+        try container.encode(id, forKey: .id)
+        try container.encode(book, forKey: .book)
+        try container.encode(isFavorite, forKey: .isFavorite)
     }
 }

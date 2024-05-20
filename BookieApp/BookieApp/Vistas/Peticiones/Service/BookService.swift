@@ -8,12 +8,14 @@
 import Foundation
 import Combine
 
-struct BookService{
+struct BookService {
     
     public static let shared: BookService = BookService()
     
     public func fetch(query: String) -> AnyPublisher<[Book], Error> {
+        
         let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
         guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(query)") else {
             let error = URLError(.badURL)
             return Fail(error: error).eraseToAnyPublisher()
@@ -23,6 +25,7 @@ struct BookService{
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw URLError(.badServerResponse)
             }
+            print(String(decoding: data, as: UTF8.self))
             return data
         })
         .decode(type: BooksResponse.self, decoder: JSONDecoder())
