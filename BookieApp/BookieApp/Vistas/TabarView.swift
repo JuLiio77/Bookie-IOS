@@ -20,7 +20,7 @@ struct TabarView: View {
                 .tabItem {
                     Label("Biblioteca", systemImage: "book")
                 }
-    
+            
             SubirLibroView()
                 .tabItem {
                     Label("Subir", systemImage: "plus.app.fill")
@@ -33,8 +33,7 @@ struct TabarView: View {
             PerfilView()
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
-                }
-         
+                }            
         }
         .accentColor(Color.button)
     }

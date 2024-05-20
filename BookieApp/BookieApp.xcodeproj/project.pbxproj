@@ -25,6 +25,8 @@
 		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
 		3D75B2802BA0DA6100B14A09 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */; };
+		3D86F4652BFB9F8A00CD44E3 /* FiltroLibrosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */; };
+		3D86F4672BFBA3CC00CD44E3 /* Categorias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
 		3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
@@ -89,6 +91,8 @@
 		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
 		3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
+		3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroLibrosView.swift; sourceTree = "<group>"; };
+		3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorias.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
 		3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminosUsoView.swift; sourceTree = "<group>"; };
 		3D96B0E92BC455730030322C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				3D19B5CB2BA9FD0A00D892F3 /* SubirLibroView.swift */,
+				3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */,
+				3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */,
 			);
 			path = ViewSubirLibro;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
 				3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */,
+				3D86F4672BFBA3CC00CD44E3 /* Categorias.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3DFBB7AA2BD8107400719F60 /* CeldaMisLibros.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
@@ -497,6 +504,7 @@
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
 				3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */,
 				3DFBB77F2BD80A3E00719F60 /* PerfilView.swift in Sources */,
+				3D86F4652BFB9F8A00CD44E3 /* FiltroLibrosView.swift in Sources */,
 				3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */,
 				3DF9E9202BC6F51000801D26 /* ListaLibrosFavoritos.swift in Sources */,
 				3DFBB7742BD8081D00719F60 /* ViewAjenoHistorial.swift in Sources */,

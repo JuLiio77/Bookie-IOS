@@ -21,13 +21,13 @@ struct InicioView: View {
             Text("¡Bienvenido \(userData.name)!")
                 .bold()
                 .font(.title)
-                .padding(.leading, 25)
+                .padding(.leading, 28)
                 .padding(.top, 15)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             
             Text("Descubre a tu bookie favorita")
-                .padding(.trailing, 120)
+                .padding(.trailing, 110)
                 .padding(.top, 1)
                 .padding(.bottom, 10)
             
