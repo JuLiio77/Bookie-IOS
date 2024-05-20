@@ -9,15 +9,14 @@ import SwiftUI
 
 struct SubirLibroView: View {
     
-    var fun = PeticionesSubirLibro()
-    
-    @State var titulo: String = ""
-    @State var autor: String = ""
-    @State var numeroPaginas: String = ""
-    @State var genero: String = ""
-    @State var editorial: String = ""
-    @State var sinopsis: String = ""
-    
+    @State private var titulo = ""
+    @State private var autor = ""
+    @State private var numeroPaginas = ""
+    @State private var sinopsis = ""
+    @State private var editorial = ""
+    @State private var genero = ""
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
 
     var body: some View {
         
@@ -138,23 +137,103 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
-                Button("Subir libro", action: {
-                    
-                })
-      
-                    .padding(20)
-                    .padding(.horizontal, 30)
-                    .background(Color.button)
-                    .foregroundColor(.black)
-                    .cornerRadius(20)
-                    .padding([.leading, .trailing], 10)
-                    .padding(.top, 30)
-                    
-                    Spacer()
+                Button(action: subirLibro) {
+                    Text("Subir Libro")
                 }
+                
+                // Botón para simular el registro y almacenar el token
+                Button(action: {
+                    let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWxpb3BydWViYSIsImlhdCI6MTcxNjIxNzY4MSwiZXhwIjoxNzE2MzA0MDgxfQ.JQ4cuesDK4wetRNywxVCgES9qy6pm9lyJ7IH-NbIdss"
+                    UserDefaults.standard.set(token, forKey: "authToken")
+                    self.alertMessage = "Token almacenado"
+                    self.showingAlert = true
+                }) {
+                    Text("Guardar Token")
+                }
+            }
+            .navigationBarTitle("Agregar Libro")
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
         }
     }
+    
+    func subirLibro() {
+        guard let url = URL(string: "http://localhost:8080/api/libro") else {
+            self.alertMessage = "URL inválida"
+            self.showingAlert = true
+            return
+        }
+        
+        guard let paginas = Int(numeroPaginas) else {
+            self.alertMessage = "Número de páginas inválido"
+            self.showingAlert = true
+            return
+        }
+        
+        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+            self.alertMessage = "No se encontró el token de autenticación"
+            self.showingAlert = true
+            return
+        }
+        
+        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        
+        guard let jsonData = try? JSONEncoder().encode(libro) else {
+            self.alertMessage = "Error codificando datos"
+            self.showingAlert = true
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Error: \(error.localizedDescription)"
+                    self.showingAlert = true
+                }
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Respuesta no válida del servidor"
+                    self.showingAlert = true
+                }
+                return
+            }
+            
+            if !(200...299).contains(httpResponse.statusCode) {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
+                    self.showingAlert = true
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.alertMessage = "Libro subido con éxito"
+                self.showingAlert = true
+            }
+        }.resume()
+    }
+}
+//
+//                    .padding(20)
+//                    .padding(.horizontal, 30)
+//                    .background(Color.button)
+//                    .foregroundColor(.black)
+//                    .cornerRadius(20)
+//                    .padding([.leading, .trailing], 10)
+//                    .padding(.top, 30)
+                    
+                
+       
 
 
 #Preview {
