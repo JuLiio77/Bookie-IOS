@@ -17,23 +17,26 @@ struct SubirLibroView: View {
     @State private var genero = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
-
+    
+    @State private var mostrarSheet = false
+    @State private var categoriaseleccionada = ""
+    
     var body: some View {
         
-    
-        VStack{
+        NavigationStack {
+            
             ScrollView{
-                Text("Detalles del libro")
                 
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
+                    .padding(.top, 25)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
-                    .padding(.top, 60)
+                    .padding(.top, 50)
                     .padding(.trailing, 280)
                 
                 TextField("Título", text: $titulo)
@@ -105,17 +108,21 @@ struct SubirLibroView: View {
                     .padding([.leading, .trailing], 20)
                 
                 
-                HStack{
+                HStack {
                     
                     Label("Agregar filtos", systemImage: "")
                         .labelStyle(.titleOnly)
                     
                     Button(action: {
-                        //accion
+                        mostrarSheet.toggle()
                     }) {
                         Image(systemName: "plus.app.fill")
                             .foregroundColor(.red)
                     }
+                    .sheet(isPresented: $mostrarSheet) {
+                        FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
+                    }
+                    
                     
                 }
                 .padding(.top, 30)
@@ -137,21 +144,32 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
+                if !categoriaseleccionada.isEmpty {
+                    Text("Categoria seleccionada: \(categoriaseleccionada)")
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(10)
+                        .padding([.leading, .trailing], 20)
+                }
+                
                 Button(action: subirLibro) {
                     Text("Subir Libro")
                 }
                 
-                // Botón para simular el registro y almacenar el token
+                //boton para simular el registro y almacenar el token
                 Button(action: {
                     let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWxpb3BydWViYSIsImlhdCI6MTcxNjIxNzY4MSwiZXhwIjoxNzE2MzA0MDgxfQ.JQ4cuesDK4wetRNywxVCgES9qy6pm9lyJ7IH-NbIdss"
                     UserDefaults.standard.set(token, forKey: "authToken")
+                    
                     self.alertMessage = "Token almacenado"
                     self.showingAlert = true
                 }) {
                     Text("Guardar Token")
                 }
             }
-            .navigationBarTitle("Agregar Libro")
+            .navigationBarTitle("Subir Libro")
+            .navigationBarTitleDisplayMode(.inline)
+            
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -223,18 +241,6 @@ struct SubirLibroView: View {
         }.resume()
     }
 }
-//
-//                    .padding(20)
-//                    .padding(.horizontal, 30)
-//                    .background(Color.button)
-//                    .foregroundColor(.black)
-//                    .cornerRadius(20)
-//                    .padding([.leading, .trailing], 10)
-//                    .padding(.top, 30)
-                    
-                
-       
-
 
 #Preview {
     SubirLibroView()
