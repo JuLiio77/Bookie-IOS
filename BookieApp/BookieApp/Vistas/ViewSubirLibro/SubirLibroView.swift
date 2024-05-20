@@ -8,26 +8,28 @@
 import SwiftUI
 
 struct SubirLibroView: View {
-    @State var titulo: String = ""
-    @State var autor: String = ""
-    @State var paginas: String = ""
-    @State var genero: String = ""
-
     
+    @State private var titulo = ""
+    @State private var autor = ""
+    @State private var numeroPaginas = ""
+    @State private var sinopsis = ""
+    @State private var editorial = ""
+    @State private var genero = ""
+    @State private var showingAlert = false
+    @State private var alertMessage = ""
+
     var body: some View {
         
-        NavigationStack{
-            
+    
+        VStack{
             ScrollView{
-                /*Text("Detalles del libro")
-                    .padding(.top)*/
+                Text("Detalles del libro")
                 
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
-                    .padding(.top)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
@@ -59,7 +61,7 @@ struct SubirLibroView: View {
                     .padding(.top, 30)
                     .padding(.trailing, 220)
                 
-                TextField("Nº de páginas", text: $paginas)
+                TextField("Nº de páginas", text: $numeroPaginas)
                     .bold()
                     .padding()
                     .background(Color.color)
@@ -77,6 +79,31 @@ struct SubirLibroView: View {
                     .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
+                
+                Label("Editorial", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Editorial", text: $editorial)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Sinopsis", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Sinopsis", text: $sinopsis)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
                 
                 HStack{
                     
@@ -96,10 +123,10 @@ struct SubirLibroView: View {
                 
                 Divider()
                 
-                .padding(.top, 10)
-
+                    .padding(.top, 10)
+                
                 HStack{
-                   
+                    
                     ViewFotoPerfil()
                         .frame(width: 50)
                     ViewFotoPerfil()
@@ -110,24 +137,103 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 20)
                 
-               Button("Siguiente"){
-                   
-               }
-               .padding(20)
-               .padding(.horizontal, 30)
-               .background(Color.button)
-               .foregroundColor(.black)
-               .cornerRadius(20)
-               .padding([.leading, .trailing], 10)
-               .padding(.top, 30)
-                       
-                //Spacer()
+                Button(action: subirLibro) {
+                    Text("Subir Libro")
+                }
+                
+                // Botón para simular el registro y almacenar el token
+                Button(action: {
+                    let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWxpb3BydWViYSIsImlhdCI6MTcxNjIxNzY4MSwiZXhwIjoxNzE2MzA0MDgxfQ.JQ4cuesDK4wetRNywxVCgES9qy6pm9lyJ7IH-NbIdss"
+                    UserDefaults.standard.set(token, forKey: "authToken")
+                    self.alertMessage = "Token almacenado"
+                    self.showingAlert = true
+                }) {
+                    Text("Guardar Token")
+                }
             }
-            .navigationTitle("Detalle del libro")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle("Agregar Libro")
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
     }
+    
+    func subirLibro() {
+        guard let url = URL(string: "http://localhost:8080/api/libro") else {
+            self.alertMessage = "URL inválida"
+            self.showingAlert = true
+            return
+        }
+        
+        guard let paginas = Int(numeroPaginas) else {
+            self.alertMessage = "Número de páginas inválido"
+            self.showingAlert = true
+            return
+        }
+        
+        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+            self.alertMessage = "No se encontró el token de autenticación"
+            self.showingAlert = true
+            return
+        }
+        
+        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        
+        guard let jsonData = try? JSONEncoder().encode(libro) else {
+            self.alertMessage = "Error codificando datos"
+            self.showingAlert = true
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Error: \(error.localizedDescription)"
+                    self.showingAlert = true
+                }
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Respuesta no válida del servidor"
+                    self.showingAlert = true
+                }
+                return
+            }
+            
+            if !(200...299).contains(httpResponse.statusCode) {
+                DispatchQueue.main.async {
+                    self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
+                    self.showingAlert = true
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.alertMessage = "Libro subido con éxito"
+                self.showingAlert = true
+            }
+        }.resume()
+    }
 }
+//
+//                    .padding(20)
+//                    .padding(.horizontal, 30)
+//                    .background(Color.button)
+//                    .foregroundColor(.black)
+//                    .cornerRadius(20)
+//                    .padding([.leading, .trailing], 10)
+//                    .padding(.top, 30)
+                    
+                
+       
 
 
 #Preview {
