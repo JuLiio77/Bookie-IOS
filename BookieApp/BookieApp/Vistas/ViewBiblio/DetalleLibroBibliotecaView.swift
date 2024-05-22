@@ -44,9 +44,9 @@ struct DetalleLibroBibliotecaView: View {
                             bookmodelFav.isFavorite.toggle()
                             
                             if bookmodelFav.isFavorite {
-                                librosFavoritos.anadirfav(book: book)
+                                librosFavoritos.anadirFav(book: book)
                             } else {
-                                librosFavoritos.eliminarfav(book: book)
+                                librosFavoritos.eliminarFav(book: book)
                             }
                         })
                         {
