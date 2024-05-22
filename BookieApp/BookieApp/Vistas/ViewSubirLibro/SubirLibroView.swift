@@ -19,7 +19,7 @@ struct SubirLibroView: View {
     @State private var alertMessage = ""
     
     @State private var mostrarSheet = false
-    @State private var categoriaseleccionada = [Categorias]()
+    @State private var categoriaseleccionada = [Categorias]
     
     var body: some View {
         
