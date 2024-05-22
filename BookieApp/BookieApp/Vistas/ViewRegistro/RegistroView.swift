@@ -29,7 +29,7 @@ struct RegistroView: View {
             TextField("Nombre", text: $userData.name)
                 .bold()
                 .padding()
-                .background(Color.mensajefondo)
+                .background(Color.button)
                 .cornerRadius(30)
                 .padding(.top,90)
                 .textInputAutocapitalization(.never)
@@ -37,7 +37,7 @@ struct RegistroView: View {
             TextField("Correo electronico", text: $userData.email)
                 .bold()
                 .padding()
-                .background(Color.mensajefondo)
+                .background(Color.button)
                 .cornerRadius(30)
                 .padding(.top,40)
                 .textInputAutocapitalization(.never)
@@ -46,14 +46,14 @@ struct RegistroView: View {
                 if mostrarContrasenia {
                     TextField("Contraseña", text: $userData.password)
                         .padding()
-                        .background(Color.mensajefondo)
+                        .background(Color.button)
                         .cornerRadius(30)
                         .padding(.top, 40)
                     
                 } else {
                     SecureField("Contraseña", text: $userData.password)
                         .padding()
-                        .background(Color.mensajefondo)
+                        .background(Color.button)
                         .cornerRadius(30)
                         .padding(.top, 40)
                 }
@@ -72,14 +72,14 @@ struct RegistroView: View {
                 if mostrarContrasenia1 {
                     TextField("Contraseña", text: $userData.repassword)
                         .padding()
-                        .background(Color.mensajefondo)
+                        .background(Color.button)
                         .cornerRadius(30)
                         .padding(.top, 40)
                     
                 } else {
                     SecureField("Contraseña", text: $userData.repassword)
                         .padding()
-                        .background(Color.mensajefondo)
+                        .background(Color.button)
                         .cornerRadius(30)
                         .padding(.top, 40)
                 }

@@ -27,7 +27,7 @@ struct ViewRegistroFoto: View {
                 TextField("Nombre de usuario", text: $datos.username)
                     .bold()
                     .padding()
-                    .background(Color.mensajefondo)
+                    .background(Color.button)
                     .cornerRadius(30)
                     .padding(.top, 50)
                     .textInputAutocapitalization(.never)
