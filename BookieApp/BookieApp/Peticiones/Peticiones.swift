@@ -81,15 +81,15 @@ class Peticiones{
                 do{
                     let decoder = JSONDecoder()
                     
-                    //let token = try decoder.decode(ModelToken.self, from: data)
+                    let token = try decoder.decode(ModelToken.self, from: data)
+                    UserDefaults.standard.setValue(token.token, forKey: "token")
                     print("Registro completado")
-                    return
-                    
+                                        
                 }catch(let error){
+                    print("Registro fallido")
                     print(error.localizedDescription)
                 }
             }
-            
             
         }.resume()
         
@@ -109,6 +109,7 @@ class Peticiones{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        //let usuario = ["username": username, "password": password]
         guard let httpBody = try? JSONEncoder().encode(user) else {
             print("Invalid httpBody")
             return
@@ -119,20 +120,19 @@ class Peticiones{
         URLSession.shared.dataTask(with: request){ data, response, error in
             
             if let data = data {
+                //print(String(data: data, encoding: .utf8))
                 do{
                     let decoder = JSONDecoder()
-                    
                     let token = try decoder.decode(ModelToken.self, from: data)
-                    
                     UserDefaults.standard.setValue(token.token, forKey: "token")
+                    print("login correcto")
                     
-                }catch(_){
-                    print("error en el login")
+                }catch(let error){
+                    print("error en el login \(error)")
                 }
             }
         }.resume()
-        
-        
+    
     }
     
        

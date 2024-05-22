@@ -12,102 +12,105 @@ struct VistaLogin: View {
     @EnvironmentObject var datos: FuncionLogin
     @State var toggle: Bool
     @State var mostrarContrasenia: Bool
-    
+    @State var nextView: Bool
+
     var body: some View {
+
         
-        VStack {
-            
-            Text("Bienvenido")
-                .font(.title)
-                .bold()
-                .padding()
+        NavigationStack{
             
             
-            TextField("Nombre de Usuario", text: $datos.username)
-                .bold()
-                .padding()
-                .background(Color.mensajefondo)
-                .cornerRadius(30)
-                .padding(.top,130)
-                .textContentType(.username)
-                .textInputAutocapitalization(.never)
+            VStack {
                 
-            
-            ZStack(alignment: .trailingFirstTextBaseline) {
+                Text("Bienvenido")
+                    .font(.title)
+                    .bold()
+                    .padding()
                 
-                if mostrarContrasenia {
-                    TextField("Contraseña", text: $datos.password)
-                        .padding()
-                        .background(Color.mensajefondo)
-                        .cornerRadius(30)
-                        .padding(.top, 40)
+                
+                TextField("Nombre de Usuario", text: $datos.username)
+                    .bold()
+                    .padding()
+                    .background(Color.mensajefondo)
+                    .cornerRadius(30)
+                    .padding(.top,130)
+                    .textContentType(.username)
+                    .textInputAutocapitalization(.never)
+                
+                
+                ZStack(alignment: .trailingFirstTextBaseline) {
                     
-                } else {
-                    SecureField("Contraseña", text: $datos.password)
-                        .padding()
-                        .background(Color.mensajefondo)
-                        .cornerRadius(30)
-                        .padding(.top, 40)
+                    if mostrarContrasenia {
+                        TextField("Contraseña", text: $datos.password)
+                            .padding()
+                            .background(Color.mensajefondo)
+                            .cornerRadius(30)
+                            .padding(.top, 40)
+                        
+                    } else {
+                        SecureField("Contraseña", text: $datos.password)
+                            .padding()
+                            .background(Color.mensajefondo)
+                            .cornerRadius(30)
+                            .padding(.top, 40)
+                    }
+                    
+                    Button(action: {
+                        mostrarContrasenia.toggle()
+                    }) {
+                        Image(systemName: mostrarContrasenia ? "eye.fill" : "eye.slash.fill")
+                            .foregroundColor(.primary)
+                            .padding(10)
+                    }
+                    .padding(.trailing, 15)
+                    
                 }
                 
-                Button(action: {
-                    mostrarContrasenia.toggle()
-                }) {
-                    Image(systemName: mostrarContrasenia ? "eye.fill" : "eye.slash.fill")
-                        .foregroundColor(.primary)
-                        .padding(10)
+                HStack {
+                    
+                    Toggle("", isOn: $toggle)
+                    Text("Recordar contraseña")
+                    
                 }
-                .padding(.trailing, 15)
-                
-            }
-            
-            HStack {
-                
-                Toggle("", isOn: $toggle)
-                Text("Recordar contraseña")
-                
-            }
-            .frame(width: 400)
-            .padding(.top, 20)
-            .padding(.trailing, 200.0)
-            .toggleStyle(SwitchToggleStyle(tint: Color.button))
-            
-            
-            
-            NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
+                .frame(width: 400)
                 .padding(.top, 20)
-                .foregroundColor(.black)
-                .navigationBarBackButtonHidden(true)
-            
-            
-            Button("Inicio Sesion", action: {
-                datos.check(username: datos.username, password: datos.password)
+                .padding(.trailing, 200.0)
+                .toggleStyle(SwitchToggleStyle(tint: Color.button))
                 
-                //$datos.user
-            })
-            .padding(20)
-            .padding(.horizontal, 30)
-            .background(Color.button)
-            .foregroundColor(.black)
-            .cornerRadius(20)
-            .padding([.leading, .trailing], 10)
-            .padding(.top, 75)
-            .navigationBarBackButtonHidden(true)
-            
-            NavigationLink("registreo", destination: RegistroView())
-            
-            NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
-                .padding(.top, 30)
+                
+                
+                NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
+                    .padding(.top, 20)
+                    .foregroundColor(.black)
+                    .navigationBarBackButtonHidden(true)
+                
+                NavigationLink(destination: TabarView(), isActive: $nextView){
+                    Button("Inicio Sesion", action: {
+                        datos.check(name: datos.username, pass: datos.password)
+                        nextView = true
+                    })
+                }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
                 .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                .navigationBarBackButtonHidden(true)
+                
+                NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
+                    .padding(.top, 30)
+                    .foregroundColor(.black)
+            }
+            .padding()
+            
         }
-        .padding()
-        
+        //.tint(.brown)
     }
-    //.tint(.brown)
-    
 }
 
 #Preview {
-    VistaLogin(toggle: false, mostrarContrasenia: false)
+    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false)
         .environmentObject(FuncionLogin())
 }

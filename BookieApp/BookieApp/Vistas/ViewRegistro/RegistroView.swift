@@ -21,7 +21,7 @@ struct RegistroView: View {
         VStack {
             
             Text("Registro")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title)
                 .bold()
                 .padding()
             
@@ -32,6 +32,7 @@ struct RegistroView: View {
                 .background(Color.mensajefondo)
                 .cornerRadius(30)
                 .padding(.top,90)
+                .textInputAutocapitalization(.never)
             
             TextField("Correo electronico", text: $userData.email)
                 .bold()
@@ -39,7 +40,7 @@ struct RegistroView: View {
                 .background(Color.mensajefondo)
                 .cornerRadius(30)
                 .padding(.top,40)
-            
+                .textInputAutocapitalization(.never)
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia {
@@ -93,10 +94,10 @@ struct RegistroView: View {
                 .padding(.trailing, 15)
             }
             
-            Button("Siguiente"){
-                
-                
-            }
+            
+            NavigationLink("Siguiente", destination: {
+                    IntroducirUbicacionView()
+            })
             .padding(20)
             .padding(.horizontal, 30)
             .background(Color.button)
@@ -104,6 +105,8 @@ struct RegistroView: View {
             .cornerRadius(20)
             .padding([.leading, .trailing], 10)
             .padding(.top, 75)
+
+            
         }
         .padding()
     }
