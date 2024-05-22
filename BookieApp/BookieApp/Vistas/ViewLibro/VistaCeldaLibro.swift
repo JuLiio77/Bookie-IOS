@@ -19,10 +19,11 @@ struct VistaCeldaLibro: View {
                     .cornerRadius(20)
                 
                 Text("Harry Potter y la piedra filosofal")
-                    .padding(.trailing, 10)
+                    .frame(width: 165)
+                    //.padding(.trailing, 10)
                     .font(.subheadline)
                     .foregroundColor(.black)
-                //.multilineTextAlignment(.trailing)
+                    .multilineTextAlignment(.center)
             }
             .padding([.top, .bottom], 20)
         
