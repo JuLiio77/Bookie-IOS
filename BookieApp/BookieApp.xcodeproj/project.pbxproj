@@ -54,6 +54,7 @@
 		3DCC23A02BD809E600E35C93 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC239F2BD809E600E35C93 /* Constant.swift */; };
 		3DCC23A52BD80BE100E35C93 /* VistaLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC23A42BD80BE100E35C93 /* VistaLogin.swift */; };
 		3DCC23A72BD814B400E35C93 /* ModelUserDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCC23A62BD814B400E35C93 /* ModelUserDecoder.swift */; };
+<<<<<<< HEAD
 		3DCD586F2BFE54E100E14D85 /* DetalleLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD586A2BFE54E100E14D85 /* DetalleLibro.swift */; };
 		3DCD58702BFE54E100E14D85 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD586B2BFE54E100E14D85 /* ListaLibros.swift */; };
 		3DCD58712BFE54E100E14D85 /* ViewLibroNoDisponible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD586C2BFE54E100E14D85 /* ViewLibroNoDisponible.swift */; };
@@ -66,6 +67,12 @@
 		3DCD58812BFE58CF00E14D85 /* ViewAjenoReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD58792BFE58CF00E14D85 /* ViewAjenoReview.swift */; };
 		3DCD58822BFE58CF00E14D85 /* ViewPerfilAjeno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD587A2BFE58CF00E14D85 /* ViewPerfilAjeno.swift */; };
 		3DDB385C2BF65D0E009221E0 /* ViewRegistroFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDB385B2BF65D0E009221E0 /* ViewRegistroFoto.swift */; };
+=======
+		3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */; };
+		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
+		3DE784D42BA88FFF00686105 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D32BA88FFF00686105 /* PerfilView.swift */; };
+		3DE784D62BA8902800686105 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D52BA8902700686105 /* ReviewView.swift */; };
+>>>>>>> parent of aea6009 (funcion login y que cambie de vista)
 		3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */; };
 		3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DA2BA89ECF00686105 /* NotificacionesCeldaView.swift */; };
 		3DE784DD2BA8B76C00686105 /* MensajesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DC2BA8B76C00686105 /* MensajesView.swift */; };
@@ -126,6 +133,7 @@
 		3DCC239F2BD809E600E35C93 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3DCC23A42BD80BE100E35C93 /* VistaLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaLogin.swift; sourceTree = "<group>"; };
 		3DCC23A62BD814B400E35C93 /* ModelUserDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUserDecoder.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		3DCD586A2BFE54E100E14D85 /* DetalleLibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalleLibro.swift; sourceTree = "<group>"; };
 		3DCD586B2BFE54E100E14D85 /* ListaLibros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
 		3DCD586C2BFE54E100E14D85 /* ViewLibroNoDisponible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLibroNoDisponible.swift; sourceTree = "<group>"; };
@@ -138,6 +146,12 @@
 		3DCD58792BFE58CF00E14D85 /* ViewAjenoReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAjenoReview.swift; sourceTree = "<group>"; };
 		3DCD587A2BFE58CF00E14D85 /* ViewPerfilAjeno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPerfilAjeno.swift; sourceTree = "<group>"; };
 		3DDB385B2BF65D0E009221E0 /* ViewRegistroFoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRegistroFoto.swift; sourceTree = "<group>"; };
+=======
+		3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
+		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
+		3DE784D32BA88FFF00686105 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
+		3DE784D52BA8902700686105 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+>>>>>>> parent of aea6009 (funcion login y que cambie de vista)
 		3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesCeldaView.swift; sourceTree = "<group>"; };
 		3DE784DA2BA89ECF00686105 /* NotificacionesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionesCeldaView.swift; sourceTree = "<group>"; };
 		3DE784DC2BA8B76C00686105 /* MensajesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesView.swift; sourceTree = "<group>"; };
@@ -343,7 +357,6 @@
 				3D8826F52B9F7DFD00CF248C /* RegistroView.swift */,
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
-				3DDB385B2BF65D0E009221E0 /* ViewRegistroFoto.swift */,
 			);
 			path = ViewRegistro;
 			sourceTree = "<group>";
@@ -537,10 +550,13 @@
 				3DE784DD2BA8B76C00686105 /* MensajesView.swift in Sources */,
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
 				3DCC23A02BD809E600E35C93 /* Constant.swift in Sources */,
+<<<<<<< HEAD
 				3DB53B1E2BFE5FD60056EE37 /* ModificarLibroView.swift in Sources */,
 				3DDB385C2BF65D0E009221E0 /* ViewRegistroFoto.swift in Sources */,
 				3DB53B182BFE5FD60056EE37 /* ViewHistorial.swift in Sources */,
 				3D677A402BFE50320001D806 /* CeldaLibroFavorito.swift in Sources */,
+=======
+>>>>>>> parent of aea6009 (funcion login y que cambie de vista)
 				3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */,
 				3D11CD7E2BEA939A002BCECD /* LibrosFavoritos.swift in Sources */,
 				3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */,

@@ -10,20 +10,21 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var datos = FuncionLogin()
+    @State private var userData: ModelUser?
     
     var body: some View {
         
         HStack{
             
-            var token = !datos.tokeen.isEmpty
-            
+            var token = false
+            // datos.tokeen.isEmpty
             if token{
                 
                 TabarView()
                                
             }else{
                 
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false)
+                VistaLogin(toggle: false, mostrarContrasenia: false)
                 
             }
             

@@ -16,7 +16,7 @@ struct RegisterRequest: Encodable, Decodable{
     var email: String
     var ciudad: String
     var provincia: String
-    var codigoPostal: String
+    var codigoPostal: Int
     var foto: String
     var reportado: Bool
     var token: String
