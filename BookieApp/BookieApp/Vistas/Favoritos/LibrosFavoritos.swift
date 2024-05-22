@@ -1,8 +1,8 @@
 //
-//  ListaFavoritos.swift
+//  LibrosFavoritos.swift
 //  BookieApp
 //
-//  Created by dam2 on 11/4/24.
+//  Created by dam2 on 7/5/24.
 //
 
 import Foundation
@@ -68,3 +68,5 @@ class LibrosFavoritos: ObservableObject {
         return librosFav.first(where: { $0.book?.id == book.id }) ?? BookModelFavoritos(id: book.id, book: book)
     }
 }
+
+

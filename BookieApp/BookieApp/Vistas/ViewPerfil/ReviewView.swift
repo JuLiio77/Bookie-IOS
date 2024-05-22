@@ -8,42 +8,51 @@
 import SwiftUI
 
 struct ReviewView: View {
-   
+    
     @State private var reviewText: String = ""
-
+    
     @State private var rating: Int = 0
-
+    @State var showingAlert = false
+    
     var body: some View {
-
+        
         NavigationView {
-
+            
             VStack {
-                // Text input field for the review
-          TextEditor(text: $reviewText)
-                .frame(height: 400)
-                .padding()
-                .background(Color.color .opacity(0.6))
-                .cornerRadius(20)
-                .scrollContentBackground(.hidden)
+                
+                TextEditor(text: $reviewText)
+                    .frame(height: 400)
+                    .padding()
+                    .background(Color.color .opacity(0.6))
+                    .cornerRadius(20)
+                    .scrollContentBackground(.hidden)
                 
                 Spacer()
+                
                 HStack {
-              ForEach(1...5, id: \.self) { index in
-                     Image(systemName: index <= rating ? "star.fill" : "star")
+                    
+                    ForEach(1...5, id: \.self) { index in
+                        
+                        Image(systemName: index <= rating ? "star.fill" : "star")
                             .foregroundColor(.yellow)
                             .onTapGesture {
                                 rating = index
-
                             }
-
                     }
-
-        }
-
-                .padding()
-
-                Button("Continuar"){
-
+                }
+                
+                Button("Continuar") {
+                    self.showingAlert = true
+                }
+                .alert(isPresented: $showingAlert) {
+                    
+                    Alert(
+                        title: Text("Quieres publicar la reseña"),
+                        primaryButton: .destructive(Text("Sí")) {
+                            //gregar el código para cerrar la vista y volver a la anterior
+                        },
+                        secondaryButton: .cancel()
+                    )
                 }
                 .padding(20)
                 .padding(.horizontal, 50)
@@ -52,18 +61,13 @@ struct ReviewView: View {
                 .cornerRadius(20)
                 .padding([.leading, .trailing], 10)
                 .padding(.top, 75)
-
             }
-
-                .padding()
-                .navigationTitle("Escribe tu reseña")
-                //.navigationBarTitleDisplayMode(.inline)
-
-            }
+            .padding()
+            .navigationTitle("Escribe tu reseña")
+            .navigationBarTitleDisplayMode(.inline)
         }
-
     }
-
+}
 
 #Preview {
     ReviewView()
