@@ -36,6 +36,7 @@ struct VistaLogin: View {
             ZStack(alignment: .trailingFirstTextBaseline) {
                 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 
                 TextField("Nombre de Usuario", text: $datos.username)
                     .bold()
@@ -73,12 +74,17 @@ struct VistaLogin: View {
                     }
                     .padding(.trailing, 15)
 =======
+=======
+>>>>>>> parent of aea6009 (funcion login y que cambie de vista)
                 if mostrarContrasenia {
                     TextField("Contraseña", text: $datos.password)
                         .padding()
                         .background(Color.mensajefondo)
                         .cornerRadius(30)
                         .padding(.top, 40)
+<<<<<<< HEAD
+>>>>>>> parent of aea6009 (funcion login y que cambie de vista)
+=======
 >>>>>>> parent of aea6009 (funcion login y que cambie de vista)
                     
                 } else {
