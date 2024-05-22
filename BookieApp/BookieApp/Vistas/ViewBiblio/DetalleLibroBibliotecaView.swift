@@ -44,9 +44,9 @@ struct DetalleLibroBibliotecaView: View {
                             bookmodelFav.isFavorite.toggle()
                             
                             if bookmodelFav.isFavorite {
-                                librosFavoritos.anadirFav(book: book)
+                                librosFavoritos.anadirfav(book: book)
                             } else {
-                                librosFavoritos.eliminarFav(book: book)
+                                librosFavoritos.eliminarfav(book: book)
                             }
                         })
                         {
@@ -79,7 +79,7 @@ struct DetalleLibroBibliotecaView: View {
                             .bold()
                             .padding(.top, 20)
                         
-                        Text(book.volumeInfo.authors.joined(separator: ", ") ?? "Desconocido")
+                        Text(book.volumeInfo.authors?.joined(separator: ", ") ?? "Desconocido")
                             .padding(.top, 1)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -91,7 +91,7 @@ struct DetalleLibroBibliotecaView: View {
                             .bold()
                             .padding(.top, 20)
                         
-                        Text(book.volumeInfo.description
+                        Text(book.volumeInfo.description 
                              ?? "Desconocido")
                             .padding(.top, 1)
                     }

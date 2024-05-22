@@ -1,5 +1,5 @@
 //
-//  ViewLibroNoDisponible.swift
+//  LibroPropioDetallesView.swift
 //  BookieApp
 //
 //  Created by dam2 on 23/4/24.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct ViewLibroNoDisponible: View {
-    
+struct LibroPropioDetallesView: View {
+    @State var eliminarLibro = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
         GridItem(.adaptive(minimum: 60, maximum: 100), spacing: 60),
@@ -19,38 +20,22 @@ struct ViewLibroNoDisponible: View {
         
         NavigationStack{
             
-            ScrollView(.vertical){
+            ScrollView(){
                 
                 VStack{
-//                    NavigationLink(destination: ViewPerfilAjeno()) {
-//                        Label( "Iñigo", systemImage: "person.circle.fill")
-//                             .padding(.leading, 250)
-//                             .padding([.top, .bottom], 15)
-//                             .foregroundColor(.black)
-//                     }
+                    NavigationLink(destination: PerfilView()) {
+                        Label( "Usuario ", systemImage: "person.circle.fill")
+                             .padding(.leading, 250)
+                             .padding([.top, .bottom], 15)
+                             .foregroundColor(.black)
+                     }
                     
                     Image(systemName: "globe")
                         .frame(width: 166, height: 196)
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
-                        .padding(.top, 20)
-                    
-                    VStack{
-               
-                        Text("¿Has recibido tu libro de vuelta?")
-                            .foregroundStyle(.cyan)
-                        
-                        NavigationLink("Finalizar Intercambio", destination: MensajesView())
-                           .padding(15)
-                           .padding(.horizontal, 20)
-                           .background(.button)
-                           .foregroundColor(.white)
-                           .cornerRadius(30)
-                           .padding([.leading, .trailing], 10)
-                           .padding(.top, 10)
-                           .navigationBarBackButtonHidden(true)
-                    }
+                  
                     
                     ZStack{
                         
@@ -134,29 +119,44 @@ struct ViewLibroNoDisponible: View {
                             .frame(width: 50)
                         
                     }
-//
-//
-//                    HStack{
-//
-//                        NavigationLink("Intercambio", destination: MensajesView())
-//                            .padding(15)
-//                            .padding(.horizontal, 20)
-//                            .background(.brown)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(30)
-//                            .padding([.leading, .trailing], 10)
-//                            .padding(.top, 20)
-//                            .navigationBarBackButtonHidden(true)
-//
-//                        NavigationLink("Escribir Reseña", destination: ReviewView())
-//                            .padding(15)
-//                            .background(Color.button)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(30)
-//                            .padding([.leading, .trailing], 10)
-//                            .padding(.top, 20)
-//                            .navigationBarBackButtonHidden(true)
-//                    }
+                    
+                    
+                    HStack{
+                        
+                        NavigationLink("Modificar", destination: ModificarLibroView())
+                            .padding(15)
+                            .padding(.horizontal, 20)
+                            .background(.brown)
+                            .foregroundColor(.white)
+                            .cornerRadius(30)
+                            .padding([.leading, .trailing], 10)
+                            .padding(.top, 20)
+                            .navigationBarBackButtonHidden(true)
+                    
+                        
+                         Button("Eliminar") {
+                             eliminarLibro = true
+                         }
+                         .alert(isPresented: $eliminarLibro) {
+                             Alert(
+                                 title: Text("Eliminar Libro"),
+                                 message: Text("¿Estas seguro de que quieres eliminar este libro?"),
+                                 primaryButton: .default(Text("Sí")) {
+                                     // Aquí puedes poner el código para guardar los cambios
+                                     self.presentationMode.wrappedValue.dismiss()
+                                 },
+                                 secondaryButton: .cancel(Text("No"))
+                             )
+                         }
+                         .padding(15)
+                         .padding(.horizontal, 20)
+                         .background(.button)
+                         .foregroundColor(.white)
+                         .cornerRadius(30)
+                         .padding([.leading, .trailing], 10)
+                         .padding(.top, 20)
+                         .navigationBarBackButtonHidden(true)
+                     }
                     
                     
                     Spacer()
@@ -168,7 +168,6 @@ struct ViewLibroNoDisponible: View {
         //.tint(.brown)
     }
 }
-
 #Preview {
-    ViewLibroNoDisponible()
+    LibroPropioDetallesView()
 }

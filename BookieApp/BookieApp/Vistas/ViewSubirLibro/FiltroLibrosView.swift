@@ -9,9 +9,9 @@ import SwiftUI
 
 struct FiltroLibrosView: View {
     
-    @Binding var categoriaseleccionada: [Categorias]
+    @Binding var categoriaseleccionada: String
     
-    let categorias: [Categorias] = [
+    let categoria: [Categorias] = [
         Categorias(nombre: "Romance", imagen: "filtroromance"),
         Categorias(nombre: "Aventura", imagen: "filtroaventuras"),
         Categorias(nombre: "Fantasía", imagen: "filtrofantasia"),
@@ -27,31 +27,28 @@ struct FiltroLibrosView: View {
         Categorias(nombre: "Extranjero", imagen: "filtroextranjero")
     ]
     
-    @Environment(\.presentationMode) var presentationMode
-    
     var body: some View {
         
         VStack {
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 20) {
                 
-                ForEach(categorias) { categoria in
+                ForEach(categoria) { categorias in
                     
                     Button(action: {
                         
-                        if !categoriaseleccionada.contains(where: { $0.id == categoria.id }) {
-                            categoriaseleccionada.append(categoria)
-                        }
+                        categoriaseleccionada = categorias.imagen
+                        print("\(categorias.nombre) pulsado")
                         
                     }) {
                         
                         VStack {
-                            Image(categoria.imagen)
+                            Image(categorias.imagen)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 70, height: 70)
                             
-                            Text(categoria.nombre)
+                            Text(categorias.nombre)
                                 .font(.footnote)
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
@@ -63,7 +60,7 @@ struct FiltroLibrosView: View {
             
             HStack {
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    //
                 }) {
                     Text("Cancelar")
                         .padding()
@@ -74,7 +71,7 @@ struct FiltroLibrosView: View {
                 }
                 Spacer()
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    //
                 }) {
                     Text("Aceptar")
                         .padding()
@@ -93,5 +90,5 @@ struct FiltroLibrosView: View {
 }
 
 #Preview {
-    FiltroLibrosView(categoriaseleccionada: .constant([]))
+    FiltroLibrosView(categoriaseleccionada: .constant(""))
 }

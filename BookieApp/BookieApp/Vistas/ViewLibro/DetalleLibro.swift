@@ -47,9 +47,9 @@ struct DetalleLibro: View {
                             bookmodelFav.isFavorite.toggle()
                             
                             if bookmodelFav.isFavorite {
-                                librosFavoritos.anadirFav(book: book)
+                                librosFavoritos.anadirfav(book: book)
                             } else {
-                                librosFavoritos.eliminarFav(book: book)
+                                librosFavoritos.eliminarfav(book: book)
                             }
                         })
                         {
@@ -135,7 +135,14 @@ struct DetalleLibro: View {
                         .padding(.top, 25)
                     
                     HStack{
-
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                     }
                     
                     

@@ -9,43 +9,34 @@ import SwiftUI
 
 struct VistaCeldaChat: View {
     
-    @EnvironmentObject var chat: ModelMensaje
-    
-    @State var message: Mensaje
+    @State var message: String = "Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce."
     @State var fecha: Date = Date()
-    let isSendMensaje: Bool
     
     var body: some View {
         
-        HStack {
-            if isSendMensaje{
-                Spacer()
-            }
-            
-            VStack(alignment: .leading){
+        ZStack {
                 
-                Text(message.texto)
-                    .padding(.leading, 20)
-                    .font(.callout)
-                Text("\(fecha.formatted(date: .omitted, time: .shortened))")
-                    .font(.footnote)
-            }
-            .padding(10)
-            .padding(.top, 5)
-            .foregroundStyle(.white)
-            .background(isSendMensaje ? Color.button : Color.button.opacity(0.5))
-            .cornerRadius(10.0)
-            
-            if !isSendMensaje{
-                Spacer()
-            }
-            
-        }
-        
+                Image("")
+                    .frame(width: 360, height: 130)
+                    .background(Color.button.opacity(0.3))
+                    .cornerRadius(20)
+
+                VStack {
+                    Text(message)
+                        .padding([.leading ,.trailing], 20)
+                        .lineLimit(2, reservesSpace: false)
+                    
+                    Text("\(fecha.formatted(date: .omitted, time: .shortened))")
+                    .padding(.trailing, 290)
+                    .padding(.top, 20)                    
+                }
+                .frame(width: 345, height: 50)
+                .padding(.top, 35)
+                .font(.subheadline)
+        }        
     }
 }
 
 #Preview {
-    VistaCeldaChat(message: Mensaje(texto: "mensaje de prueba", idusuario: 1, idChat: 1, fechaMensaje: ""), isSendMensaje: true)
-        .environmentObject(ModelMensaje(mensajes: []))
+    VistaCeldaChat()
 }
