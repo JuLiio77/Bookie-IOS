@@ -19,6 +19,7 @@ struct SubirLibroView: View {
     @State private var alertMessage = ""
     
     @State private var mostrarSheet = false
+<<<<<<< HEAD
     @State private var categoriaseleccionada = [Categorias]()
     
     @State private var mostraralertaelim = false
@@ -125,10 +126,27 @@ struct SubirLibroView: View {
                     .sheet(isPresented: $mostrarSheet) {
                         FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
                     }
+=======
+    @State private var categoriaseleccionada = ""
+    
+    var body: some View {
+        
+        NavigationView {
+            Form {
+                Section(header: Text("Detalles del Libro")) {
+                    TextField("Título", text: $titulo)
+                    TextField("Autor", text: $autor)
+                    TextField("Número de Páginas", text: $numeroPaginas)
+                        .keyboardType(.numberPad)
+                    TextField("Sinopsis", text: $sinopsis)
+                    TextField("Editorial", text: $editorial)
+                    TextField("Género", text: $genero)
+>>>>>>> jose
                 }
                 .padding(.top, 30)
                 .padding(.trailing, 200)
                 
+<<<<<<< HEAD
                 Divider()
                     .padding(.top, 15)
                 
@@ -197,6 +215,13 @@ struct SubirLibroView: View {
             .navigationBarTitle("Subir Libro")
             .navigationBarTitleDisplayMode(.inline)
             
+=======
+                Button(action: subirLibro) {
+                    Text("Subir Libro")
+                }
+            }
+            .navigationBarTitle("Agregar Libro")
+>>>>>>> jose
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -239,7 +264,11 @@ struct SubirLibroView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
+<<<<<<< HEAD
                     self.alertMessage = "Error: \(error.localizedDescription)"
+=======
+                    self.alertMessage = "Error en el data"
+>>>>>>> jose
                     self.showingAlert = true
                 }
                 return
@@ -255,7 +284,11 @@ struct SubirLibroView: View {
             
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
+<<<<<<< HEAD
                     self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
+=======
+                    self.alertMessage = "Error en el servidor"
+>>>>>>> jose
                     self.showingAlert = true
                 }
                 return
@@ -267,8 +300,151 @@ struct SubirLibroView: View {
             }
         }.resume()
     }
+<<<<<<< HEAD
 }
 
 #Preview {
     SubirLibroView()
+=======
+        
+//        NavigationStack {
+//            
+//            ScrollView{
+//                
+//                Image(systemName: "")
+//                    .frame(width: 166, height: 196)
+//                    .foregroundColor(.blue)
+//                    .background(Color.gray, in: .rect)
+//                    .cornerRadius(20)
+//                    .padding(.top, 25)
+//                
+//                Label("Título", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 50)
+//                    .padding(.trailing, 280)
+//                
+//                TextField("Título", text: $titulo)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.color)
+//                    .cornerRadius(30)
+//                    .padding([.leading, .trailing], 20)
+//                
+//                Label("Autor", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 30)
+//                    .padding(.trailing, 280)
+//                
+//                TextField("Autor", text: $autor)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.color)
+//                    .cornerRadius(30)
+//                    .padding([.leading, .trailing], 20)
+//                
+//                
+//                Label("Nº de páginas", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 30)
+//                    .padding(.trailing, 220)
+//                
+//                TextField("Nº de páginas", text: $numeroPaginas)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.color)
+//                    .cornerRadius(30)
+//                    .padding([.leading, .trailing], 20)
+//                
+//                Label("Género", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 30)
+//                    .padding(.trailing, 280)
+//                
+//                TextField("Género", text: $genero)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.color)
+//                    .cornerRadius(30)
+//                    .padding([.leading, .trailing], 20)
+//                
+//                Label("Editorial", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 30)
+//                    .padding(.trailing, 280)
+//                
+//                TextField("Editorial", text: $editorial)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.color)
+//                    .cornerRadius(30)
+//                    .padding([.leading, .trailing], 20)
+//                
+//                Label("Sinopsis", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 30)
+//                    .padding(.trailing, 280)
+//                
+//                TextField("Sinopsis", text: $sinopsis)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.color)
+//                    .cornerRadius(30)
+//                    .padding([.leading, .trailing], 20)
+//                
+//                
+//                HStack {
+//                    
+//                    Label("Agregar filtos", systemImage: "")
+//                        .labelStyle(.titleOnly)
+//                    
+//                    Button(action: {
+//                        mostrarSheet.toggle()
+//                    }) {
+//                        Image(systemName: "plus.app.fill")
+//                            .foregroundColor(.red)
+//                    }
+//                    .sheet(isPresented: $mostrarSheet) {
+//                        FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
+//                    }
+//                    
+//                    
+//                }
+//                .padding(.top, 30)
+//                .padding(.trailing, 200)
+//                
+//                Divider()
+//                
+//                    .padding(.top, 10)
+//                
+//                HStack{
+//                    
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    ViewFotoPerfil()
+//                        .frame(width: 50)
+//                    
+//                }
+//                .padding(.top, 20)
+//                
+//                if !categoriaseleccionada.isEmpty {
+//                    Text("Categoria seleccionada: \(categoriaseleccionada)")
+//                        .padding()
+//                        .background(Color.gray.opacity(0.2))
+//                        .cornerRadius(10)
+//                        .padding([.leading, .trailing], 20)
+//                }
+//                
+//               
+//            }
+//        }
+//    }
+}
+
+struct AddSubirLibro_Previews: PreviewProvider {
+    static var previews: some View {
+        SubirLibroView()
+    }
+>>>>>>> jose
 }
