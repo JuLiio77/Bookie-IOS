@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SubirLibroView: View {
     
+    @ObservedObject var userData: FuncionLogin
+    
     @State private var titulo = ""
     @State private var autor = ""
     @State private var numeroPaginas = ""
@@ -17,12 +19,12 @@ struct SubirLibroView: View {
     @State private var genero = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @State private var shouldNavigate = false
     
     @State private var mostrarSheet = false
     @State private var categoriaseleccionada = ""
     
     var body: some View {
-        
         NavigationView {
             Form {
                 Section(header: Text("Detalles del Libro")) {
@@ -76,13 +78,13 @@ struct SubirLibroView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(userData.tokeen)", forHTTPHeaderField: "Authorization")
         request.httpBody = jsonData
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    self.alertMessage = "Error en el data"
+                    self.alertMessage = "Error: \(error.localizedDescription)"
                     self.showingAlert = true
                 }
                 return
@@ -110,6 +112,13 @@ struct SubirLibroView: View {
             }
         }.resume()
     }
+}
+struct AddSubirLibro_Previews: PreviewProvider {
+    static var previews: some View {
+        SubirLibroView(userData: FuncionLogin())
+    }
+}
+
         
 //        NavigationStack {
 //            
@@ -244,10 +253,10 @@ struct SubirLibroView: View {
 //            }
 //        }
 //    }
-}
+//}
 
-struct AddSubirLibro_Previews: PreviewProvider {
-    static var previews: some View {
-        SubirLibroView()
-    }
-}
+//struct AddSubirLibro_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SubirLibroView()
+//    }
+//}

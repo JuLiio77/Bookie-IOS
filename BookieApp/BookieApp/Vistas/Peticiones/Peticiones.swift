@@ -48,47 +48,48 @@ class Peticiones {
         }.resume()
     }
     
-    func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
-        
-        let urlString = "http://localhost:8080/api/auth/register"
-        
-        guard let url = URL(string: urlString) else {
-            print("URL no válida")
-            return
-        }
-        
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
-        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
-            print("Invalid httpBody")
-            return
-        }
-        
-        request.httpBody = httpBody
-   
-        URLSession.shared.dataTask(with: request){ data, response, error in
-            
-            if let data = data {
-                do{
-                    let decoder = JSONDecoder()
-                    
-                    let token = try decoder.decode(ModelToken.self, from: data)
-                    
-                    return
-                    //print(token.token)
-                    //print(response)
-                }catch(let error){
-                    print(error.localizedDescription)
-                }
-            }
-        }.resume()
-    }
+    func PostRegister(_ userRegister: RegisterRequest){
+         
+         
+         let urlString = "http://localhost:8080/api/auth/register"
+         
+         guard let url = URL(string: urlString) else {
+             print("URL no válida")
+             return
+         }
+         
+         var request = URLRequest(url: url)
+         request.httpMethod = "POST"
+         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+         
+         guard let httpBody = try? JSONEncoder().encode(userRegister) else {
+             print("Invalid httpBody")
+             return
+         }
+         
+         request.httpBody = httpBody
     
-    func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
+         URLSession.shared.dataTask(with: request){ data, response, error in
+             
+             if let data = data {
+                 do{
+                     let decoder = JSONDecoder()
+                     
+                     let token = try decoder.decode(ModelToken.self, from: data)
+                     UserDefaults.standard.setValue(token.token, forKey: "token")
+                     print("Registro completado")
+                                         
+                 }catch(let error){
+                     print("Registro fallido")
+                     print(error.localizedDescription)
+                 }
+             }
+             
+         }.resume()
+         
+     }
+    
+    func login(_ user: AuthRequest, completion: @escaping (Result<String, Error>)-> Void){
 
         let urlString = "http://localhost:8080/api/auth/login"
         
@@ -101,9 +102,8 @@ class Peticiones {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let firstUser = AuthRequest(username: username, password: password)
-        
-        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+            
+        guard let httpBody = try? JSONEncoder().encode(user) else {
             print("Invalid httpBody")
             return
         }
@@ -116,17 +116,89 @@ class Peticiones {
                 
                 do {
                     let decoder = JSONDecoder()
-                    
                     let token = try decoder.decode(ModelToken.self, from: data)
-                    
-                    //UserDefaults.standard.setValue(token.token, forKey: "token")
                     UserDefaults.standard.setValue(token.token, forKey: "token")
-                    //print("token peticion:\(token.token)")
-                    
+                    print("Exzito en la peticion")
                 } catch (let error) {
-                    print("error en el login")
+                   print("Error en la peticion")
                 }
             }
         }.resume()
     }
+    
+    func getUserData() {
+        
+        let urlString = "http://localhost:8080/api/credentials/get-user-from-token"
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let tokenUser = UserDefaults.standard.string(forKey: "token") // Si llega a fallar cambiar el UserDefault por un token
+
+        request.setValue("Bearer \(tokenUser)", forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            let decoder = JSONDecoder()
+
+            if let data = data {
+                
+                do {
+                    let user = try decoder.decode(ModelUser.self, from: data)
+                    print("Usuario decodificado:", user)
+                } catch {
+                    print("Error al decodificar datos del usuario:", error.localizedDescription)
+                }
+            } else if let error = error {
+                print("Error de red:", error.localizedDescription)
+            }
+        }.resume()
+    }
+    
+    func subirLibro(_ libro: Libro){
+        
+        let urlString = "http://localhost:8080/api/libro"
+        
+        guard let url = URL(string: urlString) else {
+            print("URL no válida")
+            return
+        }
+        
+        let token = UserDefaults.standard.string(forKey: "token")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        guard let httpBody = try? JSONEncoder().encode(libro) else {
+            print("Invalid httpBody")
+            return
+        }
+        
+        request.httpBody = httpBody
+        
+        URLSession.shared.dataTask(with: request){ data, response, error in
+            
+            if let data = data {
+                do{
+                    let decoder = JSONDecoder()
+                    
+                    let libro = try decoder.decode(libro.self, from: data)
+                    
+                    print("libro completado")
+                    
+                }catch(let error){
+                    print("libro fallido")
+                    // print(error.localizedDescription)
+                }
+            }
+            
+        }.resume()
+        
+    }
+        
 }

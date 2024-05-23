@@ -21,7 +21,7 @@ struct RegistroView: View {
         VStack {
             
             Text("Registro")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title)
                 .bold()
                 .padding()
             
@@ -93,10 +93,10 @@ struct RegistroView: View {
                 .padding(.trailing, 15)
             }
             
-            Button("Siguiente"){
-                
-                
-            }
+            NavigationLink("Siguiente", destination:{
+                IntroducirUbicacionView()
+                    
+            })
             .padding(20)
             .padding(.horizontal, 30)
             .background(Color.button)

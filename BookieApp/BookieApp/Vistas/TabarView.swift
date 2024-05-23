@@ -21,7 +21,7 @@ struct TabarView: View {
                     Label("Biblioteca", systemImage: "book")
                 }
             
-            SubirLibroView()
+            SubirLibroView(userData: FuncionLogin())
                 .tabItem {
                     Label("Subir", systemImage: "plus.app.fill")
                 }

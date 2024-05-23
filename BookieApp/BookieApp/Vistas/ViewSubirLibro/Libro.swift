@@ -7,12 +7,13 @@
 
 import Foundation
 
-struct Libro: Codable {
-    var titulo: String
-    var autor: String
-    var numeroPaginas: Int
-    var sinopsis: String
-    var editorial: String
-    var genero: String
-   // var prestado: Bool
+
+struct Libro: Codable, Identifiable {
+    let id = UUID()
+    let titulo: String
+    let autor: String
+    let numeroPaginas: Int
+    let sinopsis: String
+    let editorial: String
+    let genero: String
 }

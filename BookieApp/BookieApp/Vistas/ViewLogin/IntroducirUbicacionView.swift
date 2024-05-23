@@ -13,7 +13,8 @@ struct IntroducirUbicacionView: View {
     @State var repetirContrasenia: String = ""
     @State var correo: String = ""
     @State var contrasenia: String = ""
-        
+    @EnvironmentObject var datos: FuncionLogin
+    
     @State private var selecciProvincia = 0
         
     let provincias = ["Álava", "Albacete", "Alicante", "Almería", "Asturias", "Ávila", "Badajoz", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "Cuenca", "Gerona", "Granada", "Guadalajara", "Guipúzcoa", "Huelva", "Huesca", "Islas Baleares", "Jaén", "La Coruña", "La Rioja", "Las Palmas", "León", "Lérida", "Lugo", "Madrid", "Málaga", "Melilla", "Murcia", "Navarra", "Orense", "Palencia", "Pontevedra", "Salamanca", "Santa Cruz de Tenerife", "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel", "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora", "Zaragoza"]
@@ -22,7 +23,7 @@ struct IntroducirUbicacionView: View {
     var body: some View {
         VStack{
             Text("Introducir ubicación")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title)
                 .bold()
                 .padding()
             
@@ -34,41 +35,43 @@ struct IntroducirUbicacionView: View {
             }
             .padding()*/
             
-            TextField("Provincia", text: $nombre)
+            TextField("Provincia", text: $datos.provincia)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,150)
+                .textInputAutocapitalization(.never)
             
-            TextField("Ciudad", text: $nombre)
+            TextField("Ciudad", text: $datos.ciudad)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,40)
+                .textInputAutocapitalization(.never)
             
-            TextField("Código postal", text: $nombre)
+            TextField("Código postal", text: $datos.codigoPostal)
                 .bold()
                 .padding()
                 .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,40)
+                .textInputAutocapitalization(.never)
             
-            
-           Button("Siguiente"){
-               
-           }
-           .padding(20)
-           .padding(.horizontal, 30)
-           .background(Color.button)
-           .foregroundColor(.black)
-           .cornerRadius(20)
-           .padding([.leading, .trailing], 10)
-           .padding(.top, 75)
-               
+            NavigationLink("Siguiente", destination: {
+                ViewRegistroFoto()
+            })
+            .padding(20)
+            .padding(.horizontal, 30)
+            .background(Color.button)
+            .foregroundColor(.black)
+            .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
+            .padding(.top, 75)
+                       
      
-            Spacer()            
+            Spacer()
             
             }
             .padding()
@@ -78,4 +81,5 @@ struct IntroducirUbicacionView: View {
 
 #Preview {
     IntroducirUbicacionView()
+        .environmentObject(FuncionLogin())
 }
