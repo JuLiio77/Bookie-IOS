@@ -10,6 +10,7 @@ import SwiftUI
 struct SubirLibroView: View {
     
     @ObservedObject var userData: FuncionLogin
+    var peticiones = Peticiones()
     
     @State private var titulo = ""
     @State private var autor = ""
@@ -47,6 +48,8 @@ struct SubirLibroView: View {
             }
         }
     }
+    
+
     
     func subirLibro() {
         guard let url = URL(string: "http://localhost:8080/api/libro") else {
@@ -100,7 +103,7 @@ struct SubirLibroView: View {
             
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
-                    self.alertMessage = "Error en el servidor"
+                    self.alertMessage = "Libro Subido Correctamente"
                     self.showingAlert = true
                 }
                 return

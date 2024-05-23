@@ -184,17 +184,9 @@ class Peticiones {
         URLSession.shared.dataTask(with: request){ data, response, error in
             
             if let data = data {
-                do{
-                    let decoder = JSONDecoder()
-                    
-                    let libro = try decoder.decode(libro.self, from: data)
-                    
-                    print("libro completado")
-                    
-                }catch(let error){
-                    print("libro fallido")
-                    // print(error.localizedDescription)
-                }
+                let decoder = JSONDecoder()
+                let respuesta = data
+                print("Se ha subido el libro correctamente")
             }
             
         }.resume()

@@ -16,4 +16,6 @@ struct Libro: Codable, Identifiable {
     let sinopsis: String
     let editorial: String
     let genero: String
+    let prestado: Bool = false
+    
 }
