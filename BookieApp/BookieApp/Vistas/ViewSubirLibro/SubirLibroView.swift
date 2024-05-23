@@ -21,6 +21,9 @@ struct SubirLibroView: View {
     @State private var mostrarSheet = false
     @State private var categoriaseleccionada = [Categorias]()
     
+    @State private var mostraralertaelim = false
+    @State private var eliminarcateg: Categorias?
+    
     var body: some View {
         
         NavigationStack {
@@ -110,7 +113,7 @@ struct SubirLibroView: View {
                 
                 HStack {
                     
-                    Label("Agregar filtos", systemImage: "")
+                    Label("Agregar filtro", systemImage: "")
                         .labelStyle(.titleOnly)
                     
                     Button(action: {
@@ -122,8 +125,6 @@ struct SubirLibroView: View {
                     .sheet(isPresented: $mostrarSheet) {
                         FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
                     }
-                    
-                    
                 }
                 .padding(.top, 30)
                 .padding(.trailing, 200)
@@ -141,14 +142,35 @@ struct SubirLibroView: View {
                                 
                                 VStack {
                                     
-                                    Image(categoria.imagen).resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 40, height: 40)
-                                    
-                                    Text(categoria.nombre)
-                                        .font(.footnote)
-                                        .foregroundColor(.black)
-                                        .multilineTextAlignment(.center)
+                                    Button(action: {
+                                        
+                                        eliminarcateg = categoria
+                                        mostraralertaelim = true
+                                    }) {
+                                        
+                                        VStack {
+                                            
+                                            Image(categoria.imagen).resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 60, height: 60)
+                                            
+                                            Text(categoria.nombre)
+                                                .font(.footnote)
+                                                .foregroundColor(.black)
+                                                .multilineTextAlignment(.center)
+                                        }
+                                    }
+                                    .alert(isPresented: $mostraralertaelim) {
+                                        
+                                        Alert(title: Text("Eliminar filtro"), message: Text("¿Quieres eliminar el filtro \(eliminarcateg?.nombre ?? "")?"), primaryButton: .destructive(Text("Eliminar")) {
+                                            
+                                            if let eliminarcateg = eliminarcateg {
+                                                categoriaseleccionada.removeAll { $0.id == eliminarcateg.id }
+                                            }
+                                        },
+                                              secondaryButton: .cancel()
+                                        )
+                                    }
                                 }
                             }
                         }
