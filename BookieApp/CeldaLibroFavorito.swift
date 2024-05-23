@@ -34,8 +34,10 @@ struct CeldaLibroFavorito: View {
                 .font(.subheadline)
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
+                .lineLimit(3)
+                .truncationMode(.tail)
         }
-        .padding([.top, .bottom], 20)
+        .padding([.top, .bottom], 16)
     }
 }
 

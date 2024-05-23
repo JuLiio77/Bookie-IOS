@@ -28,16 +28,12 @@ struct VistaCeldaChat: View {
                     
                     Text("\(fecha.formatted(date: .omitted, time: .shortened))")
                     .padding(.trailing, 290)
-                    .padding(.top, 20)
-                    
+                    .padding(.top, 20)                    
                 }
                 .frame(width: 345, height: 50)
                 .padding(.top, 35)
                 .font(.subheadline)
-            
-            
-        }
-        
+        }        
     }
 }
 

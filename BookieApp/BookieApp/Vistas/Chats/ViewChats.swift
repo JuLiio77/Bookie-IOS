@@ -24,8 +24,7 @@ struct ViewChats: View {
                 VistaCeldaChat()
                 VistaCeldaChat()
                 VistaCeldaChat()
-                VistaCeldaChat()
-                
+                VistaCeldaChat()                
             }
                        
             Spacer()

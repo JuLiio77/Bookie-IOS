@@ -7,15 +7,15 @@
 
 import Foundation
 
-class Peticiones{
-    
+class Peticiones {
     
     static let shared = Peticiones()
 
     // funcion para descargar los datos
-    func getDatosApi(apiResponse: @escaping(Book)-> ()){
+    func getDatosApi(query: String, apiResponse: @escaping(Book)-> ()){
         
-        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=a") else {return}
+        let query = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=\(query)") else {return}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -41,13 +41,11 @@ class Peticiones{
                 DispatchQueue.main.async {
                     apiResponse(decodedData)
                 }
-            }else{
+                
+            } else {
                 print("No se ha podido descodificar el json")
             }
-            
-            
         }.resume()
-    
     }
     
     func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
@@ -87,14 +85,8 @@ class Peticiones{
                     print(error.localizedDescription)
                 }
             }
-            
-            
         }.resume()
-        
     }
-    
-
-  
     
     func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
 
@@ -105,12 +97,12 @@ class Peticiones{
             return
         }
         
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let firstUser = AuthRequest(username: username, password: password)
+        
         guard let httpBody = try? JSONEncoder().encode(firstUser) else {
             print("Invalid httpBody")
             return
@@ -121,7 +113,8 @@ class Peticiones{
         URLSession.shared.dataTask(with: request){ data, response, error in
             
             if let data = data {
-                do{
+                
+                do {
                     let decoder = JSONDecoder()
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
@@ -130,17 +123,10 @@ class Peticiones{
                     UserDefaults.standard.setValue(token.token, forKey: "token")
                     //print("token peticion:\(token.token)")
                     
-                    
-                }catch(let error){
+                } catch (let error) {
                     print("error en el login")
                 }
             }
         }.resume()
-        
-        
     }
-    
-       
-    
 }
-
