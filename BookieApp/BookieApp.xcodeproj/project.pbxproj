@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D057AFE2BFF9DE0009D8580 /* VistaLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D057AFD2BFF9DE0009D8580 /* VistaLogin.swift */; };
+		3D057B002BFFA216009D8580 /* ViewRegistroFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D057AFF2BFFA216009D8580 /* ViewRegistroFoto.swift */; };
 		3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0916992BA8917A00C88A88 /* Peticiones.swift */; };
 		3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09169B2BA8964700C88A88 /* FuncionLogin.swift */; };
 		3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09169E2BA8D81D00C88A88 /* ViewChats.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D057AFD2BFF9DE0009D8580 /* VistaLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaLogin.swift; sourceTree = "<group>"; };
+		3D057AFF2BFFA216009D8580 /* ViewRegistroFoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRegistroFoto.swift; sourceTree = "<group>"; };
 		3D0916992BA8917A00C88A88 /* Peticiones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peticiones.swift; sourceTree = "<group>"; };
 		3D09169B2BA8964700C88A88 /* FuncionLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionLogin.swift; sourceTree = "<group>"; };
 		3D09169E2BA8D81D00C88A88 /* ViewChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChats.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
+				3D057AFD2BFF9DE0009D8580 /* VistaLogin.swift */,
+				3D057AFF2BFFA216009D8580 /* ViewRegistroFoto.swift */,
 			);
 			path = ViewLogin;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
 				3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */,
 				3D86F4672BFBA3CC00CD44E3 /* Categorias.swift in Sources */,
+				3D057B002BFFA216009D8580 /* ViewRegistroFoto.swift in Sources */,
 				3D27D38D2BA4C4BC00DDDBBA /* ViewRecuContra.swift in Sources */,
 				3DFBB7AA2BD8107400719F60 /* CeldaMisLibros.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
@@ -516,6 +523,7 @@
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
 				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
+				3D057AFE2BFF9DE0009D8580 /* VistaLogin.swift in Sources */,
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
