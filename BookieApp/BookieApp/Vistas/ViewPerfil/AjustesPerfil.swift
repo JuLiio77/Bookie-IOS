@@ -38,7 +38,7 @@ struct AjustesPerfil: View {
                               }
                               .alert(isPresented: $showDeleteAlert) {
                                   Alert(
-                                      title: Text("Alert"),
+                                      title: Text("Eliminar cuenta"),
                                       message: Text("¿Estás seguro de que quieres eliminar tu cuenta?"),
                                       primaryButton: .destructive(Text("Eliminar")) {
                                           // Aquí va el código para eliminar la cuenta
@@ -55,7 +55,7 @@ struct AjustesPerfil: View {
                               }
                               .alert(isPresented: $showLogoutAlert) {
                                   Alert(
-                                      title: Text("Alert"),
+                                      title: Text("Cerrar sesión"),
                                       message: Text("¿Estás seguro de que quieres cerrar sesión?"),
                                       primaryButton: .destructive(Text("Cerrar Sesión")) {
                                           // Aquí va el código para cerrar sesión
