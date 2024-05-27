@@ -40,6 +40,8 @@ class FuncionLogin: ObservableObject{
             }
             
         }
+        
+       
     }
         
         //        peticiones.login(username: name, password: pass){ result in

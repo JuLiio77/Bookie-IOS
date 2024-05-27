@@ -124,7 +124,9 @@ class Peticiones{
                     let decoder = JSONDecoder()
                     let token = try decoder.decode(ModelToken.self, from: data)
                     UserDefaults.standard.setValue(token.token, forKey: "token")
-                    print("login correcto")
+                    
+                    self.getUserData()
+                    print("login correcto \(token.token)")
                     
                 }catch(let error){
                     print("error en el login \(error)")
@@ -146,19 +148,23 @@ class Peticiones{
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
+    
         let tokenUser = UserDefaults.standard.string(forKey: "token") // Si llega a fallar cambiar el UserDefault por un token
-
-        request.setValue("Bearer \(tokenUser!)", forHTTPHeaderField: "Authorization")
+        if tokenUser!.isEmpty{
+            print("Token vacio")
+        }
+        request.setValue("Bearer \(tokenUser ?? "")", forHTTPHeaderField: "Authorization")
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             let decoder = JSONDecoder()
 
             if let data = data {
-                
+                print(String(decoding: data, as: UTF8.self))
+
                 do {
                     let user = try decoder.decode(ModelUser.self, from: data)
                     print("Usuario decodificado:", user)
+                    print("Los resultados de data: \(data)")
                 } catch {
                     print("Error al decodificar datos del usuario:", error.localizedDescription)
                 }
