@@ -51,7 +51,7 @@ struct SubirLibroView: View {
                         Image(systemName: "photo")
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 205, height: 250)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.black)
                             .background(Color.gray, in: .rect)
                             .cornerRadius(20)
                             .padding(.top, 25)
@@ -221,7 +221,7 @@ struct SubirLibroView: View {
                     Text("Guardar Token")
                 }
             }
-            .navigationBarTitle("Subir Libro")
+            .navigationBarTitle("Detalles del libro")
             .navigationBarTitleDisplayMode(.inline)
             
             .alert(isPresented: $showingAlert) {
