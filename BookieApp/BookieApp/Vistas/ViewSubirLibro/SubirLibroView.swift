@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct SubirLibroView: View {
     
@@ -24,22 +25,48 @@ struct SubirLibroView: View {
     @State private var mostraralertaelim = false
     @State private var eliminarcateg: Categorias?
     
+    @State private var seleccionarimg: UIImage? = nil
+    @State private var isimgpickerselecct = false
+    
     var body: some View {
         
         NavigationStack {
             
             ScrollView{
                 
-                Image(systemName: "")
-                    .frame(width: 166, height: 196)
-                    .foregroundColor(.blue)
-                    .background(Color.gray, in: .rect)
-                    .cornerRadius(20)
-                    .padding(.top, 25)
+                Button(action: {
+                    isimgpickerselecct.toggle()
+                }) {
+                    if let image = seleccionarimg {
+                        
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 205, height: 250)
+                            .cornerRadius(20)
+                            .padding(.top, 25)
+                        
+                    } else {
+                        
+                        Image(systemName: "photo")
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 205, height: 250)
+                            .foregroundColor(.blue)
+                            .background(Color.gray, in: .rect)
+                            .cornerRadius(20)
+                            .padding(.top, 25)
+                    }
+                }
+                .sheet(isPresented: $isimgpickerselecct) {
+                    ImagePicker(selectedimage: $seleccionarimg)
+                }
+                
+                Divider()
+                    .padding(.top, 35)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
-                    .padding(.top, 50)
+                    .padding(.top, 40)
                     .padding(.trailing, 280)
                 
                 TextField("Título", text: $titulo)
