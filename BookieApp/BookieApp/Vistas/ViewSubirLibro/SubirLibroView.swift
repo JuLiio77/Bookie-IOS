@@ -27,7 +27,8 @@ struct SubirLibroView: View {
     
     var body: some View {
         NavigationView {
-            Form {
+            Form{
+                
                 Section(header: Text("Detalles del Libro")) {
                     TextField("Título", text: $titulo)
                     TextField("Autor", text: $autor)
@@ -64,13 +65,13 @@ struct SubirLibroView: View {
             return
         }
         
-        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+        guard let authToken = UserDefaults.standard.string(forKey: "token") else {
             self.alertMessage = "No se encontró el token de autenticación"
             self.showingAlert = true
             return
         }
         
-        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        let libro = Libro( titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2.init(id: 1))
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"

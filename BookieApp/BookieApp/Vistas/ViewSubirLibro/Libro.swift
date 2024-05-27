@@ -8,14 +8,15 @@
 import Foundation
 
 
-struct Libro: Codable, Identifiable {
-    let id = UUID()
+struct Libro: Codable {
     let titulo: String
     let autor: String
     let numeroPaginas: Int
     let sinopsis: String
     let editorial: String
     let genero: String
-    let prestado: Bool = false
-    
+    let foto: String
+    let prestado: Bool
+    let filtro: Set<Int>
+    let usuario: ModelUser2
 }

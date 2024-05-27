@@ -13,3 +13,11 @@ struct ModelUser: Encodable, Decodable{
     var reportado: String
     var token: String
 }
+
+
+
+struct ModelUser2: Encodable, Decodable{
+    
+    var id: Int
+
+}
