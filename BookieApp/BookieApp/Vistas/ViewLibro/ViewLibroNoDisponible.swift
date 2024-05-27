@@ -124,7 +124,14 @@ struct ViewLibroNoDisponible: View {
                         .padding(.top, 25)
                        
                     HStack{
-
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                         
                     }
 //
