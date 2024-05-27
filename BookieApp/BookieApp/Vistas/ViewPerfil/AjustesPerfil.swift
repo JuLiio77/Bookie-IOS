@@ -14,8 +14,8 @@ struct AjustesPerfil: View {
     @State private var showDeleteAlert = false
     @State private var showLogoutAlert = false
     
-    //@Environment(\.presentationMode) var presentationmode
-    
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+        
     var body: some View {
         
         ZStack {
@@ -69,6 +69,8 @@ struct AjustesPerfil: View {
                                 message: Text("¿Estás seguro de que quieres cerrar sesión?"),
                                 primaryButton: .destructive(Text("Cerrar Sesión")) {
                                     // Aquí va el código para cerrar sesión
+                                    isLoggedIn = false
+                                    isPresented = false
                                 },
                                 secondaryButton: .cancel()
                             )
