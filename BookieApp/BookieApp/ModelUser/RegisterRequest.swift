@@ -9,7 +9,7 @@ import Foundation
 
 struct RegisterRequest: Encodable, Decodable{
     
-    var rol: String
+    var rol: String = "ROLE_USER"
     var nombre: String
     var username: String
     var password: String

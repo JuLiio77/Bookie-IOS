@@ -9,6 +9,6 @@ import Foundation
 
 struct AuthRequest: Encodable, Decodable{
     
-    var username: String
-    var password: String
+    var username: String = UserDefaults.standard.string(forKey: "username") ?? ""
+    var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
 }
