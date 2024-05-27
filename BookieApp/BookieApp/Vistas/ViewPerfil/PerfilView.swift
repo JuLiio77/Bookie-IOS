@@ -35,7 +35,6 @@ struct PerfilView: View {
                 AjustesPerfil(isPresented: $isPresented)
                     .presentationDetents([.large])
             })
-        
             
             .padding(.leading, 320)
             .font(.headline)
@@ -132,5 +131,6 @@ struct PerfilView: View {
 
 #Preview {
     PerfilView()
+        .environmentObject(LibrosFavoritos())
     
 }
