@@ -30,16 +30,30 @@ struct SubirLibroView: View {
             
             ScrollView{
                 
-                Image(systemName: "")
+                Button(action: {
+                    //mostrarSheet.toggle()
+                }) {
+                    Image(systemName: "photo.badge.plus")
+                        .frame(width: 205, height: 250)
+                        .foregroundColor(.black)
+                        .background(Color.gray, in: .rect)
+                        .cornerRadius(20)
+                        .padding(.top, 25)
+                }
+                
+                Divider()
+                    .padding(.top, 40)
+                
+                /*Image(systemName: "photo.badge.plus")
                     .frame(width: 166, height: 196)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.black)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
-                    .padding(.top, 25)
+                    .padding(.top, 25)*/
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
-                    .padding(.top, 50)
+                    .padding(.top, 38)
                     .padding(.trailing, 280)
                 
                 TextField("Título", text: $titulo)
@@ -110,7 +124,6 @@ struct SubirLibroView: View {
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
-                
                 HStack {
                     
                     Label("Agregar filtro", systemImage: "")
@@ -126,7 +139,7 @@ struct SubirLibroView: View {
                         FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
                     }
                 }
-                .padding(.top, 30)
+                .padding(.top, 35)
                 .padding(.trailing, 200)
                 
                 Divider()
