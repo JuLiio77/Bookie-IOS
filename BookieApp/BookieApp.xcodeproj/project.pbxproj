@@ -192,9 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */,
+				3DFBB7AF2BD81D1600719F60 /* ViewLibroNoDisponible.swift */,
 				3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */,
 				3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */,
-				3DFBB7AF2BD81D1600719F60 /* ViewLibroNoDisponible.swift */,
 			);
 			path = ViewLibro;
 			sourceTree = "<group>";

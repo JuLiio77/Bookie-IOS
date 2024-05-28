@@ -14,99 +14,90 @@ struct ContentView: View {
     
     @State var mostrarContrasenia: Bool = false
     
-    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
-
     var body: some View {
         
-        if isLoggedIn {
+        NavigationStack {
             
-            TabarView()
-            
-        } else {
-            
-            NavigationStack{
+            VStack {
                 
-                VStack {
+                Text("Bienvenido")
+                    .font(.title)
+                    .bold()
+                    .padding()
+                
+                
+                TextField("Correo electronico", text: $correo)
+                    .bold()
+                    .padding()
+                    .background(Color.color)
+                    .cornerRadius(30)
+                    .padding(.top,130)
+                    .textContentType(.emailAddress)
+                
+                ZStack(alignment: .trailingFirstTextBaseline) {
                     
-                    Text("Bienvenido")
-                        .font(.title)
-                        .bold()
-                        .padding()
-                    
-                    
-                    TextField("Correo electronico", text: $correo)
-                        .bold()
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding(.top,130)
-                        .textContentType(.emailAddress)
-                    
-                    ZStack(alignment: .trailingFirstTextBaseline) {
+                    if mostrarContrasenia {
+                        TextField("Contraseña", text: $contrasenia)
+                            .padding()
+                            .background(Color.color)
+                            .cornerRadius(30)
+                            .padding(.top, 40)
                         
-                        if mostrarContrasenia {
-                            TextField("Contraseña", text: $contrasenia)
-                                .padding()
-                                .background(Color.color)
-                                .cornerRadius(30)
-                                .padding(.top, 40)
-                            
-                        } else {
-                            SecureField("Contraseña", text: $contrasenia)
-                                .padding()
-                                .background(Color.color)
-                                .cornerRadius(30)
-                                .padding(.top, 40)
-                        }
-                        
-                        Button(action: {
-                            mostrarContrasenia.toggle()
-                        }) {
-                            Image(systemName: mostrarContrasenia ? "eye.fill" : "eye.slash.fill")
-                                .foregroundColor(.primary)
-                                .padding(10)
-                        }
-                        .padding(.trailing, 15)
-                        
+                    } else {
+                        SecureField("Contraseña", text: $contrasenia)
+                            .padding()
+                            .background(Color.color)
+                            .cornerRadius(30)
+                            .padding(.top, 40)
                     }
                     
-                    HStack {
-                        
-                        Toggle("",isOn: $toggle)
-                        Text("Recordar contraseña")
-                        
+                    Button(action: {
+                        mostrarContrasenia.toggle()
+                    }) {
+                        Image(systemName: mostrarContrasenia ? "eye.fill" : "eye.slash.fill")
+                            .foregroundColor(.primary)
+                            .padding(10)
                     }
-                    .frame(width: 400)
-                    .padding(.top, 20)
-                    .padding(.trailing, 200.0)
-                    .toggleStyle(SwitchToggleStyle(tint: Color.button))
+                    .padding(.trailing, 15)
                     
-                    
-                    NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
-                        .padding(.top, 20)
-                        .foregroundColor(.black)
-                        .navigationBarBackButtonHidden(true)
-                    
-                    
-                    NavigationLink("Iniciar Sesion", destination: TabarView())
-                        .padding(20)
-                        .padding(.horizontal, 30)
-                        .background(Color.button)
-                        .foregroundColor(.black)
-                        .cornerRadius(20)
-                        .padding([.leading, .trailing], 10)
-                        .padding(.top, 75)
-                        .navigationBarBackButtonHidden(true)
-                    
-                    NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
-                        .padding(.top, 30)
-                        .foregroundColor(.black)
                 }
-                .padding()
                 
+                HStack {
+                    
+                    Toggle("",isOn: $toggle)
+                    Text("Recordar contraseña")
+                    
+                }
+                .frame(width: 400)
+                .padding(.top, 20)
+                .padding(.trailing, 200.0)
+                .toggleStyle(SwitchToggleStyle(tint: Color.button))
+                
+                
+                NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
+                    .padding(.top, 20)
+                    .foregroundColor(.black)
+                    .navigationBarBackButtonHidden(true)
+                
+                
+                NavigationLink("Iniciar Sesion", destination: TabarView())
+                    .padding(20)
+                    .padding(.horizontal, 30)
+                    .background(Color.button)
+                    .foregroundColor(.black)
+                    .cornerRadius(20)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.top, 75)
+                    .navigationBarBackButtonHidden(true)
+                
+                NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
+                    .padding(.top, 30)
+                    .foregroundColor(.black)
             }
-            .tint(.brown)
+            .padding()
+            
         }
+        .tint(.brown)
     }
 }
 
