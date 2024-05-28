@@ -42,17 +42,19 @@ struct PerfilView: View {
             
             HStack {
                 
-                Image(systemName: "person.circle.fill")
+                Image("filtrofantasia")
                     .resizable()
-                    .frame(width: 120, height: 120)
+                    .frame(width: 115, height: 115)
                 
                 
                 VStack(alignment: .leading) {
                     //Text("\(userData.ciudad)")
                     
                     Text("4,8 ★")
+                        .padding(.leading, 10)
                     
                     Text("Bookies favoritas")
+                        .padding(.leading, 10)
                 }
             }
             .padding(.trailing, 70)
