@@ -34,12 +34,12 @@ class FuncionLogin: ObservableObject{
             switch result{
             case .success(let token):
                 print("Login succesful \(token)")
-                
             case .failure(let error):
                 print("Error en el login \(error)")
             }
-            
         }
+        
+        
         
        
     }
@@ -67,7 +67,7 @@ class FuncionLogin: ObservableObject{
                 
                 if password.elementsEqual(repassword){
                     
-                    UserDefaults.standard.setValue(name, forKey: "username")
+                    UserDefaults.standard.setValue(name, forKey: "name")
                     UserDefaults.standard.setValue(email, forKey: "email")
                     UserDefaults.standard.setValue(password, forKey: "password")
                     UserDefaults.standard.setValue(repassword, forKey: "repassword")

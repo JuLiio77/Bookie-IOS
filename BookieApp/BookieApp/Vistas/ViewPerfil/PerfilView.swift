@@ -10,9 +10,11 @@ import SwiftUI
 struct PerfilView: View {
 
     @StateObject var userData = FuncionLogin()
+    @StateObject private var funcionesPerfil = FuncionesPerfil()
+    
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
-
+    let modelUser: ModelUser
     
     
     var body: some View {
@@ -49,7 +51,7 @@ struct PerfilView: View {
                 
                 
                 VStack(alignment: .leading) {
-                    //Text("\(userData.ciudad)")
+                    Text("\(modelUser.ciudad)")
                     
                     Text("4,8 ★")
                     
@@ -120,17 +122,18 @@ struct PerfilView: View {
             }
             
             Spacer()
-                
-                .navigationTitle("\(userData.name)")
+                .navigationTitle("\(modelUser.nombre)")
                 .navigationBarTitleDisplayMode(.inline)
-                
-                    
-                
+
         }
+        .onAppear{
+            funcionesPerfil.listaLibros()
+        }
+        
     }
 }
 
 #Preview {
-    PerfilView()
+    PerfilView(modelUser: ModelUser(id: 2))
     
 }

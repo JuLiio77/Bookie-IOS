@@ -13,7 +13,8 @@ struct VistaLogin: View {
     @State var toggle: Bool
     @State var mostrarContrasenia: Bool
     @State var nextView: Bool
-
+    @State var modelUser: ModelUser
+    
     var body: some View {
 
         
@@ -28,10 +29,10 @@ struct VistaLogin: View {
                     .padding()
                 
                 
-                TextField("Nombre de Usuario", text: $datos.username)
+                TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.color1)
                     .cornerRadius(30)
                     .padding(.top,130)
                     .textContentType(.username)
@@ -43,14 +44,14 @@ struct VistaLogin: View {
                     if mostrarContrasenia {
                         TextField("Contraseña", text: $datos.password)
                             .padding()
-                            .background(Color.color)
+                            .background(Color.color1)
                             .cornerRadius(30)
                             .padding(.top, 40)
                         
                     } else {
                         SecureField("Contraseña", text: $datos.password)
                             .padding()
-                            .background(Color.color)
+                            .background(Color.color1)
                             .cornerRadius(30)
                             .padding(.top, 40)
                     }
@@ -111,6 +112,6 @@ struct VistaLogin: View {
 }
 
 #Preview {
-    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false)
+    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
         .environmentObject(FuncionLogin())
 }

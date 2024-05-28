@@ -126,7 +126,7 @@ class Peticiones{
                     UserDefaults.standard.setValue(token.token, forKey: "token")
                     
                     self.getUserData()
-                    print("login correcto \(token.token)")
+                    //print("login correcto \(token.token)")
                     
                 }catch(let error){
                     print("error en el login \(error)")
@@ -163,10 +163,9 @@ class Peticiones{
 
                 do {
                     let user = try decoder.decode(ModelUser.self, from: data)
-                    print("Usuario decodificado:", user)
-                    print("Los resultados de data: \(data)")
+                    print("Usuario decodificado")
                 } catch {
-                    print("Error al decodificar datos del usuario:", error.localizedDescription)
+                    print("Error al decodificar datos del usuario: \(error.localizedDescription)")
                 }
             } else if let error = error {
                 print("Error de red:", error.localizedDescription)

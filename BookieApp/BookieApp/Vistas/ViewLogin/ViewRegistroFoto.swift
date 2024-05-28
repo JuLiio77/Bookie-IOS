@@ -11,6 +11,8 @@ struct ViewRegistroFoto: View {
     
     @EnvironmentObject var datos: FuncionLogin
     @State var nombre: String = ""
+    @State var nextView: Bool
+    
     var body: some View {
         
         NavigationStack{
@@ -27,18 +29,23 @@ struct ViewRegistroFoto: View {
                 TextField("Nombre de usuario", text: $datos.username)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.button)
                     .cornerRadius(30)
                     .padding(.top, 50)
                     .textInputAutocapitalization(.never)
+                
+                NavigationLink(destination: VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser()), isActive: $nextView){
+                    
+                    Button("Finalizar", action:{
+                        datos.register()
+                    })
+                }
                                 
                 Button("Finalizar", action:{
-                    
                     datos.register()
-                    
                 })
                 NavigationLink("Finalizar", destination: {
-                    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false)
+                    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
                 })
                 .padding(20)
                 .padding(.horizontal, 30)
@@ -48,12 +55,13 @@ struct ViewRegistroFoto: View {
                 .padding([.leading, .trailing], 10)
                 .padding(.top, 75)
             }
+            .background(Color.fondo)
             
         }
     }
 }
 
 #Preview {
-    ViewRegistroFoto()
+    ViewRegistroFoto(nextView: false)
         .environmentObject(FuncionLogin())
 }

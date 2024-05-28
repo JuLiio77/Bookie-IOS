@@ -71,7 +71,7 @@ struct SubirLibroView: View {
             return
         }
         
-        let libro = Libro( titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2.init(id: 1))
+        let libro = Libro( titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: UsuarioId())
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
@@ -104,7 +104,7 @@ struct SubirLibroView: View {
             
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
-                    self.alertMessage = "Libro Subido Correctamente"
+                    self.alertMessage = "Fallo en el servidor"
                     self.showingAlert = true
                 }
                 return
