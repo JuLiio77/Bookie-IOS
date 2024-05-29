@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Libro: Codable {
+struct Libro: Identifiable, Codable {
     let id: Int
     let titulo: String
     let autor: String
@@ -19,5 +19,5 @@ struct Libro: Codable {
     let foto: String
     let prestado: Bool
     let filtro: Set<Int>
-    let usuario: UsuarioId
+    let usuario: ModelUser2
 }

@@ -19,34 +19,31 @@ struct ViewRegistroFoto: View {
             
             VStack{
                 
-                Circle()
-                    .frame(width: 300)
+          Image("filtrofantasia")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 200, height: 250)
                 
-                Rectangle()
-                    .frame(width: 65, height: 50)
-                
+         
                 
                 TextField("Nombre de usuario", text: $datos.username)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
-                    .padding(.top, 50)
+                    .padding(.top, 130)
+                    .padding()
+                    .textContentType(.username)
                     .textInputAutocapitalization(.never)
                 
                 NavigationLink(destination: VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser()), isActive: $nextView){
                     
                     Button("Finalizar", action:{
                         datos.register()
+                        self.nextView = true
+
                     })
                 }
-                                
-                Button("Finalizar", action:{
-                    datos.register()
-                })
-                NavigationLink("Finalizar", destination: {
-                    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
-                })
                 .padding(20)
                 .padding(.horizontal, 30)
                 .background(Color.button)
@@ -54,8 +51,22 @@ struct ViewRegistroFoto: View {
                 .cornerRadius(20)
                 .padding([.leading, .trailing], 10)
                 .padding(.top, 75)
+                                
+//                Button("Finalizar", action:{
+//                    datos.register()
+//                })
+//                NavigationLink("Finalizar", destination: {
+//                    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+//                })
+//                .padding(20)
+//                .padding(.horizontal, 30)
+//                .background(Color.button)
+//                .foregroundColor(.black)
+//                .cornerRadius(20)
+//                .padding([.leading, .trailing], 10)
+//                .padding(.top, 75)
             }
-            .background(Color.fondo)
+            .background(Color.color1)
             
         }
     }

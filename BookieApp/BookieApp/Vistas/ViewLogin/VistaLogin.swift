@@ -32,7 +32,7 @@ struct VistaLogin: View {
                 TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
-                    .background(Color.color1)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding(.top,130)
                     .textContentType(.username)
@@ -44,14 +44,14 @@ struct VistaLogin: View {
                     if mostrarContrasenia {
                         TextField("Contraseña", text: $datos.password)
                             .padding()
-                            .background(Color.color1)
+                            .background(Color.fondo)
                             .cornerRadius(30)
                             .padding(.top, 40)
                         
                     } else {
                         SecureField("Contraseña", text: $datos.password)
                             .padding()
-                            .background(Color.color1)
+                            .background(Color.fondo)
                             .cornerRadius(30)
                             .padding(.top, 40)
                     }

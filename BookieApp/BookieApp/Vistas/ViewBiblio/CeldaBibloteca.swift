@@ -18,7 +18,8 @@ struct CeldaBibloteca: View {
             
             Image(systemName: "")
                 .frame(width: 350, height: 180)
-                .background(Color.color1.opacity(0.5))
+                .background(Color.fondo
+                .opacity(0.5))
                 .cornerRadius(20)
             
             if let urlString = book.volumeInfo.imageLinks?.smallThumbnail,

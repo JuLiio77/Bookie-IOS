@@ -16,6 +16,15 @@ struct ModelUser: Encodable, Decodable{
     //var bookieFavoutitaId: Int
 }
 
-struct UsuarioId: Encodable, Decodable{
-    var id: Int = UserDefaults.standard.integer(forKey: "id")
+
+//
+//struct UsuarioId: Encodable, Decodable{
+//    var id: Int = UserDefaults.standard.integer(forKey: "id")
+//}
+
+
+
+struct ModelUser2: Encodable, Decodable{
+    
+    var id: Int
 }
