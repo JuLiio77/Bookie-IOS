@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
+      "filename" : "inicioPoesia.png",
+=======
       "filename" : "poesia.png",
+>>>>>>> jose
       "idiom" : "universal",
       "scale" : "1x"
     },

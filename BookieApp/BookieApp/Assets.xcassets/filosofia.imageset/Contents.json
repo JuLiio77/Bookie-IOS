@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
+      "filename" : "inicioFilo.png",
+=======
       "filename" : "filosofia.png",
+>>>>>>> jose
       "idiom" : "universal",
       "scale" : "1x"
     },

@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
+      "filename" : "inicioCiencia.png",
+=======
       "filename" : "ciencia.png",
+>>>>>>> jose
       "idiom" : "universal",
       "scale" : "1x"
     },

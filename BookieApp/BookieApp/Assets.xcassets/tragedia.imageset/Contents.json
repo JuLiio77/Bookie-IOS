@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
+      "filename" : "inicioTragedia.png",
+=======
       "filename" : "tragedia.png",
+>>>>>>> jose
       "idiom" : "universal",
       "scale" : "1x"
     },

@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
+      "filename" : "inicioFanta.png",
+=======
       "filename" : "fantasia.png",
+>>>>>>> jose
       "idiom" : "universal",
       "scale" : "1x"
     },

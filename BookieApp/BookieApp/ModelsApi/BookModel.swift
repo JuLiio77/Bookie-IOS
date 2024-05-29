@@ -10,17 +10,31 @@ import SwiftUI
 
 class BookModel: ObservableObject {
     
+    private var bookservice = BookService()
+    
     @Published public private(set) var libros: [Book] = []
     @Published public private(set) var imagenLibro: String = ""
     @Published public private(set) var nombreLibro: String = ""
     @Published public private(set) var nombreAutor: String = ""
-
     
     private var suscripcion = Set<AnyCancellable>()
     
     public func onAppear() {
+        fetchBooks(query: "a")
+        fetchBooks(query: "c")
+        fetchBooks(query: "d")
+        fetchBooks(query: "f")
+        fetchBooks(query: "l")
+        fetchBooks(query: "m")
+        fetchBooks(query: "p")
+        fetchBooks(query: "s")
+        fetchBooks(query: "t")
+        fetchBooks(query: "u")
+    }
+    
+    private func fetchBooks(query: String) {
         
-        BookService.shared.fetch(query: "a")
+        BookService.shared.fetch(query: query)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -28,11 +42,12 @@ class BookModel: ObservableObject {
                     
                 case .failure(let error):
                     print("Error: \(error)")
+                    return
                 }
             } receiveValue: { [weak self] books in
-                self?.libros = books
+                self?.libros.append(contentsOf: books)
                 
-                if let book = books.first, let author = book.volumeInfo.authors.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
+                if let book = books.first, let author = book.volumeInfo.authors?.first, let image = book.volumeInfo.imageLinks?.smallThumbnail {
                     self?.nombreLibro = book.volumeInfo.title
                     self?.nombreAutor = author
                     self?.imagenLibro = image
