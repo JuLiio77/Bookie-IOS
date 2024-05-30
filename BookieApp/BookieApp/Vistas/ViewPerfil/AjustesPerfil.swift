@@ -13,6 +13,9 @@ struct AjustesPerfil: View {
     
     @State private var showDeleteAlert = false
     @State private var showLogoutAlert = false
+    
+    @State private var mostrarSheet = false
+    @State private var categoriaseleccionada = [Categorias]()
             
     var body: some View {
         

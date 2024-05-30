@@ -40,6 +40,8 @@
 		3DBC66EA2B9F7BF9001A6B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */; };
 		3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */; };
 		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
+		3DE4BBC62C08D09F0035F2FB /* FiltroFotoPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBC52C08D09F0035F2FB /* FiltroFotoPerfilView.swift */; };
+		3DE4BBC82C08D9290035F2FB /* PerfilViewDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBC72C08D9290035F2FB /* PerfilViewDefaults.swift */; };
 		3DE784D62BA8902800686105 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D52BA8902700686105 /* ReviewView.swift */; };
 		3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */; };
 		3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DA2BA89ECF00686105 /* NotificacionesCeldaView.swift */; };
@@ -110,6 +112,8 @@
 		3DBC66E92B9F7BF9001A6B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibros.swift; sourceTree = "<group>"; };
 		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
+		3DE4BBC52C08D09F0035F2FB /* FiltroFotoPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroFotoPerfilView.swift; sourceTree = "<group>"; };
+		3DE4BBC72C08D9290035F2FB /* PerfilViewDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewDefaults.swift; sourceTree = "<group>"; };
 		3DE784D52BA8902700686105 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesCeldaView.swift; sourceTree = "<group>"; };
 		3DE784DA2BA89ECF00686105 /* NotificacionesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionesCeldaView.swift; sourceTree = "<group>"; };
@@ -384,6 +388,8 @@
 				3DFBB7A72BD8106600719F60 /* CeldaHistorial.swift */,
 				3DFBB7A92BD8107400719F60 /* CeldaMisLibros.swift */,
 				3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */,
+				3DE4BBC52C08D09F0035F2FB /* FiltroFotoPerfilView.swift */,
+				3DE4BBC72C08D9290035F2FB /* PerfilViewDefaults.swift */,
 			);
 			path = VistasPerfil;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 				3DFBB79D2BD80DD300719F60 /* EditarPerfil.swift in Sources */,
 				3DFBB7722BD8081D00719F60 /* CeldaAjenoLibros.swift in Sources */,
 				3DFBB7732BD8081D00719F60 /* CeldaAjenoReview.swift in Sources */,
+				3DE4BBC82C08D9290035F2FB /* PerfilViewDefaults.swift in Sources */,
 				3D86F4692BFBAAE100CD44E3 /* Libro.swift in Sources */,
 				3DF4712D2BC8366B00FF5669 /* LibrosFavoritos.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
@@ -516,6 +523,7 @@
 				3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */,
 				3DF9E9202BC6F51000801D26 /* ListaLibrosFavoritos.swift in Sources */,
 				3DFBB7742BD8081D00719F60 /* ViewAjenoHistorial.swift in Sources */,
+				3DE4BBC62C08D09F0035F2FB /* FiltroFotoPerfilView.swift in Sources */,
 				3DED65D72BBB1CE7001BB9C2 /* ModelLibro.swift in Sources */,
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
