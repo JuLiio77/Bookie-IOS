@@ -12,7 +12,9 @@ class PerfilViewDefaults {
     static let shared = PerfilViewDefaults()
     
     private let selectimagenkey = "seleccionarimagen"
+    private let selectfiltrokey = "seleccionarfiltro"
     
+    //guarda imagen de foto de perfil de manera persistente y cargarla
     func guardarimagenseleccionada(_ imgagen: Categorias?) {
         
         if let imagen = imgagen {
@@ -32,5 +34,20 @@ class PerfilViewDefaults {
             }
         }
         return nil
+    }
+    
+    //guarda filtro del perfil de manera persistente y cargarlod
+    func guardarfiltroselect(_ filtros: [String: Filtros?]) {
+        
+        let encoded = filtros.compactMapValues { try? JSONEncoder().encode($0) }
+        UserDefaults.standard.set(encoded, forKey: "seleccionarfiltro")
+    }
+    
+    func loadfiltroselect() -> [String: Filtros?] {
+        
+        guard let savedata = UserDefaults.standard.dictionary(forKey: "seleccionarfiltro") as? [String: Data] else {
+            return [:]
+        }
+        return savedata.compactMapValues { try? JSONDecoder().decode(Filtros.self, from: $0) }
     }
 }

@@ -95,7 +95,7 @@ struct FiltroFotoPerfilView: View {
                 }
                 .alert(isPresented: $mostraralerta) {
                     
-                    Alert(title: Text("Agregar filtro"), message: Text("¿Quieres agregar como foto de perfil la imagen de la categoria \(seleccionarcateg?.nombre ?? "")?"), primaryButton: .default(Text("Aceptar")) {
+                    Alert(title: Text("Agregar foto"), message: Text("¿Quieres agregar como foto de perfil la imagen de la categoria \(seleccionarcateg?.nombre ?? "")?"), primaryButton: .default(Text("Aceptar")) {
                         
                         if let seleccionarcateg = seleccionarcateg {
                             imagenseleccionada = seleccionarcateg

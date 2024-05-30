@@ -16,6 +16,7 @@ struct PerfilView: View {
     
     @State var isPresentedFoto: Bool = false
     @State var imagenseleccionada: Categorias? = PerfilViewDefaults.shared.loadimagenseleccionada()
+    @State var filtroseleccionado: [String : Filtros?] = PerfilViewDefaults.shared.loadfiltroselect()
     
     var body: some View {
         
@@ -69,10 +70,6 @@ struct PerfilView: View {
                             .presentationDetents([.large])
                     }
                     
-//                    Image(systemName: "person.circle.fill")
-//                        .resizable()
-//                        .frame(width: 120, height: 120)
-                    
                     VStack(alignment: .leading) {
                         //Text("\(userData.ciudad)")
                         
@@ -87,6 +84,9 @@ struct PerfilView: View {
                 
                 
                 HStack {
+                    
+                    /*FiltroView(filtroseleccionado: $filtroseleccionado[], nombre: "Misterio", systemImagen: "eye.circle.fill")
+                        .padding(.horizontal, 10)*/
                     
                     VStack {
                         Image(systemName: "eye.circle.fill")

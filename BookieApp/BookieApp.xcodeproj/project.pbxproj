@@ -42,6 +42,9 @@
 		3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */; };
 		3DE4BBC62C08D09F0035F2FB /* FiltroFotoPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBC52C08D09F0035F2FB /* FiltroFotoPerfilView.swift */; };
 		3DE4BBC82C08D9290035F2FB /* PerfilViewDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBC72C08D9290035F2FB /* PerfilViewDefaults.swift */; };
+		3DE4BBCA2C08DD920035F2FB /* Filtros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBC92C08DD920035F2FB /* Filtros.swift */; };
+		3DE4BBCC2C08E3180035F2FB /* FiltrosPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBCB2C08E3180035F2FB /* FiltrosPerfilView.swift */; };
+		3DE4BBCE2C08E48C0035F2FB /* FiltroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE4BBCD2C08E48C0035F2FB /* FiltroView.swift */; };
 		3DE784D62BA8902800686105 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D52BA8902700686105 /* ReviewView.swift */; };
 		3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */; };
 		3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DA2BA89ECF00686105 /* NotificacionesCeldaView.swift */; };
@@ -114,6 +117,9 @@
 		3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaCeldaLibro.swift; sourceTree = "<group>"; };
 		3DE4BBC52C08D09F0035F2FB /* FiltroFotoPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroFotoPerfilView.swift; sourceTree = "<group>"; };
 		3DE4BBC72C08D9290035F2FB /* PerfilViewDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewDefaults.swift; sourceTree = "<group>"; };
+		3DE4BBC92C08DD920035F2FB /* Filtros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtros.swift; sourceTree = "<group>"; };
+		3DE4BBCB2C08E3180035F2FB /* FiltrosPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltrosPerfilView.swift; sourceTree = "<group>"; };
+		3DE4BBCD2C08E48C0035F2FB /* FiltroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroView.swift; sourceTree = "<group>"; };
 		3DE784D52BA8902700686105 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		3DE784D82BA89EB400686105 /* MensajesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesCeldaView.swift; sourceTree = "<group>"; };
 		3DE784DA2BA89ECF00686105 /* NotificacionesCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionesCeldaView.swift; sourceTree = "<group>"; };
@@ -390,6 +396,9 @@
 				3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */,
 				3DE4BBC52C08D09F0035F2FB /* FiltroFotoPerfilView.swift */,
 				3DE4BBC72C08D9290035F2FB /* PerfilViewDefaults.swift */,
+				3DE4BBC92C08DD920035F2FB /* Filtros.swift */,
+				3DE4BBCB2C08E3180035F2FB /* FiltrosPerfilView.swift */,
+				3DE4BBCD2C08E48C0035F2FB /* FiltroView.swift */,
 			);
 			path = VistasPerfil;
 			sourceTree = "<group>";
@@ -498,9 +507,11 @@
 				3DFBB7A22BD8103800719F60 /* ViewHistorial.swift in Sources */,
 				3D2FDF4A2BD6C5550007CA17 /* AuthRequest.swift in Sources */,
 				3DFBB7AE2BD81BC200719F60 /* ModificarLibroView.swift in Sources */,
+				3DE4BBCC2C08E3180035F2FB /* FiltrosPerfilView.swift in Sources */,
 				3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */,
 				3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */,
 				3DFBB7A82BD8106600719F60 /* CeldaHistorial.swift in Sources */,
+				3DE4BBCE2C08E48C0035F2FB /* FiltroView.swift in Sources */,
 				3D2FDF4D2BD6C5550007CA17 /* RegisterRequest.swift in Sources */,
 				3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */,
 				3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */,
@@ -511,6 +522,7 @@
 				3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */,
 				3DF9E91E2BC6F47600801D26 /* CeldaLibroFavorito.swift in Sources */,
 				3DE784DD2BA8B76C00686105 /* MensajesView.swift in Sources */,
+				3DE4BBCA2C08DD920035F2FB /* Filtros.swift in Sources */,
 				3DFBB7A42BD8104400719F60 /* ViewMisLibros.swift in Sources */,
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
 				3DFBB7762BD8081D00719F60 /* ViewAjenoReview.swift in Sources */,
