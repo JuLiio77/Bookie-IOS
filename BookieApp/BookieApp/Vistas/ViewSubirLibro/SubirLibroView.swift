@@ -18,9 +18,12 @@ struct SubirLibroView: View {
     @State private var mostrarSheet = false
     @State private var categoriaseleccionada = ""
     
+    
+    
     var body: some View {
         NavigationView {
             ScrollView {
+                
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
@@ -100,21 +103,21 @@ struct SubirLibroView: View {
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
-                NavigationLink(destination: ListaLibrosView(), isActive: $shouldNavigate) {
-                    Button(action: subirLibro) {
-                        Text("Subir Libro")
-                    }
-                    .padding(20)
-                    .padding(.horizontal, 30)
-                    .background(Color.button)
-                    .foregroundColor(.black)
-                    .cornerRadius(20)
-                    .padding([.leading, .trailing], 10)
-                    .padding(.top, 75)
-                    .navigationBarBackButtonHidden(false)
+                Button(action: subirLibro) {
+                    Text("Subir Libro")
                 }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                .navigationBarBackButtonHidden(false)
+                
             }
             .navigationBarTitle("Agregar Libro")
+            .navigationBarTitleDisplayMode(.inline)
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -140,6 +143,8 @@ struct SubirLibroView: View {
             return
         }
         
+        print("Token de autenticación: \(authToken)")
+        
         let libro = Libro(id: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2(id: 1))
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
@@ -151,7 +156,7 @@ struct SubirLibroView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(userData.tokeen)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         request.httpBody = jsonData
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -171,6 +176,8 @@ struct SubirLibroView: View {
                 return
             }
             
+            print("Código de estado HTTP: \(httpResponse.statusCode)")
+            
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
                     self.alertMessage = "Fallo en el servidor"
@@ -182,14 +189,15 @@ struct SubirLibroView: View {
             DispatchQueue.main.async {
                 self.alertMessage = "Libro subido con éxito"
                 self.showingAlert = true
-                self.shouldNavigate = true // Navigate to the list view
+                self.shouldNavigate = true
             }
         }.resume()
     }
 }
 
-struct AddSubirLibro_Previews: PreviewProvider {
-    static var previews: some View {
-        SubirLibroView(userData: FuncionLogin())
-    }
+#Preview {
+    SubirLibroView(userData: FuncionLogin())
 }
+
+
+
