@@ -41,6 +41,8 @@ class PerfilViewDefaults {
         
         let encoded = filtros.compactMapValues { try? JSONEncoder().encode($0) }
         UserDefaults.standard.set(encoded, forKey: "seleccionarfiltro")
+        print("Filtros guardados: \(filtros)")
+
     }
     
     func loadfiltroselect() -> [String: Filtros?] {
@@ -48,6 +50,9 @@ class PerfilViewDefaults {
         guard let savedata = UserDefaults.standard.dictionary(forKey: "seleccionarfiltro") as? [String: Data] else {
             return [:]
         }
-        return savedata.compactMapValues { try? JSONDecoder().decode(Filtros.self, from: $0) }
+        
+        let filtros = savedata.compactMapValues { try? JSONDecoder().decode(Filtros.self, from: $0) }
+        print("Filtros cargado: \(filtros)")
+        return filtros
     }
 }

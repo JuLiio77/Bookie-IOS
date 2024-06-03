@@ -16,7 +16,15 @@ struct PerfilView: View {
     
     @State var isPresentedFoto: Bool = false
     @State var imagenseleccionada: Categorias? = PerfilViewDefaults.shared.loadimagenseleccionada()
-    @State var filtroseleccionado: [String : Filtros?] = PerfilViewDefaults.shared.loadfiltroselect()
+    
+    @State private var filtrouno: Filtros? = PerfilViewDefaults.shared.loadfiltroselect()["Misterio"] ?? nil
+    @State private var filtrodos: Filtros? = PerfilViewDefaults.shared.loadfiltroselect()["Poesia"] ?? nil
+    @State private var filtrotres: Filtros? = PerfilViewDefaults.shared.loadfiltroselect()["Filosofia"] ?? nil
+    
+    @State var isPresentedfiltro: Bool = false
+    @State var isPresentedfiltrodos: Bool = false
+    @State var isPresentedfiltrotres: Bool = false
+    
     
     var body: some View {
         
@@ -89,35 +97,94 @@ struct PerfilView: View {
                         .padding(.horizontal, 10)*/
                     
                     VStack {
-                        Image(systemName: "eye.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                        Text("Misterio")
+                        
+                        Button(action: {
+                            isPresentedfiltro = true
+                        }) {
+                            if let filtro = filtrouno {
+                                Image(filtro.imagen)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                Image(systemName: "eye.circle.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .sheet(isPresented: $isPresentedfiltro, onDismiss: {
+                            isPresentedfiltro = false
+                            
+                            PerfilViewDefaults.shared.guardarfiltroselect(["Misterio": filtrouno, "Aventura": filtrodos, "Filosofía": filtrotres])
+                        }) {
+                            FiltrosPerfilView(filtroseleccionad: $filtrouno)
+                                .presentationDetents([.large])
+                        }
+                        Text(filtrouno?.nombre ?? "Filtro")
                             .font(.caption)
                     }
                     .padding(.horizontal, 10)
                     
                     
                     VStack {
-                        Image(systemName: "leaf.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                        Text("Aventura")
-                            .font(.caption)
                         
+                        Button(action: {
+                            isPresentedfiltrodos = true
+                        }) {
+                            if let filtro = filtrodos {
+                                Image(filtro.imagen)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                Image(systemName: "eye.circle.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .sheet(isPresented: $isPresentedfiltrodos, onDismiss: {
+                            isPresentedfiltrodos = false
+                            
+                            PerfilViewDefaults.shared.guardarfiltroselect(["Misterio": filtrouno, "Aventura": filtrodos, "Filosofía": filtrotres])
+                        }) {
+                            FiltrosPerfilView(filtroseleccionad: $filtrodos)
+                                .presentationDetents([.large])
+                        }
+                        Text(filtrodos?.nombre ?? "Filtro")
+                            .font(.caption)
                     }
-                    
                     .padding(.horizontal, 10)
                     
                     VStack {
-                        Image(systemName: "book.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                        Text("Filosofía")
-                            .font(.caption)
                         
+                        Button(action: {
+                            isPresentedfiltrotres = true
+                        }) {
+                            if let filtro = filtrotres {
+                                Image(filtro.imagen)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                Image(systemName: "eye.circle.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        .sheet(isPresented: $isPresentedfiltrotres, onDismiss: {
+                            isPresentedfiltrotres = false
+                            
+                            PerfilViewDefaults.shared.guardarfiltroselect(["Misterio": filtrouno, "Aventura": filtrodos, "Filosofía": filtrotres])
+                        }) {
+                            FiltrosPerfilView(filtroseleccionad: $filtrotres)
+                                .presentationDetents([.large])
+                        }
+                        Text(filtrotres?.nombre ?? "Filtro")
+                            .font(.caption)
                     }
-                    
                     .padding(.horizontal, 10)
                     
                 }

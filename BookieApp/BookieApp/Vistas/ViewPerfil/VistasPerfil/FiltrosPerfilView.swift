@@ -9,30 +9,42 @@ import SwiftUI
 
 struct FiltrosPerfilView: View {
     
-        @Binding var filtroseleccionad: Filtros?
+    @Binding var filtroseleccionad: Filtros?
+    
+    let filtros: [Filtros] = [
+        Filtros(nombre: "Romance", imagen: "perfilromance"),
+        Filtros(nombre: "Aventura", imagen: "perfilaventuras"),
+        Filtros(nombre: "Fantasía", imagen: "perfilfantasia"),
+        Filtros(nombre: "Terror", imagen: "perfilterror"),
+        Filtros(nombre: "Tragedia", imagen: "perfiltragedia"),
+        Filtros(nombre: "Psicología", imagen: "perfilpsicologia"),
+        Filtros(nombre: "Aficciones", imagen: "perfilaficciones"),
+        Filtros(nombre: "Poesia", imagen: "perfilpoesia"),
+        Filtros(nombre: "Historia", imagen: "perfilhistoria"),
+        Filtros(nombre: "Ciencia ficción", imagen: "perfilcienciaficc"),
+        Filtros(nombre: "Infantil", imagen: "perfilinfantil"),
+        Filtros(nombre: "Clásicos", imagen: "perfilclasicos"),
+        Filtros(nombre: "Extranjero", imagen: "perfilextranjero"),
+        Filtros(nombre: "Thriller", imagen: "perfilthriller"),
+        Filtros(nombre: "Acción", imagen: "perfilaccion"),
+        Filtros(nombre: "Bélico", imagen: "perfilbelico"),
+        Filtros(nombre: "Filosofía", imagen: "perfilfilosofia"),
+        Filtros(nombre: "Misterio", imagen: "perfilmisterio"),
+        Filtros(nombre: "Biografía", imagen: "perfilbiografia"),
+        Filtros(nombre: "Ciencia", imagen: "perfilciencia"),
+        Filtros(nombre: "Educación", imagen: "perfileducacion"),
         
-        let filtros: [Filtros] = [
-            Filtros(nombre: "Romance", imagen: "filtroromance"),
-            Filtros(nombre: "Aventura", imagen: "filtroaventuras"),
-            Filtros(nombre: "Fantasía", imagen: "filtrofantasia"),
-            Filtros(nombre: "Terror", imagen: "filtroterror"),
-            Filtros(nombre: "Tragedia", imagen: "filtrotragedia"),
-            Filtros(nombre: "Psicología", imagen: "filtropsicologia"),
-            Filtros(nombre: "Aficciones", imagen: "filtroaficciones"),
-            Filtros(nombre: "Poesia", imagen: "filtropoesia"),
-            Filtros(nombre: "Historia", imagen: "filtrohistoria"),
-            Filtros(nombre: "Ciencia ficción", imagen: "filtrociencia"),
-            Filtros(nombre: "Infantil", imagen: "filtroinfantil"),
-            Filtros(nombre: "Clásicos", imagen: "filtroeducacion"),
-            Filtros(nombre: "Extranjero", imagen: "filtroextranjero")
-        ]
         
-        @Environment(\.presentationMode) var presentationMode
+    ]
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var mostraralerta = false
+    @State private var seleccionarcateg: Filtros? = nil
+    
+    var body: some View {
         
-        @State private var mostraralerta = false
-        @State private var seleccionarcateg: Filtros? = nil
-        
-        var body: some View {
+        ScrollView {
             
             VStack {
                 
@@ -114,8 +126,7 @@ struct FiltrosPerfilView: View {
             .padding()
         }
     }
-
-
+}
 
 #Preview {
     FiltrosPerfilView(filtroseleccionad: .constant(nil))

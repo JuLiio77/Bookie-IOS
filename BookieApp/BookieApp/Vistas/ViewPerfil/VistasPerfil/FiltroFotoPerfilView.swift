@@ -115,8 +115,6 @@ struct FiltroFotoPerfilView: View {
     }
 }
 
-
-
 #Preview {
     FiltroFotoPerfilView(imagenseleccionada: .constant(nil))
 }

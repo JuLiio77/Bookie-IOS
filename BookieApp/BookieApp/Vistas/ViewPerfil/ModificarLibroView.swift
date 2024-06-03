@@ -108,7 +108,6 @@ struct ModificarLibroView: View {
                         
                     }
                     
-                    
                     HStack{
                         
                        
