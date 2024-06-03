@@ -1,13 +1,10 @@
-//
-//  SubirLibroView.swift
-//  BookieApp
-//
-//  Created by dam2 on 19/3/24.
-//
-
 import SwiftUI
 
 struct SubirLibroView: View {
+    
+    @ObservedObject var userData: FuncionLogin
+    var peticiones = Peticiones()
+    @State private var idUser = ModelUser()
     
     @State private var titulo = ""
     @State private var autor = ""
@@ -17,19 +14,16 @@ struct SubirLibroView: View {
     @State private var genero = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @State private var shouldNavigate = false
     
     @State private var mostrarSheet = false
-<<<<<<< HEAD
-    @State private var categoriaseleccionada = [Categorias]()
+    @State private var categoriaseleccionada = ""
     
-    @State private var mostraralertaelim = false
-    @State private var eliminarcateg: Categorias?
+    
     
     var body: some View {
-        
-        NavigationStack {
-            
-            ScrollView{
+        NavigationView {
+            ScrollView {
                 
                 Image(systemName: "")
                     .frame(width: 166, height: 196)
@@ -46,7 +40,7 @@ struct SubirLibroView: View {
                 TextField("Título", text: $titulo)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -58,10 +52,9 @@ struct SubirLibroView: View {
                 TextField("Autor", text: $autor)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
-                
                 
                 Label("Nº de páginas", systemImage: "")
                     .labelStyle(.titleOnly)
@@ -71,7 +64,7 @@ struct SubirLibroView: View {
                 TextField("Nº de páginas", text: $numeroPaginas)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -83,7 +76,7 @@ struct SubirLibroView: View {
                 TextField("Género", text: $genero)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -95,7 +88,7 @@ struct SubirLibroView: View {
                 TextField("Editorial", text: $editorial)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -107,121 +100,25 @@ struct SubirLibroView: View {
                 TextField("Sinopsis", text: $sinopsis)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
-                
-                HStack {
-                    
-                    Label("Agregar filtro", systemImage: "")
-                        .labelStyle(.titleOnly)
-                    
-                    Button(action: {
-                        mostrarSheet.toggle()
-                    }) {
-                        Image(systemName: "plus.app.fill")
-                            .foregroundColor(.red)
-                    }
-                    .sheet(isPresented: $mostrarSheet) {
-                        FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
-                    }
-=======
-    @State private var categoriaseleccionada = ""
-    
-    var body: some View {
-        
-        NavigationView {
-            Form {
-                Section(header: Text("Detalles del Libro")) {
-                    TextField("Título", text: $titulo)
-                    TextField("Autor", text: $autor)
-                    TextField("Número de Páginas", text: $numeroPaginas)
-                        .keyboardType(.numberPad)
-                    TextField("Sinopsis", text: $sinopsis)
-                    TextField("Editorial", text: $editorial)
-                    TextField("Género", text: $genero)
->>>>>>> jose
-                }
-                .padding(.top, 30)
-                .padding(.trailing, 200)
-                
-<<<<<<< HEAD
-                Divider()
-                    .padding(.top, 15)
-                
-                VStack {
-                    
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 20) {
-                        
-                        if !categoriaseleccionada.isEmpty {
-                            
-                            ForEach(categoriaseleccionada) { categoria in
-                                
-                                VStack {
-                                    
-                                    Button(action: {
-                                        
-                                        eliminarcateg = categoria
-                                        mostraralertaelim = true
-                                    }) {
-                                        
-                                        VStack {
-                                            
-                                            Image(categoria.imagen).resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 60, height: 60)
-                                            
-                                            Text(categoria.nombre)
-                                                .font(.footnote)
-                                                .foregroundColor(.black)
-                                                .multilineTextAlignment(.center)
-                                        }
-                                    }
-                                    .alert(isPresented: $mostraralertaelim) {
-                                        
-                                        Alert(title: Text("Eliminar filtro"), message: Text("¿Quieres eliminar el filtro \(eliminarcateg?.nombre ?? "")?"), primaryButton: .destructive(Text("Eliminar")) {
-                                            
-                                            if let eliminarcateg = eliminarcateg {
-                                                categoriaseleccionada.removeAll { $0.id == eliminarcateg.id }
-                                            }
-                                        },
-                                              secondaryButton: .cancel()
-                                        )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .padding(.top, 15)
-                
                 Button(action: subirLibro) {
                     Text("Subir Libro")
                 }
-                .padding(.top, 25)
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                .navigationBarBackButtonHidden(false)
                 
-                //boton para simular el registro y almacenar el token
-                Button(action: {
-                    let token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqdWxpb3BydWViYSIsImlhdCI6MTcxNjIxNzY4MSwiZXhwIjoxNzE2MzA0MDgxfQ.JQ4cuesDK4wetRNywxVCgES9qy6pm9lyJ7IH-NbIdss"
-                    UserDefaults.standard.set(token, forKey: "authToken")
-                    
-                    self.alertMessage = "Token almacenado"
-                    self.showingAlert = true
-                }) {
-                    Text("Guardar Token")
-                }
-            }
-            .navigationBarTitle("Subir Libro")
-            .navigationBarTitleDisplayMode(.inline)
-            
-=======
-                Button(action: subirLibro) {
-                    Text("Subir Libro")
-                }
             }
             .navigationBarTitle("Agregar Libro")
->>>>>>> jose
+            .navigationBarTitleDisplayMode(.inline)
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -241,13 +138,15 @@ struct SubirLibroView: View {
             return
         }
         
-        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+        guard let authToken = UserDefaults.standard.string(forKey: "token") else {
             self.alertMessage = "No se encontró el token de autenticación"
             self.showingAlert = true
             return
         }
         
-        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        print("Token de autenticación: \(authToken)")
+        
+        let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: "pepe", userId: idUser.id)
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
@@ -264,11 +163,7 @@ struct SubirLibroView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-<<<<<<< HEAD
                     self.alertMessage = "Error: \(error.localizedDescription)"
-=======
-                    self.alertMessage = "Error en el data"
->>>>>>> jose
                     self.showingAlert = true
                 }
                 return
@@ -282,13 +177,11 @@ struct SubirLibroView: View {
                 return
             }
             
+            print("Código de estado HTTP: \(httpResponse.statusCode)")
+            
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
-<<<<<<< HEAD
-                    self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
-=======
-                    self.alertMessage = "Error en el servidor"
->>>>>>> jose
+                    self.alertMessage = "Fallo en el servidor"
                     self.showingAlert = true
                 }
                 return
@@ -297,154 +190,15 @@ struct SubirLibroView: View {
             DispatchQueue.main.async {
                 self.alertMessage = "Libro subido con éxito"
                 self.showingAlert = true
+                self.shouldNavigate = true
             }
         }.resume()
     }
-<<<<<<< HEAD
 }
 
 #Preview {
-    SubirLibroView()
-=======
-        
-//        NavigationStack {
-//            
-//            ScrollView{
-//                
-//                Image(systemName: "")
-//                    .frame(width: 166, height: 196)
-//                    .foregroundColor(.blue)
-//                    .background(Color.gray, in: .rect)
-//                    .cornerRadius(20)
-//                    .padding(.top, 25)
-//                
-//                Label("Título", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 50)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Título", text: $titulo)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Autor", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Autor", text: $autor)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                
-//                Label("Nº de páginas", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 220)
-//                
-//                TextField("Nº de páginas", text: $numeroPaginas)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Género", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Género", text: $genero)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Editorial", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Editorial", text: $editorial)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Sinopsis", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Sinopsis", text: $sinopsis)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                
-//                HStack {
-//                    
-//                    Label("Agregar filtos", systemImage: "")
-//                        .labelStyle(.titleOnly)
-//                    
-//                    Button(action: {
-//                        mostrarSheet.toggle()
-//                    }) {
-//                        Image(systemName: "plus.app.fill")
-//                            .foregroundColor(.red)
-//                    }
-//                    .sheet(isPresented: $mostrarSheet) {
-//                        FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
-//                    }
-//                    
-//                    
-//                }
-//                .padding(.top, 30)
-//                .padding(.trailing, 200)
-//                
-//                Divider()
-//                
-//                    .padding(.top, 10)
-//                
-//                HStack{
-//                    
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    
-//                }
-//                .padding(.top, 20)
-//                
-//                if !categoriaseleccionada.isEmpty {
-//                    Text("Categoria seleccionada: \(categoriaseleccionada)")
-//                        .padding()
-//                        .background(Color.gray.opacity(0.2))
-//                        .cornerRadius(10)
-//                        .padding([.leading, .trailing], 20)
-//                }
-//                
-//               
-//            }
-//        }
-//    }
+    SubirLibroView(userData: FuncionLogin())
 }
 
-struct AddSubirLibro_Previews: PreviewProvider {
-    static var previews: some View {
-        SubirLibroView()
-    }
->>>>>>> jose
-}
+
+

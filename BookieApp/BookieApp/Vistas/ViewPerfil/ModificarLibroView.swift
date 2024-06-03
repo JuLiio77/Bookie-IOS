@@ -48,7 +48,7 @@ struct ModificarLibroView: View {
                   TextField("Título", text: $titulo)
                       .bold()
                       .padding()
-                      .background(Color.button)
+                      .background(Color.color1)
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -60,7 +60,7 @@ struct ModificarLibroView: View {
                   TextField("Autor", text: $autor)
                       .bold()
                       .padding()
-                      .background(Color.button)
+                      .background(Color.color1)
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -73,7 +73,7 @@ struct ModificarLibroView: View {
                   TextField("Nº de páginas", text: $paginas)
                       .bold()
                       .padding()
-                      .background(Color.button)
+                      .background(Color.color1)
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -85,7 +85,7 @@ struct ModificarLibroView: View {
                   TextField("Género", text: $genero)
                       .bold()
                       .padding()
-                      .background(Color.button)
+                      .background(Color.color1)
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
 
@@ -97,7 +97,14 @@ struct ModificarLibroView: View {
                     Divider()
 
                     HStack{
-
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                         
                     }
                     

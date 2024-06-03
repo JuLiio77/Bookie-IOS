@@ -22,7 +22,7 @@ struct EditarPerfil: View {
         NavigationView{
             ScrollView{
                 ZStack{
-                    Image(ImageResource.thriller)
+                  Image(ImageResource.defultAvatar)
                     
                     Button(action: {
                         
@@ -47,7 +47,7 @@ struct EditarPerfil: View {
                 TextField("Nombre", text: $nombre)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding()
                 
@@ -58,7 +58,7 @@ struct EditarPerfil: View {
                 TextField("Contraseña", text: $password)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding()
                 
@@ -71,7 +71,7 @@ struct EditarPerfil: View {
                 TextField("Provincia", text: $provincia)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding()
                 
@@ -82,7 +82,7 @@ struct EditarPerfil: View {
                 TextField("Ciudad", text: $ciudad)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding()
                 
@@ -93,7 +93,7 @@ struct EditarPerfil: View {
                 TextField("Codigo Postal", text: $codigoPostal)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding()
                 
@@ -104,7 +104,7 @@ struct EditarPerfil: View {
                 TextField("Preferencias Literarias", text: $prefeLite)
                     .bold()
                     .padding()
-                    .background(Color.button)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding()
                 
@@ -116,7 +116,6 @@ struct EditarPerfil: View {
                            title: Text("Guardar Cambios"),
                            message: Text("¿Quieres guardar los cambios?"),
                            primaryButton: .default(Text("Sí")) {
-                               // Aquí puedes poner el código para guardar los cambios
                                self.presentationMode.wrappedValue.dismiss()
                            },
                            secondaryButton: .cancel(Text("No"))

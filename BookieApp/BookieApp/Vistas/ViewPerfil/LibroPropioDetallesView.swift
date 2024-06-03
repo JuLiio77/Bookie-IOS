@@ -23,7 +23,7 @@ struct LibroPropioDetallesView: View {
             ScrollView(){
                 
                 VStack{
-                    NavigationLink(destination: PerfilView()) {
+                    NavigationLink(destination: PerfilView(modelUser: ModelUser())) {
                         Label( "Usuario ", systemImage: "person.circle.fill")
                              .padding(.leading, 250)
                              .padding([.top, .bottom], 15)
@@ -109,7 +109,14 @@ struct LibroPropioDetallesView: View {
                         .padding(.top, 25)
                        
                     HStack{
-
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                         
                     }
                     
