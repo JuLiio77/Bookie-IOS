@@ -17,9 +17,9 @@ struct PerfilView: View {
     @State var isPresentedFoto: Bool = false
     @State var imagenseleccionada: Categorias? = PerfilViewDefaults.shared.loadimagenseleccionada()
     
-    @State private var filtrouno: Filtros? = PerfilViewDefaults.shared.loadfiltroselect()
-    @State private var filtrodos: Filtros? = PerfilViewDefaults.shared.loadfiltroselect()
-    @State private var filtrotres: Filtros? = PerfilViewDefaults.shared.loadfiltroselect()
+    @State private var filtrouno: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 0)
+    @State private var filtrodos: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 1)
+    @State private var filtrotres: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 2)
     
     @State var isPresentedfiltro: Bool = false
     @State var isPresentedfiltrodos: Bool = false
@@ -81,6 +81,9 @@ struct PerfilView: View {
                     VStack(alignment: .leading) {
                         //Text("\(userData.ciudad)")
                         
+                        Text("Ciudad")
+                            .padding(.leading, 10)
+                        
                         Text("4,8 ★")
                             .padding(.leading, 10)
                         
@@ -93,11 +96,11 @@ struct PerfilView: View {
                 
                 HStack {
                     
-                    FiltroBotonView(filtro: $filtrouno, ispresented: $isPresentedfiltro, filtroKey: "")
+                    FiltroBotonView(filtro: $filtrouno, ispresented: $isPresentedfiltro, filtroKey: "filtrouno", pos: 0)
                     
-                    FiltroBotonView(filtro: $filtrodos, ispresented: $isPresentedfiltrodos, filtroKey: "Poesia")
+                    FiltroBotonView(filtro: $filtrodos, ispresented: $isPresentedfiltrodos, filtroKey: "filtrodos", pos: 1)
 
-                    FiltroBotonView(filtro: $filtrotres, ispresented: $isPresentedfiltrotres, filtroKey: "Filosofia")
+                    FiltroBotonView(filtro: $filtrotres, ispresented: $isPresentedfiltrotres, filtroKey: "filtrotres", pos: 2)
                 }
                 .padding(.leading, 100)
                 
@@ -107,7 +110,6 @@ struct PerfilView: View {
                         Text("Reseñas").tag(1)
                         Text("Historial").tag(2)
                     }
-                    //                .background(Color.blue)
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                     

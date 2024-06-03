@@ -14,6 +14,8 @@ struct FiltroBotonView: View {
     
     let filtroKey: String
     
+    var pos: Int
+    
     var body: some View {
         
         VStack {
@@ -35,7 +37,7 @@ struct FiltroBotonView: View {
             }
             .sheet(isPresented: $ispresented, onDismiss: { ispresented = false
                 
-                PerfilViewDefaults.shared.guardarfiltroselect(filtro)
+                PerfilViewDefaults.shared.guardarfiltroselect(filtro, pos: pos)
             }) {
                 FiltrosPerfilView(filtroseleccionad: $filtro)
                     .presentationDetents([.large])
@@ -48,5 +50,5 @@ struct FiltroBotonView: View {
 }
 
 #Preview {
-    FiltroBotonView(filtro: .constant(nil), ispresented: .constant(false), filtroKey: "filtro")
+    FiltroBotonView(filtro: .constant(nil), ispresented: .constant(false), filtroKey: "filtro", pos: 0)
 }

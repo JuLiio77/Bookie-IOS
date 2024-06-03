@@ -36,21 +36,21 @@ class PerfilViewDefaults {
         return nil
     }
     
-    //guarda filtro del perfil de manera persistente y cargarlod
-    func guardarfiltroselect(_ filtro: Filtros?) {
+    //guardar filtros del perfil de manera persistente y cargarlod
+    func guardarfiltroselect(_ filtro: Filtros?, pos: Int) {
         
         if let filtro = filtro {
             if let encoded = try? JSONEncoder().encode(filtro) {
-                UserDefaults.standard.set(encoded, forKey: "seleccionarfiltro")
+                UserDefaults.standard.set(encoded, forKey: "seleccionarfiltro\(pos)")
             }
         } else {
-            UserDefaults.standard.removeObject(forKey: "seleccionarfiltro")
+            UserDefaults.standard.removeObject(forKey: "seleccionarfiltro\(pos)")
         }
     }
-    
-    func loadfiltroselect(/*forKey key: String*/) -> Filtros? {
+      
+    func loadfiltroselect(pos: Int) -> Filtros? {
         
-        if let savedata = UserDefaults.standard.object(forKey: "seleccionarfiltro") as? Data {
+        if let savedata = UserDefaults.standard.object(forKey: "seleccionarfiltro\(pos)") as? Data {
             if let decoded = try? JSONDecoder().decode(Filtros.self, from: savedata) {
                 return decoded
             }
