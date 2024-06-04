@@ -23,7 +23,11 @@ struct ReviewView: View {
                 TextEditor(text: $reviewtext)
                     .frame(height: 400)
                     .padding()
+<<<<<<< HEAD
                     .background(Color.button.opacity(0.6))
+=======
+                    .background(Color.color1 .opacity(0.6))
+>>>>>>> julio
                     .cornerRadius(20)
                     .scrollContentBackground(.hidden)
                 

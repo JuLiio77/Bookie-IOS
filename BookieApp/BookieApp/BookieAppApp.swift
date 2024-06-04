@@ -13,6 +13,7 @@ struct BookieAppApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(FuncionLogin())
+                .environmentObject(LibrosFavoritos())
         }
     }
 }

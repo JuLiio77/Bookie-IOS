@@ -12,6 +12,11 @@ struct VistaLogin: View {
     @EnvironmentObject var datos: FuncionLogin
     @State var toggle: Bool
     @State var mostrarContrasenia: Bool
+<<<<<<< HEAD
+=======
+    @State var nextView: Bool
+    @State var modelUser: ModelUser
+>>>>>>> julio
     
     var body: some View {
         
@@ -38,10 +43,14 @@ struct VistaLogin: View {
 <<<<<<< HEAD
 <<<<<<< HEAD
                 
-                TextField("Nombre de Usuario", text: $datos.username)
+                TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.button)
+=======
+                    .background(Color.fondo)
+>>>>>>> julio
                     .cornerRadius(30)
                     .padding(.top,130)
                     .textContentType(.username)
@@ -53,14 +62,22 @@ struct VistaLogin: View {
                     if mostrarContrasenia {
                         TextField("Contraseña", text: $datos.password)
                             .padding()
+<<<<<<< HEAD
                             .background(Color.button)
+=======
+                            .background(Color.fondo)
+>>>>>>> julio
                             .cornerRadius(30)
                             .padding(.top, 40)
                         
                     } else {
                         SecureField("Contraseña", text: $datos.password)
                             .padding()
+<<<<<<< HEAD
                             .background(Color.button)
+=======
+                            .background(Color.fondo)
+>>>>>>> julio
                             .cornerRadius(30)
                             .padding(.top, 40)
                     }
@@ -153,6 +170,10 @@ struct VistaLogin: View {
 }
 
 #Preview {
+<<<<<<< HEAD
     VistaLogin(toggle: false, mostrarContrasenia: false)
+=======
+    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+>>>>>>> julio
         .environmentObject(FuncionLogin())
 }

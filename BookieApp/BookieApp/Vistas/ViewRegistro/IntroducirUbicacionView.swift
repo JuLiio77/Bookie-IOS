@@ -37,24 +37,37 @@ struct IntroducirUbicacionView: View {
             TextField("Provincia", text: $nombre)
                 .bold()
                 .padding()
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewRegistro/IntroducirUbicacionView.swift
                 .background(Color.button)
+=======
+                .background(Color.fondo)
+>>>>>>> julio:BookieApp/BookieApp/Vistas/ViewLogin/IntroducirUbicacionView.swift
                 .cornerRadius(30)
                 .padding(.top,150)
             
             TextField("Ciudad", text: $nombre)
                 .bold()
                 .padding()
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewRegistro/IntroducirUbicacionView.swift
                 .background(Color.button)
+=======
+                .background(Color.fondo)
+>>>>>>> julio:BookieApp/BookieApp/Vistas/ViewLogin/IntroducirUbicacionView.swift
                 .cornerRadius(30)
                 .padding(.top,40)
             
             TextField("Código postal", text: $nombre)
                 .bold()
                 .padding()
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewRegistro/IntroducirUbicacionView.swift
                 .background(Color.button)
+=======
+                .background(Color.fondo)
+>>>>>>> julio:BookieApp/BookieApp/Vistas/ViewLogin/IntroducirUbicacionView.swift
                 .cornerRadius(30)
                 .padding(.top,40)
             
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewRegistro/IntroducirUbicacionView.swift
             
            Button("Siguiente"){
                
@@ -67,6 +80,19 @@ struct IntroducirUbicacionView: View {
            .padding([.leading, .trailing], 10)
            .padding(.top, 75)
                
+=======
+            NavigationLink("Siguiente", destination: {
+                ViewRegistroFoto(nextView: false)
+            })
+            .padding(20)
+            .padding(.horizontal, 30)
+            .background(Color.button)
+            .foregroundColor(.black)
+            .cornerRadius(20)
+            .padding([.leading, .trailing], 10)
+            .padding(.top, 75)
+                       
+>>>>>>> julio:BookieApp/BookieApp/Vistas/ViewLogin/IntroducirUbicacionView.swift
      
             Spacer()            
             

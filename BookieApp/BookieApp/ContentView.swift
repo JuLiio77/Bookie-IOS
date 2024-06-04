@@ -24,7 +24,11 @@ struct ContentView: View {
                                
             }else{
                 
+<<<<<<< HEAD:BookieApp/BookieApp/ContentView.swift
                 VistaLogin(toggle: false, mostrarContrasenia: false)
+=======
+                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+>>>>>>> julio:BookieApp/BookieApp/Vistas/ViewLogin/ContentView.swift
                 
             }
             

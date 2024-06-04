@@ -1,14 +1,13 @@
-//
-//  SubirLibroView.swift
-//  BookieApp
-//
-//  Created by dam2 on 19/3/24.
-//
-
 import SwiftUI
 
 struct SubirLibroView: View {
     
+<<<<<<< HEAD
+=======
+    @ObservedObject var userData: FuncionLogin
+    var peticiones = Peticiones()
+    
+>>>>>>> julio
     @State private var titulo = ""
     @State private var autor = ""
     @State private var numeroPaginas = ""
@@ -129,9 +128,12 @@ struct SubirLibroView: View {
 =======
     @State private var categoriaseleccionada = ""
     
+    
+    
     var body: some View {
         
         NavigationView {
+<<<<<<< HEAD
             Form {
                 Section(header: Text("Detalles del Libro")) {
                     TextField("Título", text: $titulo)
@@ -145,6 +147,88 @@ struct SubirLibroView: View {
                 }
                 .padding(.top, 30)
                 .padding(.trailing, 200)
+=======
+            ScrollView {
+                
+                Image(systemName: "")
+                    .frame(width: 166, height: 196)
+                    .foregroundColor(.blue)
+                    .background(Color.gray, in: .rect)
+                    .cornerRadius(20)
+                    .padding(.top, 25)
+                
+                Label("Título", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 50)
+                    .padding(.trailing, 280)
+                
+                TextField("Título", text: $titulo)
+                    .bold()
+                    .padding()
+                    .background(Color.fondo)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Autor", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Autor", text: $autor)
+                    .bold()
+                    .padding()
+                    .background(Color.fondo)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Nº de páginas", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 220)
+                
+                TextField("Nº de páginas", text: $numeroPaginas)
+                    .bold()
+                    .padding()
+                    .background(Color.fondo)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Género", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Género", text: $genero)
+                    .bold()
+                    .padding()
+                    .background(Color.fondo)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Editorial", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Editorial", text: $editorial)
+                    .bold()
+                    .padding()
+                    .background(Color.fondo)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+                
+                Label("Sinopsis", systemImage: "")
+                    .labelStyle(.titleOnly)
+                    .padding(.top, 30)
+                    .padding(.trailing, 280)
+                
+                TextField("Sinopsis", text: $sinopsis)
+                    .bold()
+                    .padding()
+                    .background(Color.fondo)
+                    .cornerRadius(30)
+                    .padding([.leading, .trailing], 20)
+>>>>>>> julio
                 
 <<<<<<< HEAD
                 Divider()
@@ -219,9 +303,22 @@ struct SubirLibroView: View {
                 Button(action: subirLibro) {
                     Text("Subir Libro")
                 }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                .navigationBarBackButtonHidden(false)
+                
             }
             .navigationBarTitle("Agregar Libro")
+<<<<<<< HEAD
 >>>>>>> jose
+=======
+            .navigationBarTitleDisplayMode(.inline)
+>>>>>>> julio
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -241,13 +338,15 @@ struct SubirLibroView: View {
             return
         }
         
-        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+        guard let authToken = UserDefaults.standard.string(forKey: "token") else {
             self.alertMessage = "No se encontró el token de autenticación"
             self.showingAlert = true
             return
         }
         
-        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        print("Token de autenticación: \(authToken)")
+        
+        let libro = Libro(id: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2(id: 1))
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
@@ -282,13 +381,19 @@ struct SubirLibroView: View {
                 return
             }
             
+            print("Código de estado HTTP: \(httpResponse.statusCode)")
+            
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
+<<<<<<< HEAD
 <<<<<<< HEAD
                     self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
 =======
                     self.alertMessage = "Error en el servidor"
 >>>>>>> jose
+=======
+                    self.alertMessage = "Fallo en el servidor"
+>>>>>>> julio
                     self.showingAlert = true
                 }
                 return
@@ -297,9 +402,11 @@ struct SubirLibroView: View {
             DispatchQueue.main.async {
                 self.alertMessage = "Libro subido con éxito"
                 self.showingAlert = true
+                self.shouldNavigate = true
             }
         }.resume()
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 
@@ -448,3 +555,13 @@ struct AddSubirLibro_Previews: PreviewProvider {
     }
 >>>>>>> jose
 }
+=======
+}
+
+#Preview {
+    SubirLibroView(userData: FuncionLogin())
+}
+
+
+
+>>>>>>> julio

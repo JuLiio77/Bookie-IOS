@@ -10,7 +10,12 @@ import SwiftUI
 struct InicioView: View {
     
     @State var nombre: String = ""
+<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewInicio/InicioView.swift
     @StateObject var userData = FuncionLogin()
+=======
+    @StateObject var userData = FuncionLogin()      
+    let modelUser: ModelUser
+>>>>>>> julio:BookieApp/BookieApp/Vistas/InicioView.swift
     
     var category: [String] = ["Ciencia ficcion", "Thriller", "Terror", "Acción", "Romance", "Aventura", "Historia", "Fantasia", "Bélico", "Infantil", "Filosofía", "Misterio", "Clásico", "Poesía", "Psicología", "Aficiones", "Biografía", "Ciencia", "Extranjeros", "Tragedia", "Educativos" ]
     
@@ -18,7 +23,7 @@ struct InicioView: View {
         
         NavigationStack {
             
-            Text("¡Bienvenido \(userData.name)!")
+            Text("¡Bienvenido \(modelUser.username)!")
                 .bold()
                 .font(.title)
                 .padding(.leading, 28)
@@ -222,10 +227,11 @@ struct InicioView: View {
                 }
             }
             .padding(.bottom, 10)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
 
 #Preview {
-    InicioView()
+    InicioView(modelUser: ModelUser())
 }

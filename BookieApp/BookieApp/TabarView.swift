@@ -14,7 +14,7 @@ struct TabarView: View {
     var body: some View {
         
         TabView {
-            InicioView()
+            InicioView(modelUser: ModelUser())
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
@@ -32,7 +32,11 @@ struct TabarView: View {
                 .tabItem {
                     Label("Buzón", systemImage: "message")
                 }
-            PerfilView()
+            ListaLibrosView()
+                .tabItem {
+                    Label("Buzón", systemImage: "message")
+                }
+            PerfilView(modelUser: ModelUser())
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
                 }
@@ -42,6 +46,8 @@ struct TabarView: View {
                 }
         }
         .accentColor(Color.button)
+        .background(Color.button)
+        .navigationBarBackButtonHidden(false)
     }
 }
 
