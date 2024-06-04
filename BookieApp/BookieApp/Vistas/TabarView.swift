@@ -14,7 +14,11 @@ struct TabarView: View {
     var body: some View {
         
         TabView {
+<<<<<<< HEAD
             InicioView()
+=======
+            InicioView(funciones: UserService(), modelUser: ModelUser())
+>>>>>>> jose
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
@@ -32,12 +36,19 @@ struct TabarView: View {
                 .tabItem {
                     Label("Buzón", systemImage: "message")
                 }
+<<<<<<< HEAD
             
             
             PerfilView()
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
                 }
+=======
+            PerfilView(modelUser: ModelUser())
+                .tabItem {
+                    Label("Perfil", systemImage: "person.fill")
+                }            
+>>>>>>> jose
         }
         .accentColor(Color.button)
     }

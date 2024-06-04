@@ -137,7 +137,11 @@ struct PerfilView: View {
 }
 
 #Preview {
+<<<<<<< HEAD
     PerfilView()
         .environmentObject(LibrosFavoritos())
+=======
+    PerfilView(modelUser: ModelUser())
+>>>>>>> jose
     
 }
