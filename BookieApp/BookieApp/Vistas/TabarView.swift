@@ -9,12 +9,10 @@ import SwiftUI
 
 struct TabarView: View {
     
-    @State var isPresented: Bool = true
-    
     var body: some View {
         
         TabView {
-            InicioView()
+            InicioView(modelUser: ModelUser())
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
@@ -23,7 +21,7 @@ struct TabarView: View {
                     Label("Biblioteca", systemImage: "book")
                 }
             
-            SubirLibroView()
+            SubirLibroView(userData: FuncionLogin())
                 .tabItem {
                     Label("Subir", systemImage: "plus.app.fill")
                 }
@@ -32,14 +30,18 @@ struct TabarView: View {
                 .tabItem {
                     Label("Buzón", systemImage: "message")
                 }
-            
-            
-            PerfilView()
+            ListaLibrosView()
+                .tabItem {
+                    Label("Buzón", systemImage: "message")
+                }
+            PerfilView(modelUser: ModelUser())
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
-                }
+                }            
         }
         .accentColor(Color.button)
+        .background(Color.button)
+        .navigationBarBackButtonHidden(false)
     }
 }
 

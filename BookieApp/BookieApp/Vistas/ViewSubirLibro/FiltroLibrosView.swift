@@ -9,9 +9,9 @@ import SwiftUI
 
 struct FiltroLibrosView: View {
     
-    @Binding var categoriaseleccionada: [Categorias]
+    @Binding var categoriaseleccionada: String
     
-    let categorias: [Categorias] = [
+    let categoria: [Categorias] = [
         Categorias(nombre: "Romance", imagen: "filtroromance"),
         Categorias(nombre: "Aventura", imagen: "filtroaventuras"),
         Categorias(nombre: "Fantasía", imagen: "filtrofantasia"),
@@ -27,46 +27,28 @@ struct FiltroLibrosView: View {
         Categorias(nombre: "Extranjero", imagen: "filtroextranjero")
     ]
     
-    @Environment(\.presentationMode) var presentationMode
-    
-    @State private var mostraralerta = false
-    @State private var seleccionarcateg: Categorias? = nil
-    
     var body: some View {
         
         VStack {
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 20) {
                 
-                ForEach(categorias) { categoria in
+                ForEach(categoria) { categorias in
                     
                     Button(action: {
                         
-                        //seleccionar solo un maximo de tres categorias
-                        if categoriaseleccionada.count < 3 {
-                            
-                            seleccionarcateg = categoria
-                            
-                            /*if !categoriaseleccionada.contains(where: { $0.id == categoria.id }) {
-                             categoriaseleccionada.append(categoria)
-                             }*/
-                        }
-    
+                        categoriaseleccionada = categorias.imagen
+                        print("\(categorias.nombre) pulsado")
+                        
                     }) {
                         
                         VStack {
-                            
-                            Image(categoria.imagen)
+                            Image(categorias.imagen)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 70, height: 70)
-                            //borde para saber que esta seleccionado
-                                .clipShape(Circle())
-                                .overlay(
-                                    Circle().stroke(seleccionarcateg?.id == categoria.id ? Color.black : Color.clear, lineWidth: 2)
-                                )
                             
-                            Text(categoria.nombre)
+                            Text(categorias.nombre)
                                 .font(.footnote)
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
@@ -77,9 +59,8 @@ struct FiltroLibrosView: View {
             .padding()
             
             HStack {
-                
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    //
                 }) {
                     Text("Cancelar")
                         .padding()
@@ -88,11 +69,9 @@ struct FiltroLibrosView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
-                
                 Spacer()
-                
                 Button(action: {
-                    mostraralerta = true
+                    //
                 }) {
                     Text("Aceptar")
                         .padding()
@@ -100,19 +79,6 @@ struct FiltroLibrosView: View {
                         .background(Color(red: 0.9, green: 0.6, blue: 0.5))
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                    
-                        .alert(isPresented: $mostraralerta) {
-                            
-                            Alert(title: Text("Agregar filtro"), message: Text("¿Quieres agregar el filtro \(seleccionarcateg?.nombre ?? "")?"), primaryButton: .default(Text("Aceptar")) {
-                                
-                                if let seleccionarcateg = seleccionarcateg {
-                                    categoriaseleccionada.append(seleccionarcateg)
-                                }
-                                presentationMode.wrappedValue.dismiss()
-                            },
-                                  secondaryButton: .cancel()
-                            )
-                        }
                 }
             }
             .padding(.horizontal)
@@ -124,5 +90,5 @@ struct FiltroLibrosView: View {
 }
 
 #Preview {
-    FiltroLibrosView(categoriaseleccionada: .constant([]))
+    FiltroLibrosView(categoriaseleccionada: .constant(""))
 }
