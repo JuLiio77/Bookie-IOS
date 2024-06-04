@@ -43,7 +43,7 @@ struct VistaLogin: View {
 <<<<<<< HEAD
 <<<<<<< HEAD
                 
-                TextField("Nombre de Usuario", text: $modelUser.username)
+            TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
 <<<<<<< HEAD

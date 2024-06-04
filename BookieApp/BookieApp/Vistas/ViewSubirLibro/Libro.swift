@@ -13,12 +13,17 @@ struct Libro: Codable {
 =======
 import Foundation
 
+<<<<<<< HEAD
 struct Libro: Identifiable, Codable {
     var id: Int
 >>>>>>> julio
 =======
 struct Libro: Codable {
 >>>>>>> letizia
+=======
+class Libro: Codable, ObservableObject {
+    var libroId: Int
+>>>>>>> jose
     var titulo: String
     var autor: String
     var numeroPaginas: Int
@@ -32,9 +37,22 @@ struct Libro: Codable {
     var foto: String
     var prestado: Bool
     var filtro: [Int]
+<<<<<<< HEAD
     var usuario: ModelUser2
 >>>>>>> julio
 =======
    // var prestado: Bool
 >>>>>>> letizia
 }
+=======
+    var usuario: ModelUser
+    var userId: Int
+}
+
+
+
+//struct ModelUser2: Identifiable, Codable {
+//    var id: Int
+//}
+
+>>>>>>> jose

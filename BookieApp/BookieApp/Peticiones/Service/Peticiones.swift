@@ -184,40 +184,40 @@ class Peticiones{
     
        
     // FUNCION GET PARA CONSEGUIR LOS DATOS DEL USUARIO QUE SE HA LOGUEADO
-    func getUserData() {
-        
-        let urlString = "http://localhost:8080/api/credentials/get-user-from-token"
-        guard let url = URL(string: urlString) else {
-            print("URL no válida")
-            return
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-    
-        let tokenUser = UserDefaults.standard.string(forKey: "token") // Si llega a fallar cambiar el UserDefault por un token
-        if tokenUser!.isEmpty{
-            print("Token vacio")
-        }
-        request.setValue("Bearer \(tokenUser ?? "")", forHTTPHeaderField: "Authorization")
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            let decoder = JSONDecoder()
-
-            if let data = data {
-                print(String(decoding: data, as: UTF8.self))
-
-                do {
-                    let user = try decoder.decode(ModelUser.self, from: data)
-                    print("Usuario decodificado")
-                } catch {
-                    print("Error al decodificar datos del usuario: \(error.localizedDescription)")
-                }
-            } else if let error = error {
-                print("Error de red:", error.localizedDescription)
-            }
-        }.resume()
-    }
+//    func getUserData() {
+//        
+//        let urlString = "http://localhost:8080/api/credentials/get-user-from-token"
+//        guard let url = URL(string: urlString) else {
+//            print("URL no válida")
+//            return
+//        }
+//
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//    
+//        let tokenUser = UserDefaults.standard.string(forKey: "token") // Si llega a fallar cambiar el UserDefault por un token
+//        if tokenUser!.isEmpty{
+//            print("Token vacio")
+//        }
+//        request.setValue("Bearer \(tokenUser ?? "")", forHTTPHeaderField: "Authorization")
+//
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//            let decoder = JSONDecoder()
+//
+//            if let data = data {
+//                print(String(decoding: data, as: UTF8.self))
+//
+//                do {
+//                    let user = try decoder.decode(ModelUser.self, from: data)
+//                    print("Usuario decodificado")
+//                } catch {
+//                    print("Error al decodificar datos del usuario: \(error.localizedDescription)")
+//                }
+//            } else if let error = error {
+//                print("Error de red:", error.localizedDescription)
+//            }
+//        }.resume()
+//    }
     
     
     func listaUsuarios(){

@@ -10,11 +10,16 @@ import SwiftUI
 struct InicioView: View {
     
     @State var nombre: String = ""
+<<<<<<< HEAD
 <<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewInicio/InicioView.swift
 <<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewInicio/InicioView.swift
     @StateObject var userData = FuncionLogin()
 =======
     @StateObject var userData = FuncionLogin()      
+=======
+    let funciones: UserService
+    @StateObject var userData = FuncionLogin()
+>>>>>>> jose
     let modelUser: ModelUser
 >>>>>>> julio:BookieApp/BookieApp/Vistas/InicioView.swift
 =======
@@ -232,9 +237,16 @@ struct InicioView: View {
             }
             .padding(.bottom, 10)
         }
+        .onAppear(){
+            funciones.getUserData()
+        }
     }
 }
 
 #Preview {
+<<<<<<< HEAD
     InicioView()
+=======
+    InicioView(funciones: UserService(), modelUser: ModelUser())
+>>>>>>> jose
 }
