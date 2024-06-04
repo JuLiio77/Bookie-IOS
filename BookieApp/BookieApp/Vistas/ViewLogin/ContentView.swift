@@ -3,16 +3,11 @@
 //  BookieApp
 //
 //  Created by dam2 on 11/3/24.
-<<<<<<< HEAD
-=======
-//º
->>>>>>> jose
 
 import SwiftUI
 
 struct ContentView: View {
     
-<<<<<<< HEAD
     @State var correo: String = ""
     @State var contrasenia: String = ""
     @State var toggle: Bool = false
@@ -108,33 +103,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-=======
-    @StateObject private var datos = FuncionLogin()
-    
-    var body: some View {
-        
-        HStack{
-            
-            var token = !datos.tokeen.isEmpty
-            
-            if token{
-                
-                TabarView()
-                               
-            }else{
-                
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
-                
-            }
-            
-        }
-        
-    }
-}
-
-
-#Preview {
-    ContentView()
-        .environmentObject(FuncionLogin())
->>>>>>> jose
 }
