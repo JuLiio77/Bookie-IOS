@@ -14,8 +14,6 @@
 		3D09169F2BA8D81D00C88A88 /* ViewChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D09169E2BA8D81D00C88A88 /* ViewChats.swift */; };
 		3D16C1852C063C2C00603BAF /* FuncionesPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16C1842C063C2C00603BAF /* FuncionesPerfil.swift */; };
 		3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19B5CB2BA9FD0A00D892F3 /* SubirLibroView.swift */; };
-		3D1AEA0B2C08DC9D00C458C3 /* LibroCeldaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1AEA0A2C08DC9D00C458C3 /* LibroCeldaView.swift */; };
-		3D1AEA0D2C08DCBF00C458C3 /* ListaLibrosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1AEA0C2C08DCBF00C458C3 /* ListaLibrosView.swift */; };
 		3D1CE92D2BA3484100844484 /* TabarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE92C2BA3484100844484 /* TabarView.swift */; };
 		3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */; };
 		3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */; };
@@ -86,8 +84,6 @@
 		3D09169E2BA8D81D00C88A88 /* ViewChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewChats.swift; sourceTree = "<group>"; };
 		3D16C1842C063C2C00603BAF /* FuncionesPerfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncionesPerfil.swift; sourceTree = "<group>"; };
 		3D19B5CB2BA9FD0A00D892F3 /* SubirLibroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubirLibroView.swift; sourceTree = "<group>"; };
-		3D1AEA0A2C08DC9D00C458C3 /* LibroCeldaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibroCeldaView.swift; sourceTree = "<group>"; };
-		3D1AEA0C2C08DCBF00C458C3 /* ListaLibrosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaLibrosView.swift; sourceTree = "<group>"; };
 		3D1CE92C2BA3484100844484 /* TabarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabarView.swift; sourceTree = "<group>"; };
 		3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibliotecaView.swift; sourceTree = "<group>"; };
 		3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaBibloteca.swift; sourceTree = "<group>"; };
@@ -179,8 +175,6 @@
 				3D19B5CB2BA9FD0A00D892F3 /* SubirLibroView.swift */,
 				3D86F4642BFB9F8A00CD44E3 /* FiltroLibrosView.swift */,
 				3D86F4662BFBA3CC00CD44E3 /* Categorias.swift */,
-				3D1AEA0A2C08DC9D00C458C3 /* LibroCeldaView.swift */,
-				3D1AEA0C2C08DCBF00C458C3 /* ListaLibrosView.swift */,
 			);
 			path = ViewSubirLibro;
 			sourceTree = "<group>";
@@ -471,7 +465,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DFBB7A02BD8102C00719F60 /* ViewReview.swift in Sources */,
-				3D1AEA0B2C08DC9D00C458C3 /* LibroCeldaView.swift in Sources */,
 				3DF4712F2BC840C900FF5669 /* BookModelFavoritos.swift in Sources */,
 				3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */,
 				3DF5242B2BA889C300C7D10F /* Book.swift in Sources */,
@@ -511,7 +504,6 @@
 				3D2FDF4D2BD6C5550007CA17 /* RegisterRequest.swift in Sources */,
 				3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */,
 				3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */,
-				3D1AEA0D2C08DCBF00C458C3 /* ListaLibrosView.swift in Sources */,
 				3DFBB7AC2BD81B9400719F60 /* LibroPropioDetallesView.swift in Sources */,
 				3DB9727A2BA9FA0B005849B7 /* VistaCeldaChat.swift in Sources */,
 				3D1CE92F2BA3487A00844484 /* BibliotecaView.swift in Sources */,

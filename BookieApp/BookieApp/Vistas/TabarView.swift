@@ -30,10 +30,7 @@ struct TabarView: View {
                 .tabItem {
                     Label("Buzón", systemImage: "message")
                 }
-            ListaLibrosView()
-                .tabItem {
-                    Label("Buzón", systemImage: "message")
-                }
+      
             PerfilView(modelUser: ModelUser())
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
