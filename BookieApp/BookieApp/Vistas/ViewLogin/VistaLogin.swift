@@ -29,7 +29,7 @@ struct VistaLogin: View {
                     .padding()
                 
                 
-                TextField("Nombre de Usuario", text: $modelUser.username)
+            TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
                     .background(Color.fondo)

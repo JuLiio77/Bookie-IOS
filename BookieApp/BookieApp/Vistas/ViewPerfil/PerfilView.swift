@@ -134,6 +134,6 @@ struct PerfilView: View {
 }
 
 #Preview {
-    PerfilView(modelUser: ModelUser(id: 2))
+    PerfilView(modelUser: ModelUser())
     
 }

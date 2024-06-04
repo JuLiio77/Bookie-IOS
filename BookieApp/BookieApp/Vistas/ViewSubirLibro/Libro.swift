@@ -9,7 +9,7 @@ import Foundation
 
 import Foundation
 
-struct Libro: Codable {
+class Libro: Codable, ObservableObject {
     var libroId: Int
     var titulo: String
     var autor: String
@@ -20,11 +20,13 @@ struct Libro: Codable {
     var foto: String
     var prestado: Bool
     var filtro: [Int]
-    var usuario: String
+    var usuario: ModelUser
     var userId: Int
 }
 
-struct ModelUser2: Identifiable, Codable {
-    var id: Int
-}
+
+
+//struct ModelUser2: Identifiable, Codable {
+//    var id: Int
+//}
 

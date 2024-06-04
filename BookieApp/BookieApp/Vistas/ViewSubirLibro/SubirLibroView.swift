@@ -4,7 +4,7 @@ struct SubirLibroView: View {
     
     @ObservedObject var userData: FuncionLogin
     var peticiones = Peticiones()
-    @State private var idUser = ModelUser()
+    @ObservedObject private var idUser = ModelUser()
     
     @State private var titulo = ""
     @State private var autor = ""
@@ -146,14 +146,13 @@ struct SubirLibroView: View {
         
         print("Token de autenticación: \(authToken)")
         
-        let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: "pepe", userId: idUser.id)
+        let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: idUser, userId: idUser.id)
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
             self.showingAlert = true
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
