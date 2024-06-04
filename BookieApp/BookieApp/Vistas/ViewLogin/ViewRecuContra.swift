@@ -35,7 +35,7 @@ struct ViewRecuContra: View {
         TextField("email", text: $nombre)
             .bold()
             .padding()
-            .background(Color.fondo)
+            .background(Color.color)
             .cornerRadius(30)
             .padding([.leading, .trailing], 20)
         
@@ -51,14 +51,14 @@ struct ViewRecuContra: View {
             if mostarContrasenia {
                 TextField("contraseña", text: $contra)
                     .padding()
-                    .background(Color.fondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
              
             } else {
                 SecureField("contraseña", text: $contra)
                     .padding()
-                    .background(Color.fondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
             }
@@ -84,14 +84,14 @@ struct ViewRecuContra: View {
             if mostarContrasenia2 {
                 TextField("Contraseña", text: $reContra2)
                     .padding()
-                    .background(Color.fondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
              
             } else {
                 SecureField("Contraseña", text: $contra2)
                     .padding()
-                    .background(Color.fondo)
+                    .background(Color.color)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
             }

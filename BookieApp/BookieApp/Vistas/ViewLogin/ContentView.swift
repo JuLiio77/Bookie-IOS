@@ -25,10 +25,6 @@ struct ContentView: View {
                     .bold()
                     .padding()
                 
-<<<<<<< HEAD
-=======
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
->>>>>>> julio
                 
                 TextField("Correo electronico", text: $correo)
                     .bold()

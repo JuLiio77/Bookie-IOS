@@ -10,8 +10,7 @@ import SwiftUI
 struct InicioView: View {
     
     @State var nombre: String = ""
-    @StateObject var userData = FuncionLogin()      
-    let modelUser: ModelUser
+    @StateObject var userData = FuncionLogin()        
     
     var category: [String] = ["Ciencia ficcion", "Thriller", "Terror", "Acción", "Romance", "Aventura", "Historia", "Fantasia", "Bélico", "Infantil", "Filosofía", "Misterio", "Clásico", "Poesía", "Psicología", "Aficiones", "Biografía", "Ciencia", "Extranjeros", "Tragedia", "Educativos" ]
     
@@ -19,7 +18,7 @@ struct InicioView: View {
         
         NavigationStack {
             
-            Text("¡Bienvenido \(modelUser.username)!")
+            Text("¡Bienvenido \(userData.name)!")
                 .bold()
                 .font(.title)
                 .padding(.leading, 28)
@@ -223,11 +222,10 @@ struct InicioView: View {
                 }
             }
             .padding(.bottom, 10)
-            .navigationBarBackButtonHidden(true)
         }
     }
 }
 
 #Preview {
-    InicioView(modelUser: ModelUser())
+    InicioView()
 }
