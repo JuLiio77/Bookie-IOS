@@ -50,11 +50,15 @@ class Peticiones{
     
     }
     
+<<<<<<< HEAD
     
     // FUNCION POST DE REGISTRO DEL USUARIO -- SE LE MANDA COMO PARAMETRO TODOS LOS DATOS
     
     func PostRegister(_ userRegister: RegisterRequest){
         
+=======
+    func PostRegister(name: String, username: String ,password: String,email:String,repass:String,provincia: String, ciudad: String, codigoPos:Int){
+>>>>>>> letizia
         
         let urlString = "http://localhost:8080/api/auth/register"
         
@@ -63,11 +67,20 @@ class Peticiones{
             return
         }
         
+<<<<<<< HEAD
+=======
+        
+>>>>>>> letizia
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
+<<<<<<< HEAD
         guard let httpBody = try? JSONEncoder().encode(userRegister) else {
+=======
+        let firstUser = RegisterRequest(rol: "ROLE_USER", nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPos, foto: "", reportado: false, token: "")
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+>>>>>>> letizia
             print("Invalid httpBody")
             return
         }
@@ -81,6 +94,7 @@ class Peticiones{
                     let decoder = JSONDecoder()
                     
                     let token = try decoder.decode(ModelToken.self, from: data)
+<<<<<<< HEAD
                     UserDefaults.standard.setValue(token.token, forKey: "token")
                     print("Registro completado")
                                         
@@ -97,6 +111,21 @@ class Peticiones{
   // FUNCION POST DE LOGIN DE USUARIO -- SE LE MANDA POR PARAMETRO EL USERNAME Y LA CONTRASELA Y SI ESTA CORRECTO NOS DEVUELVE UN TOKEN
     func login(_ user: AuthRequest, completion: @escaping (Result<String, Error>)-> Void){
         
+=======
+                    
+                    return
+                    //print(token.token)
+                    //print(response)
+                }catch(let error){
+                    print(error.localizedDescription)
+                }
+            }
+        }.resume()
+    }
+    
+    func login(username: String, password: String, completion: @escaping (Result<String, Error>)-> Void){
+
+>>>>>>> letizia
         let urlString = "http://localhost:8080/api/auth/login"
         
         guard let url = URL(string: urlString) else {
@@ -108,8 +137,14 @@ class Peticiones{
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
+<<<<<<< HEAD
         //let usuario = ["username": username, "password": password]
         guard let httpBody = try? JSONEncoder().encode(user) else {
+=======
+        let firstUser = AuthRequest(username: username, password: password)
+        
+        guard let httpBody = try? JSONEncoder().encode(firstUser) else {
+>>>>>>> letizia
             print("Invalid httpBody")
             return
         }
@@ -122,19 +157,30 @@ class Peticiones{
                 //print(String(data: data, encoding: .utf8))
                 do{
                     let decoder = JSONDecoder()
+                    
                     let token = try decoder.decode(ModelToken.self, from: data)
+                    
+                    //UserDefaults.standard.setValue(token.token, forKey: "token")
                     UserDefaults.standard.setValue(token.token, forKey: "token")
+<<<<<<< HEAD
                     
                     self.getUserData()
                     //print("login correcto \(token.token)")
                     
                 }catch(let error){
                     print("error en el login \(error)")
+=======
+                    //print("token peticion:\(token.token)")
+                    
+                } catch (let error) {
+                    print("error en el login")
+>>>>>>> letizia
                 }
             }
         }.resume()
     
     }
+<<<<<<< HEAD
     
        
     // FUNCION GET PARA CONSEGUIR LOS DATOS DEL USUARIO QUE SE HA LOGUEADO
@@ -509,3 +555,6 @@ class Peticiones{
 //      }
 
 
+=======
+}
+>>>>>>> letizia

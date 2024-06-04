@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
       "filename" : "inicioHistoria.png",
-=======
-      "filename" : "historia.png",
->>>>>>> jose
       "idiom" : "universal",
       "scale" : "1x"
     },

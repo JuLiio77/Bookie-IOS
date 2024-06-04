@@ -46,10 +46,9 @@
             filePath = "BookieApp/Peticiones/Peticiones.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-<<<<<<< HEAD
             startingLineNumber = "86"
             endingLineNumber = "86"
-            landmarkName = "PostRegister(name:username:password:email:repass:provincia:ciudad:codigoPos:)"
+            landmarkName = "login(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -65,44 +64,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "login(username:password:completion:)"
-=======
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "PostRegister(name:username:password:email:repass:provincia:ciudad:codigoPos:)"
->>>>>>> parent of 1367b20 (Merge remote-tracking branch 'origin/julio' into jose)
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5B48C893-BB65-4FE5-8CB0-851EE31BF571"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookieApp/Vistas/Peticiones/Peticiones.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "getUserData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "66CB20F2-8D42-4733-9548-453A91D30CF9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookieApp/Vistas/Peticiones/Peticiones.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "getUserData()"
+            landmarkName = "login(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

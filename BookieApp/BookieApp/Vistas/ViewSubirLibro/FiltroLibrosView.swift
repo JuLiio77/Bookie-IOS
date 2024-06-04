@@ -9,15 +9,9 @@ import SwiftUI
 
 struct FiltroLibrosView: View {
     
-<<<<<<< HEAD
     @Binding var categoriaseleccionada: [Categorias]
     
     let categorias: [Categorias] = [
-=======
-    @Binding var categoriaseleccionada: String
-    
-    let categoria: [Categorias] = [
->>>>>>> jose
         Categorias(nombre: "Romance", imagen: "filtroromance"),
         Categorias(nombre: "Aventura", imagen: "filtroaventuras"),
         Categorias(nombre: "Fantasía", imagen: "filtrofantasia"),
@@ -33,21 +27,17 @@ struct FiltroLibrosView: View {
         Categorias(nombre: "Extranjero", imagen: "filtroextranjero")
     ]
     
-<<<<<<< HEAD
     @Environment(\.presentationMode) var presentationMode
     
     @State private var mostraralerta = false
     @State private var seleccionarcateg: Categorias? = nil
     
-=======
->>>>>>> jose
     var body: some View {
         
         VStack {
             
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 20) {
                 
-<<<<<<< HEAD
                 ForEach(categorias) { categoria in
                     
                     Button(action: {
@@ -67,19 +57,6 @@ struct FiltroLibrosView: View {
                         VStack {
                             
                             Image(categoria.imagen)
-=======
-                ForEach(categoria) { categorias in
-                    
-                    Button(action: {
-                        
-                        categoriaseleccionada = categorias.imagen
-                        print("\(categorias.nombre) pulsado")
-                        
-                    }) {
-                        
-                        VStack {
-                            Image(categorias.imagen)
->>>>>>> jose
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 70, height: 70)
@@ -89,11 +66,7 @@ struct FiltroLibrosView: View {
                                     Circle().stroke(seleccionarcateg?.id == categoria.id ? Color.black : Color.clear, lineWidth: 2)
                                 )
                             
-<<<<<<< HEAD
                             Text(categoria.nombre)
-=======
-                            Text(categorias.nombre)
->>>>>>> jose
                                 .font(.footnote)
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
@@ -106,11 +79,7 @@ struct FiltroLibrosView: View {
             HStack {
                 
                 Button(action: {
-<<<<<<< HEAD
                     presentationMode.wrappedValue.dismiss()
-=======
-                    //
->>>>>>> jose
                 }) {
                     Text("Cancelar")
                         .padding()
@@ -123,11 +92,7 @@ struct FiltroLibrosView: View {
                 Spacer()
                 
                 Button(action: {
-<<<<<<< HEAD
                     mostraralerta = true
-=======
-                    //
->>>>>>> jose
                 }) {
                     Text("Aceptar")
                         .padding()
@@ -159,9 +124,5 @@ struct FiltroLibrosView: View {
 }
 
 #Preview {
-<<<<<<< HEAD
     FiltroLibrosView(categoriaseleccionada: .constant([]))
-=======
-    FiltroLibrosView(categoriaseleccionada: .constant(""))
->>>>>>> jose
 }

@@ -22,7 +22,7 @@ struct EditarPerfil: View {
         NavigationView{
             ScrollView{
                 ZStack{
-                    Image(ImageResource.thriller)
+                  Image(ImageResource.defultAvatar)
                     
                     Button(action: {
                         
@@ -48,10 +48,14 @@ struct EditarPerfil: View {
                     .bold()
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button)
 =======
                     .background(Color.fondo)
 >>>>>>> julio
+=======
+                    .background(Color.color)
+>>>>>>> letizia
                     .cornerRadius(30)
                     .padding()
                 
@@ -63,10 +67,14 @@ struct EditarPerfil: View {
                     .bold()
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button)
 =======
                     .background(Color.fondo)
 >>>>>>> julio
+=======
+                    .background(Color.color)
+>>>>>>> letizia
                     .cornerRadius(30)
                     .padding()
                 
@@ -80,10 +88,14 @@ struct EditarPerfil: View {
                     .bold()
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button)
 =======
                     .background(Color.fondo)
 >>>>>>> julio
+=======
+                    .background(Color.color)
+>>>>>>> letizia
                     .cornerRadius(30)
                     .padding()
                 
@@ -95,10 +107,14 @@ struct EditarPerfil: View {
                     .bold()
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button)
 =======
                     .background(Color.fondo)
 >>>>>>> julio
+=======
+                    .background(Color.color)
+>>>>>>> letizia
                     .cornerRadius(30)
                     .padding()
                 
@@ -110,10 +126,14 @@ struct EditarPerfil: View {
                     .bold()
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button)
 =======
                     .background(Color.fondo)
 >>>>>>> julio
+=======
+                    .background(Color.color)
+>>>>>>> letizia
                     .cornerRadius(30)
                     .padding()
                 
@@ -125,10 +145,14 @@ struct EditarPerfil: View {
                     .bold()
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button)
 =======
                     .background(Color.fondo)
 >>>>>>> julio
+=======
+                    .background(Color.color)
+>>>>>>> letizia
                     .cornerRadius(30)
                     .padding()
                 
@@ -140,6 +164,7 @@ struct EditarPerfil: View {
                            title: Text("Guardar Cambios"),
                            message: Text("¿Quieres guardar los cambios?"),
                            primaryButton: .default(Text("Sí")) {
+                               // Aquí puedes poner el código para guardar los cambios
                                self.presentationMode.wrappedValue.dismiss()
                            },
                            secondaryButton: .cancel(Text("No"))

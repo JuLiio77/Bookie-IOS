@@ -1,13 +1,24 @@
+//
+//  SubirLibroView.swift
+//  BookieApp
+//
+//  Created by dam2 on 19/3/24.
+//
+
 import SwiftUI
+import PhotosUI
 
 struct SubirLibroView: View {
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     @ObservedObject var userData: FuncionLogin
     var peticiones = Peticiones()
     
 >>>>>>> julio
+=======
+>>>>>>> letizia
     @State private var titulo = ""
     @State private var autor = ""
     @State private var numeroPaginas = ""
@@ -18,11 +29,13 @@ struct SubirLibroView: View {
     @State private var alertMessage = ""
     
     @State private var mostrarSheet = false
-<<<<<<< HEAD
     @State private var categoriaseleccionada = [Categorias]()
     
     @State private var mostraralertaelim = false
     @State private var eliminarcateg: Categorias?
+    
+    @State private var seleccionarimg: UIImage? = nil
+    @State private var isimgpickerselecct = false
     
     var body: some View {
         
@@ -30,16 +43,39 @@ struct SubirLibroView: View {
             
             ScrollView{
                 
-                Image(systemName: "")
-                    .frame(width: 166, height: 196)
-                    .foregroundColor(.blue)
-                    .background(Color.gray, in: .rect)
-                    .cornerRadius(20)
-                    .padding(.top, 25)
+                Button(action: {
+                    isimgpickerselecct.toggle()
+                }) {
+                    if let image = seleccionarimg {
+                        
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 205, height: 250)
+                            .cornerRadius(20)
+                            .padding(.top, 25)
+                        
+                    } else {
+                        
+                        Image(systemName: "photo")
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 205, height: 250)
+                            .foregroundColor(.black)
+                            .background(Color.gray, in: .rect)
+                            .cornerRadius(20)
+                            .padding(.top, 25)
+                    }
+                }
+                .sheet(isPresented: $isimgpickerselecct) {
+                    ImagePicker(selectedimage: $seleccionarimg)
+                }
+                
+                Divider()
+                    .padding(.top, 35)
                 
                 Label("Título", systemImage: "")
                     .labelStyle(.titleOnly)
-                    .padding(.top, 50)
+                    .padding(.top, 40)
                     .padding(.trailing, 280)
                 
                 TextField("Título", text: $titulo)
@@ -125,6 +161,7 @@ struct SubirLibroView: View {
                     .sheet(isPresented: $mostrarSheet) {
                         FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
                     }
+<<<<<<< HEAD
 =======
     @State private var categoriaseleccionada = ""
     
@@ -231,6 +268,12 @@ struct SubirLibroView: View {
 >>>>>>> julio
                 
 <<<<<<< HEAD
+=======
+                }
+                .padding(.top, 30)
+                .padding(.trailing, 200)
+                
+>>>>>>> letizia
                 Divider()
                     .padding(.top, 15)
                 
@@ -296,9 +339,10 @@ struct SubirLibroView: View {
                     Text("Guardar Token")
                 }
             }
-            .navigationBarTitle("Subir Libro")
+            .navigationBarTitle("Detalles del libro")
             .navigationBarTitleDisplayMode(.inline)
             
+<<<<<<< HEAD
 =======
                 Button(action: subirLibro) {
                     Text("Subir Libro")
@@ -319,6 +363,8 @@ struct SubirLibroView: View {
 =======
             .navigationBarTitleDisplayMode(.inline)
 >>>>>>> julio
+=======
+>>>>>>> letizia
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -338,15 +384,13 @@ struct SubirLibroView: View {
             return
         }
         
-        guard let authToken = UserDefaults.standard.string(forKey: "token") else {
+        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
             self.alertMessage = "No se encontró el token de autenticación"
             self.showingAlert = true
             return
         }
         
-        print("Token de autenticación: \(authToken)")
-        
-        let libro = Libro(id: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2(id: 1))
+        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
@@ -363,11 +407,7 @@ struct SubirLibroView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-<<<<<<< HEAD
                     self.alertMessage = "Error: \(error.localizedDescription)"
-=======
-                    self.alertMessage = "Error en el data"
->>>>>>> jose
                     self.showingAlert = true
                 }
                 return
@@ -381,10 +421,9 @@ struct SubirLibroView: View {
                 return
             }
             
-            print("Código de estado HTTP: \(httpResponse.statusCode)")
-            
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
@@ -394,6 +433,9 @@ struct SubirLibroView: View {
 =======
                     self.alertMessage = "Fallo en el servidor"
 >>>>>>> julio
+=======
+                    self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
+>>>>>>> letizia
                     self.showingAlert = true
                 }
                 return
@@ -402,152 +444,20 @@ struct SubirLibroView: View {
             DispatchQueue.main.async {
                 self.alertMessage = "Libro subido con éxito"
                 self.showingAlert = true
-                self.shouldNavigate = true
             }
         }.resume()
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> letizia
 }
 
 #Preview {
     SubirLibroView()
-=======
-        
-//        NavigationStack {
-//            
-//            ScrollView{
-//                
-//                Image(systemName: "")
-//                    .frame(width: 166, height: 196)
-//                    .foregroundColor(.blue)
-//                    .background(Color.gray, in: .rect)
-//                    .cornerRadius(20)
-//                    .padding(.top, 25)
-//                
-//                Label("Título", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 50)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Título", text: $titulo)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Autor", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Autor", text: $autor)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                
-//                Label("Nº de páginas", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 220)
-//                
-//                TextField("Nº de páginas", text: $numeroPaginas)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Género", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Género", text: $genero)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Editorial", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Editorial", text: $editorial)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                Label("Sinopsis", systemImage: "")
-//                    .labelStyle(.titleOnly)
-//                    .padding(.top, 30)
-//                    .padding(.trailing, 280)
-//                
-//                TextField("Sinopsis", text: $sinopsis)
-//                    .bold()
-//                    .padding()
-//                    .background(Color.color)
-//                    .cornerRadius(30)
-//                    .padding([.leading, .trailing], 20)
-//                
-//                
-//                HStack {
-//                    
-//                    Label("Agregar filtos", systemImage: "")
-//                        .labelStyle(.titleOnly)
-//                    
-//                    Button(action: {
-//                        mostrarSheet.toggle()
-//                    }) {
-//                        Image(systemName: "plus.app.fill")
-//                            .foregroundColor(.red)
-//                    }
-//                    .sheet(isPresented: $mostrarSheet) {
-//                        FiltroLibrosView(categoriaseleccionada: $categoriaseleccionada)
-//                    }
-//                    
-//                    
-//                }
-//                .padding(.top, 30)
-//                .padding(.trailing, 200)
-//                
-//                Divider()
-//                
-//                    .padding(.top, 10)
-//                
-//                HStack{
-//                    
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    ViewFotoPerfil()
-//                        .frame(width: 50)
-//                    
-//                }
-//                .padding(.top, 20)
-//                
-//                if !categoriaseleccionada.isEmpty {
-//                    Text("Categoria seleccionada: \(categoriaseleccionada)")
-//                        .padding()
-//                        .background(Color.gray.opacity(0.2))
-//                        .cornerRadius(10)
-//                        .padding([.leading, .trailing], 20)
-//                }
-//                
-//               
-//            }
-//        }
-//    }
 }
+<<<<<<< HEAD
 
 struct AddSubirLibro_Previews: PreviewProvider {
     static var previews: some View {
@@ -565,3 +475,5 @@ struct AddSubirLibro_Previews: PreviewProvider {
 
 
 >>>>>>> julio
+=======
+>>>>>>> letizia

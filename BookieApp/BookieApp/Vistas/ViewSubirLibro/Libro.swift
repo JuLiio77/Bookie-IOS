@@ -8,6 +8,7 @@
 import Foundation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 struct Libro: Codable {
 =======
 import Foundation
@@ -15,12 +16,16 @@ import Foundation
 struct Libro: Identifiable, Codable {
     var id: Int
 >>>>>>> julio
+=======
+struct Libro: Codable {
+>>>>>>> letizia
     var titulo: String
     var autor: String
     var numeroPaginas: Int
     var sinopsis: String
     var editorial: String
     var genero: String
+<<<<<<< HEAD
 <<<<<<< HEAD
    // var prestado: Bool
 =======
@@ -29,9 +34,7 @@ struct Libro: Identifiable, Codable {
     var filtro: [Int]
     var usuario: ModelUser2
 >>>>>>> julio
+=======
+   // var prestado: Bool
+>>>>>>> letizia
 }
-
-struct ModelUser2: Identifiable, Codable {
-    var id: Int
-}
-

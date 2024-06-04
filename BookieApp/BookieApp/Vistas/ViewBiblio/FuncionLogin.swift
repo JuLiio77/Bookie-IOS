@@ -31,12 +31,16 @@ class FuncionLogin: ObservableObject{
             switch result {
             case .success(let token):
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> letizia
                 print("Login successful with token: \(token)")
                 
             case .failure(let error):
                 
                 print("Login error \(error.localizedDescription)")
 
+<<<<<<< HEAD
 =======
                 print("Login succesful \(token)")
             case .failure(let error):
@@ -88,6 +92,8 @@ class FuncionLogin: ObservableObject{
             }else{
                 print("Registro Fallido")
 >>>>>>> julio
+=======
+>>>>>>> letizia
             }
         }
     }    

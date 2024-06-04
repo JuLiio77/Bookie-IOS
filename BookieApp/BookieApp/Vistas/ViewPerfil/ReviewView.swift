@@ -24,10 +24,14 @@ struct ReviewView: View {
                     .frame(height: 400)
                     .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                     .background(Color.button.opacity(0.6))
 =======
                     .background(Color.color1 .opacity(0.6))
 >>>>>>> julio
+=======
+                    .background(Color.color .opacity(0.6))
+>>>>>>> letizia
                     .cornerRadius(20)
                     .scrollContentBackground(.hidden)
                 

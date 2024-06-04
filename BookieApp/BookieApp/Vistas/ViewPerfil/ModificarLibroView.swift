@@ -49,10 +49,14 @@ struct ModificarLibroView: View {
                       .bold()
                       .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                       .background(Color.button)
 =======
                       .background(Color.color1)
 >>>>>>> julio
+=======
+                      .background(Color.color)
+>>>>>>> letizia
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -65,10 +69,14 @@ struct ModificarLibroView: View {
                       .bold()
                       .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                       .background(Color.button)
 =======
                       .background(Color.color1)
 >>>>>>> julio
+=======
+                      .background(Color.color)
+>>>>>>> letizia
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -82,10 +90,14 @@ struct ModificarLibroView: View {
                       .bold()
                       .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                       .background(Color.button)
 =======
                       .background(Color.color1)
 >>>>>>> julio
+=======
+                      .background(Color.color)
+>>>>>>> letizia
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -98,10 +110,14 @@ struct ModificarLibroView: View {
                       .bold()
                       .padding()
 <<<<<<< HEAD
+<<<<<<< HEAD
                       .background(Color.button)
 =======
                       .background(Color.color1)
 >>>>>>> julio
+=======
+                      .background(Color.color)
+>>>>>>> letizia
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
 
@@ -113,10 +129,16 @@ struct ModificarLibroView: View {
                     Divider()
 
                     HStack{
-
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                         
                     }
-                    
                     
                     HStack{
                         

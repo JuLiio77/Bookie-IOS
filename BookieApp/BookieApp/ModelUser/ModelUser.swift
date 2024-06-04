@@ -1,8 +1,8 @@
 import Foundation
 
-<<<<<<< HEAD
 struct ModelUser: Encodable, Decodable{
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -10,17 +10,19 @@ struct ModelUser: Decodable{
   
     var username: String
 >>>>>>> jose
+=======
+>>>>>>> letizia
     var id: Int
     var username: String
     var password: String
     var email: String
     var ciudad: String
-<<<<<<< HEAD
     var provincia: String
     var codigoPostal: String
     var foto: String
     var reportado: String
     var token: String
+<<<<<<< HEAD
 =======
     var provicia: String
     var codigoPosta: Int
@@ -39,10 +41,6 @@ struct ModelUser: Decodable{
 //    var token: String = UserDefaults.standard.string(forKey: "token") ?? ""
     //var bookieFavoutitaId: Int
 >>>>>>> julio
+=======
+>>>>>>> letizia
 }
-
-
-//
-//struct UsuarioId: Encodable, Decodable{
-//    var id: Int = UserDefaults.standard.integer(forKey: "id")
-//}
