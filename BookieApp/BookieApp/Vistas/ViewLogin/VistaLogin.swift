@@ -1,22 +1,25 @@
 //
-//  ContentView.swift
+//  VistaLogin.swift
 //  BookieApp
 //
-//  Created by dam2 on 11/3/24.
+//  Created by dam2 on 23/4/24.
+//
 
 import SwiftUI
 
-struct ContentView: View {
+struct VistaLogin: View {
     
-    @State var correo: String = ""
-    @State var contrasenia: String = ""
-    @State var toggle: Bool = false
-    
-    @State var mostrarContrasenia: Bool = false
+    @EnvironmentObject var datos: FuncionLogin
+    @State var toggle: Bool
+    @State var mostrarContrasenia: Bool
+    @State var nextView: Bool
+    @State var modelUser: ModelUser
     
     var body: some View {
+
         
-        NavigationStack {
+        NavigationStack{
+            
             
             VStack {
                 
@@ -25,32 +28,30 @@ struct ContentView: View {
                     .bold()
                     .padding()
                 
-<<<<<<< HEAD
-=======
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
->>>>>>> julio
                 
-                TextField("Correo electronico", text: $correo)
+                TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding(.top,130)
-                    .textContentType(.emailAddress)
+                    .textContentType(.username)
+                    .textInputAutocapitalization(.never)
+                
                 
                 ZStack(alignment: .trailingFirstTextBaseline) {
                     
                     if mostrarContrasenia {
-                        TextField("Contraseña", text: $contrasenia)
+                        TextField("Contraseña", text: $datos.password)
                             .padding()
-                            .background(Color.color)
+                            .background(Color.fondo)
                             .cornerRadius(30)
                             .padding(.top, 40)
                         
                     } else {
-                        SecureField("Contraseña", text: $contrasenia)
+                        SecureField("Contraseña", text: $datos.password)
                             .padding()
-                            .background(Color.color)
+                            .background(Color.fondo)
                             .cornerRadius(30)
                             .padding(.top, 40)
                     }
@@ -68,7 +69,7 @@ struct ContentView: View {
                 
                 HStack {
                     
-                    Toggle("",isOn: $toggle)
+                    Toggle("", isOn: $toggle)
                     Text("Recordar contraseña")
                     
                 }
@@ -78,21 +79,26 @@ struct ContentView: View {
                 .toggleStyle(SwitchToggleStyle(tint: Color.button))
                 
                 
+                
                 NavigationLink("¿Has olvidado la contraseña?", destination: ViewRecuContra())
                     .padding(.top, 20)
                     .foregroundColor(.black)
                     .navigationBarBackButtonHidden(true)
                 
-                
-                NavigationLink("Iniciar Sesion", destination: TabarView())
-                    .padding(20)
-                    .padding(.horizontal, 30)
-                    .background(Color.button)
-                    .foregroundColor(.black)
-                    .cornerRadius(20)
-                    .padding([.leading, .trailing], 10)
-                    .padding(.top, 75)
-                    .navigationBarBackButtonHidden(true)
+                NavigationLink(destination: TabarView(), isActive: $nextView){
+                    Button("Inicio Sesion", action: {
+                        datos.check(name: datos.username, pass: datos.password)
+                        nextView = true
+                    })
+                }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                .navigationBarBackButtonHidden(true)
                 
                 NavigationLink("¿No tienes una cuenta? Creé una ahora", destination: RegistroView())
                     .padding(.top, 30)
@@ -101,10 +107,11 @@ struct ContentView: View {
             .padding()
             
         }
-        .tint(.brown)
+        //.tint(.brown)
     }
 }
 
 #Preview {
-    ContentView()
+    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+        .environmentObject(FuncionLogin())
 }

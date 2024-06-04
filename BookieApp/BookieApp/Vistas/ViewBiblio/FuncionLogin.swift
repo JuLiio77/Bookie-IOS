@@ -30,12 +30,64 @@ class FuncionLogin: ObservableObject{
         peticiones.login(username: username, password: password) { result in
             switch result {
             case .success(let token):
+<<<<<<< HEAD
                 print("Login successful with token: \(token)")
                 
             case .failure(let error):
                 
                 print("Login error \(error.localizedDescription)")
 
+=======
+                print("Login succesful \(token)")
+            case .failure(let error):
+                print("Error en el login \(error)")
+            }
+        }
+        
+        
+        
+       
+    }
+        
+        //        peticiones.login(username: name, password: pass){ result in
+        //
+        //            switch result{
+        //            case .success(let token):
+        //                print("Login correcto \(token)")
+        //
+        //            case .failure(let error):
+        //                print("Error en el login \(error)")
+        //
+        //            }
+        //        }
+        
+        
+        
+        
+        
+        
+        func register(){
+            
+            if !name.isEmpty && !email.isEmpty && !password.isEmpty && !repassword.isEmpty{
+                
+                if password.elementsEqual(repassword){
+                    
+                    UserDefaults.standard.setValue(name, forKey: "name")
+                    UserDefaults.standard.setValue(email, forKey: "email")
+                    UserDefaults.standard.setValue(password, forKey: "password")
+                    UserDefaults.standard.setValue(repassword, forKey: "repassword")
+                    UserDefaults.standard.setValue(ciudad, forKey: "ciudad")
+                    UserDefaults.standard.setValue(provincia, forKey: "provincia")
+                    UserDefaults.standard.setValue(codigoPostal, forKey: "codigoPostal")
+                    UserDefaults.standard.setValue(username, forKey: "username")
+                    
+                    peticiones.PostRegister(RegisterRequest(nombre: name, username: username, password: password, email: email, ciudad: ciudad, provincia: provincia, codigoPostal: codigoPostal, foto: foto, reportado: false, token: tokeen))
+                    
+                }
+                
+            }else{
+                print("Registro Fallido")
+>>>>>>> julio
             }
         }
     }    

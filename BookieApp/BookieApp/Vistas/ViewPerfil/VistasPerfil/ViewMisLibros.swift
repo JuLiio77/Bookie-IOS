@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ViewMisLibros: View {
     @State var search = ""
+    @StateObject var funcioneslibro = FuncionesPerfil()
     
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
@@ -17,7 +18,6 @@ struct ViewMisLibros: View {
     
     var body: some View {
         
-        
         NavigationStack{
             
             Section{
@@ -25,7 +25,7 @@ struct ViewMisLibros: View {
                 //                Text("Mis Libros")
                 //                    .font(.title)
                 //                    .bold()
-                
+
                 ScrollView(.vertical){
                     
                     LazyVGrid(columns: columnas, content: {
