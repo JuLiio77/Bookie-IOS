@@ -10,7 +10,6 @@ import SwiftUI
 struct CeldaBibloteca: View {
         
     @EnvironmentObject var librosFavoritos: LibrosFavoritos
-    
     let book: Book
     
     var body: some View {
@@ -19,7 +18,12 @@ struct CeldaBibloteca: View {
             
             Image(systemName: "")
                 .frame(width: 350, height: 180)
+<<<<<<< HEAD
                 .background(Color.color.opacity(0.5))
+=======
+                .background(Color.fondo
+                .opacity(0.5))
+>>>>>>> jose
                 .cornerRadius(20)
             
             if let urlString = book.volumeInfo.imageLinks?.smallThumbnail,

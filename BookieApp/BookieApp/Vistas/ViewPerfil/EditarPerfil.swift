@@ -47,7 +47,11 @@ struct EditarPerfil: View {
                 TextField("Nombre", text: $nombre)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.color)
+=======
+                    .background(Color.fondo)
+>>>>>>> jose
                     .cornerRadius(30)
                     .padding()
                 
@@ -58,7 +62,11 @@ struct EditarPerfil: View {
                 TextField("Contraseña", text: $password)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.color)
+=======
+                    .background(Color.fondo)
+>>>>>>> jose
                     .cornerRadius(30)
                     .padding()
                 
@@ -71,7 +79,11 @@ struct EditarPerfil: View {
                 TextField("Provincia", text: $provincia)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.color)
+=======
+                    .background(Color.fondo)
+>>>>>>> jose
                     .cornerRadius(30)
                     .padding()
                 
@@ -82,7 +94,11 @@ struct EditarPerfil: View {
                 TextField("Ciudad", text: $ciudad)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.color)
+=======
+                    .background(Color.fondo)
+>>>>>>> jose
                     .cornerRadius(30)
                     .padding()
                 
@@ -93,7 +109,11 @@ struct EditarPerfil: View {
                 TextField("Codigo Postal", text: $codigoPostal)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.color)
+=======
+                    .background(Color.fondo)
+>>>>>>> jose
                     .cornerRadius(30)
                     .padding()
                 
@@ -104,7 +124,11 @@ struct EditarPerfil: View {
                 TextField("Preferencias Literarias", text: $prefeLite)
                     .bold()
                     .padding()
+<<<<<<< HEAD
                     .background(Color.color)
+=======
+                    .background(Color.fondo)
+>>>>>>> jose
                     .cornerRadius(30)
                     .padding()
                 
@@ -116,7 +140,6 @@ struct EditarPerfil: View {
                            title: Text("Guardar Cambios"),
                            message: Text("¿Quieres guardar los cambios?"),
                            primaryButton: .default(Text("Sí")) {
-                               // Aquí puedes poner el código para guardar los cambios
                                self.presentationMode.wrappedValue.dismiss()
                            },
                            secondaryButton: .cancel(Text("No"))

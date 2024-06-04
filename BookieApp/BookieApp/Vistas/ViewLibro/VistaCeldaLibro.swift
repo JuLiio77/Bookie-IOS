@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct VistaCeldaLibro: View {
-    
     var body: some View {
 
             VStack{
@@ -27,7 +26,10 @@ struct VistaCeldaLibro: View {
                     .multilineTextAlignment(.center)
             }
             .padding([.top, .bottom], 20)
+        
+        
     }
+    
 }
 
 #Preview {

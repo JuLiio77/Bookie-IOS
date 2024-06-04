@@ -1,14 +1,11 @@
-//
-//  SubirLibroView.swift
-//  BookieApp
-//
-//  Created by dam2 on 19/3/24.
-//
-
 import SwiftUI
 import PhotosUI
 
 struct SubirLibroView: View {
+    
+    @ObservedObject var userData: FuncionLogin
+    var peticiones = Peticiones()
+    @State private var idUser = ModelUser()
     
     @State private var titulo = ""
     @State private var autor = ""
@@ -18,21 +15,26 @@ struct SubirLibroView: View {
     @State private var genero = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @State private var shouldNavigate = false
     
     @State private var mostrarSheet = false
     @State private var categoriaseleccionada = [Categorias]()
     
-    @State private var mostraralertaelim = false
-    @State private var eliminarcateg: Categorias?
+    
     
     @State private var seleccionarimg: UIImage? = nil
     @State private var isimgpickerselecct = false
     
     var body: some View {
+<<<<<<< HEAD
         
         NavigationStack {
             
             ScrollView{
+=======
+        NavigationView {
+            ScrollView {
+>>>>>>> jose
                 
                 Button(action: {
                     isimgpickerselecct.toggle()
@@ -72,7 +74,7 @@ struct SubirLibroView: View {
                 TextField("Título", text: $titulo)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -84,10 +86,9 @@ struct SubirLibroView: View {
                 TextField("Autor", text: $autor)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
-                
                 
                 Label("Nº de páginas", systemImage: "")
                     .labelStyle(.titleOnly)
@@ -97,7 +98,7 @@ struct SubirLibroView: View {
                 TextField("Nº de páginas", text: $numeroPaginas)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -109,7 +110,7 @@ struct SubirLibroView: View {
                 TextField("Género", text: $genero)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -121,7 +122,7 @@ struct SubirLibroView: View {
                 TextField("Editorial", text: $editorial)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
@@ -133,10 +134,11 @@ struct SubirLibroView: View {
                 TextField("Sinopsis", text: $sinopsis)
                     .bold()
                     .padding()
-                    .background(Color.color)
+                    .background(Color.fondo)
                     .cornerRadius(30)
                     .padding([.leading, .trailing], 20)
                 
+<<<<<<< HEAD
                 
                 HStack {
                     
@@ -224,6 +226,23 @@ struct SubirLibroView: View {
             .navigationBarTitle("Detalles del libro")
             .navigationBarTitleDisplayMode(.inline)
             
+=======
+                Button(action: subirLibro) {
+                    Text("Subir Libro")
+                }
+                .padding(20)
+                .padding(.horizontal, 30)
+                .background(Color.button)
+                .foregroundColor(.black)
+                .cornerRadius(20)
+                .padding([.leading, .trailing], 10)
+                .padding(.top, 75)
+                .navigationBarBackButtonHidden(false)
+                
+            }
+            .navigationBarTitle("Agregar Libro")
+            .navigationBarTitleDisplayMode(.inline)
+>>>>>>> jose
             .alert(isPresented: $showingAlert) {
                 Alert(title: Text("Resultado"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
@@ -243,13 +262,15 @@ struct SubirLibroView: View {
             return
         }
         
-        guard let authToken = UserDefaults.standard.string(forKey: "authToken") else {
+        guard let authToken = UserDefaults.standard.string(forKey: "token") else {
             self.alertMessage = "No se encontró el token de autenticación"
             self.showingAlert = true
             return
         }
         
-        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        print("Token de autenticación: \(authToken)")
+        
+        let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: "pepe", userId: idUser.id)
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
@@ -280,9 +301,15 @@ struct SubirLibroView: View {
                 return
             }
             
+            print("Código de estado HTTP: \(httpResponse.statusCode)")
+            
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
+<<<<<<< HEAD
                     self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
+=======
+                    self.alertMessage = "Fallo en el servidor"
+>>>>>>> jose
                     self.showingAlert = true
                 }
                 return
@@ -291,11 +318,19 @@ struct SubirLibroView: View {
             DispatchQueue.main.async {
                 self.alertMessage = "Libro subido con éxito"
                 self.showingAlert = true
+                self.shouldNavigate = true
             }
         }.resume()
     }
 }
 
 #Preview {
+<<<<<<< HEAD
     SubirLibroView()
+=======
+    SubirLibroView(userData: FuncionLogin())
+>>>>>>> jose
 }
+
+
+

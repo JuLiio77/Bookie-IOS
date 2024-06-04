@@ -10,6 +10,7 @@ import SwiftUI
 struct PerfilView: View {
     
     @StateObject var userData = FuncionLogin()
+<<<<<<< HEAD
     
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
@@ -24,6 +25,13 @@ struct PerfilView: View {
     @State var isPresentedfiltro: Bool = false
     @State var isPresentedfiltrodos: Bool = false
     @State var isPresentedfiltrotres: Bool = false
+=======
+    @StateObject private var funcionesPerfil = FuncionesPerfil()
+    
+    @State private var seleccionado = 0
+    @State var isPresented: Bool = false
+    let modelUser: ModelUser
+>>>>>>> jose
     
     
     var body: some View {
@@ -49,6 +57,64 @@ struct PerfilView: View {
             .padding(.leading, 320)
             .font(.headline)
             
+<<<<<<< HEAD
+=======
+            
+            HStack {
+                
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .frame(width: 120, height: 120)
+                
+                
+                VStack(alignment: .leading) {
+                    Text("\(modelUser.ciudad)")
+                    
+                    Text("4,8 ★")
+                    
+                    Text("Bookies favoritas")
+                }
+            }
+            .padding(.trailing, 70)
+            
+            HStack {
+                
+                VStack {
+                    Image(systemName: "eye.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Misterio")
+                        .font(.caption)
+                }
+                .padding(.horizontal, 10)
+                
+                
+                VStack {
+                    Image(systemName: "leaf.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Aventura")
+                        .font(.caption)
+
+                }
+                
+                .padding(.horizontal, 10)
+                
+                VStack {
+                    Image(systemName: "book.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Filosofía")
+                        .font(.caption)
+
+                }
+                
+                .padding(.horizontal, 10)
+                
+            }
+            .padding(.leading, 100)
+            
+>>>>>>> jose
             VStack {
                 
                 HStack {
@@ -132,12 +198,28 @@ struct PerfilView: View {
                     .navigationTitle("\(userData.name)")
                     .navigationBarTitleDisplayMode(.inline)
             }
+<<<<<<< HEAD
+=======
+            
+            Spacer()
+                .navigationTitle("\(modelUser.nombre)")
+                .navigationBarTitleDisplayMode(.inline)
+
+>>>>>>> jose
         }
+        .onAppear{
+            funcionesPerfil.listaLibros()
+        }
+        
     }
 }
 
 #Preview {
+<<<<<<< HEAD
     PerfilView()
         .environmentObject(LibrosFavoritos())
+=======
+    PerfilView(modelUser: ModelUser(id: 2))
+>>>>>>> jose
     
 }
