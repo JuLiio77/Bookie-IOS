@@ -23,7 +23,7 @@ struct LibroPropioDetallesView: View {
             ScrollView(){
                 
                 VStack{
-                    NavigationLink(destination: PerfilView(modelUser: ModelUser())) {
+                    NavigationLink(destination: PerfilView()) {
                         Label( "Usuario ", systemImage: "person.circle.fill")
                              .padding(.leading, 250)
                              .padding([.top, .bottom], 15)

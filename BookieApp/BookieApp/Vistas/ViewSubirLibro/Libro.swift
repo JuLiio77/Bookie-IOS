@@ -7,23 +7,12 @@
 
 import Foundation
 
-import Foundation
-
-struct Libro: Identifiable, Codable {
-    var id: Int
+struct Libro: Codable {
     var titulo: String
     var autor: String
     var numeroPaginas: Int
     var sinopsis: String
     var editorial: String
     var genero: String
-    var foto: String
-    var prestado: Bool
-    var filtro: [Int]
-    var usuario: ModelUser2
+   // var prestado: Bool
 }
-
-struct ModelUser2: Identifiable, Codable {
-    var id: Int
-}
-

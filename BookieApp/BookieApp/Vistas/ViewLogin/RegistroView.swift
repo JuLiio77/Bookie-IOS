@@ -21,7 +21,7 @@ struct RegistroView: View {
         VStack {
             
             Text("Registro")
-                .font(.title)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .bold()
                 .padding()
             
@@ -29,36 +29,32 @@ struct RegistroView: View {
             TextField("Nombre", text: $userData.name)
                 .bold()
                 .padding()
-                .background(Color.fondo)
+                .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,90)
-                .autocapitalization(.none)
             
             TextField("Correo electronico", text: $userData.email)
                 .bold()
                 .padding()
-                .background(Color.fondo)
+                .background(Color.color)
                 .cornerRadius(30)
                 .padding(.top,40)
-                .autocapitalization(.none)
             
             
             ZStack(alignment: .trailingFirstTextBaseline) {
                 if mostrarContrasenia {
                     TextField("Contraseña", text: $userData.password)
                         .padding()
-                        .background(Color.fondo)
+                        .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
-                        .autocapitalization(.none)
                     
                 } else {
                     SecureField("Contraseña", text: $userData.password)
                         .padding()
-                        .background(Color.fondo)
+                        .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
-                        .autocapitalization(.none)
                 }
                 
                 Button(action: {
@@ -75,18 +71,16 @@ struct RegistroView: View {
                 if mostrarContrasenia1 {
                     TextField("Contraseña", text: $userData.repassword)
                         .padding()
-                        .background(Color.fondo)
+                        .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
-                        .autocapitalization(.none)
                     
                 } else {
-                    SecureField("Repetir contraseña", text: $userData.repassword)
+                    SecureField("Contraseña", text: $userData.repassword)
                         .padding()
-                        .background(Color.fondo)
+                        .background(Color.color)
                         .cornerRadius(30)
                         .padding(.top, 40)
-                        .autocapitalization(.none)
                 }
                 
                 Button(action: {
@@ -99,10 +93,10 @@ struct RegistroView: View {
                 .padding(.trailing, 15)
             }
             
-            NavigationLink("Siguiente", destination:{
-                IntroducirUbicacionView()
-                    
-            })
+            Button("Siguiente"){
+                
+                
+            }
             .padding(20)
             .padding(.horizontal, 30)
             .background(Color.button)
