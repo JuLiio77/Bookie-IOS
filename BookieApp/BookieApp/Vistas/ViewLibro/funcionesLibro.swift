@@ -11,9 +11,10 @@ struct FuncionesLibro{
     
     var token = UserDefaults.standard.string(forKey: "token")
     var userId = ModelUser()
-    var arrayLibros = [Libro]()
+    var libro = Libro()
+    var arrayLibros: [Libro] = []
     
-    func listaLibrosUser(_ id: Int){
+    mutating func listaLibrosUser(_ id: Int){
         
         guard let url = URL(string: "http://localhost:8080/api/libro/usuario/\(userId.id)") else {return}
         
@@ -36,16 +37,10 @@ struct FuncionesLibro{
             }
             
             do {
-                let datosLibro = try decoder.decode(Libro.self, from: data)
+                let datosLibro = try decoder.decode([Libro].self, from: data)
                 
-                DispatchQueue.main.async { [self] in
-                    
-                    let libro = Libro
-                    arrayLibros.append()
-                    
-                    
-                }
-                
+                arrayLibros.append(contentsOf: datosLibro)
+   
             } catch {
                 print("Error al decodificar los datos: \(error)")
             }
@@ -90,7 +85,7 @@ struct FuncionesLibro{
 //            }
             
             
-        }.resume()
+        }
         
     }
-}
+

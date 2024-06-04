@@ -22,7 +22,7 @@ struct VistaCeldaLibro: View {
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
                 
-                Text(f)
+                Text("afadf")
                     .frame(width: 165)
                     //.padding(.trailing, 10)
                     .font(.subheadline)
