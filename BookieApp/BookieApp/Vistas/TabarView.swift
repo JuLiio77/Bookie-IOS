@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TabarView: View {
     
+    @State var isPresented: Bool = true
+    
     var body: some View {
         
         TabView {
@@ -30,10 +32,12 @@ struct TabarView: View {
                 .tabItem {
                     Label("Buzón", systemImage: "message")
                 }
+            
+            
             PerfilView()
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")
-                }            
+                }
         }
         .accentColor(Color.button)
     }

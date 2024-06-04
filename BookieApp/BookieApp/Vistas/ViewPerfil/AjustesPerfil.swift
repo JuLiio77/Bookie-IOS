@@ -69,7 +69,32 @@ struct AjustesPerfil: View {
                                 title: Text("Alert"),
                                 message: Text("¿Estás seguro de que quieres cerrar sesión?"),
                                 primaryButton: .destructive(Text("Cerrar Sesión")) {
-                                    // Aquí va el código para cerrar sesión
+                                    
+                                    //codigo para cerrar sesión
+                                    //borramos los datos guardados en userdefault
+                                    UserDefaults.standard.removeObject(forKey: "username")
+                                    UserDefaults.standard.removeObject(forKey: "password")
+                                    UserDefaults.standard.removeObject(forKey: "repassword")
+                                    UserDefaults.standard.removeObject(forKey: "toogle")
+                                    UserDefaults.standard.removeObject(forKey: "token")
+                                    UserDefaults.standard.removeObject(forKey: "email")
+                                    UserDefaults.standard.removeObject(forKey: "provincia")
+                                    UserDefaults.standard.removeObject(forKey: "codigoPostal")
+                                    UserDefaults.standard.removeObject(forKey: "ciudad")
+                                    UserDefaults.standard.removeObject(forKey: "preferencia")
+                                    
+                                    //sincronizacion de los datos
+                                    UserDefaults.standard.synchronize()
+                                    
+                                    //ir a la vista principal
+                                    if let windowscene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                                        if let window = windowscene.windows.first {
+                                            window.rootViewController = UIHostingController(rootView: ContentView())
+                                            window.makeKeyAndVisible()
+                                        }
+                                    }
+                                    
+                                    isPresented = false
                                 },
                                 secondaryButton: .cancel()
                             )
