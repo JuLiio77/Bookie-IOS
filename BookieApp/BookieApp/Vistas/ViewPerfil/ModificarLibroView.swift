@@ -48,11 +48,7 @@ struct ModificarLibroView: View {
                   TextField("Título", text: $titulo)
                       .bold()
                       .padding()
-<<<<<<< HEAD
                       .background(Color.color)
-=======
-                      .background(Color.color1)
->>>>>>> jose
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -64,11 +60,7 @@ struct ModificarLibroView: View {
                   TextField("Autor", text: $autor)
                       .bold()
                       .padding()
-<<<<<<< HEAD
                       .background(Color.color)
-=======
-                      .background(Color.color1)
->>>>>>> jose
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -81,11 +73,7 @@ struct ModificarLibroView: View {
                   TextField("Nº de páginas", text: $paginas)
                       .bold()
                       .padding()
-<<<<<<< HEAD
                       .background(Color.color)
-=======
-                      .background(Color.color1)
->>>>>>> jose
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
                   
@@ -97,11 +85,7 @@ struct ModificarLibroView: View {
                   TextField("Género", text: $genero)
                       .bold()
                       .padding()
-<<<<<<< HEAD
                       .background(Color.color)
-=======
-                      .background(Color.color1)
->>>>>>> jose
                       .cornerRadius(30)
                       .padding([.leading, .trailing], 20)
 

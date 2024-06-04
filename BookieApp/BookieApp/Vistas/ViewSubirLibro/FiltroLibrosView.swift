@@ -27,14 +27,11 @@ struct FiltroLibrosView: View {
         Categorias(nombre: "Extranjero", imagen: "filtroextranjero")
     ]
     
-<<<<<<< HEAD
     @Environment(\.presentationMode) var presentationMode
     
     @State private var mostraralerta = false
     @State private var seleccionarcateg: Categorias? = nil
     
-=======
->>>>>>> jose
     var body: some View {
         
         VStack {
@@ -45,7 +42,6 @@ struct FiltroLibrosView: View {
                     
                     Button(action: {
                         
-<<<<<<< HEAD
                         //seleccionar solo un maximo de tres categorias
                         if categoriaseleccionada.count < 3 {
                             
@@ -61,18 +57,14 @@ struct FiltroLibrosView: View {
                         VStack {
                             
                             Image(categoria.imagen)
-=======
-                        categoriaseleccionada = categorias.imagen
-                        print("\(categorias.nombre) pulsado")
-                        
-                    }) {
-                        
-                        VStack {
-                            Image(categorias.imagen)
->>>>>>> jose
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 70, height: 70)
+                            //borde para saber que esta seleccionado
+                                .clipShape(Circle())
+                                .overlay(
+                                    Circle().stroke(seleccionarcateg?.id == categoria.id ? Color.black : Color.clear, lineWidth: 2)
+                                )
                             
                             Text(categoria.nombre)
                                 .font(.footnote)
@@ -85,6 +77,7 @@ struct FiltroLibrosView: View {
             .padding()
             
             HStack {
+                
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
                 }) {
@@ -95,13 +88,11 @@ struct FiltroLibrosView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                
                 Spacer()
+                
                 Button(action: {
-<<<<<<< HEAD
                     mostraralerta = true
-=======
-                    //
->>>>>>> jose
                 }) {
                     Text("Aceptar")
                         .padding()
@@ -109,6 +100,19 @@ struct FiltroLibrosView: View {
                         .background(Color(red: 0.9, green: 0.6, blue: 0.5))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                    
+                        .alert(isPresented: $mostraralerta) {
+                            
+                            Alert(title: Text("Agregar filtro"), message: Text("¿Quieres agregar el filtro \(seleccionarcateg?.nombre ?? "")?"), primaryButton: .default(Text("Aceptar")) {
+                                
+                                if let seleccionarcateg = seleccionarcateg {
+                                    categoriaseleccionada.append(seleccionarcateg)
+                                }
+                                presentationMode.wrappedValue.dismiss()
+                            },
+                                  secondaryButton: .cancel()
+                            )
+                        }
                 }
             }
             .padding(.horizontal)
