@@ -24,6 +24,7 @@
 		3D2FDF442BD6C5490007CA17 /* Mensajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF412BD6C5490007CA17 /* Mensajes.swift */; };
 		3D2FDF4A2BD6C5550007CA17 /* AuthRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */; };
 		3D2FDF4B2BD6C5550007CA17 /* ModelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF462BD6C5550007CA17 /* ModelToken.swift */; };
+		3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF472BD6C5550007CA17 /* ModelUser.swift */; };
 		3D2FDF4D2BD6C5550007CA17 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FDF482BD6C5550007CA17 /* RegisterRequest.swift */; };
 		3D39A2FB2BACAEE400DDD168 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D39A2FA2BACAEE400DDD168 /* BookModel.swift */; };
 		3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */; };
@@ -33,12 +34,6 @@
 		3D86F4692BFBAAE100CD44E3 /* Libro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D86F4682BFBAAE100CD44E3 /* Libro.swift */; };
 		3D8826F62B9F7DFD00CF248C /* RegistroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8826F52B9F7DFD00CF248C /* RegistroView.swift */; };
 		3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */; };
-		3D94BFD72C10AC6400AA0AEB /* funcionesLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94BFD62C10AC6400AA0AEB /* funcionesLibro.swift */; };
-		3D94BFDB2C10ACE400AA0AEB /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94BFDA2C10ACE400AA0AEB /* ModelUser.swift */; };
-		3D94BFDD2C10B2F800AA0AEB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94BFDC2C10B2F800AA0AEB /* LoginResponse.swift */; };
-		3D94BFDF2C10BF0B00AA0AEB /* FuncionesPerfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94BFDE2C10BF0B00AA0AEB /* FuncionesPerfil.swift */; };
-		3D94BFE12C10C2B000AA0AEB /* ViewRegistroFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94BFE02C10C2B000AA0AEB /* ViewRegistroFoto.swift */; };
-		3D94BFE32C10C33100AA0AEB /* VistaLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D94BFE22C10C33100AA0AEB /* VistaLogin.swift */; };
 		3D9FBFF92BA0C2AC001BFFDD /* InicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */; };
 		3DAF468F2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */; };
 		3DBC66E32B9F7BF8001A6B90 /* BookieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBC66E22B9F7BF8001A6B90 /* BookieAppApp.swift */; };
@@ -102,6 +97,7 @@
 		3D2FDF412BD6C5490007CA17 /* Mensajes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mensajes.swift; sourceTree = "<group>"; };
 		3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRequest.swift; sourceTree = "<group>"; };
 		3D2FDF462BD6C5550007CA17 /* ModelToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelToken.swift; sourceTree = "<group>"; };
+		3D2FDF472BD6C5550007CA17 /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		3D2FDF482BD6C5550007CA17 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		3D39A2FA2BACAEE400DDD168 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroducirUbicacionView.swift; sourceTree = "<group>"; };
@@ -111,12 +107,6 @@
 		3D86F4682BFBAAE100CD44E3 /* Libro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libro.swift; sourceTree = "<group>"; };
 		3D8826F52B9F7DFD00CF248C /* RegistroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroView.swift; sourceTree = "<group>"; };
 		3D8FF8E32BE1573B00F9D47D /* TerminosUsoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminosUsoView.swift; sourceTree = "<group>"; };
-		3D94BFD62C10AC6400AA0AEB /* funcionesLibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = funcionesLibro.swift; sourceTree = "<group>"; };
-		3D94BFDA2C10ACE400AA0AEB /* ModelUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
-		3D94BFDC2C10B2F800AA0AEB /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = "../../../../../../Downloads/Bookie-IOS-jose/BookieApp/BookieApp/ModelUser/LoginResponse.swift"; sourceTree = "<group>"; };
-		3D94BFDE2C10BF0B00AA0AEB /* FuncionesPerfil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuncionesPerfil.swift; path = "../../../../../../../../Downloads/Bookie-IOS-jose/BookieApp/BookieApp/Vistas/ViewPerfil/VistasPerfil/FuncionesPerfil.swift"; sourceTree = "<group>"; };
-		3D94BFE02C10C2B000AA0AEB /* ViewRegistroFoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewRegistroFoto.swift; path = "../../../../../../../Downloads/Bookie-IOS-jose/BookieApp/BookieApp/Vistas/ViewRegistro/ViewRegistroFoto.swift"; sourceTree = "<group>"; };
-		3D94BFE22C10C33100AA0AEB /* VistaLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VistaLogin.swift; path = "../../../../../../../Downloads/Bookie-IOS-jose/BookieApp/BookieApp/Vistas/ViewLogin/VistaLogin.swift"; sourceTree = "<group>"; };
 		3D96B0E92BC455730030322C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D9FBFF82BA0C2AC001BFFDD /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
 		3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibroBibliotecaView.swift; sourceTree = "<group>"; };
@@ -202,14 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */,
-				3D94BFE02C10C2B000AA0AEB /* ViewRegistroFoto.swift */,
 				3D8826F52B9F7DFD00CF248C /* RegistroView.swift */,
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
-<<<<<<< HEAD
-=======
-				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
-				3D94BFE22C10C33100AA0AEB /* VistaLogin.swift */,
->>>>>>> origin/letizia
 				3D27D38C2BA4C4BC00DDDBBA /* ViewRecuContra.swift */,
 				3D057AFD2BFF9DE0009D8580 /* VistaLogin.swift */,
 				3D057AFF2BFFA216009D8580 /* ViewRegistroFoto.swift */,
@@ -220,11 +204,7 @@
 		3D27D3862BA4BCEF00DDDBBA /* ViewLibro */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
-=======
-				3D94BFD62C10AC6400AA0AEB /* funcionesLibro.swift */,
->>>>>>> origin/letizia
 				3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */,
 				3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */,
 				3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */,
@@ -257,10 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				3D2FDF452BD6C5550007CA17 /* AuthRequest.swift */,
-				3D94BFDA2C10ACE400AA0AEB /* ModelUser.swift */,
 				3D2FDF462BD6C5550007CA17 /* ModelToken.swift */,
+				3D2FDF472BD6C5550007CA17 /* ModelUser.swift */,
 				3D2FDF482BD6C5550007CA17 /* RegisterRequest.swift */,
-				3D94BFDC2C10B2F800AA0AEB /* LoginResponse.swift */,
 			);
 			path = ModelUser;
 			sourceTree = "<group>";
@@ -362,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				3DF524262BA888D600C7D10F /* Service */,
+				3D0916992BA8917A00C88A88 /* Peticiones.swift */,
 			);
 			path = Peticiones;
 			sourceTree = "<group>";
@@ -369,7 +349,6 @@
 		3DF524262BA888D600C7D10F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				3D0916992BA8917A00C88A88 /* Peticiones.swift */,
 				3DF524272BA888F000C7D10F /* BookService.swift */,
 			);
 			path = Service;
@@ -412,7 +391,6 @@
 		3DFBB79E2BD80FEF00719F60 /* VistasPerfil */ = {
 			isa = PBXGroup;
 			children = (
-				3D94BFDE2C10BF0B00AA0AEB /* FuncionesPerfil.swift */,
 				3DFBB79F2BD8102C00719F60 /* ViewReview.swift */,
 				3DFBB7A12BD8103800719F60 /* ViewHistorial.swift */,
 				3DFBB7A32BD8104400719F60 /* ViewMisLibros.swift */,
@@ -507,12 +485,7 @@
 				3DFBB7AA2BD8107400719F60 /* CeldaMisLibros.swift in Sources */,
 				3D27D38B2BA4C17400DDDBBA /* ViewFotoPerfil.swift in Sources */,
 				3DFBB79D2BD80DD300719F60 /* EditarPerfil.swift in Sources */,
-<<<<<<< HEAD
 				3DF1AAF82C10BFFC00EF1647 /* ChatView.swift in Sources */,
-=======
-				3D94BFE12C10C2B000AA0AEB /* ViewRegistroFoto.swift in Sources */,
-				3D94BFE32C10C33100AA0AEB /* VistaLogin.swift in Sources */,
->>>>>>> origin/letizia
 				3DFBB7722BD8081D00719F60 /* CeldaAjenoLibros.swift in Sources */,
 				3DFBB7732BD8081D00719F60 /* CeldaAjenoReview.swift in Sources */,
 				3D86F4692BFBAAE100CD44E3 /* Libro.swift in Sources */,
@@ -536,7 +509,6 @@
 				3DE784E12BA8BBE600686105 /* MainViewBuzon.swift in Sources */,
 				3DFBB7A22BD8103800719F60 /* ViewHistorial.swift in Sources */,
 				3D2FDF4A2BD6C5550007CA17 /* AuthRequest.swift in Sources */,
-				3D94BFDD2C10B2F800AA0AEB /* LoginResponse.swift in Sources */,
 				3DFBB7AE2BD81BC200719F60 /* ModificarLibroView.swift in Sources */,
 				3D1CE9312BA3496600844484 /* CeldaBibloteca.swift in Sources */,
 				3D09169C2BA8964700C88A88 /* FuncionLogin.swift in Sources */,
@@ -544,7 +516,6 @@
 				3D2FDF4D2BD6C5550007CA17 /* RegisterRequest.swift in Sources */,
 				3DF1AAF42C10BFA900EF1647 /* Message.swift in Sources */,
 				3DBC66E52B9F7BF8001A6B90 /* ContentView.swift in Sources */,
-				3D94BFDF2C10BF0B00AA0AEB /* FuncionesPerfil.swift in Sources */,
 				3DDD96122B9F85A400ABEDE2 /* VistaCeldaLibro.swift in Sources */,
 				3D1AEA0D2C08DCBF00C458C3 /* ListaLibrosView.swift in Sources */,
 				3DFBB7AC2BD81B9400719F60 /* LibroPropioDetallesView.swift in Sources */,
@@ -557,7 +528,7 @@
 				3DE784D92BA89EB400686105 /* MensajesCeldaView.swift in Sources */,
 				3DFBB7762BD8081D00719F60 /* ViewAjenoReview.swift in Sources */,
 				3DFBB7752BD8081D00719F60 /* ViewAjenoLibros.swift in Sources */,
-				3D94BFDB2C10ACE400AA0AEB /* ModelUser.swift in Sources */,
+				3D2FDF4C2BD6C5550007CA17 /* ModelUser.swift in Sources */,
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
 				3DFBB77F2BD80A3E00719F60 /* PerfilView.swift in Sources */,
 				3D86F4652BFB9F8A00CD44E3 /* FiltroLibrosView.swift in Sources */,
@@ -568,11 +539,7 @@
 				3DE784DB2BA89ECF00686105 /* NotificacionesCeldaView.swift in Sources */,
 				3DDD96102B9F82B300ABEDE2 /* ListaLibros.swift in Sources */,
 				3D09169A2BA8917A00C88A88 /* Peticiones.swift in Sources */,
-<<<<<<< HEAD
 				3D057AFE2BFF9DE0009D8580 /* VistaLogin.swift in Sources */,
-=======
-				3D94BFD72C10AC6400AA0AEB /* funcionesLibro.swift in Sources */,
->>>>>>> origin/letizia
 				3D66DC802B9F7EF400948047 /* IntroducirUbicacionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

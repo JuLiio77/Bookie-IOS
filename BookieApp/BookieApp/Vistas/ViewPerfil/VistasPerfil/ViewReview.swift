@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct ViewReview: View {
-    
     var body: some View {
-        
-        VStack {
+        VStack{
             
-            ScrollView(.vertical) {
+            ScrollView(.vertical){
                 
                 CeldaReview()
                 CeldaReview()

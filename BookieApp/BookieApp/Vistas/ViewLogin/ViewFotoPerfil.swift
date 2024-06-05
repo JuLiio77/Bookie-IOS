@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ViewFotoPerfil: View {
-    
     var body: some View {
+        
+        
         
         Circle()
             .foregroundStyle(.gray)

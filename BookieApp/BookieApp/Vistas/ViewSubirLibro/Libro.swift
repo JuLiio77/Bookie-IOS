@@ -9,10 +9,6 @@
 import Foundation
 
 struct Libro: Identifiable, Codable {
-<<<<<<< HEAD
-=======
-    
->>>>>>> origin/letizia
     var id: Int
     var titulo: String
     var autor: String
@@ -24,13 +20,6 @@ struct Libro: Identifiable, Codable {
     var prestado: Bool
     var filtro: [Int]
     var usuario: ModelUser2
-<<<<<<< HEAD
-=======
-}
-
-struct ModelUser2: Identifiable, Codable {
-    var id: Int
->>>>>>> origin/letizia
 }
 
 struct ModelUser2: Identifiable, Codable {

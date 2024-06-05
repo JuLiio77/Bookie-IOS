@@ -39,6 +39,8 @@ struct ViewRecuContra: View {
             .cornerRadius(30)
             .padding([.leading, .trailing], 20)
         
+        
+        
         // Contraseña
         Label("Contraseña", systemImage: "")
             .labelStyle(.titleOnly)
@@ -46,7 +48,6 @@ struct ViewRecuContra: View {
             .padding(.trailing, 240)
         
         ZStack(alignment: .trailingFirstTextBaseline) {
-            
             if mostarContrasenia {
                 TextField("contraseña", text: $contra)
                     .padding()
@@ -114,7 +115,9 @@ struct ViewRecuContra: View {
                 .cornerRadius(20)
                 .padding([.leading, .trailing], 10)
                 .padding(.top, 75)
+            
         })
+            
     }
 }
 

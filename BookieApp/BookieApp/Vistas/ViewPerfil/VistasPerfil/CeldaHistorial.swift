@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct CeldaHistorial: View {
-    
     @State var fecha: Date = Date()
     
     var body: some View {
         
         ZStack {
-            
             Image("")
                 .frame(width: 360, height: 130)
                 .background(Color.button.opacity(0.3))
                 .cornerRadius(20)
             
+            
             HStack {
-                
                 Image(systemName: "person.circle.fill")
                     .resizable()
                     .frame(width: 35, height: 35)
@@ -35,11 +33,11 @@ struct CeldaHistorial: View {
                 
                 Text("\(fecha.formatted(date: .numeric, time: .omitted))")
                     .padding(.leading, 20)
+        
             }
             .padding(.bottom, 60)
             
             VStack {
-                
                 Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
             }
             .frame(width: 345, height: 50)
@@ -48,7 +46,6 @@ struct CeldaHistorial: View {
         }
     }
 }
-
 #Preview {
     CeldaHistorial()
 }

@@ -50,6 +50,7 @@ struct BibliotecaView: View {
     }
 }
 
+
 #Preview {
     BibliotecaView()
         .environmentObject(LibrosFavoritos())

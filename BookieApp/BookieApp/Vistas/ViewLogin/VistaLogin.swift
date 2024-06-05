@@ -9,20 +9,15 @@ import SwiftUI
 
 struct VistaLogin: View {
     
-<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewLogin/VistaLogin.swift
     @EnvironmentObject var datos: FuncionLogin
     @State var toggle: Bool
     @State var mostrarContrasenia: Bool
     @State var nextView: Bool
     @State var modelUser: ModelUser
-=======
-    @StateObject private var datos = FuncionLogin()
->>>>>>> origin/letizia:BookieApp/BookieApp/Vistas/ViewLogin/ContentView.swift
     
     var body: some View {
 
         
-<<<<<<< HEAD:BookieApp/BookieApp/Vistas/ViewLogin/VistaLogin.swift
         NavigationStack{
             
             
@@ -113,18 +108,6 @@ struct VistaLogin: View {
             
         }
         //.tint(.brown)
-=======
-        HStack {
-            
-            var token = !datos.tokeen.isEmpty
-            
-            if token {
-                TabarView()
-            } else {
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
-            }
-        }        
->>>>>>> origin/letizia:BookieApp/BookieApp/Vistas/ViewLogin/ContentView.swift
     }
 }
 

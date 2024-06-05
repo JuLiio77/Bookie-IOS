@@ -16,7 +16,6 @@ struct PerfilView: View {
     @State var isPresented: Bool = false
     let modelUser: ModelUser
     
-    let modelUser: ModelUser
     
     var body: some View {
         
@@ -64,33 +63,11 @@ struct PerfilView: View {
             HStack {
                 
                 VStack {
-<<<<<<< HEAD
                     Image(systemName: "eye.circle.fill")
                         .resizable()
                         .frame(width: 40, height: 40)
                     Text("Misterio")
                         .font(.caption)
-=======
-                    Picker("", selection: $seleccionado) {
-                        Text("Mis libros").tag(0)
-                        Text("Reseñas").tag(1)
-                        Text("Historial").tag(2)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
-                    
-                    Spacer()
-                    
-                    if seleccionado == 0 {
-                        ViewMisLibros()
-                    } else if seleccionado == 1 {
-                        ViewReview()
-                    } else if seleccionado == 2 {
-                        ViewHistorial()
-                    }
-                    
-                    Spacer()
->>>>>>> origin/letizia
                 }
                 .padding(.horizontal, 10)
                 
@@ -132,7 +109,6 @@ struct PerfilView: View {
                 
                 Spacer()
                 
-<<<<<<< HEAD
                 if seleccionado == 0 {
                    ViewMisLibros()
                 } else if seleccionado == 1 {
@@ -149,14 +125,6 @@ struct PerfilView: View {
                 .navigationTitle("\(modelUser.nombre)")
                 .navigationBarTitleDisplayMode(.inline)
 
-=======
-                    .navigationTitle("\(modelUser.nombre)")
-                    .navigationBarTitleDisplayMode(.inline)
-            }
-            .onAppear {
-                funcionesPerfil.listaLibros()
-            }
->>>>>>> origin/letizia
         }
         .onAppear{
             funcionesPerfil.listaLibros()
@@ -166,11 +134,6 @@ struct PerfilView: View {
 }
 
 #Preview {
-<<<<<<< HEAD
     PerfilView(modelUser: ModelUser(id: 2))
     
-=======
-    PerfilView(modelUser: ModelUser())
-        .environmentObject(LibrosFavoritos())
->>>>>>> origin/letizia
 }

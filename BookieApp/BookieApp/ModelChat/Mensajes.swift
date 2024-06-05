@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Mensajes {
+struct Mensajes{
     
     let id: Int
     var texto: String

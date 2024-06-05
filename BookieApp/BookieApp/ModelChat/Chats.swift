@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Chats {
+struct Chats{
     
     let id: Int
     var usuarioEmisor: ModelUser
