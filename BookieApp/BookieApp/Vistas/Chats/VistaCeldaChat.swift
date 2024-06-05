@@ -15,25 +15,26 @@ struct VistaCeldaChat: View {
     var body: some View {
         
         ZStack {
+            
+            Image("")
+                .frame(width: 360, height: 130)
+                .background(Color.button.opacity(0.3))
+                .cornerRadius(20)
+            
+            VStack {
                 
-                Image("")
-                    .frame(width: 360, height: 130)
-                    .background(Color.button.opacity(0.3))
-                    .cornerRadius(20)
-
-                VStack {
-                    Text(message)
-                        .padding([.leading ,.trailing], 20)
-                        .lineLimit(2, reservesSpace: false)
-                    
-                    Text("\(fecha.formatted(date: .omitted, time: .shortened))")
+                Text(message)
+                    .padding([.leading ,.trailing], 20)
+                    .lineLimit(2, reservesSpace: false)
+                
+                Text("\(fecha.formatted(date: .omitted, time: .shortened))")
                     .padding(.trailing, 290)
-                    .padding(.top, 20)                    
-                }
-                .frame(width: 345, height: 50)
-                .padding(.top, 35)
-                .font(.subheadline)
-        }        
+                    .padding(.top, 20)
+            }
+            .frame(width: 345, height: 50)
+            .padding(.top, 35)
+            .font(.subheadline)
+        }
     }
 }
 

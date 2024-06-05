@@ -10,6 +10,11 @@ import PhotosUI
 
 struct SubirLibroView: View {
     
+    @ObservedObject var userData: FuncionLogin
+    @ObservedObject private var idUser = ModelUser()
+
+    var peticiones = Peticiones()
+
     @State private var titulo = ""
     @State private var autor = ""
     @State private var numeroPaginas = ""
@@ -28,11 +33,12 @@ struct SubirLibroView: View {
     @State private var seleccionarimg: UIImage? = nil
     @State private var isimgpickerselecct = false
     
+    
     var body: some View {
         
         NavigationStack {
             
-            ScrollView{
+            ScrollView {
                 
                 Button(action: {
                     isimgpickerselecct.toggle()
@@ -249,7 +255,7 @@ struct SubirLibroView: View {
             return
         }
         
-        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
+        let libro = Libro(id: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2(id: 1))
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
@@ -280,6 +286,8 @@ struct SubirLibroView: View {
                 return
             }
             
+            print("Codigo de estado HTTP: \(httpResponse.statusCode)")
+            
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
                     self.alertMessage = "Error en el servidor: \(httpResponse.statusCode)"
@@ -297,5 +305,5 @@ struct SubirLibroView: View {
 }
 
 #Preview {
-    SubirLibroView()
+    SubirLibroView(userData: FuncionLogin())
 }

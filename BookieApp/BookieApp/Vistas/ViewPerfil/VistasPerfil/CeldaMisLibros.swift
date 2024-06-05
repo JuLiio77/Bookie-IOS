@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct CeldaMisLibros: View {
+    
+    @StateObject var funcioneslibro = FuncionesPerfil()
+    
     var body: some View {
-        VStack{
+        
+        VStack {
+            
+            //List($funcioneslibro.libros, id: \.libroId) { libro in
             
             Image(systemName: "")
                 .frame(width: 166, height: 196)
@@ -24,9 +30,10 @@ struct CeldaMisLibros: View {
             //.multilineTextAlignment(.trailing)
         }
         .padding([.top, .bottom], 20)
-    
     }
 }
+
+
 #Preview {
     CeldaMisLibros()
 }

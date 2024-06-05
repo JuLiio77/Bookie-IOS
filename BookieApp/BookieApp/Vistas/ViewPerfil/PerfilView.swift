@@ -10,6 +10,7 @@ import SwiftUI
 struct PerfilView: View {
     
     @StateObject var userData = FuncionLogin()
+    @StateObject private var funcionesPerfil = FuncionesPerfil()
     
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
@@ -25,6 +26,7 @@ struct PerfilView: View {
     @State var isPresentedfiltrodos: Bool = false
     @State var isPresentedfiltrotres: Bool = false
     
+    let modelUser: ModelUser
     
     var body: some View {
         
@@ -121,7 +123,6 @@ struct PerfilView: View {
                         ViewReview()
                     } else if seleccionado == 2 {
                         ViewHistorial()
-                        
                     }
                     
                     Spacer()
@@ -129,15 +130,17 @@ struct PerfilView: View {
                 
                 Spacer()
                 
-                    .navigationTitle("\(userData.name)")
+                    .navigationTitle("\(modelUser.nombre)")
                     .navigationBarTitleDisplayMode(.inline)
+            }
+            .onAppear {
+                funcionesPerfil.listaLibros()
             }
         }
     }
 }
 
 #Preview {
-    PerfilView()
+    PerfilView(modelUser: ModelUser())
         .environmentObject(LibrosFavoritos())
-    
 }

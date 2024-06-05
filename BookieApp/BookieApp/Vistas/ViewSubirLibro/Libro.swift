@@ -7,27 +7,21 @@
 
 import Foundation
 
-import Foundation
-
-class Libro: Codable, ObservableObject {
-    var libroId: Int? = 0
-    var titulo: String? = ""
-    var autor: String? = ""
-    var numeroPaginas: Int? = 0
-    var sinopsis: String? = ""
-    var editorial: String? = ""
-    var genero: String? = ""
-    var foto: String? = ""
-    var prestado: Bool? = false
-    var filtro: [Int]? = [0]
-    var usuario: ModelUser?
-    var userId: Int? = 0
+struct Libro: Identifiable, Codable {
     
-    init(){}
+    var id: Int
+    var titulo: String
+    var autor: String
+    var numeroPaginas: Int
+    var sinopsis: String
+    var editorial: String
+    var genero: String
+    var foto: String
+    var prestado: Bool
+    var filtro: [Int]
+    var usuario: ModelUser2
 }
 
-
-//struct ModelUser2: Identifiable, Codable {
-//    var id: Int
-//}
-
+struct ModelUser2: Identifiable, Codable {
+    var id: Int
+}

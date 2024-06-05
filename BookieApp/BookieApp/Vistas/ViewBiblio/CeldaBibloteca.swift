@@ -57,7 +57,6 @@ struct CeldaBibloteca: View {
                         .font(.caption)
                 }
                 
-                
                 VStack {
                     
                     NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: librosFavoritos.bookModelFavoritos(for: book))) {
