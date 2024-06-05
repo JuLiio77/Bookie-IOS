@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class FuncionLogin: ObservableObject{
+class FuncionLogin: ObservableObject {
     
     //static let shared = FuncionLogin()
     //var taber = TabarView()

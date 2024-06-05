@@ -8,8 +8,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var datos = FuncionLogin()
-    
+    @StateObject private var datos = FuncionLogin()    
+
     var body: some View {
         
         HStack {
@@ -19,7 +19,7 @@ struct ContentView: View {
             if token {
                 TabarView()
             } else {
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+                VistaLogin(datos: datos, toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
             }
         }        
     }
@@ -27,4 +27,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(FuncionLogin())
 }
