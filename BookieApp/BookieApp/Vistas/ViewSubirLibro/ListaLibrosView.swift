@@ -34,7 +34,7 @@ func listaLibrosUser(_ id: Int){
   var request = URLRequest(url: url)
   request.httpMethod = "GET"
   request.addValue("application/json", forHTTPHeaderField: "Content-type")
-    request.setValue("Bearer \(userToken ?? "")", forHTTPHeaderField: "Authorization")
+//    request.setValue("Bearer \(userToken ?? "")", forHTTPHeaderField: "Authorization")
 
   let session = URLSession.shared
   session.dataTask(with: request){ (data, response, error) in

@@ -148,7 +148,7 @@ struct DetalleLibro: View {
                     
                     HStack{
                         
-                        NavigationLink("Intercambio", destination: MensajesView())
+                        NavigationLink("Intercambio", destination: ChatView())
                             .padding(15)
                             .padding(.horizontal, 20)
                             .background(.brown)
@@ -165,14 +165,16 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            .navigationBarBackButtonHidden(true)
+                         
                     }
                     
                     Spacer()
                 }
             }
+           
         }
         //.tint(.brown)
+        .navigationBarBackButtonHidden(false)
     }
 }
 
