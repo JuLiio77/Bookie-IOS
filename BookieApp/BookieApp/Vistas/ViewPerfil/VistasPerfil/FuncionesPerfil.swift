@@ -9,6 +9,7 @@ import Foundation
 
 class FuncionesPerfil: ObservableObject{
     
+
     @Published var libros: [Libro] = []
     
     //Funciones para traer los libros

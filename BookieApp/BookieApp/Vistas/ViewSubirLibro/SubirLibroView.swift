@@ -146,7 +146,7 @@ struct SubirLibroView: View {
         
         print("Token de autenticación: \(authToken)")
         
-        let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: idUser, userId: idUser.id)
+        let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: Int(numeroPaginas) ?? 0, genero: genero, foto: "", sinopsis: sinopsis, editorial: editorial, prestado: false, filtro: [0], usuario: ModelUser(), userId: idUser.id, libroId: 0)
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"

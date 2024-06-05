@@ -10,7 +10,7 @@ import SwiftUI
 struct PerfilView: View {
 
     @StateObject var userData = FuncionLogin()
-    @StateObject private var funcionesPerfil = FuncionesPerfil()
+    var funcionesPerfil = FuncionesLibro()
     
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
@@ -45,7 +45,7 @@ struct PerfilView: View {
             
             HStack {
                 
-                Image(systemName: "person.circle.fill")
+                Image("filtrofantasia")
                     .resizable()
                     .frame(width: 120, height: 120)
                 
@@ -63,20 +63,20 @@ struct PerfilView: View {
             HStack {
                 
                 VStack {
-                    Image(systemName: "eye.circle.fill")
+                    Image("filtrohistoria")
                         .resizable()
                         .frame(width: 40, height: 40)
-                    Text("Misterio")
+                    Text("Historia")
                         .font(.caption)
                 }
                 .padding(.horizontal, 10)
                 
                 
                 VStack {
-                    Image(systemName: "leaf.circle.fill")
+                    Image("filtropoesia")
                         .resizable()
                         .frame(width: 40, height: 40)
-                    Text("Aventura")
+                    Text("Poesia")
                         .font(.caption)
 
                 }
@@ -84,10 +84,10 @@ struct PerfilView: View {
                 .padding(.horizontal, 10)
                 
                 VStack {
-                    Image(systemName: "book.circle.fill")
+                    Image("filtroterror")
                         .resizable()
                         .frame(width: 40, height: 40)
-                    Text("Filosofía")
+                    Text("Terror")
                         .font(.caption)
 
                 }
@@ -127,7 +127,7 @@ struct PerfilView: View {
 
         }
         .onAppear{
-            funcionesPerfil.listaLibros()
+            funcionesPerfil.listaLibrosUser(modelUser.id)
         }
         
     }

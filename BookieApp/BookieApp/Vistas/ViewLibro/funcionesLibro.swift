@@ -11,20 +11,21 @@ struct FuncionesLibro{
     
     var token = UserDefaults.standard.string(forKey: "token")
     var userId = ModelUser()
-    var libro = Libro()
     var arrayLibros: [Libro] = []
     
-    mutating func listaLibrosUser(_ id: Int){
+    func listaLibrosUser(_ id: Int){
         
-        guard let url = URL(string: "http://localhost:8080/api/libro/usuario/\(userId.id)") else {return}
+        guard let url = URL(string: "http://localhost:8080/api/libro/usuario/\(id)") else {return}
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-type")
+        
         request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
   
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+           
             let decoder = JSONDecoder()
             if let error = error {
                 print("Error al traer el listado \(error)")
@@ -39,12 +40,16 @@ struct FuncionesLibro{
             do {
                 let datosLibro = try decoder.decode([Libro].self, from: data)
                 
-                arrayLibros.append(contentsOf: datosLibro)
+                print(datosLibro)
    
             } catch {
                 print("Error al decodificar los datos: \(error)")
             }
         }.resume()
+    }
+    
+}
+
 //        URLSession.shared.dataTask(with: request){ data, response, error in
 //            let decoder = JSONDecoder()
 //            
@@ -85,7 +90,4 @@ struct FuncionesLibro{
 //            }
             
             
-        }
-        
-    }
 

@@ -9,21 +9,21 @@ import SwiftUI
 
 struct CeldaMisLibros: View {
     
-    @StateObject var funcioneslibro = FuncionesPerfil()
+    var funcioneslibro = FuncionesLibro()
     
     var body: some View {
         VStack{
             
             
-            List($funcioneslibro.libros, id: \.libroId){ libro in
+            List(funcioneslibro.arrayLibros, id: \.libroId){ libro in
                 
-                Image("imagen del libro")
+                Image("historia")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
                 
-                Text("\(libro.titulo)")
+                Text("\(libro.titulo ?? "Titulo del libro")")
                     .padding(.trailing, 10)
                     .font(.subheadline)
                     .foregroundColor(.black)
