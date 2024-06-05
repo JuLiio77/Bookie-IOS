@@ -15,7 +15,6 @@ struct RegistroView: View {
     @State var mostrarContrasenia: Bool = false
     @State var mostrarContrasenia1: Bool = false
     
-    
     var body: some View {
         
         VStack {
@@ -44,6 +43,7 @@ struct RegistroView: View {
             
             
             ZStack(alignment: .trailingFirstTextBaseline) {
+                
                 if mostrarContrasenia {
                     TextField("Contraseña", text: $userData.password)
                         .padding()
@@ -72,6 +72,7 @@ struct RegistroView: View {
             }
             
             ZStack(alignment: .trailingFirstTextBaseline) {
+                
                 if mostrarContrasenia1 {
                     TextField("Contraseña", text: $userData.repassword)
                         .padding()

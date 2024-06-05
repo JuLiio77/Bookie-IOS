@@ -8,39 +8,32 @@
 import SwiftUI
 
 struct ViewHistorial: View {
- 
-
-        var body: some View {
+    
+    var body: some View {
+        
+        VStack {
             
-            VStack{
+            ScrollView(.vertical) {
                 
-                ScrollView(.vertical){
-
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-             
-                    
-                    
-                }
-                           
-                Spacer()
-                
-               
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
+                CeldaHistorial()
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarHidden(false)
+            
+            Spacer()
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(false)
     }
-
+}
 
 #Preview {
     ViewHistorial()

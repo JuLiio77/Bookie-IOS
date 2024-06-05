@@ -34,7 +34,8 @@ struct BookService {
         .eraseToAnyPublisher()
     }
 
-    // Estructura para manejar la respuesta de la API que incluye los libros
+    // estructura para manejar la respuesta de la API que incluye los libros
+    
     struct BooksResponse: Decodable {
         let items: [Book]
     }

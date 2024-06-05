@@ -12,7 +12,10 @@ struct CeldaMisLibros: View {
     @StateObject var funcioneslibro = FuncionesPerfil()
     
     var body: some View {
-        VStack{
+        
+        VStack {
+            
+            //List($funcioneslibro.libros, id: \.libroId) { libro in
             
             
             List(funcioneslibro.libros, id: \.id){ libro in
@@ -31,8 +34,14 @@ struct CeldaMisLibros: View {
             }
             .padding([.top, .bottom], 20)
         }
+<<<<<<< HEAD
+=======
+        .padding([.top, .bottom], 20)
+>>>>>>> origin/letizia
     }
 }
+
+
 #Preview {
     CeldaMisLibros()
 }

@@ -3,8 +3,15 @@ import SwiftUI
 struct SubirLibroView: View {
     
     @ObservedObject var userData: FuncionLogin
+<<<<<<< HEAD
     var peticiones = Peticiones()
     
+=======
+    @ObservedObject private var idUser = ModelUser()
+
+    var peticiones = Peticiones()
+
+>>>>>>> origin/letizia
     @State private var titulo = ""
     @State private var autor = ""
     @State private var numeroPaginas = ""
@@ -20,8 +27,15 @@ struct SubirLibroView: View {
     
     
     
+    
     var body: some View {
+<<<<<<< HEAD
         NavigationView {
+=======
+        
+        NavigationStack {
+            
+>>>>>>> origin/letizia
             ScrollView {
                 
                 Image(systemName: "")
@@ -143,8 +157,11 @@ struct SubirLibroView: View {
             return
         }
         
+<<<<<<< HEAD
         print("Token de autenticación: \(authToken)")
         
+=======
+>>>>>>> origin/letizia
         let libro = Libro(id: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2(id: 1))
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
@@ -176,7 +193,11 @@ struct SubirLibroView: View {
                 return
             }
             
+<<<<<<< HEAD
             print("Código de estado HTTP: \(httpResponse.statusCode)")
+=======
+            print("Codigo de estado HTTP: \(httpResponse.statusCode)")
+>>>>>>> origin/letizia
             
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {

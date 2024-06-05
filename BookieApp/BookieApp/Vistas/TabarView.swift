@@ -12,7 +12,11 @@ struct TabarView: View {
     var body: some View {
         
         TabView {
+<<<<<<< HEAD
             InicioView(modelUser: ModelUser())
+=======
+            InicioView(funciones: UserService(), modelUser: ModelUser())
+>>>>>>> origin/letizia
                 .tabItem {
                     Label("Inicio", systemImage: "house")
                 }
@@ -30,7 +34,12 @@ struct TabarView: View {
                 .tabItem {
                     Label("Buzón", systemImage: "message")
                 }
+<<<<<<< HEAD
         
+=======
+            
+            
+>>>>>>> origin/letizia
             PerfilView(modelUser: ModelUser())
                 .tabItem {
                     Label("Perfil", systemImage: "person.fill")

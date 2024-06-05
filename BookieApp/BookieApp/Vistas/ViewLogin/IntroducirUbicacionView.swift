@@ -8,32 +8,36 @@
 import SwiftUI
 
 struct IntroducirUbicacionView: View {
-        
+    
     @State var nombre: String = ""
     @State var repetirContrasenia: String = ""
     @State var correo: String = ""
     @State var contrasenia: String = ""
+<<<<<<< HEAD
+=======
+    
+>>>>>>> origin/letizia
     @EnvironmentObject var datos: FuncionLogin
     
     @State private var selecciProvincia = 0
-        
+    
     let provincias = ["Álava", "Albacete", "Alicante", "Almería", "Asturias", "Ávila", "Badajoz", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "Cuenca", "Gerona", "Granada", "Guadalajara", "Guipúzcoa", "Huelva", "Huesca", "Islas Baleares", "Jaén", "La Coruña", "La Rioja", "Las Palmas", "León", "Lérida", "Lugo", "Madrid", "Málaga", "Melilla", "Murcia", "Navarra", "Orense", "Palencia", "Pontevedra", "Salamanca", "Santa Cruz de Tenerife", "Segovia", "Sevilla", "Soria", "Tarragona", "Teruel", "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora", "Zaragoza"]
-
-
+    
     var body: some View {
-        VStack{
+        
+        VStack {
+            
             Text("Introducir ubicación")
                 .font(.title)
                 .bold()
                 .padding()
             
-            
             /*Picker("Provincia", selection: $selecciProvincia) {
-                ForEach(0 ..< provincias.count) { index in
-                    Text(self.provincias[index]).tag(index)
-                }
-            }
-            .padding()*/
+             ForEach(0 ..< provincias.count) { index in
+             Text(self.provincias[index]).tag(index)
+             }
+             }
+             .padding()*/
             
             TextField("Provincia", text: $datos.provincia)
                 .bold()
@@ -69,15 +73,21 @@ struct IntroducirUbicacionView: View {
             .cornerRadius(20)
             .padding([.leading, .trailing], 10)
             .padding(.top, 75)
+<<<<<<< HEAD
                        
      
             Spacer()
             
             }
             .padding()
+=======
+            
+            Spacer()
+>>>>>>> origin/letizia
         }
-
+        .padding()
     }
+}
 
 #Preview {
     IntroducirUbicacionView()

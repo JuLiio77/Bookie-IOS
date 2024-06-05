@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct BookieAppApp: App {
+    
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
+<<<<<<< HEAD
                 .environmentObject(FuncionLogin())
+=======
+>>>>>>> origin/letizia
                 .environmentObject(LibrosFavoritos())
+                .environmentObject(FuncionLogin())
         }
     }
 }
