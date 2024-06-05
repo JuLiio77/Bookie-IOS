@@ -10,7 +10,7 @@ import SwiftUI
 struct DetalleLibro: View {
     
     @EnvironmentObject var librosFavoritos: LibrosFavoritos
-    @State var datos = ModelUser()
+    
     var book: Book
     @ObservedObject var bookmodelFav: BookModelFavoritos
     
@@ -29,13 +29,13 @@ struct DetalleLibro: View {
                 VStack{
                     
                     NavigationLink(destination: ViewPerfilAjeno()) {
-                        Label(datos.nombre ?? "nombre", systemImage: "person.circle.fill")
+                      Label( "Iñigo", systemImage: "person.circle.fill")
                            .padding(.leading, 250)
                            .padding([.top, .bottom], 15)
                            .foregroundColor(.black)
                    }
                     
-                    Image("misterio")
+                    Image(systemName: "globe")
                         .frame(width: 166, height: 196)
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
@@ -165,14 +165,13 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            
+                            .navigationBarBackButtonHidden(true)
                     }
                     
                     Spacer()
                 }
             }
         }
-        .navigationBarBackButtonHidden(false)
         //.tint(.brown)
     }
 }

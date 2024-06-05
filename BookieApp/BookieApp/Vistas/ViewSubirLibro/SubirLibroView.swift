@@ -10,13 +10,6 @@ import PhotosUI
 
 struct SubirLibroView: View {
     
-<<<<<<< HEAD
-=======
-    @ObservedObject var userData: FuncionLogin
-    var peticiones = Peticiones()
-    @ObservedObject private var idUser = ModelUser()
-    
->>>>>>> jose
     @State private var titulo = ""
     @State private var autor = ""
     @State private var numeroPaginas = ""
@@ -256,19 +249,14 @@ struct SubirLibroView: View {
             return
         }
         
-<<<<<<< HEAD
         let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
-=======
-        print("Token de autenticación: \(authToken)")
-        
-        let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: idUser, userId: idUser.id)
->>>>>>> jose
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
             self.showingAlert = true
             return
         }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

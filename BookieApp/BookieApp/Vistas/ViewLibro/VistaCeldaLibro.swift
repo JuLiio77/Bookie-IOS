@@ -9,23 +9,17 @@ import SwiftUI
 
 struct VistaCeldaLibro: View {
     
-<<<<<<< HEAD
-=======
-    var funcionLibro = FuncionesLibro()
-    
->>>>>>> jose
     var body: some View {
-        
-        
+
             VStack{
                 
-                Image("misterio")
+                Image(systemName: "globe")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
                 
-                Text(f)
+                Text("Harry Potter y la piedra filosofal")
                     .frame(width: 165)
                     //.padding(.trailing, 10)
                     .font(.subheadline)
