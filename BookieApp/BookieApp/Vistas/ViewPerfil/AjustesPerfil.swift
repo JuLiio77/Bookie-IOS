@@ -8,21 +8,66 @@
 import SwiftUI
 
 struct AjustesPerfil: View {
-        
+    
     @Binding var isPresented: Bool
-    
     @State private var showDeleteAlert = false
-    @State private var showLogoutAlert = false
-    
-    @State private var mostrarSheet = false
-    @State private var categoriaseleccionada = [Categorias]()
-            
+       @State private var showLogoutAlert = false
+
     var body: some View {
-        
-        ZStack {
-            
+        ZStack{
             NavigationView {
+               
+                       List {
+                           Section{
+                               NavigationLink(destination: EditarPerfil()) {
+                                   Text("Editar Perfil")
+                               }
+                               NavigationLink(destination: ListaLibrosFavoritos()) {
+                                   Text("Favoritos")
+                               }
+                               NavigationLink(destination: TerminosUsoView()) {
+                                   Text("Ir a terminos de uso")
+                               }
+                           }
+                           
+                           Section{
+                              Button(action: {
+                                  self.showDeleteAlert = true
+                              }) {
+                                  Text("Eliminar Cuenta")
+                              }
+                              .alert(isPresented: $showDeleteAlert) {
+                                  Alert(
+                                      title: Text("Alert"),
+                                      message: Text("¿Estás seguro de que quieres eliminar tu cuenta?"),
+                                      primaryButton: .destructive(Text("Eliminar")) {
+                                          // Aquí va el código para eliminar la cuenta
+                                      },
+                                      secondaryButton: .cancel()
+                                  )
+                              }
+
+                              Button(action: {
+                                  self.showLogoutAlert = true
+                              }) {
+                                  Text("Cerrar Sesión")
+                                      .foregroundStyle(Color.red)
+                              }
+                              .alert(isPresented: $showLogoutAlert) {
+                                  Alert(
+                                      title: Text("Alert"),
+                                      message: Text("¿Estás seguro de que quieres cerrar sesión?"),
+                                      primaryButton: .destructive(Text("Cerrar Sesión")) {
+                                          // Aquí va el código para cerrar sesión
+                                      },
+                                      secondaryButton: .cancel()
+                                  )
+                              }
+                          }
+                         
+                       }
                 
+<<<<<<< HEAD
                 List {
                     
                     Section {
@@ -105,13 +150,21 @@ struct AjustesPerfil: View {
                 }
                 .navigationBarTitle("Ajustes")
                 .navigationBarTitleDisplayMode(.inline)
+=======
+                       .navigationBarTitle("Ajustes")
+                       .navigationBarTitleDisplayMode(.inline)
+>>>>>>> julio
             }
         }
     }
 }
-
 #Preview {
     AjustesPerfil(isPresented: .constant(true))
         .environmentObject(LibrosFavoritos())
+<<<<<<< HEAD
         .environmentObject(FuncionLogin())
+=======
+
+    
+>>>>>>> julio
 }

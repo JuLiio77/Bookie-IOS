@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ReviewView: View {
     
-    @State private var reviewtext: String = ""
+    @State private var reviewText: String = ""
     
     @State private var rating: Int = 0
-    @State var mostraralerta = false
+    @State var showingAlert = false
     
     var body: some View {
         
@@ -20,10 +20,10 @@ struct ReviewView: View {
             
             VStack {
                 
-                TextEditor(text: $reviewtext)
+                TextEditor(text: $reviewText)
                     .frame(height: 400)
                     .padding()
-                    .background(Color.color .opacity(0.6))
+                    .background(Color.color1 .opacity(0.6))
                     .cornerRadius(20)
                     .scrollContentBackground(.hidden)
                 
@@ -42,9 +42,9 @@ struct ReviewView: View {
                 }
                 
                 Button("Continuar") {
-                    self.mostraralerta = true
+                    self.showingAlert = true
                 }
-                .alert(isPresented: $mostraralerta) {
+                .alert(isPresented: $showingAlert) {
                     
                     Alert(
                         title: Text("Quieres publicar la reseña"),

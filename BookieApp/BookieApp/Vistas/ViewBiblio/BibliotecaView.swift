@@ -10,6 +10,7 @@ import SwiftUI
 struct BibliotecaView: View {
     
     @StateObject var bookModel = BookModel()
+    
     @State var search = ""
     
     var body: some View {
@@ -48,6 +49,7 @@ struct BibliotecaView: View {
         }
     }
 }
+
 
 #Preview {
     BibliotecaView()

@@ -16,7 +16,6 @@ struct ModificarLibroView: View {
     @State var genero = ""
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
     let columnas = [
         GridItem(.flexible(minimum: 60, maximum: 100), spacing: 60),
         GridItem(.adaptive(minimum: 60, maximum: 100), spacing: 60),
@@ -25,11 +24,12 @@ struct ModificarLibroView: View {
         
     var body: some View {
         
-        NavigationStack {
+        NavigationStack{
             
-            ScrollView() {
+            ScrollView(){
                 
-                VStack {
+                VStack{
+                   
                     
                     Image(systemName: "")
                         .frame(width: 166, height: 196)
@@ -37,109 +37,115 @@ struct ModificarLibroView: View {
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
                         .padding(.top, 30)
+                  
                     
+                
                     Label("Título", systemImage: "")
-                        .labelStyle(.titleOnly)
-                        .padding(.top, 60)
-                        .padding(.trailing, 280)
+                      .labelStyle(.titleOnly)
+                      .padding(.top, 60)
+                      .padding(.trailing, 280)
+                  
+                  TextField("Título", text: $titulo)
+                      .bold()
+                      .padding()
+                      .background(Color.color1)
+                      .cornerRadius(30)
+                      .padding([.leading, .trailing], 20)
+                  
+                  Label("Autor", systemImage: "")
+                      .labelStyle(.titleOnly)
+                      .padding(.top, 30)
+                      .padding(.trailing, 280)
+                  
+                  TextField("Autor", text: $autor)
+                      .bold()
+                      .padding()
+                      .background(Color.color1)
+                      .cornerRadius(30)
+                      .padding([.leading, .trailing], 20)
+                  
+                  
+                  Label("Nº de páginas", systemImage: "")
+                      .labelStyle(.titleOnly)
+                      .padding(.top, 30)
+                      .padding(.trailing, 220)
+                  
+                  TextField("Nº de páginas", text: $paginas)
+                      .bold()
+                      .padding()
+                      .background(Color.color1)
+                      .cornerRadius(30)
+                      .padding([.leading, .trailing], 20)
+                  
+                  Label("Género", systemImage: "")
+                      .labelStyle(.titleOnly)
+                      .padding(.top, 30)
+                      .padding(.trailing, 280)
+                  
+                  TextField("Género", text: $genero)
+                      .bold()
+                      .padding()
+                      .background(Color.color1)
+                      .cornerRadius(30)
+                      .padding([.leading, .trailing], 20)
+
                     
-                    TextField("Título", text: $titulo)
-                        .bold()
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding([.leading, .trailing], 20)
-                    
-                    Label("Autor", systemImage: "")
-                        .labelStyle(.titleOnly)
-                        .padding(.top, 30)
-                        .padding(.trailing, 280)
-                    
-                    TextField("Autor", text: $autor)
-                        .bold()
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding([.leading, .trailing], 20)
-                    
-                    Label("Nº de páginas", systemImage: "")
-                        .labelStyle(.titleOnly)
-                        .padding(.top, 30)
-                        .padding(.trailing, 220)
-                    
-                    TextField("Nº de páginas", text: $paginas)
-                        .bold()
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding([.leading, .trailing], 20)
-                    
-                    Label("Género", systemImage: "")
-                        .labelStyle(.titleOnly)
-                        .padding(.top, 30)
-                        .padding(.trailing, 280)
-                    
-                    TextField("Género", text: $genero)
-                        .bold()
-                        .padding()
-                        .background(Color.color)
-                        .cornerRadius(30)
-                        .padding([.leading, .trailing], 20)
-                                        
                     Text("Filtros")
                         .labelStyle(.titleOnly)
                         .padding(.top, 30)
                         .padding(.trailing, 290)
-                    
                     Divider()
-                    
-                    HStack {
-                        
+
+                    HStack{
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                         ViewFotoPerfil()
                             .frame(width: 50)
                         
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        
-                        ViewFotoPerfil()
-                            .frame(width: 50)
                     }
                     
-                    HStack {
+                    
+                    HStack{
                         
-                        Button("Modificar") {
-                            modificarLibro = true
-                        }
-                        .alert(isPresented: $modificarLibro) {
-                            Alert(
+                       
+                         Button("Modificar") {
+                             modificarLibro = true
+                         }
+                         .alert(isPresented: $modificarLibro) {
+                             Alert(
                                 title: Text("Modificar Libro"),
-                                message: Text("¿Estas seguro de que quieres modificar este libro?"),
-                                primaryButton: .default(Text("Sí")) {
-                                    // Aquí puedes poner el código para guardar los cambios
-                                    self.presentationMode.wrappedValue.dismiss()
-                                },
-                                secondaryButton: .cancel(Text("No"))
-                            )
-                        }
-                        .padding(15)
-                        .padding(.horizontal, 20)
-                        .background(.button)
-                        .foregroundColor(.white)
-                        .cornerRadius(30)
-                        .padding([.leading, .trailing], 10)
-                        .padding(.top, 20)
-                        .navigationBarBackButtonHidden(true)
-                    }
+                                 message: Text("¿Estas seguro de que quieres modificar este libro?"),
+                                 primaryButton: .default(Text("Sí")) {
+                                     // Aquí puedes poner el código para guardar los cambios
+                                     self.presentationMode.wrappedValue.dismiss()
+                                 },
+                                 secondaryButton: .cancel(Text("No"))
+                             )
+                         }
+                         .padding(15)
+                         .padding(.horizontal, 20)
+                         .background(.button)
+                         .foregroundColor(.white)
+                         .cornerRadius(30)
+                         .padding([.leading, .trailing], 10)
+                         .padding(.top, 20)
+                         .navigationBarBackButtonHidden(true)
+                     }
+                    
                     
                     Spacer()
-                }                
-                .navigationBarTitle("Detalles Libro")
-                .navigationBarTitleDisplayMode(.inline)
+                }
+                
+                         .navigationBarTitle("Detalles Libro")
+                         .navigationBarTitleDisplayMode(.inline)
             }
+            
         }
+        //.tint(.brown)
     }
 }
 

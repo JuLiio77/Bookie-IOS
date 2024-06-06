@@ -21,12 +21,9 @@ class BookModel: ObservableObject {
     
     public func onAppear() {
         fetchBooks(query: "a")
-        fetchBooks(query: "b")
         fetchBooks(query: "c")
         fetchBooks(query: "d")
-        fetchBooks(query: "e")
         fetchBooks(query: "f")
-        fetchBooks(query: "g")
         fetchBooks(query: "l")
         fetchBooks(query: "m")
         fetchBooks(query: "p")

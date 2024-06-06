@@ -9,23 +9,29 @@ import SwiftUI
 
 struct ViewAjenoHistorial: View {
     
+    
     var body: some View {
         
-        VStack {
+        VStack{
             
-            ScrollView(.vertical) {
+            ScrollView(.vertical){
+
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+                CeldaAjenoHistorial()
+         
                 
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
-                CeldaAjenoHistorial()
+                
             }
-            
+                       
             Spacer()
+            
+           
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(false)

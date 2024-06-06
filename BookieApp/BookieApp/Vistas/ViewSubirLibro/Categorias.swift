@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct Categorias: Identifiable, Codable {
+struct Categorias: Identifiable {
     
     var id = UUID()
     var nombre: String
     var imagen: String
-    
-    init(nombre: String, imagen: String) {
-        self.id = UUID()
-        self.nombre = nombre
-        self.imagen = imagen
-    }
 }

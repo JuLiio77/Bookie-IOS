@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ViewAjenoLibros: View {
-    
     @State var search = ""
     
     let columnas = [
@@ -17,49 +16,51 @@ struct ViewAjenoLibros: View {
     ]
     
     var body: some View {
+        
 
-        NavigationStack {
+        NavigationStack{
             
-            Section {
+            Section{
                 
-                ScrollView(.vertical) {
-                    
+//                Text("Mis Libros")
+//                    .font(.title)
+//                    .bold()
+                
+                ScrollView(.vertical){
+
                     LazyVGrid(columns: columnas, content: {
                         
-                        NavigationLink(destination: ViewAjenoLibros()) {
+                        NavigationLink(destination: ViewAjenoLibros()){
+                            CeldaAjenoLibros()
+                        }
+                        NavigationLink(destination: ViewAjenoLibros()){
+                            CeldaAjenoLibros()
+                        }
+                        NavigationLink(destination: ViewAjenoLibros()){
+                            CeldaAjenoLibros()
+                        }
+                        NavigationLink(destination: ViewAjenoLibros()){
+                            CeldaAjenoLibros()
+                        }
+                        NavigationLink(destination: ViewAjenoLibros()){
+                            CeldaAjenoLibros()
+                        }
+                        NavigationLink(destination: ViewAjenoLibros()){
+                            CeldaAjenoLibros()
+                        }
+                        NavigationLink(destination: ViewAjenoLibros()){
                             CeldaAjenoLibros()
                         }
                         
-                        NavigationLink(destination: ViewAjenoLibros()) {
-                            CeldaAjenoLibros()
-                        }
-                        
-                        NavigationLink(destination: ViewAjenoLibros()) {
-                            CeldaAjenoLibros()
-                        }
-                        
-                        NavigationLink(destination: ViewAjenoLibros()) {
-                            CeldaAjenoLibros()
-                        }
-                        
-                        NavigationLink(destination: ViewAjenoLibros()) {
-                            CeldaAjenoLibros()
-                        }
-                        
-                        NavigationLink(destination: ViewAjenoLibros()) {
-                            CeldaAjenoLibros()
-                        }
-                        
-                        NavigationLink(destination: ViewAjenoLibros()) {
-                            CeldaAjenoLibros()
-                        }
                     })
                 }
             }
+            
         }
         .searchable(text: $search)
     }
 }
+
 
 #Preview {
     ViewAjenoLibros()

@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct CeldaAjenoLibros: View {
-    
     var body: some View {
-        
         VStack{
             
             Image(systemName: "")
@@ -25,8 +23,10 @@ struct CeldaAjenoLibros: View {
                 .foregroundColor(.black)
         }
         .padding([.top, .bottom], 20)
+    
     }
 }
+
 
 #Preview {
     CeldaAjenoLibros()

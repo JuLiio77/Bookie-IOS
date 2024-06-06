@@ -9,13 +9,11 @@ import Foundation
 import Combine
 
 struct Book: Codable, Identifiable {
-    
     let id: String
     let volumeInfo: VolumeInfo
 }
 
 struct VolumeInfo: Codable {
-    
     let title: String
     let authors: [String]?
     let publisher: String?
@@ -34,18 +32,15 @@ struct VolumeInfo: Codable {
 }
 
 struct IndustryIdentifier: Codable {
-    
     let type: String
     let identifier: String
 }
 
 struct ImageLinks: Codable {
-    
     let smallThumbnail: String?
     let thumbnail: String?
 }
 
 struct BooksResponse: Codable {
-    
     let items: [Book]
 }
