@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ViewMisLibros: View {
+    
     @State var search = ""
-    @StateObject var funcioneslibro = FuncionesPerfil()
     
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
@@ -20,46 +20,47 @@ struct ViewMisLibros: View {
         
         NavigationStack{
             
-            Section{
+            Section {
                 
-                //                Text("Mis Libros")
-                //                    .font(.title)
-                //                    .bold()
-
-                ScrollView(.vertical){
+                ScrollView(.vertical) {
                     
                     LazyVGrid(columns: columnas, content: {
                         
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
+                        NavigationLink(destination: LibroPropioDetallesView()) {
                             CeldaMisLibros()
                         }
                         
+                        NavigationLink(destination: LibroPropioDetallesView()) {
+                            CeldaMisLibros()
+                        }
+                        
+                        NavigationLink(destination: LibroPropioDetallesView()) {
+                            CeldaMisLibros()
+                        }
+                        
+                        NavigationLink(destination: LibroPropioDetallesView()) {
+                            CeldaMisLibros()
+                        }
+                        
+                        NavigationLink(destination: LibroPropioDetallesView()) {
+                            CeldaMisLibros()
+                        }
+                        
+                        NavigationLink(destination: LibroPropioDetallesView()) {
+                            CeldaMisLibros()
+                        }
+                        
+                        NavigationLink(destination: LibroPropioDetallesView()) {
+                            CeldaMisLibros()
+                        }
                     })
                 }
             }
-            
         }
         .searchable(text: $search)
     }
 }
+
 #Preview {
     ViewMisLibros()
 }

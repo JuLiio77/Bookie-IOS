@@ -5,10 +5,10 @@
 //  Created by dam2 on 20/5/24.
 //
 
-
 import Foundation
 
 struct Libro: Identifiable, Codable {
+    
     var id: Int
     var titulo: String
     var autor: String
@@ -25,4 +25,3 @@ struct Libro: Identifiable, Codable {
 struct ModelUser2: Identifiable, Codable {
     var id: Int
 }
-

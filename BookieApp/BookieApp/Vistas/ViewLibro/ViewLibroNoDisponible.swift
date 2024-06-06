@@ -17,11 +17,12 @@ struct ViewLibroNoDisponible: View {
         
     var body: some View {
         
-        NavigationStack{
+        NavigationStack {
             
-            ScrollView(.vertical){
+            ScrollView(.vertical) {
                 
-                VStack{
+                VStack {
+                    
 //                    NavigationLink(destination: ViewPerfilAjeno()) {
 //                        Label( "Iñigo", systemImage: "person.circle.fill")
 //                             .padding(.leading, 250)
@@ -36,7 +37,7 @@ struct ViewLibroNoDisponible: View {
                         .cornerRadius(20)
                         .padding(.top, 20)
                     
-                    VStack{
+                    VStack {
                
                         Text("¿Has recibido tu libro de vuelta?")
                             .foregroundStyle(.cyan)
@@ -52,7 +53,7 @@ struct ViewLibroNoDisponible: View {
                            .navigationBarBackButtonHidden(true)
                     }
                     
-                    ZStack{
+                    ZStack {
                         
                         Rectangle()
                             .frame(height: 80)
@@ -71,50 +72,50 @@ struct ViewLibroNoDisponible: View {
                             .padding(.trailing, 150)
                     }
                     .padding([.top,.bottom], 15)
-                    //.background(Color.button)
-
                     
                     LazyVGrid(columns: [GridItem(.flexible(minimum: 140, maximum: 220), spacing: 100),
                                         GridItem(.adaptive(minimum: 140, maximum: 250), spacing: 100)], content: {
                         
-                                Text("Autor")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                Text("Genero")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                Text("Alexandre Duque")
-                                    
-                                    
-                                Text("Terror")
+                        Text("Autor")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
                         
-                                Text("Estado")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                    .padding(.top, 2)
+                        Text("Genero")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
                         
-                                Text("Nº Paginas")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                    .padding(.top, 2
-                                    )
-                                Text("Nuevo")
-                                Text("219")
-                                Text("Editorial")
-                                    .font(.title2)
-                                    .foregroundStyle(.brown)
-                                    .bold()
-                                    .padding(.top, 2)
-                                Text("")
-                                
-                                
-                                Text("SM")
-                                    
-                            })
+                        Text("Alexandre Duque")
+                        
+                        Text("Terror")
+                        
+                        Text("Estado")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                            .padding(.top, 2)
+                        
+                        Text("Nº Paginas")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                            .padding(.top, 2)
+                        
+                        Text("Nuevo")
+                        
+                        Text("219")
+                        
+                        Text("Editorial")
+                            .font(.title2)
+                            .foregroundStyle(.brown)
+                            .bold()
+                            .padding(.top, 2)
+                        
+                        Text("")
+                        
+                        Text("SM")
+                    })
                     
                     Text("Filtros")
                         .font(.title2)
@@ -123,19 +124,21 @@ struct ViewLibroNoDisponible: View {
                         .padding(.trailing, 250)
                         .padding(.top, 25)
                        
-                    HStack{
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        ViewFotoPerfil()
-                            .frame(width: 50)
-                        ViewFotoPerfil()
-                            .frame(width: 50)
+                    HStack {
+                        
                         ViewFotoPerfil()
                             .frame(width: 50)
                         
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        
+                        ViewFotoPerfil()
+                            .frame(width: 50)
+                        
+                        ViewFotoPerfil()
+                            .frame(width: 50)
                     }
-//
-//
+                    
 //                    HStack{
 //
 //                        NavigationLink("Intercambio", destination: MensajesView())
@@ -157,15 +160,11 @@ struct ViewLibroNoDisponible: View {
 //                            .padding(.top, 20)
 //                            .navigationBarBackButtonHidden(true)
 //                    }
-                    
-                    
+
                     Spacer()
                 }
-                
             }
-            
         }
-        //.tint(.brown)
     }
 }
 

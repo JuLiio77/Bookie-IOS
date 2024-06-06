@@ -13,13 +13,9 @@ struct BookieAppApp: App {
     var body: some Scene {
         
         WindowGroup {
-            
-            /*TabarView()
-                .environmentObject(LibrosFavoritos())*/
-            
-            ContentView()
-                .environmentObject(FuncionLogin())
+            TabarView()
                 .environmentObject(LibrosFavoritos())
+                .environmentObject(FuncionLogin())
         }
     }
 }

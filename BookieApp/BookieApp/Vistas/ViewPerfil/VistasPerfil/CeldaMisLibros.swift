@@ -12,27 +12,28 @@ struct CeldaMisLibros: View {
     @StateObject var funcioneslibro = FuncionesPerfil()
     
     var body: some View {
-        VStack{
+        
+        VStack {
             
+            //List($funcioneslibro.libros, id: \.libroId) { libro in
             
-            List(funcioneslibro.libros, id: \.id){ libro in
-                
-                Image(systemName: libro.foto)
-                    .frame(width: 166, height: 196)
-                    .foregroundColor(.blue)
-                    .background(Color.gray, in: .rect)
-                    .cornerRadius(20)
-                
-                Text(libro.titulo)
-                    .padding(.trailing, 10)
-                    .font(.subheadline)
-                    .foregroundColor(.black)
-                //.multilineTextAlignment(.trailing)
-            }
-            .padding([.top, .bottom], 20)
+            Image(systemName: "")
+                .frame(width: 166, height: 196)
+                .foregroundColor(.blue)
+                .background(Color.gray, in: .rect)
+                .cornerRadius(20)
+            
+            Text("Harry Potter y la piedra filosofal")
+                .padding(.trailing, 10)
+                .font(.subheadline)
+                .foregroundColor(.black)
+            //.multilineTextAlignment(.trailing)
         }
+        .padding([.top, .bottom], 20)
     }
 }
+
+
 #Preview {
     CeldaMisLibros()
 }
