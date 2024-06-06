@@ -13,7 +13,7 @@ struct BookieAppApp: App {
     var body: some Scene {
         
         WindowGroup {
-            ContentView()
+            TabarView()
                 .environmentObject(LibrosFavoritos())
                 .environmentObject(FuncionLogin())
         }
