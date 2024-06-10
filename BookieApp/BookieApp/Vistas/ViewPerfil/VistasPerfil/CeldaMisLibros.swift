@@ -9,15 +9,14 @@ import SwiftUI
 
 struct CeldaMisLibros: View {
     
-    @StateObject var funcioneslibro = FuncionesPerfil()
+    var libro: LibroUsuario
+    
+    var userId = ModelUser()
     
     var body: some View {
         VStack{
-            
-            
-            List(funcioneslibro.libros, id: \.id){ libro in
-                
-                Image(systemName: libro.foto)
+
+                Image("historia")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
@@ -30,9 +29,10 @@ struct CeldaMisLibros: View {
                 //.multilineTextAlignment(.trailing)
             }
             .padding([.top, .bottom], 20)
-        }
+        
     }
+
 }
 #Preview {
-    CeldaMisLibros()
+    CeldaMisLibros(libro: LibroUsuario())
 }

@@ -17,6 +17,7 @@ struct MainViewBuzon: View {
            Picker("", selection: $seleccionado) {
                Text("Mensajes").tag(0)
                Text("Notificaciones").tag(1)
+               Text("Chat").tag(2)
            }
            .pickerStyle(SegmentedPickerStyle())
            .padding()
@@ -27,6 +28,8 @@ struct MainViewBuzon: View {
                MensajesView()
            } else if seleccionado == 1 {
                NotificacionesView()
+           } else if seleccionado == 2 {
+               ChatView()
            }
 
            Spacer()

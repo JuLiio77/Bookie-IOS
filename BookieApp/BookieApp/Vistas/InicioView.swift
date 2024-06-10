@@ -223,7 +223,8 @@ struct InicioView: View {
                 }
             }
             .padding(.bottom, 10)
-            .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(false
+            )
         }
     }
 }

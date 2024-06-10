@@ -20,7 +20,7 @@ struct CeldaReview: View {
                 .cornerRadius(20)
             
             HStack {
-                Text("Lorem ipsum")
+                Text("Javier")
                     .frame(width: 125, height: 50)
                     .padding(.trailing, 75)
                     .font(.title3)
@@ -34,7 +34,7 @@ struct CeldaReview: View {
             .padding(.bottom, 60)
             
             VStack {
-                Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
+                Text("Una persona agardable y da gusto intercamboar libros con ella")
                 
                 
                 

@@ -17,17 +17,7 @@ struct ViewHistorial: View {
                 ScrollView(.vertical){
 
                     CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-                    CeldaHistorial()
-             
+               
                     
                     
                 }

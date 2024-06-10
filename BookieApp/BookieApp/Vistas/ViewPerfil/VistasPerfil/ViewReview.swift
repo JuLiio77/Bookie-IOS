@@ -14,13 +14,7 @@ struct ViewReview: View {
             ScrollView(.vertical){
                 
                 CeldaReview()
-                CeldaReview()
-                CeldaReview()
-                CeldaReview()
-                CeldaReview()
-                CeldaReview()
-                CeldaReview()
-                CeldaReview()
+              
             }
             
             Spacer()

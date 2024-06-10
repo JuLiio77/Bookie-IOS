@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ViewMisLibros: View {
     @State var search = ""
-    @StateObject var funcioneslibro = FuncionesPerfil()
+    @ObservedObject var funcionesLibro = FuncionesPerfil()
+    var infoUser = ModelUser()
     
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
@@ -20,44 +21,18 @@ struct ViewMisLibros: View {
         
         NavigationStack{
             
-            Section{
-                
-                //                Text("Mis Libros")
-                //                    .font(.title)
-                //                    .bold()
-
-                ScrollView(.vertical){
+            List{
+                ForEach(funcionesLibro.arrayLibros, id: \.libroId){ libro in
                     
-                    LazyVGrid(columns: columnas, content: {
-                        
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        NavigationLink(destination: LibroPropioDetallesView()){
-                            CeldaMisLibros()
-                        }
-                        
-                    })
+                    NavigationLink(destination: LibroPropioDetallesView(libro: libro)){
+                        CeldaMisLibros(libro: libro)
+                    }
                 }
+                
             }
-            
         }
         .searchable(text: $search)
+        
     }
 }
 #Preview {
