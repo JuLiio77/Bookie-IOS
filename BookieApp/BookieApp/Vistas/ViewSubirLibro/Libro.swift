@@ -9,6 +9,7 @@ import Foundation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 struct Libro: Codable {
 =======
 import Foundation
@@ -24,12 +25,18 @@ struct Libro: Codable {
 class Libro: Codable, ObservableObject {
     var libroId: Int
 >>>>>>> jose
+=======
+struct Libro: Identifiable, Codable {
+    
+    var id: Int
+>>>>>>> letizia
     var titulo: String
     var autor: String
     var numeroPaginas: Int
     var sinopsis: String
     var editorial: String
     var genero: String
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    // var prestado: Bool
@@ -56,3 +63,14 @@ class Libro: Codable, ObservableObject {
 //}
 
 >>>>>>> jose
+=======
+    var foto: String
+    var prestado: Bool
+    var filtro: [Int]
+    var usuario: ModelUser2
+}
+
+struct ModelUser2: Identifiable, Codable {
+    var id: Int
+}
+>>>>>>> letizia

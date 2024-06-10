@@ -21,7 +21,7 @@ struct ListaLibros: View {
     
     var body: some View {        
 
-        NavigationStack{
+        NavigationStack {
             
             Section {
                 

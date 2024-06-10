@@ -12,6 +12,7 @@ struct SubirLibroView: View {
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     @ObservedObject var userData: FuncionLogin
     var peticiones = Peticiones()
@@ -22,6 +23,13 @@ struct SubirLibroView: View {
     
 >>>>>>> julio
 =======
+>>>>>>> letizia
+=======
+    @ObservedObject var userData: FuncionLogin
+    @ObservedObject private var idUser = ModelUser()
+
+    var peticiones = Peticiones()
+
 >>>>>>> letizia
     @State private var titulo = ""
     @State private var autor = ""
@@ -41,11 +49,12 @@ struct SubirLibroView: View {
     @State private var seleccionarimg: UIImage? = nil
     @State private var isimgpickerselecct = false
     
+    
     var body: some View {
         
         NavigationStack {
             
-            ScrollView{
+            ScrollView {
                 
                 Button(action: {
                     isimgpickerselecct.toggle()
@@ -395,18 +404,23 @@ struct SubirLibroView: View {
         }
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         let libro = Libro(titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero)
 =======
         print("Token de autenticación: \(authToken)")
         
         let libro = Libro(libroId: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: idUser, userId: idUser.id)
 >>>>>>> jose
+=======
+        let libro = Libro(id: 1, titulo: titulo, autor: autor, numeroPaginas: paginas, sinopsis: sinopsis, editorial: editorial, genero: genero, foto: "", prestado: false, filtro: [1], usuario: ModelUser2(id: 1))
+>>>>>>> letizia
         
         guard let jsonData = try? JSONEncoder().encode(libro) else {
             self.alertMessage = "Error codificando datos"
             self.showingAlert = true
             return
         }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -429,6 +443,8 @@ struct SubirLibroView: View {
                 }
                 return
             }
+            
+            print("Codigo de estado HTTP: \(httpResponse.statusCode)")
             
             if !(200...299).contains(httpResponse.statusCode) {
                 DispatchQueue.main.async {
@@ -464,7 +480,7 @@ struct SubirLibroView: View {
 }
 
 #Preview {
-    SubirLibroView()
+    SubirLibroView(userData: FuncionLogin())
 }
 <<<<<<< HEAD
 

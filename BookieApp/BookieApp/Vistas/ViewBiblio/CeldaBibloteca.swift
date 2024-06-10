@@ -66,7 +66,6 @@ struct CeldaBibloteca: View {
                         .font(.caption)
                 }
                 
-                
                 VStack {
                     
                     NavigationLink(destination: DetalleLibroBibliotecaView(book: book, bookmodelFav: librosFavoritos.bookModelFavoritos(for: book))) {
@@ -88,6 +87,6 @@ struct CeldaBibloteca: View {
 }
 
 #Preview {
-    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, language: "", imageLinks: ImageLinks(smallThumbnail: "http://books.google.com/books/content?id=W5jnCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: ""))))
+    CeldaBibloteca(book: Book(id: "1", volumeInfo: VolumeInfo(title: "hola", authors: ["fdhk"], publisher: "", description: "", industryIdentifiers: [], categories: [""], pageCount: 100, language: "", imageLinks: ImageLinks(smallThumbnail: "http://books.google.com/books/content?id=W5jnCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api", thumbnail: ""))))
         .environmentObject(LibrosFavoritos())
 }

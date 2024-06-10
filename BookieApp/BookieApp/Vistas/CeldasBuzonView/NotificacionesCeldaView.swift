@@ -14,12 +14,14 @@ struct NotificacionesCeldaView: View {
     var body: some View {
         
         ZStack {
+            
             Image("")
                 .frame(width: 360, height: 130)
                 .background(Color.button.opacity(0.3))
                 .cornerRadius(20)
             
             HStack {
+                
                 Text("Lorem ipsum")
                     .frame(width: 125, height: 50)
                     .padding(.trailing, 75)
@@ -28,22 +30,20 @@ struct NotificacionesCeldaView: View {
                 
                 Text("\(fecha.formatted(date: .numeric, time: .omitted))")
                     .padding(.leading, 20)
-        
             }
             
             .padding(.bottom, 60)
             
             VStack {
-                Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
                 
-               
-               
+                Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
             }
             .frame(width: 345, height: 50)
             .padding(.top, 35)
             .font(.subheadline)
             
             HStack {
+                
                 Button(action: {
                     //accion
                 }) {
@@ -60,9 +60,7 @@ struct NotificacionesCeldaView: View {
             }
             .padding(.leading, 280)
             .padding(.top, 90)
-            
         }
-        
     }
 }
 

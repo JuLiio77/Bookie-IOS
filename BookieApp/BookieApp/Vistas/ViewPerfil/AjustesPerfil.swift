@@ -71,6 +71,7 @@ struct AjustesPerfil: View {
                                 primaryButton: .destructive(Text("Cerrar Sesión")) {
                                     
                                     //codigo para cerrar sesión
+                                    
                                     //borramos los datos guardados en userdefault
                                     UserDefaults.standard.removeObject(forKey: "username")
                                     UserDefaults.standard.removeObject(forKey: "password")
@@ -82,19 +83,20 @@ struct AjustesPerfil: View {
                                     UserDefaults.standard.removeObject(forKey: "codigoPostal")
                                     UserDefaults.standard.removeObject(forKey: "ciudad")
                                     UserDefaults.standard.removeObject(forKey: "preferencia")
-                                    
-                                    //sincronizacion de los datos
+                                
+                                    //sincronizamos userdefaults
                                     UserDefaults.standard.synchronize()
-                                    
-                                    //ir a la vista principal
+                    
+                                    //cerramos la vista ajustesperfil
+                                    isPresented = false
+
+                                    //basicamente encontramos la vista principal para remplazar su rootviewcontroller con una instancia de uihostingcontroller que contiene la vista principal de la aplicación
                                     if let windowscene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                                         if let window = windowscene.windows.first {
                                             window.rootViewController = UIHostingController(rootView: ContentView())
                                             window.makeKeyAndVisible()
                                         }
                                     }
-                                    
-                                    isPresented = false
                                 },
                                 secondaryButton: .cancel()
                             )
@@ -111,4 +113,5 @@ struct AjustesPerfil: View {
 #Preview {
     AjustesPerfil(isPresented: .constant(true))
         .environmentObject(LibrosFavoritos())
+        .environmentObject(FuncionLogin())
 }

@@ -21,8 +21,11 @@ struct ModelLibro: Codable {
     var genero, foto, sinopsis, editorial: String?
     var usuario: ModelUser?
     var userID: Int?
+<<<<<<< HEAD
 >>>>>>> jose
 
+=======
+>>>>>>> letizia
 }
 
 #if DEBUG

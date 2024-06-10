@@ -11,6 +11,7 @@ struct DetalleLibro: View {
     
     @EnvironmentObject var librosFavoritos: LibrosFavoritos
     @State var datos = ModelUser()
+    
     var book: Book
     @ObservedObject var bookmodelFav: BookModelFavoritos
     
@@ -24,24 +25,26 @@ struct DetalleLibro: View {
         
         NavigationStack{
             
-            ScrollView(.vertical){
+            ScrollView(.vertical) {
                 
                 VStack{
                     
                     NavigationLink(destination: ViewPerfilAjeno()) {
-                        Label(datos.nombre ?? "nombre", systemImage: "person.circle.fill")
-                           .padding(.leading, 250)
-                           .padding([.top, .bottom], 15)
-                           .foregroundColor(.black)
-                   }
+                        
+                        Label( "Iñigo", systemImage: "person.circle.fill")
+                            .padding(.leading, 250)
+                            .padding([.top, .bottom], 15)
+                            .foregroundColor(.black)
+                    }
                     
-                    Image("misterio")
+                    Image(systemName: "globe")
                         .frame(width: 166, height: 196)
                         .foregroundColor(.blue)
                         .background(Color.gray, in: .rect)
                         .cornerRadius(20)
                     
-                    HStack{
+                    HStack {
+                        
                         Button(action: {
                             
                             bookmodelFav.isFavorite.toggle()
@@ -56,15 +59,15 @@ struct DetalleLibro: View {
                             Image(systemName: bookmodelFav.isFavorite ? "heart.fill" : "heart")
                                 .foregroundColor(bookmodelFav.isFavorite ? .red : .black)
                         }
-                        
                         .foregroundStyle(.brown)
+                        
                         Text("Disponible")
                             .padding(.leading, 50)
                             .foregroundStyle(.cyan)
                     }
                     .padding(.top, 15)
                     
-                    ZStack{
+                    ZStack {
                         
                         Rectangle()
                             .frame(height: 80)
@@ -83,7 +86,6 @@ struct DetalleLibro: View {
                             .padding(.trailing, 150)
                     }
                     .padding([.top,.bottom], 15)
-                    //.background(Color.button)
                     
                     LazyVGrid(columns: [GridItem(.flexible(minimum: 140, maximum: 220), spacing: 100),
                                         GridItem(.adaptive(minimum: 140, maximum: 250), spacing: 100)], content: {
@@ -92,12 +94,13 @@ struct DetalleLibro: View {
                             .font(.title2)
                             .foregroundStyle(.brown)
                             .bold()
+                        
                         Text("Genero")
                             .font(.title2)
                             .foregroundStyle(.brown)
                             .bold()
-                        Text("Alexandre Duque")
                         
+                        Text("Alexandre Duque")
                         
                         Text("Terror")
                         
@@ -111,20 +114,21 @@ struct DetalleLibro: View {
                             .font(.title2)
                             .foregroundStyle(.brown)
                             .bold()
-                            .padding(.top, 2
-                            )
+                            .padding(.top, 2)
+                        
                         Text("Nuevo")
+                        
                         Text("219")
+                        
                         Text("Editorial")
                             .font(.title2)
                             .foregroundStyle(.brown)
                             .bold()
                             .padding(.top, 2)
+                        
                         Text("")
                         
-                        
                         Text("SM")
-                        
                     })
                     
                     Text("Filtros")
@@ -134,19 +138,22 @@ struct DetalleLibro: View {
                         .padding(.trailing, 250)
                         .padding(.top, 25)
                     
-                    HStack{
+                    HStack {
+                        
                         ViewFotoPerfil()
                             .frame(width: 50)
+                        
                         ViewFotoPerfil()
                             .frame(width: 50)
+                        
                         ViewFotoPerfil()
                             .frame(width: 50)
+                        
                         ViewFotoPerfil()
                             .frame(width: 50)
                     }
                     
-                    
-                    HStack{
+                    HStack {
                         
                         NavigationLink("Intercambio", destination: MensajesView())
                             .padding(15)
@@ -165,15 +172,13 @@ struct DetalleLibro: View {
                             .cornerRadius(30)
                             .padding([.leading, .trailing], 10)
                             .padding(.top, 20)
-                            
+                            .navigationBarBackButtonHidden(true)
                     }
                     
                     Spacer()
                 }
             }
         }
-        .navigationBarBackButtonHidden(false)
-        //.tint(.brown)
     }
 }
 
