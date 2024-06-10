@@ -48,6 +48,10 @@
 		3DE784DD2BA8B76C00686105 /* MensajesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DC2BA8B76C00686105 /* MensajesView.swift */; };
 		3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784DE2BA8B78A00686105 /* NotificacionesView.swift */; };
 		3DE784E12BA8BBE600686105 /* MainViewBuzon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE784E02BA8BBE600686105 /* MainViewBuzon.swift */; };
+		3DED60FB2C120B62002A9158 /* libros.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DED60FA2C120B62002A9158 /* libros.json */; };
+		3DED60FD2C120BAF002A9158 /* Libros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED60FC2C120BAF002A9158 /* Libros.swift */; };
+		3DED60FF2C120CF0002A9158 /* LibroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED60FE2C120CF0002A9158 /* LibroData.swift */; };
+		3DED61012C12206D002A9158 /* DetalleLibroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED61002C12206D002A9158 /* DetalleLibroView.swift */; };
 		3DED65D72BBB1CE7001BB9C2 /* ModelLibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED65D62BBB1CE7001BB9C2 /* ModelLibro.swift */; };
 		3DF1AAF42C10BFA900EF1647 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1AAF32C10BFA900EF1647 /* Message.swift */; };
 		3DF1AAF62C10BFE400EF1647 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF1AAF52C10BFE400EF1647 /* MessageRow.swift */; };
@@ -123,6 +127,10 @@
 		3DE784DC2BA8B76C00686105 /* MensajesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensajesView.swift; sourceTree = "<group>"; };
 		3DE784DE2BA8B78A00686105 /* NotificacionesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacionesView.swift; sourceTree = "<group>"; };
 		3DE784E02BA8BBE600686105 /* MainViewBuzon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewBuzon.swift; sourceTree = "<group>"; };
+		3DED60FA2C120B62002A9158 /* libros.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libros.json; sourceTree = "<group>"; };
+		3DED60FC2C120BAF002A9158 /* Libros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Libros.swift; sourceTree = "<group>"; };
+		3DED60FE2C120CF0002A9158 /* LibroData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibroData.swift; sourceTree = "<group>"; };
+		3DED61002C12206D002A9158 /* DetalleLibroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleLibroView.swift; sourceTree = "<group>"; };
 		3DED65D62BBB1CE7001BB9C2 /* ModelLibro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLibro.swift; sourceTree = "<group>"; };
 		3DF1AAF32C10BFA900EF1647 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3DF1AAF52C10BFE400EF1647 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 		3D27D3852BA4BCC600DDDBBA /* ViewLogin */ = {
 			isa = PBXGroup;
 			children = (
+				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 				3D27D38A2BA4C17400DDDBBA /* ViewFotoPerfil.swift */,
 				3D8826F52B9F7DFD00CF248C /* RegistroView.swift */,
 				3D66DC7F2B9F7EF400948047 /* IntroducirUbicacionView.swift */,
@@ -204,11 +213,13 @@
 		3D27D3862BA4BCEF00DDDBBA /* ViewLibro */ = {
 			isa = PBXGroup;
 			children = (
-				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
 				3DDD960F2B9F82B300ABEDE2 /* ListaLibros.swift */,
 				3DDD96112B9F85A400ABEDE2 /* VistaCeldaLibro.swift */,
 				3D75B27F2BA0DA6100B14A09 /* DetalleLibro.swift */,
 				3DFBB7AF2BD81D1600719F60 /* ViewLibroNoDisponible.swift */,
+				3DED60FC2C120BAF002A9158 /* Libros.swift */,
+				3DED60FE2C120CF0002A9158 /* LibroData.swift */,
+				3DED61002C12206D002A9158 /* DetalleLibroView.swift */,
 			);
 			path = ViewLibro;
 			sourceTree = "<group>";
@@ -216,10 +227,10 @@
 		3D27D3872BA4BD7300DDDBBA /* ViewBiblio */ = {
 			isa = PBXGroup;
 			children = (
+				3DAF468E2BC5939F000C1E44 /* DetalleLibroBibliotecaView.swift */,
 				3D1CE92E2BA3487A00844484 /* BibliotecaView.swift */,
 				3DBC66E42B9F7BF8001A6B90 /* ContentView.swift */,
 				3D1CE9302BA3496600844484 /* CeldaBibloteca.swift */,
-				3D09169B2BA8964700C88A88 /* FuncionLogin.swift */,
 			);
 			path = ViewBiblio;
 			sourceTree = "<group>";
@@ -284,6 +295,7 @@
 		3DBC66E12B9F7BF8001A6B90 /* BookieApp */ = {
 			isa = PBXGroup;
 			children = (
+				3DED60FA2C120B62002A9158 /* libros.json */,
 				3D96B0E92BC455730030322C /* Info.plist */,
 				3D2FDF492BD6C5550007CA17 /* ModelUser */,
 				3D2FDF422BD6C5490007CA17 /* ModelChat */,
@@ -462,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DBC66EA2B9F7BF9001A6B90 /* Preview Assets.xcassets in Resources */,
+				3DED60FB2C120B62002A9158 /* libros.json in Resources */,
 				3DBC66E72B9F7BF9001A6B90 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +504,9 @@
 				3D86F4692BFBAAE100CD44E3 /* Libro.swift in Sources */,
 				3DF4712D2BC8366B00FF5669 /* LibrosFavoritos.swift in Sources */,
 				3DF524282BA888F000C7D10F /* BookService.swift in Sources */,
+				3DED60FF2C120CF0002A9158 /* LibroData.swift in Sources */,
 				3DE784DF2BA8B78A00686105 /* NotificacionesView.swift in Sources */,
+				3DED61012C12206D002A9158 /* DetalleLibroView.swift in Sources */,
 				3DF1AAF62C10BFE400EF1647 /* MessageRow.swift in Sources */,
 				3DFBB7772BD8081D00719F60 /* ViewPerfilAjeno.swift in Sources */,
 				3D19B5CC2BA9FD0A00D892F3 /* SubirLibroView.swift in Sources */,
@@ -532,6 +547,7 @@
 				3DE784D62BA8902800686105 /* ReviewView.swift in Sources */,
 				3DFBB77F2BD80A3E00719F60 /* PerfilView.swift in Sources */,
 				3D86F4652BFB9F8A00CD44E3 /* FiltroLibrosView.swift in Sources */,
+				3DED60FD2C120BAF002A9158 /* Libros.swift in Sources */,
 				3D8FF8E42BE1573B00F9D47D /* TerminosUsoView.swift in Sources */,
 				3DF9E9202BC6F51000801D26 /* ListaLibrosFavoritos.swift in Sources */,
 				3DFBB7742BD8081D00719F60 /* ViewAjenoHistorial.swift in Sources */,

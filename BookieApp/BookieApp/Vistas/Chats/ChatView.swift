@@ -8,33 +8,28 @@
 import SwiftUI
 
 struct ChatView: View {
-    @State private var messages: [Message] = [
-//        Message(mensaje: "Hola", enviarMensajeUsuario: false),
-//        Message(mensaje: "Adios", enviarMensajeUsuario: true)
-    ]
-    @State private var responseIndex: Int = 0 // Índice para rastrear la respuesta automática
-
+    @State private var messages: [Message] = []
+    @State private var responseIndex: Int = 0
     @State private var nuevoMensaje: String = ""
-    let automaticResponses = ["Hola!", "si claro! Cuentame", "lo siento no esta dispinible", "Hasta luego"] // Respuestas automáticas
+    let automaticResponses = ["Hola!", "si claro! Cuentame", "lo siento no esta dispinible", "Hasta luego"] //estas son las respuestas automaticas
 
     
     var body: some View {
         VStack {
             ScrollView {
-                         // ScrollViewReader permite desplazarse automáticamente al nuevo mensaje
+                         // scrollViewreader permite desplazarse automáticamente al nuevo mensaje
                          ScrollViewReader { scrollView in
                              ForEach(messages) { message in
                                  MessageRow(message: message)
-                                     .id(message.id) // Asigna un ID a cada fila de mensaje
+                                     .id(message.id) // asigna un id a cada fila de mensaje
                              }
                              .onChange(of: messages) { _ in
-                                 // Desplazarse automáticamente al último mensaje cuando cambia la lista de mensajes
                                  if let lastMessage = messages.last {
                                      withAnimation {
                                          scrollView.scrollTo(lastMessage.id, anchor: .bottom)
                                      }
                                  }
-                                 saveMessages(messages) // Guardar mensajes en UserDefaults cuando cambian
+                                 saveMessages(messages) // guardamos los  mensajes en userdefaults cuando cambian
                              }
                          }
                      }
@@ -55,29 +50,29 @@ struct ChatView: View {
             }
             .padding()
         }
-        .onAppear(perform: loadMessages) // Cargar mensajes al aparecer la vista
+        .onAppear(perform: loadMessages) // cargamos los mensajes al aparecer la vista
 
     }
     
     
-     // Función para enviar un nuevo mensaje
+     // esta funcion envia un nuevo mensaje
     func sendMessage() {
-        guard !nuevoMensaje.isEmpty else { return } // Verifica que el mensaje no esté vacío
+        guard !nuevoMensaje.isEmpty else { return }
         let newMessage = Message(mensaje: nuevoMensaje, enviarMensajeUsuario: true)
-        messages.append(newMessage) // Añade el nuevo mensaje a la lista
-        nuevoMensaje = "" // Limpia el campo de texto
+        messages.append(newMessage)
+        nuevoMensaje = ""
         
-        // Añadir una respuesta automática después de un pequeño retraso
+        // lo que hace esto es que añade una respuesta automatica. las que estan definidas arriba
           DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
               let responseText = self.automaticResponses[self.responseIndex % self.automaticResponses.count]
               let responseMessage = Message(mensaje: responseText, enviarMensajeUsuario: false)
               messages.append(responseMessage)
-              responseIndex += 1 // Incrementar el índice para la próxima respuesta automática
+              responseIndex += 1
           }
       }
     
      
-     // Función para cargar los mensajes desde UserDefaults
+     //  esta funcion carga los mensajes de userdefault
      func loadMessages() {
          if let data = UserDefaults.standard.data(forKey: "messages") {
              if let decodedMessages = try? JSONDecoder().decode([Message].self, from: data) {
@@ -86,7 +81,7 @@ struct ChatView: View {
          }
      }
      
-     // Función para guardar los mensajes en UserDefaults
+     // esta funcion guarda los mensajes de userdefault
      func saveMessages(_ messages: [Message]) {
          if let encodedMessages = try? JSONEncoder().encode(messages) {
              UserDefaults.standard.set(encodedMessages, forKey: "messages")

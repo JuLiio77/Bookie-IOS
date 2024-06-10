@@ -11,6 +11,8 @@ struct ListaLibros: View {
 
     @State var search = ""
     @StateObject var bookModel = BookModel()
+    @StateObject private var dataLibro = LibroData()
+  
     
     var categoria: String
     
@@ -34,11 +36,15 @@ struct ListaLibros: View {
 
                     LazyVGrid(columns: columnas, content: {
                         
-                        ForEach(searchResults, id: \.id) { book in
+                        ForEach(dataLibro.libros) { libro in
                             
-                            NavigationLink(destination: DetalleLibro(book: book, bookmodelFav: BookModelFavoritos(id: "", book: book, isFavorite: false))) {
-                                VistaCeldaLibro()
+                            NavigationLink(destination: DetalleLibroView(libro: libro)){
+                                VistaCeldaLibro(libro: libro)
+
                             }
+//                            NavigationLink(destination: DetalleLibro(book: book, bookmodelFav: BookModelFavoritos(id: "", book: book, isFavorite: false))) {
+//                                VistaCeldaLibro(libro: Libros(id: 1, title: "Cien años de soledad", author: "Gabriel García Márquez", publisher: "Editorial Sudamericana", pages: 471, genre: "Realismo mágico", synopsis: "La historia de la familia Buendía en el pueblo ficticio de Macondo.", user: "María"))
+//                            }
                         }
                     })
                 }
