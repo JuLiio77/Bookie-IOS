@@ -27,7 +27,7 @@ struct CeldaHistorial: View {
                     .frame(width: 35, height: 35)
                     .padding(.trailing, 15)
                 
-                Text("Lorem ipsum")
+                Text("Maria")
                     .frame(width: 125, height: 50)
                     .padding(.trailing, 45)
                     .font(.title3)
@@ -39,8 +39,12 @@ struct CeldaHistorial: View {
             .padding(.bottom, 60)
             
             VStack {
+<<<<<<< HEAD
                 
                 Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
+=======
+                Text("Intercambio de libro: Los juegos del hambre")
+>>>>>>> julio
             }
             .frame(width: 345, height: 50)
             .padding(.top, 35)

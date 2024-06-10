@@ -15,6 +15,7 @@ struct ViewHistorial: View {
             
             ScrollView(.vertical) {
                 
+<<<<<<< HEAD
                 CeldaHistorial()
                 CeldaHistorial()
                 CeldaHistorial()
@@ -26,6 +27,19 @@ struct ViewHistorial: View {
                 CeldaHistorial()
                 CeldaHistorial()
                 CeldaHistorial()
+=======
+                ScrollView(.vertical){
+
+                    CeldaHistorial()
+               
+                    
+                    
+                }
+                           
+                Spacer()
+                
+               
+>>>>>>> julio
             }
             
             Spacer()

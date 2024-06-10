@@ -14,8 +14,15 @@ struct Categorias: Identifiable, Codable {
     var imagen: String
     
     init(nombre: String, imagen: String) {
+<<<<<<< HEAD
         self.id = UUID()
         self.nombre = nombre
         self.imagen = imagen
     }
+=======
+            self.id = UUID()
+            self.nombre = nombre
+            self.imagen = imagen
+        }
+>>>>>>> julio
 }

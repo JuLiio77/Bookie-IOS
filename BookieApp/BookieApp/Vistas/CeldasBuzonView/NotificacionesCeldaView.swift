@@ -21,8 +21,12 @@ struct NotificacionesCeldaView: View {
                 .cornerRadius(20)
             
             HStack {
+<<<<<<< HEAD
                 
                 Text("Lorem ipsum")
+=======
+                Text("Jorge Molina")
+>>>>>>> julio
                     .frame(width: 125, height: 50)
                     .padding(.trailing, 75)
                     .font(.title3)
@@ -35,6 +39,10 @@ struct NotificacionesCeldaView: View {
             .padding(.bottom, 60)
             
             VStack {
+<<<<<<< HEAD
+=======
+                Text("¡HAs recibido una notificacion de Jorge!")
+>>>>>>> julio
                 
                 Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
             }

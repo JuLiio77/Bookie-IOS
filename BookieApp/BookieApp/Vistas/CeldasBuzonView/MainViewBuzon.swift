@@ -15,6 +15,7 @@ struct MainViewBuzon: View {
         
         VStack {
             
+<<<<<<< HEAD
             Picker("", selection: $seleccionado) {
                 
                 Text("Mensajes").tag(0)
@@ -33,6 +34,28 @@ struct MainViewBuzon: View {
             
             Spacer()
         }
+=======
+           Picker("", selection: $seleccionado) {
+               Text("Mensajes").tag(0)
+               Text("Notificaciones").tag(1)
+               Text("Chat").tag(2)
+           }
+           .pickerStyle(SegmentedPickerStyle())
+           .padding()
+
+           Spacer()
+
+           if seleccionado == 0 {
+               MensajesView()
+           } else if seleccionado == 1 {
+               NotificacionesView()
+           } else if seleccionado == 2 {
+               ChatView()
+           }
+
+           Spacer()
+       }
+>>>>>>> julio
     }
 }
 

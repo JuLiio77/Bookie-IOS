@@ -9,9 +9,12 @@ import SwiftUI
 
 struct CeldaMisLibros: View {
     
-    @StateObject var funcioneslibro = FuncionesPerfil()
+    var libro: LibroUsuario
+    
+    var userId = ModelUser()
     
     var body: some View {
+<<<<<<< HEAD
         
         VStack {
             
@@ -30,10 +33,29 @@ struct CeldaMisLibros: View {
             //.multilineTextAlignment(.trailing)
         }
         .padding([.top, .bottom], 20)
+=======
+        VStack{
+
+                Image("historia")
+                    .frame(width: 166, height: 196)
+                    .foregroundColor(.blue)
+                    .background(Color.gray, in: .rect)
+                    .cornerRadius(20)
+                
+                Text(libro.titulo)
+                    .padding(.trailing, 10)
+                    .font(.subheadline)
+                    .foregroundColor(.black)
+                //.multilineTextAlignment(.trailing)
+            }
+            .padding([.top, .bottom], 20)
+        
+>>>>>>> julio
     }
+
 }
 
 
 #Preview {
-    CeldaMisLibros()
+    CeldaMisLibros(libro: LibroUsuario())
 }

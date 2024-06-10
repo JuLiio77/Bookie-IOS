@@ -27,7 +27,7 @@ struct MensajesCeldaView: View {
                     .frame(width: 35, height: 35)
                     .padding(.trailing, 15)
                 
-                Text("Lorem ipsum")
+                Text("Lucía")
                     .frame(width: 125, height: 50)
                     .padding(.trailing, 45)
                     .font(.title3)
@@ -39,8 +39,12 @@ struct MensajesCeldaView: View {
             .padding(.bottom, 60)
             
             VStack {
+<<<<<<< HEAD
                 
                 Text("Lorem ipsum dolor sit amet consectetur sit rhoncus proin viverra aliquet fusce.")
+=======
+                Text("Hola! me interesa mucho tu libro!")
+>>>>>>> julio
             }
             .frame(width: 345, height: 50)
             .padding(.top, 35)

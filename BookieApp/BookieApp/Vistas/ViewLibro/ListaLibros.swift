@@ -10,7 +10,8 @@ import SwiftUI
 struct ListaLibros: View {
 
     @State var search = ""
-    @StateObject var bookModel = BookModel()
+    @StateObject private var dataLibro = LibroData()
+  
     
     var categoria: String
     
@@ -34,29 +35,35 @@ struct ListaLibros: View {
 
                     LazyVGrid(columns: columnas, content: {
                         
-                        ForEach(searchResults, id: \.id) { book in
+                        ForEach(dataLibro.libros, id: \.id ) { libro in
                             
-                            NavigationLink(destination: DetalleLibro(book: book, bookmodelFav: BookModelFavoritos(id: "", book: book, isFavorite: false))) {
-                                VistaCeldaLibro()
+                                VistaCeldaLibro(libro: libro)
+                         
                             }
+                        VistaCeldaLibro(libro: Libros(id: 1, title: "Cien años de soledad", author: "Gabriel García Márquez", publisher: "Editorial Sudamericana", pages: 471, genre: "Realismo mágico", synopsis: "La historia de la familia Buendía en el pueblo ficticio de Macondo.", user: "María"))
+                        
+                           
+                                
+                            
                         }
-                    })
-                }
-            }     
-            .onAppear {                
-                bookModel.onAppear()
+                    
+                )}
+                
+            }
+            .onAppear{
+                dataLibro.load()
             }
         }
         .searchable(text: $search, prompt: "Buscar libro")
     }
     
-    var searchResults: [Book] {
+    var searchResults: [Libros] {
         
         if search.isEmpty {
-            return bookModel.libros
+            return dataLibro.libros
         } else {
-            return bookModel.libros.filter {
-                $0.volumeInfo.title.localizedCaseInsensitiveContains(search)
+            return dataLibro.libros.filter {
+                $0.title.localizedCaseInsensitiveContains(search)
             }
         }
     }
@@ -64,5 +71,5 @@ struct ListaLibros: View {
 
 #Preview {
     ListaLibros(categoria: "Romance")
-        .environmentObject(LibrosFavoritos())
+        .environmentObject(LibroData())
 }

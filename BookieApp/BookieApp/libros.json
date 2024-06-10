@@ -1,0 +1,506 @@
+
+   [
+      {
+         "id":1,
+         "title":"Cien años de soledad",
+         "author":"Gabriel García Márquez",
+         "pages":471,
+         "publisher":"Editorial Sudamericana",
+         "synopsis":"La historia de la familia Buendía en el pueblo ficticio de Macondo.",
+         "genre":"Realismo mágico",
+         "user":"María"
+      },
+      {
+          "id":2,
+         "title":"1984",
+         "author":"George Orwell",
+         "pages":328,
+         "publisher":"Secker & Warburg",
+         "synopsis":"Una distopía sobre un estado totalitario vigilante y opresivo.",
+         "genre":"Distopía",
+         "user":"Juan"
+      },
+      {
+          "id":3,
+         "title":"El señor de los anillos",
+         "author":"J.R.R. Tolkien",
+         "pages":1178,
+         "publisher":"Allen & Unwin",
+         "synopsis":"La épica aventura de Frodo y sus compañeros para destruir el Anillo Único.",
+         "genre":"Fantasía",
+         "user":"Lucía"
+      },
+      {
+          "id":4,
+         "title":"Orgullo y prejuicio",
+         "author":"Jane Austen",
+         "pages":432,
+         "publisher":"T. Egerton, Whitehall",
+         "synopsis":"La relación entre Elizabeth Bennet y el señor Darcy en la Inglaterra rural.",
+         "genre":"Romance",
+         "user":"Carlos"
+      },
+      {
+          "id":5,
+         "title":"El código Da Vinci",
+         "author":"Dan Brown",
+         "pages":489,
+         "publisher":"Doubleday",
+         "synopsis":"Un misterio sobre una conspiración religiosa encubierta.",
+         "genre":"Thriller",
+         "user":"Ana"
+      },
+      {
+          "id":6,
+         "title":"Harry Potter y la piedra filosofal",
+         "author":"J.K. Rowling",
+         "pages":309,
+         "publisher":"Bloomsbury",
+         "synopsis":"Las aventuras de un joven mago en su primer año en Hogwarts.",
+         "genre":"Fantasía",
+         "user":"Miguel"
+      },
+      {
+          "id":7,
+         "title":"Matar a un ruiseñor",
+         "author":"Harper Lee",
+         "pages":336,
+         "publisher":"J.B. Lippincott & Co.",
+         "synopsis":"La lucha contra la injusticia racial en el sur de Estados Unidos.",
+         "genre":"Ficción",
+         "user":"Laura"
+      },
+      {
+          "id":8,
+         "title":"El gran Gatsby",
+         "author":"F. Scott Fitzgerald",
+         "pages":180,
+         "publisher":"Charles Scribner's Sons",
+         "synopsis":"La historia del misterioso millonario Jay Gatsby y su amor por Daisy Buchanan.",
+         "genre":"Tragedia",
+         "user":"David"
+      },
+      {
+          "id":9,
+         "title":"Don Quijote de la Mancha",
+         "author":"Miguel de Cervantes",
+         "pages":863,
+         "publisher":"Francisco de Robles",
+         "synopsis":"Las aventuras y desventuras del ingenioso hidalgo Don Quijote y su escudero Sancho Panza.",
+         "genre":"Aventura",
+         "user":"Sofía"
+      },
+      {
+          "id":10,
+         "title":"Crimen y castigo",
+         "author":"Fiódor Dostoyevski",
+         "pages":671,
+         "publisher":"The Russian Messenger",
+         "synopsis":"El tormento y la redención de Raskólnikov tras cometer un asesinato.",
+         "genre":"Ficción psicológica",
+         "user":"Andrés"
+      },
+      {
+         "id": 11,
+         "title": "La metamorfosis",
+         "author": "Franz Kafka",
+         "pages": 201,
+         "publisher": "Kurt Wolff Verlag",
+         "synopsis": "La historia de Gregor Samsa, un hombre que se despierta transformado en un insecto gigante.",
+         "genre": "Clásico",
+         "user": "Javier"
+       },
+       {
+         "id": 12,
+         "title": "Los pilares de la tierra",
+         "author": "Ken Follett",
+         "pages": 1040,
+         "publisher": "Macmillan",
+         "synopsis": "Una saga histórica ambientada en la Edad Media en Inglaterra.",
+         "genre": "Historia",
+         "user": "Carmen"
+       },
+       {
+         "id": 13,
+         "title": "Drácula",
+         "author": "Bram Stoker",
+         "pages": 418,
+         "publisher": "Archibald Constable and Company",
+         "synopsis": "La lucha contra el vampiro Conde Drácula por parte de un grupo de personas.",
+         "genre": "Terror",
+         "user": "Pedro"
+       },
+       {
+         "id": 14,
+         "title": "Frankenstein",
+         "author": "Mary Shelley",
+         "pages": 280,
+         "publisher": "Lackington, Hughes, Harding, Mavor & Jones",
+         "synopsis": "El científico Victor Frankenstein crea un ser vivo a partir de cadáveres.",
+         "genre": "Ciencia ficción",
+         "user": "Isabel"
+       },
+       {
+         "id": 15,
+         "title": "La sombra del viento",
+         "author": "Carlos Ruiz Zafón",
+         "pages": 576,
+         "publisher": "Planeta",
+         "synopsis": "Un joven descubre un libro maldito que cambiará su vida.",
+         "genre": "Misterio",
+         "user": "Alejandro"
+       },
+       {
+         "id": 16,
+         "title": "El alquimista",
+         "author": "Paulo Coelho",
+         "pages": 208,
+         "publisher": "HarperTorch",
+         "synopsis": "La historia de Santiago, un pastor andaluz que sueña con encontrar un tesoro en las pirámides de Egipto.",
+         "genre": "Aventura",
+         "user": "Sonia"
+       },
+       {
+         "id": 17,
+         "title": "El principito",
+         "author": "Antoine de Saint-Exupéry",
+         "pages": 96,
+         "publisher": "Reynal & Hitchcock",
+         "synopsis": "Un aviador perdido en el desierto encuentra a un pequeño príncipe de otro planeta.",
+         "genre": "Infantil",
+         "user": "Fernando"
+       },
+       {
+         "id": 18,
+         "title": "Moby-Dick",
+         "author": "Herman Melville",
+         "pages": 720,
+         "publisher": "Harper & Brothers",
+         "synopsis": "La obsesiva caza de una gran ballena blanca por el capitán Ahab.",
+         "genre": "Aventura",
+         "user": "Patricia"
+       },
+       {
+         "id": 19,
+         "title": "El nombre de la rosa",
+         "author": "Umberto Eco",
+         "pages": 512,
+         "publisher": "Bompiani",
+         "synopsis": "Un monje franciscano investiga una serie de asesinatos en una abadía italiana.",
+         "genre": "Misterio",
+         "user": "Alberto"
+       },
+       {
+         "id": 20,
+         "title": "El retrato de Dorian Gray",
+         "author": "Oscar Wilde",
+         "pages": 254,
+         "publisher": "Lippincott's Monthly Magazine",
+         "synopsis": "Un joven desea que su retrato envejezca en su lugar.",
+         "genre": "Fantasía",
+         "user": "Marta"
+       },
+       {
+         "id": 21,
+         "title": "La casa de los espíritus",
+         "author": "Isabel Allende",
+         "pages": 433,
+         "publisher": "Plaza & Janés",
+         "synopsis": "Una saga familiar ambientada en un país sin nombre en América del Sur.",
+         "genre": "Fantasía",
+         "user": "Luis"
+       },
+       {
+         "id": 22,
+         "title": "La isla del tesoro",
+         "author": "Robert Louis Stevenson",
+         "pages": 240,
+         "publisher": "Cassell & Co.",
+         "synopsis": "La búsqueda de un tesoro pirata en una isla desierta.",
+         "genre": "Aventura",
+         "user": "Elena"
+       },
+       {
+         "id": 23,
+         "title": "Jane Eyre",
+         "author": "Charlotte Brontë",
+         "pages": 500,
+         "publisher": "Smith, Elder & Co.",
+         "synopsis": "La vida de una joven huérfana que se convierte en institutriz.",
+         "genre": "Romance",
+         "user": "Raúl"
+       },
+       {
+         "id": 24,
+         "title": "Los miserables",
+         "author": "Victor Hugo",
+         "pages": 1232,
+         "publisher": "A. Lacroix, Verboeckhoven & Cie.",
+         "synopsis": "La vida de varios personajes en la Francia del siglo XIX.",
+         "genre": "Historia",
+         "user": "Cristina"
+       },
+       {
+         "id": 25,
+         "title": "La Odisea",
+         "author": "Homero",
+         "pages": 541,
+         "publisher": "Ancient Greece",
+         "synopsis": "Las aventuras de Odiseo en su viaje de regreso a Ítaca.",
+         "genre": "Clásico",
+         "user": "Pablo"
+       },
+       {
+         "id": 26,
+         "title": "Ulises",
+         "author": "James Joyce",
+         "pages": 730,
+         "publisher": "Sylvia Beach",
+         "synopsis": "Un día en la vida de Leopold Bloom en Dublín.",
+         "genre": "Clásico",
+         "user": "Natalia"
+       },
+       {
+         "id": 27,
+         "title": "Anna Karenina",
+         "author": "Lev Tolstói",
+         "pages": 864,
+         "publisher": "The Russian Messenger",
+         "synopsis": "La tragedia de una mujer de la alta sociedad rusa.",
+         "genre": "Tragedia",
+         "user": "Jorge"
+       },
+       {
+         "id": 28,
+         "title": "Las aventuras de Tom Sawyer",
+         "author": "Mark Twain",
+         "pages": 274,
+         "publisher": "American Publishing Company",
+         "synopsis": "Las travesuras de un niño en el Mississippi.",
+         "genre": "Infantil",
+         "user": "Clara"
+       },
+       {
+         "id": 29,
+         "title": "Las mil y una noches",
+         "author": "Anon",
+     json
+     Copiar código
+         "pages": 1001,
+         "publisher": "Antigua Persia",
+         "synopsis": "Una colección de cuentos árabes contados por Sherezade para salvar su vida.",
+         "genre": "Clásico",
+         "user": "Rodrigo"
+       },
+       {
+         "id": 30,
+         "title": "El perfume",
+         "author": "Patrick Süskind",
+         "pages": 255,
+         "publisher": "Diogenes Verlag",
+         "synopsis": "La vida de un hombre con un sentido del olfato extraordinario y su obsesión por crear el perfume perfecto.",
+         "genre": "Misterio",
+         "user": "Verónica"
+       },
+       {
+         "id": 31,
+         "title": "La vuelta al mundo en ochenta días",
+         "author": "Julio Verne",
+         "pages": 275,
+         "publisher": "Pierre-Jules Hetzel",
+         "synopsis": "Las aventuras de Phileas Fogg en su intento de circunnavegar el globo en 80 días.",
+         "genre": "Aventura",
+         "user": "Diego"
+       },
+       {
+         "id": 32,
+         "title": "El libro de la selva",
+         "author": "Rudyard Kipling",
+         "pages": 189,
+         "publisher": "Macmillan",
+         "synopsis": "Las historias de Mowgli, un niño criado por lobos en la selva india.",
+         "genre": "Infantil",
+         "user": "Julia"
+       },
+       {
+         "id": 33,
+         "title": "La caída de la Casa Usher",
+         "author": "Edgar Allan Poe",
+         "pages": 36,
+         "publisher": "Burton's Gentleman's Magazine",
+         "synopsis": "Una historia de terror sobre la decadencia de una familia y su mansión.",
+         "genre": "Terror",
+         "user": "Santiago"
+       },
+       {
+         "id": 34,
+         "title": "Alicia en el país de las maravillas",
+         "author": "Lewis Carroll",
+         "pages": 200,
+         "publisher": "Macmillan",
+         "synopsis": "Las aventuras de una niña en un mundo de fantasía.",
+         "genre": "Infantil",
+         "user": "Gabriela"
+       },
+       {
+         "id": 35,
+         "title": "El guardián entre el centeno",
+         "author": "J.D. Salinger",
+         "pages": 277,
+         "publisher": "Little, Brown and Company",
+         "synopsis": "La vida de Holden Caulfield, un adolescente rebelde en Nueva York.",
+         "genre": "Ficción",
+         "user": "Adrián"
+       },
+       {
+         "id": 36,
+         "title": "Los hermanos Karamazov",
+         "author": "Fiódor Dostoyevski",
+         "pages": 796,
+         "publisher": "The Russian Messenger",
+         "synopsis": "La historia de la familia Karamazov y sus conflictos morales y filosóficos.",
+         "genre": "Filosofía",
+         "user": "Alicia"
+       },
+       {
+         "id": 37,
+         "title": "La Divina Comedia",
+         "author": "Dante Alighieri",
+         "pages": 798,
+         "publisher": "Ancient Italy",
+         "synopsis": "El viaje de Dante a través del Infierno, el Purgatorio y el Paraíso.",
+         "genre": "Poesía",
+         "user": "Sergio"
+       },
+       {
+         "id": 38,
+         "title": "La Eneida",
+         "author": "Virgilio",
+         "pages": 484,
+         "publisher": "Ancient Rome",
+         "synopsis": "La épica de Eneas y la fundación de Roma.",
+         "genre": "Clásico",
+         "user": "Mónica"
+       },
+       {
+         "id": 39,
+         "title": "El conde de Montecristo",
+         "author": "Alexandre Dumas",
+         "pages": 1276,
+         "publisher": "Pierre-Jules Hetzel",
+         "synopsis": "La historia de Edmond Dantès y su venganza.",
+         "genre": "Aventura",
+         "user": "Felipe"
+       },
+       {
+         "id": 40,
+         "title": "Cumbres Borrascosas",
+         "author": "Emily Brontë",
+         "pages": 416,
+         "publisher": "Thomas Cautley Newby",
+         "synopsis": "La tormentosa relación entre Catherine Earnshaw y Heathcliff.",
+         "genre": "Romance",
+         "user": "Lourdes"
+       },
+       {
+         "id": 41,
+         "title": "El hombre invisible",
+         "author": "H.G. Wells",
+         "pages": 149,
+         "publisher": "C. Arthur Pearson",
+         "synopsis": "La historia de un científico que se vuelve invisible.",
+         "genre": "Ciencia ficción",
+         "user": "Álvaro"
+       },
+       {
+         "id": 42,
+         "title": "Veinte mil leguas de viaje submarino",
+         "author": "Julio Verne",
+         "pages": 426,
+         "publisher": "Pierre-Jules Hetzel",
+         "synopsis": "Las aventuras del capitán Nemo a bordo del submarino Nautilus.",
+         "genre": "Aventura",
+         "user": "Beatriz"
+       },
+       {
+         "id": 43,
+         "title": "Fausto",
+         "author": "Johann Wolfgang von Goethe",
+         "pages": 464,
+         "publisher": "Cotta'sche Verlagsbuchhandlung",
+         "synopsis": "La historia de un hombre que vende su alma al diablo a cambio de conocimiento y poder.",
+         "genre": "Filosofía",
+         "user": "Mario"
+       },
+       {
+         "id": 44,
+         "title": "La rebelión de Atlas",
+         "author": "Ayn Rand",
+         "pages": 1168,
+         "publisher": "Random House",
+         "synopsis": "Una distopía sobre la lucha de individuos creativos contra una sociedad opresiva.",
+         "genre": "Ciencia ficción",
+         "user": "Carla"
+       },
+       {
+         "id": 45,
+         "title": "Guerra y paz",
+         "author": "Lev Tolstói",
+         "pages": 1225,
+         "publisher": "The Russian Messenger",
+         "synopsis": "Una crónica de la sociedad rusa durante las guerras napoleónicas.",
+         "genre": "Bélico",
+         "user": "Vicente"
+       },
+       {
+         "id": 46,
+         "title": "El extranjero",
+         "author": "Albert Camus",
+         "pages": 123,
+         "publisher": "Gallimard",
+         "synopsis": "La historia de Meursault, un hombre que comete un asesinato y enfrenta la absurda indiferencia del mundo.",
+         "genre": "Extranjeros",
+         "user": "Diana"
+       },
+       {
+         "id": 47,
+         "title": "La insoportable levedad del ser",
+         "author": "Milan Kundera",
+         "pages": 314,
+         "publisher": "Harper & Row",
+         "synopsis": "Una novela filosófica sobre el amor y la identidad en la Checoslovaquia comunista.",
+         "genre": "Filosofía",
+         "user": "Iván"
+       },
+       {
+         "id": 48,
+         "title": "El guardián invisible",
+         "author": "Dolores Redondo",
+         "pages": 432,
+         "publisher": "Destino",
+         "synopsis": "Un inspector de policía investiga una serie de asesinatos en el valle del Baztán.",
+         "genre": "Misterio",
+         "user": "Eva"
+       },
+       {
+         "id": 49,
+         "title": "La carretera",
+         "author": "Cormac McCarthy",
+         "pages": 287,
+         "publisher": "Alfred A. Knopf",
+         "synopsis": "Un padre y su hijo viajan a través de un paisaje postapocalíptico.",
+         "genre": "Ciencia ficción",
+         "user": "Guillermo"
+       },
+       {
+         "id": 50,
+         "title": "El juego de Ender",
+         "author": "Orson Scott Card",
+         "pages": 324,
+         "publisher": "Tor Books",
+         "synopsis": "Un niño genio es entrenado en una escuela militar para liderar la defensa de la Tierra contra una invasión alienígena.",
+         "genre": "Ciencia ficción",
+         "user": "Olga"
+       }
+   ]
+

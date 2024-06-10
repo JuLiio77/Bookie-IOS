@@ -10,6 +10,11 @@ import SwiftUI
 struct ViewMisLibros: View {
     
     @State var search = ""
+<<<<<<< HEAD
+=======
+    @ObservedObject var funcionesLibro = FuncionesPerfil()
+    var infoUser = ModelUser()
+>>>>>>> julio
     
     let columnas = [
         GridItem(.flexible(minimum: 50, maximum: 200), spacing: 0),
@@ -20,6 +25,7 @@ struct ViewMisLibros: View {
         
         NavigationStack{
             
+<<<<<<< HEAD
             Section {
                 
                 ScrollView(.vertical) {
@@ -54,10 +60,20 @@ struct ViewMisLibros: View {
                             CeldaMisLibros()
                         }
                     })
+=======
+            List{
+                ForEach(funcionesLibro.arrayLibros, id: \.libroId){ libro in
+                    
+                    NavigationLink(destination: LibroPropioDetallesView(libro: libro)){
+                        CeldaMisLibros(libro: libro)
+                    }
+>>>>>>> julio
                 }
+                
             }
         }
         .searchable(text: $search)
+        
     }
 }
 

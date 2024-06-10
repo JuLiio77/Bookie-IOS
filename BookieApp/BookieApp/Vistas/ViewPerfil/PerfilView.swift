@@ -1,10 +1,3 @@
-//
-//  PerfilView.swift
-//  BookieApp
-//
-//  Created by dam2 on 18/3/24.
-//
-
 import SwiftUI
 
 struct PerfilView: View {
@@ -143,6 +136,7 @@ struct PerfilView: View {
 #Preview {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     PerfilView()
         .environmentObject(LibrosFavoritos())
 =======
@@ -153,4 +147,8 @@ struct PerfilView: View {
     PerfilView(modelUser: ModelUser())
         .environmentObject(LibrosFavoritos())
 >>>>>>> letizia
+=======
+    PerfilView(modelUser: ModelUser())
+        .environmentObject(LibrosFavoritos())
+>>>>>>> julio
 }

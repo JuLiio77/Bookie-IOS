@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct NotificacionesView: View {
+<<<<<<< HEAD
+=======
+    let mensajes = ["Mensaje 1"]
+    @State private var seleccionado = 0
+>>>>>>> julio
     
     let mensajes = ["Mensaje 1", "Mensaje 2", "Mensaje 3", "Mensaje 4"]
     
