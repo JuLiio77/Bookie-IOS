@@ -10,12 +10,21 @@ import SwiftUI
 struct PerfilView: View {
 
     @StateObject var userData = FuncionLogin()
-    var funcionesPerfil = FuncionesLibro()
+    @ObservedObject var funcionesPerfil = FuncionesLibro()
     
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
     let modelUser: ModelUser
+    @State var imagenseleccionada: Categorias? = PerfilViewDefaults.shared.loadimagenseleccionada()
+       
+    @State private var filtrouno: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 0)
+    @State private var filtrodos: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 1)
+    @State private var filtrotres: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 2)
     
+    @State var isPresentedFoto: Bool = false
+    @State var isPresentedfiltro: Bool = false
+    @State var isPresentedfiltrodos: Bool = false
+    @State var isPresentedfiltrotres: Bool = false
     
     var body: some View {
         
@@ -32,104 +41,102 @@ struct PerfilView: View {
                     
                 }
             }
-            
             .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
-                AjustesPerfil(isPresented: $isPresented)
+                AjustesPerfil(isPresented: $isPresented, infoUser: ModelUser())
                     .presentationDetents([.large])
             })
-        
             
             .padding(.leading, 320)
             .font(.headline)
             
-            
-            HStack {
-                
-                Image("filtrofantasia")
-                    .resizable()
-                    .frame(width: 120, height: 120)
-                
-                
-                VStack(alignment: .leading) {
-                    Text("\(modelUser.ciudad)")
-                    
-                    Text("4,8 ★")
-                    
-                    Text("Bookies favoritas")
-                }
-            }
-            .padding(.trailing, 70)
-            
-            HStack {
-                
-                VStack {
-                    Image("filtrohistoria")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                    Text("Historia")
-                        .font(.caption)
-                }
-                .padding(.horizontal, 10)
-                
-                
-                VStack {
-                    Image("filtropoesia")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                    Text("Poesia")
-                        .font(.caption)
-
-                }
-                
-                .padding(.horizontal, 10)
-                
-                VStack {
-                    Image("filtroterror")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                    Text("Terror")
-                        .font(.caption)
-
-                }
-                
-                .padding(.horizontal, 10)
-                
-            }
-            .padding(.leading, 100)
-            
             VStack {
-                Picker("", selection: $seleccionado) {
-                    Text("Mis libros").tag(0)
-                    Text("Reseñas").tag(1)
-                    Text("Historial").tag(2)
+                
+                HStack {
+                    
+                    Button(action: {
+                        isPresentedFoto = true
+                    }) {
+                        if let imagen = imagenseleccionada {
+                            Image(imagen.imagen)
+                                .resizable()
+                                .frame(width: 120, height: 120)
+                                .clipShape(Circle())
+                        } else {
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .frame(width: 120, height: 120)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .sheet(isPresented: $isPresentedFoto, onDismiss: { isPresentedFoto = false
+                        
+                        //guardar imagen selecc en userdefaults
+                        PerfilViewDefaults.shared.guardarimagenseleccionada(imagenseleccionada)
+                        
+                    }) {
+                        FiltroFotoPerfilView(imagenseleccionada: $imagenseleccionada)
+                            .presentationDetents([.large])
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        //Text("\(userData.ciudad)")
+                        
+                        Text("Ciudad")
+                            .padding(.leading, 10)
+                        
+                        Text("4,8 ★")
+                            .padding(.leading, 10)
+                        
+                        Text("Bookies favoritas")
+                            .padding(.leading, 10)
+                    }
                 }
-//                .background(Color.blue)
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
+                .padding(.trailing, 70)
                 
-                Spacer()
                 
-                if seleccionado == 0 {
-                   ViewMisLibros()
-                } else if seleccionado == 1 {
-                    ViewReview()
-                } else if seleccionado == 2 {
-                    ViewHistorial()
+                HStack {
+                    
+                    FiltroBotonView(filtro: $filtrouno, ispresented: $isPresentedfiltro, filtroKey: "filtrouno", pos: 0)
+                    
+                    FiltroBotonView(filtro: $filtrodos, ispresented: $isPresentedfiltrodos, filtroKey: "filtrodos", pos: 1)
+                    
+                    FiltroBotonView(filtro: $filtrotres, ispresented: $isPresentedfiltrotres, filtroKey: "filtrotres", pos: 2)
+                }
+                .padding(.leading, 100)
+                
+                VStack {
+                    Picker("", selection: $seleccionado) {
+                        Text("Mis libros").tag(0)
+                        Text("Reseñas").tag(1)
+                        Text("Historial").tag(2)
+                    }
+                    //                .background(Color.blue)
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                    
+                    Spacer()
+                    
+                    //ViewMisLibros(funcionesLibro: funcionesPerfil)
+                    if seleccionado == 0 {
+                        ViewMisLibros(funcionesLibro: funcionesPerfil)
+                    } else if seleccionado == 1 {
+                        ViewReview()
+                    } else if seleccionado == 2 {
+                        ViewHistorial()
+                        
+                    }
                     
                 }
                 
                 Spacer()
+                    .navigationTitle("\(modelUser.username)")
+                    .navigationBarTitleDisplayMode(.inline)
+                
             }
-            
-            Spacer()
-                .navigationTitle("\(modelUser.nombre)")
-                .navigationBarTitleDisplayMode(.inline)
-
+            .onAppear{
+                funcionesPerfil.listaLibrosUser(modelUser.id)
+            }
         }
-        .onAppear{
-            funcionesPerfil.listaLibrosUser(modelUser.id)
-        }
-        
     }
 }
 

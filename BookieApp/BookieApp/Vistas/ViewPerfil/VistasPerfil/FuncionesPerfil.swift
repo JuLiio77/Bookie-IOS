@@ -33,34 +33,22 @@ class FuncionesPerfil: ObservableObject{
                 case .failure(let error):
                     print("Error fetching libros: \(error.localizedDescription)")
                 }
-            }, receiveValue: { [weak self] libros in
-                self?.libros = libros
+            }, receiveValue: { [weak self] libro in
+
+                guard let self = self else { return }
+                print(libro)
+                // poner que si los libros que vienen son iguales que los que hay que no los meta
+                //self?.libros = libro
+                
+                let librosNuevos = libro.filter{ book in
+                    !self.libros.contains(where: { $0.libroId == book.libroId})
+                }
+                
+                
             })
-//        let session = URLSession.shared
-//        session.dataTask(with: request){ (data, response, error) in
-//            if let response = response as? HTTPURLResponse{
-//                if response.statusCode != 200{
-//                    DispatchQueue.main.async {
-//                        print("Hay un error en la peticion")
-//                    }
-//                }
-//                return
-//            }
-
-//            guard let data = data else {return}
-//
-//            if let modelLibro = try? JSONDecoder().decode(Libro.self, from: data){
-//                
-//                print("Se ha traido la lista de libros correctamente")
-//
-//                DispatchQueue.main.async {
-//                    print("Listado de libros ---> \(modelLibro)")
-//                }
-//            }else{
-//                print("No se ha podido descodificar el json")
-//            }
-
-
+        
         }
+    
+
 
 }

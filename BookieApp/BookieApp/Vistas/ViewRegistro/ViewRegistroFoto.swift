@@ -36,7 +36,7 @@ struct ViewRegistroFoto: View {
                     .textContentType(.username)
                     .textInputAutocapitalization(.never)
                 
-                NavigationLink(destination: VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser()), isActive: $nextView){
+                NavigationLink(destination: VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser(), username: ""), isActive: $nextView){
                     
                     Button("Finalizar", action:{
                         datos.register()

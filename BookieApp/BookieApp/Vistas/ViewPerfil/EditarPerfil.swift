@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditarPerfil: View {
+    
     @State var email = ""
     @State var nombre = ""
     @State var password = ""
@@ -15,9 +16,11 @@ struct EditarPerfil: View {
     @State var ciudad = ""
     @State var codigoPostal = ""
     @State var prefeLite = ""
+    @State var infoUser: ModelUser
     
     @State private var showSaveAlert = false
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         NavigationView{
             ScrollView{
@@ -97,19 +100,20 @@ struct EditarPerfil: View {
                     .cornerRadius(30)
                     .padding()
                 
-                Label("Preferencias Literarias", systemImage: "")
-                    .labelStyle(.titleOnly)
-                    .padding(.top, 30)
-                    .padding(.trailing, 180)
-                TextField("Preferencias Literarias", text: $prefeLite)
-                    .bold()
-                    .padding()
-                    .background(Color.fondo)
-                    .cornerRadius(30)
-                    .padding()
+//                Label("Preferencias Literarias", systemImage: "")
+//                    .labelStyle(.titleOnly)
+//                    .padding(.top, 30)
+//                    .padding(.trailing, 180)
+//                TextField("Preferencias Literarias", text: $prefeLite)
+//                    .bold()
+//                    .padding()
+//                    .background(Color.fondo)
+//                    .cornerRadius(30)
+//                    .padding()
                 
                 Button("Guardar Cambios") {
                        showSaveAlert = true
+                        editarDatos()
                    }
                    .alert(isPresented: $showSaveAlert) {
                        Alert(
@@ -138,8 +142,27 @@ struct EditarPerfil: View {
         
     }
     
+    func editarDatos(){
+        
+        if nombre.isEmpty || email.isEmpty || password.isEmpty || ciudad.isEmpty || provincia.isEmpty || codigoPostal.isEmpty{
+            
+            
+        }else{
+            UserDefaults.standard.setValue(nombre, forKey: "name")
+            UserDefaults.standard.setValue(email, forKey: "email")
+            UserDefaults.standard.setValue(password, forKey: "password")
+            //UserDefaults.standard.setValue(repassword, forKey: "repassword")
+            UserDefaults.standard.setValue(ciudad, forKey: "ciudad")
+            UserDefaults.standard.setValue(provincia, forKey: "provincia")
+            UserDefaults.standard.setValue(codigoPostal, forKey: "codigoPostal")
+            //UserDefaults.standard.setValue(username, forKey: "username")
+        }
+    }
+    
 }
 
+
+
 #Preview {
-    EditarPerfil()
+    EditarPerfil(infoUser: ModelUser())
 }

@@ -7,11 +7,14 @@
 
 import Foundation
 
-struct FuncionesLibro{
+class FuncionesLibro: ObservableObject{
     
     var token = UserDefaults.standard.string(forKey: "token")
     var userId = ModelUser()
-    var arrayLibros: [Libro] = []
+    @Published var arrayLibros = [LibroUsuario]()
+    
+    var arrayCompro = [LibroUsuario]()
+    
     
     func listaLibrosUser(_ id: Int){
         
@@ -22,10 +25,10 @@ struct FuncionesLibro{
         request.addValue("application/json", forHTTPHeaderField: "Content-type")
         
         request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
-  
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-           
+        
+        URLSession.shared.dataTask(with: request){ [weak self] (data, response, error) in
+            
             let decoder = JSONDecoder()
             if let error = error {
                 print("Error al traer el listado \(error)")
@@ -38,56 +41,20 @@ struct FuncionesLibro{
             }
             
             do {
-                let datosLibro = try decoder.decode([Libro].self, from: data)
                 
-                print(datosLibro)
-   
+                let datosLibro = try decoder.decode([LibroUsuario].self, from: data)
+                self?.arrayLibros.append(contentsOf: datosLibro)
+                
+                
             } catch {
                 print("Error al decodificar los datos: \(error)")
             }
+            
         }.resume()
+     print(arrayLibros)
     }
-    
 }
 
-//        URLSession.shared.dataTask(with: request){ data, response, error in
-//            let decoder = JSONDecoder()
-//            
-//            if let data = data {
-//                
-//                do{
-//                    let datosLibro = try decoder.decode(Libro, from: data)
-//                    
-//                    
-//                }
-//                       
-//                
-//            }else if let error = error {
-//                
-//                print("Erro al traer el listado \(error)")
-//            }
-            
-            
-//            if let response = response as? HTTPURLResponse{
-//                if response.statusCode != 200{
-//                    DispatchQueue.main.async {
-//                        print("Hay un error en la peticion")
-//                    }
-//                }
-//                return
-//            }
-            
-            //guard let data = data else {return}
-            
-//            if let modelLibro = try? JSONDecoder().decode(ModelLibro.self, from: data){
-//                print("Se ha traido la lista de libros correctamente")
-//                
-//                DispatchQueue.main.async {
-//                    print("Listado de libros del usuario ---> \(modelLibro)")
-//                }
-//            }else{
-//                print("No se ha podido descodificar el json \(error)")
-//            }
             
             
 

@@ -7,6 +7,6 @@
 
 import Foundation
 struct LoginResponse: Codable {
-    var token: String
-    var userId: Int
+    var token: String = ""
+    var username: String = ""
 }

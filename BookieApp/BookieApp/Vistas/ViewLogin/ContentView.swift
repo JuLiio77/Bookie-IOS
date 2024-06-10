@@ -23,7 +23,7 @@ struct ContentView: View {
                                
             }else{
                 
-                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+                VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser(), username: "")
                 
             }
             

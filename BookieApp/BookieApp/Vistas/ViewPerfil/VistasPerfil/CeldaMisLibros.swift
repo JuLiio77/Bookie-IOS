@@ -9,30 +9,31 @@ import SwiftUI
 
 struct CeldaMisLibros: View {
     
-    var funcioneslibro = FuncionesLibro()
+    var libro: LibroUsuario
+    
+    var userId = ModelUser()
     
     var body: some View {
         VStack{
-            
-            
-            List(funcioneslibro.arrayLibros, id: \.libroId){ libro in
-                
-                Image("historia")
-                    .frame(width: 166, height: 196)
+
+                Image("portadaLibro")
+                    .frame(width: 160, height: 170)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)
                     .cornerRadius(20)
                 
-                Text("\(libro.titulo ?? "Titulo del libro")")
+                Text(libro.titulo)
                     .padding(.trailing, 10)
                     .font(.subheadline)
                     .foregroundColor(.black)
                 //.multilineTextAlignment(.trailing)
             }
             .padding([.top, .bottom], 20)
-        }
+        
     }
+
 }
 #Preview {
-    CeldaMisLibros()
+
+    CeldaMisLibros(libro: LibroUsuario())
 }

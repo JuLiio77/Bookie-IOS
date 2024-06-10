@@ -11,6 +11,7 @@ struct ListaLibros: View {
 
     @State var search = ""
     @StateObject var bookModel = BookModel()
+    @StateObject var funcionLibro = FuncionesLibro()
     
     var categoria: String
     

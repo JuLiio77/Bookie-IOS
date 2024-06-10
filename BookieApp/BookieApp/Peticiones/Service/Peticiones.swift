@@ -118,12 +118,14 @@ class Peticiones{
             if let data = data {
                 do {
                     let decoder = JSONDecoder()
-                    let loginResponse = try decoder.decode(LoginResponse.self, from: data)
-                    UserDefaults.standard.setValue(loginResponse.token, forKey: "token")
-                    UserDefaults.standard.setValue(loginResponse.userId, forKey: "userId")
                     
-                    print("Login correcto. Token: \(loginResponse.token), ID Usuario: \(loginResponse.userId)")
-                    completion(.success(loginResponse.token))
+                    let loginResponse = try decoder.decode(LoginResponse.self, from: data)
+                    
+                    UserDefaults.standard.setValue(loginResponse.token, forKey: "token")
+                    UserDefaults.standard.setValue(loginResponse.username, forKey: "username")
+                    
+                    print("Login correcto. Token: \(loginResponse.token)")
+                    //completion(.success(loginResponse.token))
                     return
                     
                 } catch(let error) {
@@ -131,6 +133,7 @@ class Peticiones{
                     completion(.failure(error))
                     return
                 }
+                
             } else if let error = error {
                 print("Error en la solicitud de login: \(error.localizedDescription)")
                 completion(.failure(error))

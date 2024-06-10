@@ -16,7 +16,7 @@ struct VistaCeldaLibro: View {
         
             VStack{
                 
-                Image("misterio")
+                Image("portadaLibro")
                     .frame(width: 166, height: 196)
                     .foregroundColor(.blue)
                     .background(Color.gray, in: .rect)

@@ -30,19 +30,17 @@ class UserService{
 
     let tokenUser = UserDefaults.standard.string(forKey: "token")
         
-       if tokenUser!.isEmpty{
-           print("Token vacio")
-       }
+
        request.setValue("Bearer \(tokenUser ?? "")", forHTTPHeaderField: "Authorization")
 
        URLSession.shared.dataTask(with: request) { data, response, error in
            let decoder = JSONDecoder()
-
+           
            if let data = data {
 
                do {
                    let user = try decoder.decode(ModelUser.self, from: data)
-                   
+                   print(user)
                    DispatchQueue.main.async { [self] in
                                                          
                        modelo.username = user.username
@@ -68,7 +66,4 @@ class UserService{
        }.resume()
    }
 }
-//
-//struct UsuarioId: Encodable, Decodable{
-//    var id: Int = UserDefaults.standard.integer(forKey: "id")
-//}
+

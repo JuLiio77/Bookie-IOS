@@ -14,6 +14,7 @@ struct VistaLogin: View {
     @State var mostrarContrasenia: Bool
     @State var nextView: Bool
     @State var modelUser: ModelUser
+    @State var username: String
     
     var body: some View {
 
@@ -29,7 +30,7 @@ struct VistaLogin: View {
                     .padding()
                 
                 
-            TextField("Nombre de Usuario", text: $modelUser.username)
+                TextField("Nombre de Usuario", text: $modelUser.username)
                     .bold()
                     .padding()
                     .background(Color.fondo)
@@ -112,6 +113,6 @@ struct VistaLogin: View {
 }
 
 #Preview {
-    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser())
+    VistaLogin(toggle: false, mostrarContrasenia: false, nextView: false, modelUser: ModelUser(), username: "")
         .environmentObject(FuncionLogin())
 }

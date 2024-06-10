@@ -11,7 +11,8 @@ struct AjustesPerfil: View {
     
     @Binding var isPresented: Bool
     @State private var showDeleteAlert = false
-       @State private var showLogoutAlert = false
+    @State private var showLogoutAlert = false
+    @State var infoUser: ModelUser
 
     var body: some View {
         ZStack{
@@ -19,7 +20,7 @@ struct AjustesPerfil: View {
                
                        List {
                            Section{
-                               NavigationLink(destination: EditarPerfil()) {
+                               NavigationLink(destination: EditarPerfil(infoUser: infoUser)) {
                                    Text("Editar Perfil")
                                }
                                NavigationLink(destination: ListaLibrosFavoritos()) {
@@ -74,7 +75,7 @@ struct AjustesPerfil: View {
     }
 }
 #Preview {
-    AjustesPerfil(isPresented: .constant(true))
+    AjustesPerfil(isPresented: .constant(true), infoUser: ModelUser())
         .environmentObject(LibrosFavoritos())
 
     
