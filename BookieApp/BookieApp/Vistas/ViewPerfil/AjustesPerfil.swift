@@ -12,6 +12,7 @@ struct AjustesPerfil: View {
     @Binding var isPresented: Bool
     @State private var showDeleteAlert = false
        @State private var showLogoutAlert = false
+    @State var infoUser: ModelUser
 
     var body: some View {
         ZStack{
@@ -100,7 +101,7 @@ struct AjustesPerfil: View {
  }
 
  #Preview {
-     AjustesPerfil(isPresented: .constant(true))
+     AjustesPerfil(isPresented: .constant(true), infoUser: ModelUser())
          .environmentObject(LibrosFavoritos())
          .environmentObject(FuncionLogin())
  }

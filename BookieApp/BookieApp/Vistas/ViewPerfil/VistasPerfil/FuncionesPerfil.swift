@@ -21,14 +21,14 @@ class FuncionesPerfil: ObservableObject{
     
     //Funciones para traer los libros
     func listaLibros(){
-
+        
         guard let url = URL(string: "http://localhost:8080/api/libro") else {return}
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-type")
-
-
+        
+        
         URLSession.shared.dataTaskPublisher(for: request)
             .map { $0.data }
             .decode(type: [Libro].self, decoder: JSONDecoder())
@@ -43,30 +43,7 @@ class FuncionesPerfil: ObservableObject{
             }, receiveValue: { [weak self] libros in
                 self?.libros = libros
             })
-//        let session = URLSession.shared
-//        session.dataTask(with: request){ (data, response, error) in
-//            if let response = response as? HTTPURLResponse{
-//                if response.statusCode != 200{
-//                    DispatchQueue.main.async {
-//                        print("Hay un error en la peticion")
-//                    }
-//                }
-//                return
-//            }
-
-//            guard let data = data else {return}
-//
-//            if let modelLibro = try? JSONDecoder().decode(Libro.self, from: data){
-//                
-//                print("Se ha traido la lista de libros correctamente")
-//
-//                DispatchQueue.main.async {
-//                    print("Listado de libros ---> \(modelLibro)")
-//                }
-//            }else{
-//                print("No se ha podido descodificar el json")
-//            }
-        
+    }
         
         func listaLibrosUser(_ id: Int){
                 
@@ -109,4 +86,4 @@ class FuncionesPerfil: ObservableObject{
 
         }
 
-}
+

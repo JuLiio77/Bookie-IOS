@@ -1,25 +1,30 @@
+//
+//  PerfilView.swift
+//  BookieApp
+//
+//  Created by dam2 on 18/3/24.
+//
+
 import SwiftUI
 
 struct PerfilView: View {
-    
+
     @StateObject var userData = FuncionLogin()
-    @StateObject private var funcionesPerfil = FuncionesPerfil()
+    @ObservedObject var funcionesPerfil = FuncionesPerfil()
     
     @State private var seleccionado = 0
     @State var isPresented: Bool = false
-    
-    @State var isPresentedFoto: Bool = false
+    let modelUser: ModelUser
     @State var imagenseleccionada: Categorias? = PerfilViewDefaults.shared.loadimagenseleccionada()
-    
+       
     @State private var filtrouno: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 0)
     @State private var filtrodos: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 1)
     @State private var filtrotres: Filtros? = PerfilViewDefaults.shared.loadfiltroselect(pos: 2)
     
+    @State var isPresentedFoto: Bool = false
     @State var isPresentedfiltro: Bool = false
     @State var isPresentedfiltrodos: Bool = false
     @State var isPresentedfiltrotres: Bool = false
-    
-    let modelUser: ModelUser
     
     var body: some View {
         
@@ -37,7 +42,7 @@ struct PerfilView: View {
                 }
             }
             .sheet(isPresented: $isPresented, onDismiss: {isPresented = false}, content: {
-                AjustesPerfil(isPresented: $isPresented)
+                AjustesPerfil(isPresented: $isPresented, infoUser: ModelUser())
                     .presentationDetents([.large])
             })
             
@@ -67,7 +72,7 @@ struct PerfilView: View {
                         
                         //guardar imagen selecc en userdefaults
                         PerfilViewDefaults.shared.guardarimagenseleccionada(imagenseleccionada)
-                      
+                        
                     }) {
                         FiltroFotoPerfilView(imagenseleccionada: $imagenseleccionada)
                             .presentationDetents([.large])
@@ -94,7 +99,7 @@ struct PerfilView: View {
                     FiltroBotonView(filtro: $filtrouno, ispresented: $isPresentedfiltro, filtroKey: "filtrouno", pos: 0)
                     
                     FiltroBotonView(filtro: $filtrodos, ispresented: $isPresentedfiltrodos, filtroKey: "filtrodos", pos: 1)
-
+                    
                     FiltroBotonView(filtro: $filtrotres, ispresented: $isPresentedfiltrotres, filtroKey: "filtrotres", pos: 2)
                 }
                 .padding(.leading, 100)
@@ -105,29 +110,31 @@ struct PerfilView: View {
                         Text("Reseñas").tag(1)
                         Text("Historial").tag(2)
                     }
+                    //                .background(Color.blue)
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                     
                     Spacer()
                     
+                    //ViewMisLibros(funcionesLibro: funcionesPerfil)
                     if seleccionado == 0 {
-                        ViewMisLibros()
+                        ViewMisLibros(funcionesLibro: funcionesPerfil)
                     } else if seleccionado == 1 {
                         ViewReview()
                     } else if seleccionado == 2 {
                         ViewHistorial()
+                        
                     }
                     
-                    Spacer()
                 }
                 
                 Spacer()
-                
-                    .navigationTitle("\(modelUser.nombre)")
+                    .navigationTitle("\(modelUser.username)")
                     .navigationBarTitleDisplayMode(.inline)
+                
             }
-            .onAppear {
-                funcionesPerfil.listaLibros()
+            .onAppear{
+                funcionesPerfil.listaLibrosUser(modelUser.id)
             }
         }
     }
@@ -135,5 +142,5 @@ struct PerfilView: View {
 
 #Preview {
     PerfilView(modelUser: ModelUser())
-        .environmentObject(LibrosFavoritos())
+    
 }
