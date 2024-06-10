@@ -1,0 +1,19 @@
+Manual de instalación del backend
+
+1: Instalación del IntelliJ IDEA o una plata forma que ejecute el código.
+
+2: Tener una aplicación para abrir un servidor local y lo encendemos.
+
+3: Teniendo el IntelliJ abierto buscamos la carpeta del backend y la abrimos.
+
+4: Con los arhivos, buscamos uno que se llama application.properties. Esta en la ruta -> src/main/resources/application.properties
+
+5: Dentro de ese archivom en la primera linea escrita buscamos en la parte que ponga localhost:<<puerto>>/nombre base datos.
+
+6: En el nombre de la base de datos ponemos un nombre a recordar.
+
+7: Nos vamos phpmyAdmin para crear una base de datos con el mismo nombre que hemos puesto ahí.
+
+8: Una vez creada, volvemos al IntelliJ y buscamos en src/main/java/com.example.securityscafffolding/SecurityscaffoldingApplication
+
+9: Desde ahí lo ejecutamos, empezara a crear lo perteneciente a la base de datos.
